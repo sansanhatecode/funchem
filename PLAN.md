@@ -376,7 +376,7 @@ Ghi chú:
 
 Cần người có chuyên môn giảng dạy rà lại: cách viết tên trong câu văn (viết thường, chỗ nào kèm tên tiếng Việt) nên khớp với bộ sách giáo khoa mà học sinh mục tiêu đang dùng.
 
-### Giai đoạn 2 — đang làm (bắt đầu 2026-11-16)
+### Giai đoạn 2 — phần lớn đã xong (2026-11-16)
 
 Đã xong:
 
@@ -393,9 +393,12 @@ Cần người có chuyên môn giảng dạy rà lại: cách viết tên trong
 - [x] Web app manifest để cài lên màn hình chính.
 - [x] Sửa lỗi: tắt bộ đệm phiên trong cookie của Better Auth. Bộ đệm này làm trang hiện lại tài khoản khách đã xoá sau khi đăng ký.
 
-Đang làm:
+- [x] Nội dung Unit 3 (rắn, lỏng, khí) và Unit 4 (phản ứng, 12 bài cân bằng), kèm 8 phân tử và 6 phản ứng mới. Chương trình hiện có 4 Unit, 24 bài, 247 bài tập, 25 phân tử, 9 phản ứng.
+- [x] Sửa lỗi: chỉ tạo phiên khách sau khi server xác nhận là chưa đăng nhập, để không ghi đè phiên của tài khoản thật.
 
-- [ ] Nội dung Unit 3 (rắn, lỏng, khí) và Unit 4 (phản ứng, có bài cân bằng), kèm 6 phân tử và 6 phản ứng mới.
+Kiểm chứng: 132 test đơn vị và tích hợp, 20 test trình duyệt (gồm một test chơi hết cả 4 Unit qua giao diện).
+
+Cần người có chuyên môn rà lại nội dung Unit 3-4, đặc biệt các chỗ đơn giản hoá: trứng rán là biến đổi hoá học, pháo bông là magnesium cháy, chất rắn ion vẽ thành một đơn vị công thức.
 
 Chưa làm:
 
