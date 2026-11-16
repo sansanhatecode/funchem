@@ -1,0 +1,30 @@
+{
+  "name": "funchem",
+  "private": true,
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:up": "docker compose up -d postgres",
+    "db:migrate": "pnpm --filter @funchem/db db:migrate",
+    "db:generate": "pnpm --filter @funchem/db db:generate",
+    "e2e": "turbo run build --filter=@funchem/api... --filter='@funchem/web^...' && pnpm --filter @funchem/web e2e"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "turbo": "^2.11.11",
+    "typescript": "^5.9.3",
+    "eslint": "^9.39.0",
+    "@eslint/js": "^9.39.0",
+    "typescript-eslint": "^8.48.0"
+  },
+  "type": "module"
+}

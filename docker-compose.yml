@@ -1,0 +1,21 @@
+# Postgres cho phát triển ở máy. Production dùng Neon.
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: funchem
+      POSTGRES_PASSWORD: funchem
+      POSTGRES_DB: funchem_dev
+    ports:
+      - '5432:5432'
+    volumes:
+      - funchem_pg:/var/lib/postgresql/data
+      - ./scripts/init-test-db.sql:/docker-entrypoint-initdb.d/init-test-db.sql:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U funchem -d funchem_dev']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  funchem_pg:

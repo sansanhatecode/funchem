@@ -1,0 +1,10 @@
+node_modules
+dist
+.next
+.turbo
+pnpm-lock.yaml
+next-env.d.ts
+.next-e2e
+test-results
+playwright-report
+.next-art
