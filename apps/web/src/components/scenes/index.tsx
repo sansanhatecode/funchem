@@ -141,37 +141,73 @@ export const SCENES: Record<SceneId, SceneDef> = {
       'Tuýp kem đánh răng bóp dải kem sọc đỏ xanh lên bàn chải, phía sau là cốc súc miệng và gương',
     hotspot: { x: 108, y: 108 },
   },
-  'ice-cubes': { Component: IceCubesScene, label: 'ice-cubes', hotspot: { x: 160, y: 110 } },
+  'ice-cubes': {
+    Component: IceCubesScene,
+    label:
+      'Ba viên nước đá to xếp chồng trên bàn bếp, một viên nhỏ bên cạnh đang tan thành vũng nước',
+    hotspot: { x: 148, y: 88 },
+  },
   'boiling-kettle': {
     Component: BoilingKettleScene,
-    label: 'boiling-kettle',
-    hotspot: { x: 160, y: 110 },
+    label: 'Ấm nước màu đỏ đang sôi trên bếp ga lửa xanh, hơi nước trắng phun mạnh từ vòi ấm',
+    hotspot: { x: 90, y: 52 },
   },
-  'wet-clothes': { Component: WetClothesScene, label: 'wet-clothes', hotspot: { x: 160, y: 110 } },
-  'sugar-tea': { Component: SugarTeaScene, label: 'sugar-tea', hotspot: { x: 160, y: 110 } },
-  'frying-egg': { Component: FryingEggScene, label: 'frying-egg', hotspot: { x: 160, y: 110 } },
-  perfume: { Component: PerfumeScene, label: 'perfume', hotspot: { x: 160, y: 110 } },
+  'wet-clothes': {
+    Component: WetClothesScene,
+    label:
+      'Áo phông, khăn tắm và đôi tất còn ướt phơi trên dây ngoài trời nắng, nước nhỏ giọt và hơi nước bốc lên',
+    hotspot: { x: 160, y: 142 },
+  },
+  'sugar-tea': {
+    Component: SugarTeaScene,
+    label:
+      'Cốc trà thuỷ tinh đang được khuấy bằng thìa, các viên đường tan dần trong trà, bên cạnh là hũ đường',
+    hotspot: { x: 138, y: 146 },
+  },
+  'frying-egg': {
+    Component: FryingEggScene,
+    label:
+      'Quả trứng ốp la đang rán trong chảo trên bếp ga, lòng trắng đã chín trắng đục quanh lòng đỏ',
+    hotspot: { x: 120, y: 104 },
+  },
+  perfume: {
+    Component: PerfumeScene,
+    label: 'Lọ nước hoa đang xịt ra một làn sương trắng, hương lan dần khắp phòng',
+    hotspot: { x: 206, y: 64 },
+  },
   'vinegar-volcano': {
     Component: VinegarVolcanoScene,
-    label: 'vinegar-volcano',
-    hotspot: { x: 160, y: 110 },
+    label:
+      'Mô hình núi lửa trên khay đang phun bọt trắng hồng chảy xuống sườn núi, bên cạnh là chai giấm và một thìa bột nở',
+    hotspot: { x: 152, y: 68 },
   },
-  sparkler: { Component: SparklerScene, label: 'sparkler', hotspot: { x: 160, y: 110 } },
+  sparkler: {
+    Component: SparklerScene,
+    label:
+      'Bàn tay cầm que pháo bông cháy sáng trắng, toé tia lửa giữa trời đêm Tết có đèn lồng đỏ',
+    hotspot: { x: 146, y: 78 },
+  },
   'charcoal-grill': {
     Component: CharcoalGrillScene,
-    label: 'charcoal-grill',
-    hotspot: { x: 160, y: 110 },
+    label:
+      'Bếp nướng than hoa lúc chiều tối, than hồng rực dưới ba xiên thịt nướng, khói mỏng bay lên',
+    hotspot: { x: 139, y: 101 },
   },
   'hydrogen-peroxide': {
     Component: HydrogenPeroxideScene,
-    label: 'hydrogen-peroxide',
-    hotspot: { x: 160, y: 110 },
+    label: 'Chai oxy già màu nâu và cục bông gòn đặt cạnh đầu gối bị xước đang sủi bọt trắng',
+    hotspot: { x: 196, y: 104 },
   },
-  'baking-cake': { Component: BakingCakeScene, label: 'baking-cake', hotspot: { x: 160, y: 110 } },
+  'baking-cake': {
+    Component: BakingCakeScene,
+    label:
+      'Chiếc bánh bông lan vàng mới nướng đã cắt một miếng, lộ ruột bánh xốp đầy lỗ khí, bên cạnh là hộp và thìa bột nở',
+    hotspot: { x: 86, y: 178 },
+  },
   'vinegar-bottle': {
     Component: VinegarBottleScene,
-    label: 'vinegar-bottle',
-    hotspot: { x: 160, y: 110 },
+    label: 'Chai thuỷ tinh đựng giấm vàng nhạt ngâm tỏi ớt trên bàn bếp, bên cạnh là bát đồ chua',
+    hotspot: { x: 166, y: 106 },
   },
 }
 
