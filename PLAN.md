@@ -376,6 +376,33 @@ Ghi chú:
 
 Cần người có chuyên môn giảng dạy rà lại: cách viết tên trong câu văn (viết thường, chỗ nào kèm tên tiếng Việt) nên khớp với bộ sách giáo khoa mà học sinh mục tiêu đang dùng.
 
+### Giai đoạn 2 — đang làm (bắt đầu 2026-11-16)
+
+Đã xong:
+
+- [x] Ba hình mở đầu còn thiếu: bảng tuần hoàn tương tác, mô hình bên trong nguyên tử, phòng thí nghiệm ba trạng thái. Bài "Tấm bản đồ nguyên tố" và "Bên trong nguyên tử" của Unit 1 đã dùng hình mới.
+- [x] 12 cảnh đời sống cho Unit 3-4 (tổng cộng 30 cảnh).
+- [x] Câu trả lời sai được hỏi lại ở cuối lượt, tối đa 2 lần. Điểm vẫn tính theo câu trả lời đầu tiên.
+- [x] Làm lại bài đã hoàn thành chỉ được một nửa XP.
+- [x] Ôn tập hằng ngày: 8 câu từ bài đã học, ưu tiên khái niệm yếu hoặc đến hạn.
+- [x] Huy hiệu (bài đầu tiên, điểm tuyệt đối, xong từng Unit, chuỗi ngày, sưu tầm, mốc XP), hiện ở màn kết quả và trang Hồ sơ.
+- [x] Trang Hồ sơ: biệt danh, mục tiêu mỗi ngày, lưới 35 ngày hoạt động, huy hiệu, bật tắt âm thanh, đăng xuất, xoá tài khoản.
+- [x] Bảng xếp hạng tuần: chỉ tài khoản đã đăng ký, chỉ hiện biệt danh tự đặt, không lộ email hay tên thật.
+- [x] Âm thanh phản hồi tổng hợp bằng Web Audio, tắt được.
+- [x] Trang Điều khoản và Chính sách riêng tư (bản nháp, cần rà soát pháp lý), liên kết từ trang đăng nhập và Hồ sơ.
+- [x] Web app manifest để cài lên màn hình chính.
+- [x] Sửa lỗi: tắt bộ đệm phiên trong cookie của Better Auth. Bộ đệm này làm trang hiện lại tài khoản khách đã xoá sau khi đăng ký.
+
+Đang làm:
+
+- [ ] Nội dung Unit 3 (rắn, lỏng, khí) và Unit 4 (phản ứng, có bài cân bằng), kèm 6 phân tử và 6 phản ứng mới.
+
+Chưa làm:
+
+- [ ] Sentry và phân tích học tập (cần tài khoản dịch vụ).
+- [ ] Rà soát accessibility có hệ thống; giao diện tối.
+- [ ] Học offline (service worker).
+
 ### Tiếp theo: Giai đoạn 2
 
 Unit 3–4 (có bài cân bằng phản ứng), ôn tập theo khái niệm yếu, hỏi lại câu sai, âm thanh, trang hồ sơ, bảng xếp hạng tuần, ba loại hình minh hoạ ở trên, pháp lý và phân tích học tập.

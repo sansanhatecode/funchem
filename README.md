@@ -81,6 +81,7 @@ Các trang chỉ có khi dev, để xem nhanh:
 - http://localhost:3000/dev/scenes: mọi cảnh đời sống, bấm kính lúp để thử phóng to.
 - http://localhost:3000/dev/exercises: mọi dạng bài tập và hoạt hình phản ứng.
 - http://localhost:3000/dev/mascot: các biểu cảm của linh vật.
+- http://localhost:3000/dev/visuals: bảng tuần hoàn, mô hình nguyên tử và ba trạng thái.
 
 ## Thêm nội dung
 
