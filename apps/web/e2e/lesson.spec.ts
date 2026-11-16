@@ -1,52 +1,10 @@
-import { readFile } from 'node:fs/promises'
 import { content } from '@funchem/content'
-import { expect, type Page, test } from '@playwright/test'
-import { OTP_FILE } from '../playwright.config'
-import { answerWrong, solveExercise } from './solve'
+import { expect, test } from '@playwright/test'
+import { escapeRe, playLesson, signUpWithOtp } from './helpers'
 
 const firstUnit = content.units[0]!
 const firstLesson = firstUnit.lessons[0]!
 const secondLesson = firstUnit.lessons[1]!
-
-async function latestOtp(email: string): Promise<string> {
-  const lines = (await readFile(OTP_FILE, 'utf8')).trim().split('\n')
-  const hit = lines
-    .map((l) => JSON.parse(l) as { to: string; code: string })
-    .reverse()
-    .find((l) => l.to === email)
-  if (!hit) throw new Error(`Không thấy OTP cho ${email}`)
-  return hit.code
-}
-
-/** Làm trọn một bài học, trả lời đúng mọi câu (trừ câu đầu nếu `firstWrong`). */
-async function playLesson(page: Page, lessonId: string, opts: { firstWrong?: boolean } = {}) {
-  const { lesson } = content.lessons.get(lessonId)!
-  const main = page.getByRole('main')
-  if (lesson.intro) {
-    await expect(page.getByRole('heading', { name: lesson.intro.title })).toBeVisible()
-    await page.getByRole('button', { name: 'Bắt đầu luyện tập' }).click()
-  }
-  let wrong = 0
-  for (const [i, exercise] of lesson.exercises.entries()) {
-    await expect(page.getByRole('heading', { level: 1 })).toHaveText(exercise.prompt)
-    const check = page.getByRole('button', { name: 'Kiểm tra' })
-    if (i === 0 && opts.firstWrong && (await answerWrong(main, exercise))) {
-      await check.click()
-      await expect(page.getByRole('status')).toContainText('Chưa đúng')
-      await expect(page.getByRole('status')).toContainText('Đáp án:')
-      wrong++
-    } else {
-      await solveExercise(main, exercise, content)
-      await check.click()
-      await expect(page.getByRole('status')).toContainText('Chính xác!')
-    }
-    await expect(page.getByRole('status')).toContainText(exercise.explanation)
-    await page
-      .getByRole('button', { name: i + 1 < lesson.exercises.length ? 'Tiếp tục' : 'Hoàn thành' })
-      .click()
-  }
-  return { total: lesson.exercises.length, wrong }
-}
 
 test('khách làm bài đầu tiên, đăng ký OTP, tiến độ được giữ nguyên', async ({ page }) => {
   // 1. Vào học không cần tài khoản
@@ -56,12 +14,16 @@ test('khách làm bài đầu tiên, đăng ký OTP, tiến độ được giữ
 
   // bài đầu sẵn sàng, bài hai còn khoá
   await expect(
-    page.getByRole('link', { name: new RegExp(`${firstLesson.title}, sẵn sàng`) }),
+    page.getByRole('link', { name: new RegExp(`${escapeRe(firstLesson.title)}, sẵn sàng`) }),
   ).toBeVisible()
-  await expect(page.getByLabel(new RegExp(`${secondLesson.title}, chưa mở`))).toBeVisible()
+  await expect(
+    page.getByLabel(new RegExp(`${escapeRe(secondLesson.title)}, chưa mở`)),
+  ).toBeVisible()
 
   // 2. Vào bài đầu: thấy hiện tượng ngoài đời trước, phóng to mới thấy nguyên tử
-  await page.getByRole('link', { name: new RegExp(`${firstLesson.title}, sẵn sàng`) }).click()
+  await page
+    .getByRole('link', { name: new RegExp(`${escapeRe(firstLesson.title)}, sẵn sàng`) })
+    .click()
   const particles = page.getByRole('img', { name: /Cận cảnh .* ở cấp nguyên tử/ })
   await expect(particles).toBeHidden()
   await page.getByRole('button', { name: 'Phóng to tới nguyên tử' }).click()
@@ -77,6 +39,8 @@ test('khách làm bài đầu tiên, đăng ký OTP, tiến độ được giữ
   const pct = Math.round(((total - wrong) / total) * 100)
   await expect(page.getByText(`${pct}%`)).toBeVisible()
   await expect(page.getByText(/\+\d+ XP/)).toBeVisible()
+  await expect(page.getByText('Huy hiệu mới')).toBeVisible()
+  await expect(page.getByText('Bước đầu tiên')).toBeVisible()
   for (const id of firstLesson.unlocksMolecules) {
     await expect(page.getByText(content.molecules.get(id)!.name).first()).toBeVisible()
   }
@@ -84,27 +48,22 @@ test('khách làm bài đầu tiên, đăng ký OTP, tiến độ được giữ
   // 5. Về bản đồ: bài đầu xong, bài hai mở
   await page.getByRole('link', { name: 'Về bản đồ học' }).click()
   await expect(
-    page.getByRole('link', { name: new RegExp(`${firstLesson.title}, đã xong`) }),
+    page.getByRole('link', { name: new RegExp(`${escapeRe(firstLesson.title)}, đã xong`) }),
   ).toBeVisible()
   await expect(
-    page.getByRole('link', { name: new RegExp(`${secondLesson.title}, sẵn sàng`) }),
+    page.getByRole('link', { name: new RegExp(`${escapeRe(secondLesson.title)}, sẵn sàng`) }),
   ).toBeVisible()
   const xpBefore = await page.getByText('điểm kinh nghiệm').locator('..').innerText()
 
   // 6. Đăng ký bằng OTP
   const email = `e2e-${Date.now()}@example.com`
   await page.getByRole('link', { name: 'Lưu tiến độ' }).click()
-  await page.getByLabel('Email').fill(email)
-  await page.getByRole('button', { name: 'Gửi mã cho tôi' }).click()
-  await expect(page.getByLabel('Mã 6 số')).toBeVisible()
-  await expect.poll(() => latestOtp(email).catch(() => '')).toMatch(/^\d{6}$/)
-  await page.getByLabel('Mã 6 số').fill(await latestOtp(email))
-  await page.getByRole('button', { name: 'Xác nhận' }).click()
+  await signUpWithOtp(page, email)
 
   // 7. Tài khoản thật giữ nguyên tiến độ
   await expect(page.getByText(email)).toBeVisible()
   await expect(
-    page.getByRole('link', { name: new RegExp(`${firstLesson.title}, đã xong`) }),
+    page.getByRole('link', { name: new RegExp(`${escapeRe(firstLesson.title)}, đã xong`) }),
   ).toBeVisible()
   expect(await page.getByText('điểm kinh nghiệm').locator('..').innerText()).toBe(xpBefore)
 

@@ -1,0 +1,92 @@
+'use client'
+
+import { type ReviewResponse, type ReviewResultResponse, unwrap } from '@funchem/api-client'
+import { content, type Exercise } from '@funchem/content'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
+import Link from 'next/link'
+import { ExerciseRunner, RunnerShell } from '@/components/learn/exercise-runner'
+import { NewBadges, Stat, StreakValue } from '@/components/learn/result-parts'
+import { Mascot } from '@/components/mascot'
+import { buttonClass } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { Confetti } from '@/components/ui/confetti'
+import { api } from '@/lib/api'
+import { progressKey, useProgress } from '@/lib/use-progress'
+
+/** Lượt ôn hằng ngày: vài câu từ các bài đã học, ưu tiên khái niệm bạn hay sai. */
+export function ReviewPlayer() {
+  const { user } = useProgress()
+  const queryClient = useQueryClient()
+  const review = useQuery<ReviewResponse>({
+    queryKey: ['review', user?.id],
+    queryFn: async () => unwrap(await api.me.review.$get()),
+    enabled: Boolean(user),
+    // giữ nguyên bộ câu trong suốt lượt ôn
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+  })
+
+  if (!user || review.isPending) {
+    return (
+      <RunnerShell>
+        <div className="m-auto flex flex-col items-center gap-3 p-5" aria-busy="true">
+          <Mascot mood="think" size={96} />
+          <p className="font-bold text-ink-soft">Đang chọn câu để ôn…</p>
+        </div>
+      </RunnerShell>
+    )
+  }
+
+  const exercises = (review.data?.exerciseIds ?? [])
+    .map((id) => content.exercises.get(id)?.exercise)
+    .filter((e): e is Exercise => Boolean(e))
+
+  if (review.isError || exercises.length === 0) {
+    return (
+      <RunnerShell>
+        <Card className="m-auto mx-5 flex flex-col items-center gap-3 text-center">
+          <Mascot mood="happy" size={96} />
+          <p className="text-lg font-extrabold">
+            {review.isError ? 'Không tải được bài ôn' : 'Chưa có gì để ôn'}
+          </p>
+          <p className="text-sm text-ink-soft">
+            {review.isError
+              ? 'Kiểm tra kết nối rồi thử lại.'
+              : 'Học xong một bài rồi quay lại đây, Bình sẽ chọn câu cho bạn ôn.'}
+          </p>
+          <Link href="/learn" className={buttonClass('primary', 'md')}>
+            Về bản đồ học
+          </Link>
+        </Card>
+      </RunnerShell>
+    )
+  }
+
+  return (
+    <ExerciseRunner<ReviewResultResponse>
+      exercises={exercises}
+      color="var(--color-sun-deep)"
+      exitHref="/learn"
+      submit={async (answers) => unwrap(await api.review.$post({ json: { answers } }))}
+      onSubmitted={() => void queryClient.invalidateQueries({ queryKey: progressKey(user.id) })}
+      renderResult={(result) => (
+        <div className="relative m-auto flex w-full flex-col items-center gap-5 py-6 text-center">
+          <Confetti count={24} />
+          <div style={{ animation: 'pop-in 500ms ease-out' }}>
+            <Mascot mood="cheer" size={132} />
+          </div>
+          <h1 className="text-3xl font-extrabold">Ôn xong rồi!</h1>
+          <dl className="grid w-full grid-cols-3 gap-3">
+            <Stat label="Đúng" value={`${result.correct}/${result.total}`} />
+            <Stat label="Kinh nghiệm" value={`+${result.xpEarned} XP`} tone="sun" />
+            <Stat label="Chuỗi ngày" value={<StreakValue days={result.streak.current} />} />
+          </dl>
+          <NewBadges ids={result.newBadges} />
+          <Link href="/learn" className={buttonClass('primary', 'lg', 'mt-2 w-full')}>
+            Về bản đồ học
+          </Link>
+        </div>
+      )}
+    />
+  )
+}

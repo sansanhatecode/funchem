@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { AppShell } from '@/components/learn/app-shell'
 import { Mascot } from '@/components/mascot'
+import { ArrowRightIcon, BrainIcon } from '@/components/ui/icons'
 import { type LessonStatus, UnitPath } from '@/components/learn/unit-path'
 import { Button, buttonClass } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -42,6 +43,7 @@ export function LearnHome() {
 
   const statusOf = (id: string) => (p.lessons[id]?.status ?? 'locked') as LessonStatus
   const goalRatio = p.profile.dailyGoalXp ? p.stats.xpToday / p.profile.dailyGoalXp : 0
+  const completedCount = Object.values(p.lessons).filter((l) => l.status === 'completed').length
   const current = content.units
     .flatMap((u) => u.lessons)
     .find((l) => statusOf(l.id) === 'available')
@@ -91,6 +93,24 @@ export function LearnHome() {
             color="var(--color-sun)"
           />
         </Card>
+
+        {completedCount > 0 && (
+          <Link
+            href="/review"
+            className="mt-4 flex items-center gap-4 rounded-(--radius-card) border-2 border-sun bg-[#fff8e1] p-4 transition-transform duration-100 hover:-translate-y-0.5"
+          >
+            <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-sun text-ink">
+              <BrainIcon weight="fill" size={26} aria-hidden="true" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block font-extrabold">Ôn tập hôm nay</span>
+              <span className="block text-sm text-ink-soft">
+                Vài câu từ các bài đã học, ưu tiên chỗ bạn hay sai.
+              </span>
+            </span>
+            <ArrowRightIcon weight="bold" size={20} aria-hidden="true" />
+          </Link>
+        )}
 
         {content.units.map((unit) => (
           <UnitPath

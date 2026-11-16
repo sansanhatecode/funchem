@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { type FormEvent, useState } from 'react'
 import { Button } from '@/components/ui/button'
@@ -162,6 +163,18 @@ export function LoginForm() {
           </div>
         </>
       )}
+
+      <p className="mt-4 text-center text-xs text-ink-soft">
+        Khi tiếp tục, bạn đồng ý với{' '}
+        <Link href="/terms" className="font-bold underline-offset-4 hover:underline">
+          Điều khoản sử dụng
+        </Link>{' '}
+        và{' '}
+        <Link href="/privacy" className="font-bold underline-offset-4 hover:underline">
+          Chính sách riêng tư
+        </Link>
+        .
+      </p>
 
       <p id="form-error" role="alert" className="mt-4 min-h-5 text-sm font-medium text-bad">
         {error}

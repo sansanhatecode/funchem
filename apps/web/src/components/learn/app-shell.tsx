@@ -3,13 +3,22 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import type { ReactNode } from 'react'
-import { AtomIcon, FireIcon, FlaskIcon, LightningIcon } from '@/components/ui/icons'
+import {
+  AtomIcon,
+  FireIcon,
+  FlaskIcon,
+  LightningIcon,
+  TrophyIcon,
+  UserCircleIcon,
+} from '@/components/ui/icons'
 import { StatPill } from '@/components/ui/stat-pill'
 import { cn } from '@/lib/cn'
 
 const NAV = [
   { href: '/learn', label: 'Học', Icon: FlaskIcon },
   { href: '/molecules', label: 'Phân tử', Icon: AtomIcon },
+  { href: '/leaderboard', label: 'Xếp hạng', Icon: TrophyIcon },
+  { href: '/profile', label: 'Hồ sơ', Icon: UserCircleIcon },
 ]
 
 /** Khung chung của các trang sau đăng nhập: đầu trang có streak/XP, điều hướng dưới đáy trên điện thoại. */
@@ -34,7 +43,7 @@ export function AppShell({
               href={n.href}
               aria-current={pathname === n.href ? 'page' : undefined}
               className={cn(
-                'rounded-full px-4 py-2 text-sm font-bold',
+                'rounded-full px-3 py-2 text-sm font-bold',
                 pathname === n.href
                   ? 'bg-brand-soft text-brand-deep'
                   : 'text-ink-soft hover:bg-line',

@@ -60,3 +60,8 @@ export async function unwrap<T>(res: {
   }
   return res.json()
 }
+
+export type ReviewResponse = InferResponseType<ApiClient['me']['review']['$get'], 200>
+export type ReviewResultResponse = InferResponseType<ApiClient['review']['$post'], 201>
+export type ProfileResponse = InferResponseType<ApiClient['me']['profile']['$get'], 200>
+export type LeaderboardResponse = InferResponseType<ApiClient['leaderboard']['$get'], 200>
