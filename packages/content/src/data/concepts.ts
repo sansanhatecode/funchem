@@ -1,0 +1,26 @@
+import type { Concept } from '../schema/lesson.js'
+
+export const concepts: Concept[] = [
+  { id: 'atom', title: 'Nguyên tử' },
+  { id: 'element', title: 'Nguyên tố' },
+  { id: 'metal', title: 'Kim loại' },
+  { id: 'molecule', title: 'Phân tử' },
+  { id: 'compound', title: 'Hợp chất' },
+  { id: 'covalent-bond', title: 'Liên kết cộng hoá trị' },
+  { id: 'ionic-bond', title: 'Liên kết ion' },
+  { id: 'formula', title: 'Đọc công thức' },
+  { id: 'state-of-matter', title: 'Trạng thái vật chất' },
+  { id: 'reaction', title: 'Phản ứng hoá học' },
+  { id: 'conservation-of-mass', title: 'Bảo toàn khối lượng' },
+  { id: 'combustion', title: 'Sự cháy' },
+  { id: 'oxidation', title: 'Oxi hoá' },
+  { id: 'chemical-symbol', title: 'Ký hiệu hoá học' },
+  { id: 'periodic-table', title: 'Bảng tuần hoàn' },
+  { id: 'atomic-number', title: 'Số hiệu nguyên tử' },
+  { id: 'nonmetal', title: 'Phi kim' },
+  { id: 'subatomic-particles', title: 'Proton, neutron, electron' },
+  { id: 'multiple-bond', title: 'Liên kết đơn, đôi, ba' },
+  { id: 'ion', title: 'Ion' },
+  { id: 'elemental-substance', title: 'Đơn chất' },
+  { id: 'mixture', title: 'Hỗn hợp' },
+]

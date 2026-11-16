@@ -1,0 +1,432 @@
+import type { MoleculeInput } from '../../schema/molecule.js'
+
+export const molecules: MoleculeInput[] = [
+  {
+    id: 'h2o',
+    name: 'Nước',
+    formula: 'H2O',
+    state: 'liquid',
+    atoms: [
+      { id: 'o', element: 'O', x: 50, y: 42 },
+      { id: 'h1', element: 'H', x: 28, y: 64 },
+      { id: 'h2', element: 'H', x: 72, y: 64 },
+    ],
+    bonds: [
+      { a: 'o', b: 'h1' },
+      { a: 'o', b: 'h2' },
+    ],
+    lifeExamples: [
+      {
+        illustration: 'glass-of-water',
+        title: 'Ly nước bạn uống',
+        description: 'Mỗi ngụm nước là hàng tỉ tỉ phân tử H₂O y hệt nhau.',
+      },
+      {
+        title: 'Mưa và mây',
+        description: 'Mây là nước ở dạng giọt li ti, mưa là khi các giọt gộp lại đủ nặng.',
+      },
+    ],
+    funFact: 'Hơn 60% cơ thể bạn là nước.',
+    conceptIds: ['molecule', 'covalent-bond'],
+  },
+  {
+    id: 'o2',
+    name: 'Oxygen',
+    formula: 'O2',
+    state: 'gas',
+    atoms: [
+      { id: 'o1', element: 'O', x: 36, y: 50 },
+      { id: 'o2', element: 'O', x: 64, y: 50 },
+    ],
+    bonds: [{ a: 'o1', b: 'o2', order: 2 }],
+    lifeExamples: [
+      {
+        illustration: 'candle',
+        title: 'Ngọn lửa',
+        description: 'Lửa cần oxygen. Úp ly lên nến, oxygen hết, nến tắt.',
+      },
+      {
+        title: 'Hơi thở',
+        description:
+          'Bạn hít oxygen vào phổi mỗi vài giây, không có nó cơ thể ngừng hoạt động trong vài phút.',
+      },
+    ],
+    conceptIds: ['molecule', 'element'],
+  },
+  {
+    id: 'h2',
+    name: 'Hydrogen',
+    formula: 'H2',
+    state: 'gas',
+    atoms: [
+      { id: 'h1', element: 'H', x: 38, y: 50 },
+      { id: 'h2', element: 'H', x: 62, y: 50 },
+    ],
+    bonds: [{ a: 'h1', b: 'h2' }],
+    lifeExamples: [
+      {
+        illustration: 'rocket',
+        title: 'Nhiên liệu sạch',
+        description: 'Xe chạy hydrogen chỉ thải ra nước.',
+      },
+    ],
+    conceptIds: ['molecule', 'element'],
+  },
+  {
+    id: 'co2',
+    name: 'Carbon dioxide',
+    formula: 'CO2',
+    state: 'gas',
+    atoms: [
+      { id: 'c', element: 'C', x: 50, y: 50 },
+      { id: 'o1', element: 'O', x: 22, y: 50 },
+      { id: 'o2', element: 'O', x: 78, y: 50 },
+    ],
+    bonds: [
+      { a: 'c', b: 'o1', order: 2 },
+      { a: 'c', b: 'o2', order: 2 },
+    ],
+    lifeExamples: [
+      {
+        illustration: 'soda-can',
+        title: 'Bọt trong nước ngọt',
+        description: 'Tiếng xì khi mở lon là CO₂ thoát ra.',
+      },
+      { title: 'Hơi thở ra', description: 'Cơ thể thải CO₂ mỗi khi bạn thở ra.' },
+    ],
+    conceptIds: ['molecule', 'compound'],
+  },
+  {
+    id: 'nacl',
+    name: 'Sodium chloride',
+    commonName: 'muối ăn',
+    formula: 'NaCl',
+    state: 'solid',
+    atoms: [
+      { id: 'na', element: 'Na', x: 36, y: 50 },
+      { id: 'cl', element: 'Cl', x: 66, y: 50 },
+    ],
+    bonds: [{ a: 'na', b: 'cl', kind: 'ionic' }],
+    lifeExamples: [
+      {
+        illustration: 'salt-shaker',
+        title: 'Lọ muối trong bếp',
+        description: 'Hạt muối là hàng triệu cặp Na⁺ và Cl⁻ xếp thành khối lập phương.',
+      },
+      { title: 'Nước biển mặn', description: 'Biển mặn vì chứa rất nhiều muối hoà tan.' },
+    ],
+    funFact:
+      'Sodium là kim loại nổ khi gặp nước, chlorine là khí độc. Ghép lại thành thứ bạn rắc lên đồ ăn mỗi ngày.',
+    conceptIds: ['compound', 'ionic-bond'],
+  },
+  {
+    id: 'ch4',
+    name: 'Methane',
+    formula: 'CH4',
+    state: 'gas',
+    atoms: [
+      { id: 'c', element: 'C', x: 50, y: 50 },
+      { id: 'h1', element: 'H', x: 50, y: 22 },
+      { id: 'h2', element: 'H', x: 24, y: 64 },
+      { id: 'h3', element: 'H', x: 76, y: 64 },
+      { id: 'h4', element: 'H', x: 50, y: 80 },
+    ],
+    bonds: [
+      { a: 'c', b: 'h1' },
+      { a: 'c', b: 'h2' },
+      { a: 'c', b: 'h3' },
+      { a: 'c', b: 'h4' },
+    ],
+    lifeExamples: [
+      {
+        illustration: 'biogas-stove',
+        title: 'Bếp biogas',
+        description:
+          'Ở nhiều vùng quê, khí methane từ hầm biogas được dẫn lên bếp và cháy với ngọn lửa xanh.',
+      },
+      {
+        title: 'Khí thiên nhiên',
+        description:
+          'Methane là thành phần chính của khí thiên nhiên dùng để đun nấu và phát điện.',
+      },
+    ],
+    funFact: 'Bò ợ hơi cũng thải ra methane, mỗi con vài trăm lít một ngày.',
+    conceptIds: ['molecule', 'compound', 'covalent-bond'],
+  },
+  {
+    id: 'fe',
+    name: 'Iron',
+    commonName: 'sắt',
+    formula: 'Fe',
+    state: 'solid',
+    atoms: [{ id: 'fe', element: 'Fe', x: 50, y: 50 }],
+    bonds: [],
+    lifeExamples: [
+      {
+        illustration: 'iron-nail',
+        title: 'Cây đinh, khung xe',
+        description: 'Sắt là kim loại được dùng nhiều nhất trên thế giới.',
+      },
+    ],
+    conceptIds: ['element', 'metal'],
+  },
+  {
+    id: 'fe2o3',
+    name: 'Iron(III) oxide',
+    commonName: 'gỉ sắt',
+    formula: 'Fe2O3',
+    state: 'solid',
+    atoms: [
+      { id: 'fe1', element: 'Fe', x: 30, y: 36 },
+      { id: 'fe2', element: 'Fe', x: 70, y: 36 },
+      { id: 'o1', element: 'O', x: 20, y: 68 },
+      { id: 'o2', element: 'O', x: 50, y: 72 },
+      { id: 'o3', element: 'O', x: 80, y: 68 },
+    ],
+    bonds: [
+      { a: 'fe1', b: 'o1', kind: 'ionic' },
+      { a: 'fe1', b: 'o2', kind: 'ionic' },
+      { a: 'fe2', b: 'o2', kind: 'ionic' },
+      { a: 'fe2', b: 'o3', kind: 'ionic' },
+    ],
+    lifeExamples: [
+      {
+        illustration: 'rusty-nail',
+        title: 'Đinh để ngoài mưa',
+        description: 'Lớp nâu đỏ bong tróc trên sắt cũ chính là Fe₂O₃.',
+      },
+    ],
+    conceptIds: ['compound', 'oxidation'],
+  },
+  {
+    id: 'he',
+    name: 'Helium',
+    formula: 'He',
+    state: 'gas',
+    atoms: [{ id: 'he', element: 'He', x: 50, y: 50 }],
+    bonds: [],
+    lifeExamples: [
+      {
+        illustration: 'balloons',
+        title: 'Bóng bay lơ lửng',
+        description: 'Helium nhẹ hơn không khí nên quả bóng bơm helium tự bay lên trần nhà.',
+      },
+      {
+        title: 'Máy chụp cộng hưởng từ',
+        description: 'Helium lỏng cực lạnh giữ cho nam châm của máy MRI trong bệnh viện hoạt động.',
+      },
+    ],
+    funFact: 'Helium là nguyên tố nhiều thứ hai trong vũ trụ, chỉ sau hydrogen.',
+    conceptIds: ['atom', 'element', 'nonmetal', 'atomic-number'],
+  },
+  {
+    id: 'c',
+    name: 'Carbon',
+    formula: 'C',
+    state: 'solid',
+    atoms: [{ id: 'c', element: 'C', x: 50, y: 50 }],
+    bonds: [],
+    lifeExamples: [
+      {
+        illustration: 'charcoal-pencil',
+        title: 'Cục than, ruột bút chì',
+        description: 'Than trong bếp lò và than chì trong ruột bút chì đều gồm chủ yếu là carbon.',
+      },
+      {
+        title: 'Kim cương',
+        description:
+          'Kim cương cũng chỉ gồm carbon, nhưng các nguyên tử xếp theo kiểu khác nên cứng và trong suốt.',
+      },
+    ],
+    funFact: 'Mọi sinh vật sống, kể cả bạn, đều được xây từ những bộ khung carbon.',
+    conceptIds: ['atom', 'element', 'nonmetal', 'atomic-number'],
+  },
+  {
+    id: 'cu',
+    name: 'Copper',
+    commonName: 'đồng',
+    formula: 'Cu',
+    state: 'solid',
+    atoms: [{ id: 'cu', element: 'Cu', x: 50, y: 50 }],
+    bonds: [],
+    lifeExamples: [
+      {
+        illustration: 'copper-wire',
+        title: 'Lõi dây điện',
+        description: 'Đồng dẫn điện rất tốt nên lõi của hầu hết dây điện trong nhà làm bằng đồng.',
+      },
+      {
+        title: 'Trống đồng Đông Sơn',
+        description: 'Người Việt cổ đã đúc trống từ đồng pha thiếc cách đây hơn 2.000 năm.',
+      },
+    ],
+    funFact: 'Ký hiệu Cu đến từ "cuprum", tên Latinh của đồng.',
+    conceptIds: ['element', 'metal', 'chemical-symbol'],
+  },
+  {
+    id: 'au',
+    name: 'Gold',
+    commonName: 'vàng',
+    formula: 'Au',
+    state: 'solid',
+    atoms: [{ id: 'au', element: 'Au', x: 50, y: 50 }],
+    bonds: [],
+    lifeExamples: [
+      {
+        illustration: 'gold-ring',
+        title: 'Nhẫn cưới, vàng miếng',
+        description: 'Vàng không gỉ và không xỉn màu nên được dùng làm trang sức và của để dành.',
+      },
+      {
+        title: 'Bên trong điện thoại',
+        description:
+          'Các điểm tiếp xúc tí hon trên mạch điện thoại được mạ vàng vì vàng dẫn điện tốt và không gỉ.',
+      },
+    ],
+    funFact:
+      'Toàn bộ số vàng loài người từng khai thác, nếu đúc lại, chỉ vừa một khối lập phương cạnh hơn 20 mét.',
+    conceptIds: ['element', 'metal', 'chemical-symbol'],
+  },
+  {
+    id: 'n2',
+    name: 'Nitrogen',
+    formula: 'N2',
+    state: 'gas',
+    atoms: [
+      { id: 'n1', element: 'N', x: 34, y: 50 },
+      { id: 'n2', element: 'N', x: 66, y: 50 },
+    ],
+    bonds: [{ a: 'n1', b: 'n2', order: 3 }],
+    lifeExamples: [
+      {
+        illustration: 'snack-bag',
+        title: 'Gói bim bim phồng căng',
+        description:
+          'Khí bơm trong gói bim bim là nitrogen, giúp bánh giòn lâu và không bị vỡ vụn.',
+      },
+      {
+        title: 'Không khí quanh bạn',
+        description: 'Gần bốn phần năm không khí bạn hít vào là khí nitrogen.',
+      },
+    ],
+    funFact:
+      'Liên kết ba trong N₂ rất bền, nên khí nitrogen gần như không phản ứng với thứ gì quanh bạn.',
+    conceptIds: ['molecule', 'elemental-substance', 'covalent-bond', 'multiple-bond'],
+  },
+  {
+    id: 'nh3',
+    name: 'Ammonia',
+    formula: 'NH3',
+    state: 'gas',
+    atoms: [
+      { id: 'n', element: 'N', x: 50, y: 38 },
+      { id: 'h1', element: 'H', x: 24, y: 56 },
+      { id: 'h2', element: 'H', x: 50, y: 68 },
+      { id: 'h3', element: 'H', x: 76, y: 56 },
+    ],
+    bonds: [
+      { a: 'n', b: 'h1' },
+      { a: 'n', b: 'h2' },
+      { a: 'n', b: 'h3' },
+    ],
+    lifeExamples: [
+      {
+        illustration: 'rice-field',
+        title: 'Phân đạm',
+        description: 'Ammonia là nguyên liệu để sản xuất phân đạm bón cho lúa và rau.',
+      },
+      {
+        title: 'Mùi khai',
+        description: 'Mùi khai nồng ở chuồng trại hay nhà vệ sinh kém sạch là do ammonia bay ra.',
+      },
+    ],
+    conceptIds: ['molecule', 'compound', 'covalent-bond', 'formula'],
+  },
+  {
+    id: 'co',
+    name: 'Carbon monoxide',
+    formula: 'CO',
+    state: 'gas',
+    atoms: [
+      { id: 'c', element: 'C', x: 34, y: 50 },
+      { id: 'o', element: 'O', x: 66, y: 50 },
+    ],
+    bonds: [{ a: 'c', b: 'o', order: 3 }],
+    lifeExamples: [
+      {
+        illustration: 'coal-stove',
+        title: 'Đốt than trong phòng kín',
+        description:
+          'Than cháy thiếu không khí sinh ra CO, một khí độc không màu, không mùi. Đừng bao giờ sưởi than trong phòng đóng kín.',
+      },
+      {
+        title: 'Khói xe',
+        description: 'Khí thải xe máy, ô tô có chứa CO, vì thế không nên nổ máy lâu trong nhà kín.',
+      },
+    ],
+    funFact: 'Chỉ kém CO₂ một nguyên tử oxygen, nhưng CO lại là một chất khác hẳn và rất độc.',
+    conceptIds: ['molecule', 'compound', 'formula'],
+  },
+  {
+    id: 'c2h6o',
+    name: 'Ethanol',
+    formula: 'C2H6O',
+    state: 'liquid',
+    atoms: [
+      { id: 'c1', element: 'C', x: 36, y: 56 },
+      { id: 'c2', element: 'C', x: 58, y: 44 },
+      { id: 'o', element: 'O', x: 80, y: 56 },
+      { id: 'h1', element: 'H', x: 14, y: 46 },
+      { id: 'h2', element: 'H', x: 26, y: 80 },
+      { id: 'h3', element: 'H', x: 48, y: 80 },
+      { id: 'h4', element: 'H', x: 48, y: 20 },
+      { id: 'h5', element: 'H', x: 72, y: 22 },
+      { id: 'h6', element: 'H', x: 84, y: 80 },
+    ],
+    bonds: [
+      { a: 'c1', b: 'c2' },
+      { a: 'c2', b: 'o' },
+      { a: 'o', b: 'h6' },
+      { a: 'c1', b: 'h1' },
+      { a: 'c1', b: 'h2' },
+      { a: 'c1', b: 'h3' },
+      { a: 'c2', b: 'h4' },
+      { a: 'c2', b: 'h5' },
+    ],
+    lifeExamples: [
+      {
+        illustration: 'hand-sanitizer',
+        title: 'Nước rửa tay sát khuẩn',
+        description: 'Ethanol là chất diệt khuẩn chính trong cồn y tế và nước rửa tay khô.',
+      },
+      {
+        title: 'Rượu, bia',
+        description: 'Men biến đường trong gạo, nho, lúa mạch thành ethanol, tạo nên rượu và bia.',
+      },
+    ],
+    funFact: 'Xăng E5 ở cây xăng có pha khoảng 5% ethanol.',
+    conceptIds: ['molecule', 'compound', 'formula', 'covalent-bond'],
+  },
+  {
+    id: 'naf',
+    name: 'Sodium fluoride',
+    formula: 'NaF',
+    state: 'solid',
+    atoms: [
+      { id: 'na', element: 'Na', x: 36, y: 50 },
+      { id: 'f', element: 'F', x: 64, y: 50 },
+    ],
+    bonds: [{ a: 'na', b: 'f', kind: 'ionic' }],
+    lifeExamples: [
+      {
+        illustration: 'toothpaste',
+        title: 'Kem đánh răng',
+        description:
+          'Nhiều loại kem đánh răng chứa sodium fluoride, giúp men răng chắc hơn và ngừa sâu răng.',
+      },
+    ],
+    funFact:
+      'Giống muối ăn, sodium fluoride gồm các ion trái dấu hút nhau: Na⁺ và F⁻, xếp xen kẽ thành tinh thể.',
+    conceptIds: ['compound', 'ionic-bond', 'ion'],
+  },
+]
