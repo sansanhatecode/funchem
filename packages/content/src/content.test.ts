@@ -91,4 +91,56 @@ describe('buildRegistry bắt lỗi tham chiếu', () => {
       /khong-co/,
     )
   })
+  it('phát hiện bài tập không thể trả lời đúng', () => {
+    const lesson = (exercise: object) => ({
+      id: 'u-bad',
+      order: 98,
+      title: 't',
+      tagline: 't',
+      color: '#000000',
+      lessons: [{ id: 'u-bad-cp', title: 'cp', kind: 'checkpoint', exercises: [exercise] }],
+    })
+    const base = { id: 'u-bad-e1', prompt: 'p', explanation: 'e' }
+    const build = (unit: object) => () =>
+      buildRegistry({ units: [unit], molecules, reactions, concepts })
+
+    expect(
+      build(
+        lesson({
+          ...base,
+          type: 'build-molecule',
+          targetMoleculeId: 'h2o',
+          availableAtoms: { H: 1, O: 1 },
+        }),
+      ),
+    ).toThrow(/cần 2 nguyên tử H nhưng chỉ cấp 1/)
+    expect(
+      build(
+        lesson({
+          ...base,
+          type: 'fill-blank',
+          template: 'Nước là ___.',
+          blanks: [{ accepted: ['hợp chất'], wordBank: ['đơn chất', 'hỗn hợp'] }],
+        }),
+      ),
+    ).toThrow(/ngân hàng từ không chứa đáp án/)
+    expect(
+      build(
+        lesson({ ...base, type: 'balance-reaction', reactionId: 'rusting', maxCoefficient: 3 }),
+      ),
+    ).toThrow(/cần hệ số 4/)
+    expect(
+      build(
+        lesson({
+          ...base,
+          type: 'mcq',
+          options: [
+            { id: 'a', text: 'Oxygen' },
+            { id: 'b', text: ' Oxygen ' },
+          ],
+          correctOptionId: 'a',
+        }),
+      ),
+    ).toThrow(/hai lựa chọn giống hệt nhau/)
+  })
 })

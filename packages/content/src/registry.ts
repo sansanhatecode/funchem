@@ -136,6 +136,9 @@ export function buildRegistry(input: {
         if (ex.type === 'balance-reaction' && !reactions.has(ex.reactionId)) {
           problems.push(`exercise "${ex.id}": reaction "${ex.reactionId}" không tồn tại`)
         }
+        for (const issue of solvabilityIssues(ex, molecules, reactions)) {
+          problems.push(`exercise "${ex.id}": ${issue}`)
+        }
       }
     })
   }
@@ -145,6 +148,78 @@ export function buildRegistry(input: {
 
   if (problems.length) throw new ContentValidationError(problems)
   return { version: CONTENT_VERSION, units, molecules, reactions, concepts, lessons, exercises }
+}
+
+const normLabel = (s: string) => s.trim().toLowerCase().replace(/\s+/g, ' ')
+const itemKey = (i: {
+  text?: string | undefined
+  moleculeId?: string | undefined
+  image?: string | undefined
+}) =>
+  // giữ nguyên hoa thường: có câu hỏi mà các lựa chọn chỉ khác nhau ở chỗ đó ("NA", "Na", "na")
+  `${(i.text ?? '').trim().replace(/\s+/g, ' ')}|${i.moleculeId ?? ''}|${i.text ? '' : (i.image ?? '')}`
+
+/**
+ * Những lỗi khiến một bài tập không thể trả lời đúng, hoặc có hai lựa chọn trông giống hệt nhau.
+ * Bắt ngay lúc nạp nội dung thay vì đợi tới khi người học gặp.
+ */
+function solvabilityIssues(
+  ex: Exercise,
+  molecules: Map<string, Molecule>,
+  reactions: Map<string, Reaction>,
+): string[] {
+  const issues: string[] = []
+  const duplicates = (keys: string[]) => keys.filter((k, i) => keys.indexOf(k) !== i)
+  switch (ex.type) {
+    case 'mcq':
+      if (duplicates(ex.options.map(itemKey)).length) issues.push('có hai lựa chọn giống hệt nhau')
+      break
+    case 'match-pairs':
+      if (duplicates(ex.pairs.map((p) => itemKey(p.left))).length)
+        issues.push('cột trái có hai mục giống hệt nhau')
+      if (duplicates(ex.pairs.map((p) => itemKey(p.right))).length)
+        issues.push('cột phải có hai mục giống hệt nhau')
+      break
+    case 'build-molecule': {
+      const target = molecules.get(ex.targetMoleculeId)
+      if (!target) break
+      for (const [el, n] of Object.entries(parseFormula(target.formula))) {
+        const have = (ex.availableAtoms as Record<string, number | undefined>)[el] ?? 0
+        if (have < n) issues.push(`cần ${n} nguyên tử ${el} nhưng chỉ cấp ${have}`)
+      }
+      break
+    }
+    case 'balance-reaction': {
+      const rx = reactions.get(ex.reactionId)
+      if (!rx) break
+      const max = Math.max(...[...rx.reactants, ...rx.products].map((t) => t.coefficient))
+      if (max > ex.maxCoefficient)
+        issues.push(`cần hệ số ${max} nhưng maxCoefficient là ${ex.maxCoefficient}`)
+      break
+    }
+    case 'fill-blank':
+      ex.blanks.forEach((b, i) => {
+        if (!b.wordBank) return
+        const bank = b.wordBank.map(normLabel)
+        if (!b.accepted.some((a) => bank.includes(normLabel(a))))
+          issues.push(`chỗ trống ${i + 1}: ngân hàng từ không chứa đáp án`)
+        if (duplicates(bank).length) issues.push(`chỗ trống ${i + 1}: ngân hàng từ có từ lặp`)
+      })
+      break
+    case 'sort':
+      for (const g of ex.groups) {
+        if (!ex.items.some((it) => it.groupId === g.id))
+          issues.push(`nhóm "${g.label}" không có mục nào`)
+      }
+      if (duplicates(ex.items.map(itemKey)).length) issues.push('có hai mục giống hệt nhau')
+      break
+    case 'order-steps':
+      if (duplicates(ex.steps.map(itemKey)).length) issues.push('có hai bước giống hệt nhau')
+      break
+    default:
+      break
+  }
+  return issues
 }
 
 function referencedMolecules(ex: Exercise): string[] {
