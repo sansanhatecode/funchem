@@ -429,4 +429,265 @@ export const molecules: MoleculeInput[] = [
       'Giống muối ăn, sodium fluoride gồm các ion trái dấu hút nhau: Na⁺ và F⁻, xếp xen kẽ thành tinh thể.',
     conceptIds: ['compound', 'ionic-bond', 'ion'],
   },
+  {
+    id: 'al',
+    name: 'Aluminium',
+    commonName: 'nhôm',
+    formula: 'Al',
+    state: 'solid',
+    atoms: [{ id: 'al', element: 'Al', x: 50, y: 50 }],
+    bonds: [],
+    lifeExamples: [
+      {
+        illustration: 'soda-can',
+        title: 'Vỏ lon nước ngọt',
+        description:
+          'Vỏ lon mỏng, nhẹ mà chắc là nhờ làm bằng nhôm. Lon cũ được nấu chảy ở khoảng 660 °C rồi đúc thành lon mới, và nó vẫn là nhôm.',
+      },
+      {
+        title: 'Giấy bạc gói đồ nướng',
+        description: 'Tên gọi là giấy bạc, nhưng thật ra đó là nhôm cán thật mỏng.',
+      },
+    ],
+    funFact: 'Tái chế một vỏ lon nhôm tiết kiệm khoảng 95% năng lượng so với làm lon mới từ quặng.',
+    conceptIds: ['element', 'metal', 'state-of-matter'],
+  },
+  {
+    id: 'caco3',
+    name: 'Calcium carbonate',
+    formula: 'CaCO3',
+    state: 'solid',
+    atoms: [
+      { id: 'ca', element: 'Ca', x: 16, y: 50 },
+      { id: 'o1', element: 'O', x: 40, y: 32 },
+      { id: 'o2', element: 'O', x: 40, y: 68 },
+      { id: 'c', element: 'C', x: 60, y: 50 },
+      { id: 'o3', element: 'O', x: 86, y: 50 },
+    ],
+    bonds: [
+      { a: 'ca', b: 'o1', kind: 'ionic' },
+      { a: 'ca', b: 'o2', kind: 'ionic' },
+      { a: 'c', b: 'o1' },
+      { a: 'c', b: 'o2' },
+      { a: 'c', b: 'o3', order: 2 },
+    ],
+    lifeExamples: [
+      {
+        illustration: 'frying-egg',
+        title: 'Vỏ quả trứng',
+        description:
+          'Vỏ trứng cứng là nhờ calcium carbonate. Đập vỡ vỏ để rán trứng, các mảnh vỏ vẫn là calcium carbonate.',
+      },
+      {
+        title: 'Đá vôi và cặn trong ấm',
+        description:
+          'Núi đá vôi ở vịnh Hạ Long và lớp cặn trắng dưới đáy ấm đun nước đều chủ yếu là calcium carbonate.',
+      },
+    ],
+    funFact: 'Vỏ sò, vỏ ốc, san hô và ngọc trai cũng được xây từ calcium carbonate.',
+    conceptIds: ['compound', 'ionic-bond', 'physical-change'],
+  },
+  {
+    id: 'mg',
+    name: 'Magnesium',
+    formula: 'Mg',
+    state: 'solid',
+    atoms: [{ id: 'mg', element: 'Mg', x: 50, y: 50 }],
+    bonds: [],
+    lifeExamples: [
+      {
+        illustration: 'sparkler',
+        title: 'Que pháo bông',
+        description:
+          'Bột kim loại như magnesium trong que pháo bông cháy thành những tia sáng trắng chói mắt.',
+      },
+      {
+        title: 'Rau xanh',
+        description:
+          'Chất diệp lục làm lá cây có màu xanh chứa magnesium. Ăn rau xanh là cách bạn nạp magnesium cho cơ thể.',
+      },
+    ],
+    funFact:
+      'Magnesium cháy sáng đến mức ngày xưa thợ ảnh đốt bột magnesium để làm đèn flash chụp hình.',
+    conceptIds: ['element', 'metal', 'combustion'],
+  },
+  {
+    id: 'mgo',
+    name: 'Magnesium oxide',
+    formula: 'MgO',
+    state: 'solid',
+    atoms: [
+      { id: 'mg', element: 'Mg', x: 36, y: 50 },
+      { id: 'o', element: 'O', x: 64, y: 50 },
+    ],
+    bonds: [{ a: 'mg', b: 'o', kind: 'ionic' }],
+    lifeExamples: [
+      {
+        illustration: 'sparkler',
+        title: 'Tro trắng của pháo bông',
+        description:
+          'Magnesium cháy xong để lại một chất bột màu trắng. Đó là magnesium oxide, sản phẩm của magnesium với oxygen.',
+      },
+      {
+        title: 'Gạch lót lò nung',
+        description:
+          'Magnesium oxide chịu nhiệt rất tốt, phải hơn 2.800 °C mới nóng chảy, nên được dùng làm gạch lót lò luyện thép.',
+      },
+    ],
+    funFact:
+      'Giống muối ăn, magnesium oxide gồm các ion trái dấu hút nhau: Mg²⁺ và O²⁻, xếp xen kẽ thành tinh thể.',
+    conceptIds: ['compound', 'ionic-bond', 'oxidation'],
+  },
+  {
+    id: 'h2o2',
+    name: 'Hydrogen peroxide',
+    commonName: 'oxy già',
+    formula: 'H2O2',
+    state: 'liquid',
+    atoms: [
+      { id: 'h1', element: 'H', x: 20, y: 30 },
+      { id: 'o1', element: 'O', x: 37, y: 50 },
+      { id: 'o2', element: 'O', x: 63, y: 50 },
+      { id: 'h2', element: 'H', x: 80, y: 70 },
+    ],
+    bonds: [
+      { a: 'h1', b: 'o1' },
+      { a: 'o1', b: 'o2' },
+      { a: 'o2', b: 'h2' },
+    ],
+    lifeExamples: [
+      {
+        illustration: 'hydrogen-peroxide',
+        title: 'Chai oxy già trong tủ thuốc',
+        description:
+          'Chai oxy già ở hiệu thuốc là hydrogen peroxide pha loãng trong nước, khoảng 3%. Nhỏ lên vết xước, nó sủi bọt trắng vì tách thành nước và khí oxygen.',
+      },
+      {
+        title: 'Thuốc tẩy tóc',
+        description:
+          'Hydrogen peroxide phá được chất màu nên có trong thuốc tẩy tóc và một số chất tẩy trắng.',
+      },
+    ],
+    funFact:
+      'Chỉ hơn nước một nguyên tử oxygen, nhưng H₂O₂ là một chất khác hẳn: uống nước thì khoẻ, còn oxy già thì tuyệt đối không được uống.',
+    conceptIds: ['molecule', 'compound', 'formula', 'coefficient'],
+  },
+  {
+    id: 'nahco3',
+    name: 'Sodium hydrogencarbonate',
+    commonName: 'baking soda',
+    formula: 'NaHCO3',
+    state: 'solid',
+    atoms: [
+      { id: 'na', element: 'Na', x: 16, y: 46 },
+      { id: 'o1', element: 'O', x: 42, y: 58 },
+      { id: 'c', element: 'C', x: 62, y: 42 },
+      { id: 'o2', element: 'O', x: 60, y: 16 },
+      { id: 'o3', element: 'O', x: 82, y: 58 },
+      { id: 'h', element: 'H', x: 82, y: 84 },
+    ],
+    bonds: [
+      { a: 'na', b: 'o1', kind: 'ionic' },
+      { a: 'c', b: 'o1' },
+      { a: 'c', b: 'o2', order: 2 },
+      { a: 'c', b: 'o3' },
+      { a: 'o3', b: 'h' },
+    ],
+    lifeExamples: [
+      {
+        illustration: 'baking-cake',
+        title: 'Bánh nở phồng trong lò',
+        description:
+          'Gặp nóng, baking soda trong bột bánh sinh ra khí carbon dioxide. Bọt khí làm bánh phồng lên và xốp.',
+      },
+      {
+        title: 'Khử mùi tủ lạnh',
+        description: 'Một bát nhỏ baking soda để trong tủ lạnh giúp hút bớt mùi thức ăn.',
+      },
+    ],
+    funFact:
+      'Baking soda gặp giấm sẽ sủi bọt ùn ùn. Đó là cách làm mô hình núi lửa quen thuộc trong các hội chợ khoa học.',
+    conceptIds: ['compound', 'ionic-bond', 'formula', 'reaction-signs'],
+  },
+  {
+    id: 'c2h4o2',
+    name: 'Acetic acid',
+    formula: 'CH3COOH',
+    state: 'liquid',
+    atoms: [
+      { id: 'c1', element: 'C', x: 38, y: 45 },
+      { id: 'c2', element: 'C', x: 64, y: 45 },
+      { id: 'o1', element: 'O', x: 80, y: 25 },
+      { id: 'o2', element: 'O', x: 62, y: 71 },
+      { id: 'h1', element: 'H', x: 38, y: 19 },
+      { id: 'h2', element: 'H', x: 38, y: 71 },
+      { id: 'h3', element: 'H', x: 14, y: 45 },
+      { id: 'h4', element: 'H', x: 86, y: 80 },
+    ],
+    bonds: [
+      { a: 'c1', b: 'c2' },
+      { a: 'c2', b: 'o1', order: 2 },
+      { a: 'c2', b: 'o2' },
+      { a: 'o2', b: 'h4' },
+      { a: 'c1', b: 'h1' },
+      { a: 'c1', b: 'h2' },
+      { a: 'c1', b: 'h3' },
+    ],
+    lifeExamples: [
+      {
+        illustration: 'vinegar-bottle',
+        title: 'Vị chua của giấm',
+        description:
+          'Giấm ăn không phải là acetic acid nguyên chất mà là một dung dịch: chỉ khoảng 2 đến 5% acetic acid hoà tan trong nước. Chừng đó đã đủ tạo vị chua.',
+      },
+      {
+        title: 'Dưa muối, cà muối',
+        description: 'Nước giấm chua giúp dưa và cà muối giữ được lâu mà không hỏng.',
+      },
+    ],
+    funFact:
+      'Công thức thường được viết là CH₃COOH để thấy rõ các nhóm nguyên tử. Đếm gộp lại, phân tử có 2 C, 4 H và 2 O.',
+    conceptIds: ['molecule', 'compound', 'formula', 'solution'],
+  },
+  {
+    id: 'c2h3nao2',
+    name: 'Sodium acetate',
+    formula: 'CH3COONa',
+    state: 'solid',
+    atoms: [
+      { id: 'c1', element: 'C', x: 41, y: 40 },
+      { id: 'c2', element: 'C', x: 67, y: 40 },
+      { id: 'o1', element: 'O', x: 83, y: 20 },
+      { id: 'o2', element: 'O', x: 75, y: 64 },
+      { id: 'na', element: 'Na', x: 53, y: 82 },
+      { id: 'h1', element: 'H', x: 33, y: 16 },
+      { id: 'h2', element: 'H', x: 33, y: 64 },
+      { id: 'h3', element: 'H', x: 17, y: 40 },
+    ],
+    bonds: [
+      { a: 'c1', b: 'c2' },
+      { a: 'c2', b: 'o1', order: 2 },
+      { a: 'c2', b: 'o2' },
+      { a: 'na', b: 'o2', kind: 'ionic' },
+      { a: 'c1', b: 'h1' },
+      { a: 'c1', b: 'h2' },
+      { a: 'c1', b: 'h3' },
+    ],
+    lifeExamples: [
+      {
+        illustration: 'vinegar-volcano',
+        title: 'Thứ còn lại sau núi lửa giấm',
+        description:
+          'Khi giấm và baking soda ngừng sủi bọt, trong cốc còn nước và sodium acetate hoà tan trong đó. Bạn không nhìn thấy nó, nhưng nó vẫn ở đấy.',
+      },
+      {
+        title: 'Túi sưởi tay',
+        description:
+          'Loại túi sưởi bẻ miếng kim loại là nóng lên chứa dung dịch sodium acetate. Khi nó kết tinh, túi toả nhiệt.',
+      },
+    ],
+    funFact:
+      'Công thức thường được viết là CH₃COONa: giống acetic acid CH₃COOH, chỉ khác là sodium đã thế chỗ một nguyên tử hydrogen.',
+    conceptIds: ['compound', 'ionic-bond', 'formula', 'conservation-of-mass'],
+  },
 ]
