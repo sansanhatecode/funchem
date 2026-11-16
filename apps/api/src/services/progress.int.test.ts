@@ -2,6 +2,14 @@ import { fixtureContent } from '@funchem/content/testing'
 import { createDb, schema, sql } from '@funchem/db'
 import { afterAll, beforeEach, describe, expect, it } from 'vitest'
 import { getProgress, mergeProgress, NotFoundError, submitAttempt } from './progress.js'
+import {
+  deleteAccount,
+  getLeaderboard,
+  getProfile,
+  getReview,
+  submitReview,
+  updateProfile,
+} from './social.js'
 
 /**
  * Test tích hợp với Postgres thật. Chỉ chạy khi có TEST_DATABASE_URL
@@ -92,8 +100,10 @@ d('progress service (Postgres)', () => {
     expect(r2.newlyUnlockedMolecules).toEqual([])
     const p = await getProgress(db, u, new Date('2026-11-11T04:00:00Z'), fixtureContent)
     expect(p.lessons['u1-l1-atoms']?.bestAccuracy).toBe(1)
-    expect(p.stats.xpToday).toBe(10)
-    expect(p.stats.xpTotal).toBe(25)
+    expect(r2.repeat).toBe(true)
+    // làm lại bài đã xong: 10 XP cơ bản giảm còn một nửa
+    expect(p.stats.xpToday).toBe(5)
+    expect(p.stats.xpTotal).toBe(20)
   })
 
   it('bài không tồn tại → NotFoundError, không ghi gì', async () => {
@@ -123,5 +133,96 @@ d('progress service (Postgres)', () => {
     expect(p.molecules).toEqual(['fe'])
     const [n] = await db.select({ c: sql<number>`count(*)::int` }).from(schema.lessonAttempts)
     expect(n?.c).toBe(1)
+  })
+  it('lần đầu hoàn thành nhận huy hiệu, làm lại không nhận trùng', async () => {
+    const u = await mkUser('u-badge')
+    const first = await submitAttempt(db, { userId: u, ...lesson1 }, fixtureContent)
+    expect(first.repeat).toBe(false)
+    expect(first.newBadges.sort()).toEqual(['first-lesson', 'perfect-lesson'])
+    const again = await submitAttempt(db, { userId: u, ...lesson1 }, fixtureContent)
+    expect(again.grade.xpEarned).toBe(8)
+    expect(again.newBadges).toEqual([])
+  })
+
+  it('ôn tập: chỉ lấy câu từ bài đã học, chấm ở server, cộng XP theo số câu đúng', async () => {
+    const u = await mkUser('u-review')
+    expect((await getReview(db, u, new Date(), fixtureContent)).exerciseIds).toEqual([])
+
+    await submitAttempt(db, { userId: u, ...lesson1 }, fixtureContent)
+    const review = await getReview(db, u, new Date(), fixtureContent)
+    const allowed = lesson1.answers.map((a) => a.exerciseId)
+    expect(review.exerciseIds.length).toBeGreaterThan(0)
+    for (const id of review.exerciseIds) expect(allowed).toContain(id)
+
+    const r = await submitReview(
+      db,
+      {
+        userId: u,
+        answers: [
+          ...lesson1.answers,
+          // câu của bài chưa học và câu lặp lại đều bị bỏ qua
+          { exerciseId: 'u1-l2-e1', answer: { type: 'build-molecule', atoms: { O: 2 } } },
+          lesson1.answers[0]!,
+        ],
+      },
+      fixtureContent,
+    )
+    expect(r.total).toBe(4)
+    expect(r.correct).toBe(4)
+    expect(r.xpEarned).toBe(4)
+    const p = await getProgress(db, u, new Date(), fixtureContent)
+    expect(p.stats.xpTotal).toBe(15 + 4)
+  })
+
+  it('hồ sơ: đổi biệt danh và mục tiêu, có huy hiệu và XP theo ngày', async () => {
+    const u = await mkUser('u-profile')
+    await submitAttempt(db, { userId: u, ...lesson1 }, fixtureContent)
+    await updateProfile(db, u, { displayName: '  Minh  ', dailyGoalXp: 30 })
+    const profile = await getProfile(db, u, new Date(), fixtureContent)
+    expect(profile.displayName).toBe('Minh')
+    expect(profile.dailyGoalXp).toBe(30)
+    expect(profile.badges.find((b) => b.id === 'first-lesson')?.earnedAt).not.toBeNull()
+    expect(profile.badges.find((b) => b.id === 'streak-7')?.earnedAt).toBeNull()
+    expect(profile.activity).toEqual([{ date: profile.today, xp: 15 }])
+  })
+
+  it('bảng xếp hạng tuần: không tính khách, không lộ email, xếp theo XP', async () => {
+    const guest = await mkUser('u-lb-guest', true)
+    const a = await mkUser('u-lb-a')
+    const b = await mkUser('u-lb-b')
+    await submitAttempt(db, { userId: guest, ...lesson1 }, fixtureContent)
+    await submitAttempt(db, { userId: a, ...lesson1 }, fixtureContent)
+    await submitAttempt(db, { userId: b, lessonId: 'u1-l1-atoms', answers: [] }, fixtureContent)
+    await updateProfile(db, a, { displayName: 'An' })
+
+    const board = await getLeaderboard(db, b)
+    expect(board.participants).toBe(2)
+    expect(board.top.map((r) => [r.rank, r.name, r.xp])).toEqual([
+      [1, 'An', 15],
+      [2, 'Bạn học U-LB', 10],
+    ])
+    expect(board.me?.rank).toBe(2)
+    expect(JSON.stringify(board)).not.toContain('@')
+
+    const asGuest = await getLeaderboard(db, guest)
+    expect(asGuest.me).toBeNull()
+    expect(asGuest.myXp).toBe(15)
+  })
+
+  it('xoá tài khoản xoá sạch dữ liệu học tập', async () => {
+    const u = await mkUser('u-delete')
+    await submitAttempt(db, { userId: u, ...lesson1 }, fixtureContent)
+    await deleteAccount(db, u)
+    for (const table of [
+      schema.lessonAttempts,
+      schema.userLessons,
+      schema.userStats,
+      schema.xpEvents,
+      schema.userBadges,
+      schema.profiles,
+    ]) {
+      const [n] = await db.select({ c: sql<number>`count(*)::int` }).from(table)
+      expect(n?.c).toBe(0)
+    }
   })
 })

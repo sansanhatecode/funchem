@@ -2,11 +2,14 @@ import { type Answer, content as defaultContent, type ContentRegistry } from '@f
 import {
   computeLessonStatuses,
   computeUnitProgress,
+  earnedBadges,
   effectiveStreak,
   gradeLesson,
+  isLessonCompleted,
   type LessonRecord,
   updateConceptStrength,
   updateStreak,
+  xpForAttempt,
 } from '@funchem/core'
 import { type Db, and, desc, eq, gte, schema, sql } from '@funchem/db'
 
@@ -25,7 +28,7 @@ export class NotFoundError extends Error {
   }
 }
 
-async function ensureProfile(db: Db, userId: string) {
+export async function ensureProfile(db: Db, userId: string) {
   await db.insert(schema.profiles).values({ userId }).onConflictDoNothing()
   await db.insert(schema.userStats).values({ userId }).onConflictDoNothing()
   const [p] = await db.select().from(schema.profiles).where(eq(schema.profiles.userId, userId))
@@ -46,13 +49,34 @@ export async function submitAttempt(
   const now = input.now ?? new Date()
   const profile = await ensureProfile(db, input.userId)
 
-  const grade = gradeLesson(
+  const graded = gradeLesson(
     entry.lesson,
     { lessonId: input.lessonId, answers: input.answers },
     content,
   )
 
   return db.transaction(async (tx) => {
+    // làm lại bài đã hoàn thành chỉ được một nửa XP
+    const [previous] = await tx
+      .select()
+      .from(schema.userLessons)
+      .where(
+        and(
+          eq(schema.userLessons.userId, input.userId),
+          eq(schema.userLessons.lessonId, input.lessonId),
+        ),
+      )
+    const alreadyCompleted = previous
+      ? isLessonCompleted(
+          input.lessonId,
+          new Map([
+            [input.lessonId, { lessonId: input.lessonId, bestAccuracy: previous.bestAccuracy }],
+          ]),
+          content,
+        )
+      : false
+    const grade = { ...graded, xpEarned: xpForAttempt(graded, { alreadyCompleted }) }
+
     const [attempt] = await tx
       .insert(schema.lessonAttempts)
       .values({
@@ -169,14 +193,63 @@ export async function submitAttempt(
         })
     }
 
+    const newBadges = await awardBadges(tx, input.userId, content, now)
+
     return {
       attemptId: attempt!.id,
       grade,
+      /** true nếu đây là lần làm lại một bài đã hoàn thành (XP giảm một nửa) */
+      repeat: alreadyCompleted,
       streak: { current: streak.streakCurrent, longest: streak.streakLongest },
       xpTotal: stats!.xpTotal + grade.xpEarned,
       newlyUnlockedMolecules: newlyUnlocked,
+      newBadges,
     }
   })
+}
+
+type Tx = Parameters<Parameters<Db['transaction']>[0]>[0]
+
+/** Tính lại huy hiệu từ trạng thái hiện tại, ghi những cái mới và trả về id của chúng. */
+export async function awardBadges(
+  tx: Tx | Db,
+  userId: string,
+  content: ContentRegistry,
+  now: Date,
+): Promise<string[]> {
+  const [stats] = await tx
+    .select()
+    .from(schema.userStats)
+    .where(eq(schema.userStats.userId, userId))
+  const lessonRows = await tx
+    .select()
+    .from(schema.userLessons)
+    .where(eq(schema.userLessons.userId, userId))
+  const [molecules] = await tx
+    .select({ c: sql<number>`count(*)::int` })
+    .from(schema.userMolecules)
+    .where(eq(schema.userMolecules.userId, userId))
+  const records = new Map<string, LessonRecord>(
+    lessonRows.map((r) => [r.lessonId, { lessonId: r.lessonId, bestAccuracy: r.bestAccuracy }]),
+  )
+  const statuses = computeLessonStatuses(content, records)
+  const earned = earnedBadges({
+    lessonsCompleted: [...statuses.values()].filter((st) => st === 'completed').length,
+    unitsPassed: content.units
+      .filter((u) => computeUnitProgress(u, statuses).passed)
+      .map((u) => u.order),
+    streakLongest: stats?.streakLongest ?? 0,
+    moleculesUnlocked: molecules?.c ?? 0,
+    xpTotal: stats?.xpTotal ?? 0,
+    hasPerfectLesson: lessonRows.some((r) => r.bestAccuracy >= 1),
+  })
+  if (earned.length === 0) return []
+  const inserted = await tx
+    .insert(schema.userBadges)
+    .values(earned.map((badgeId) => ({ userId, badgeId, earnedAt: now })))
+    .onConflictDoNothing()
+    .returning({ badgeId: schema.userBadges.badgeId })
+  return inserted.map((r) => r.badgeId)
 }
 
 export async function getProgress(
@@ -321,7 +394,7 @@ export async function mergeProgress(db: Db, fromUserId: string, toUserId: string
   })
 }
 
-function startOfLocalDay(now: Date, timeZone: string): Date {
+export function startOfLocalDay(now: Date, timeZone: string): Date {
   const parts = new Intl.DateTimeFormat('en-CA', {
     timeZone,
     year: 'numeric',

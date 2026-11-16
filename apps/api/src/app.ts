@@ -16,6 +16,14 @@ import {
   NotFoundError,
   submitAttempt,
 } from './services/progress.js'
+import {
+  deleteAccount,
+  getLeaderboard,
+  getProfile,
+  getReview,
+  submitReview,
+  updateProfile,
+} from './services/social.js'
 
 export interface AppDeps {
   env: Env
@@ -40,6 +48,7 @@ export function createApp({ env, db, auth }: AppDeps) {
       origin: [env.WEB_URL],
       credentials: true,
       allowHeaders: ['Content-Type', 'Authorization'],
+      allowMethods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
       exposeHeaders: ['set-auth-token'],
     }),
   )
@@ -72,6 +81,28 @@ export function createApp({ env, db, auth }: AppDeps) {
     .get('/attempts', async (c) =>
       c.json({ attempts: await getRecentAttempts(db, c.get('user').id) }),
     )
+    .get('/review', async (c) => c.json(await getReview(db, c.get('user').id)))
+    .get('/profile', async (c) => c.json(await getProfile(db, c.get('user').id)))
+    .patch(
+      '/profile',
+      zValidator(
+        'json',
+        z.object({
+          displayName: z.string().trim().max(30).nullable().optional(),
+          dailyGoalXp: z
+            .union([z.literal(10), z.literal(20), z.literal(30), z.literal(50)])
+            .optional(),
+        }),
+      ),
+      async (c) => {
+        await updateProfile(db, c.get('user').id, c.req.valid('json'))
+        return c.json({ ok: true })
+      },
+    )
+    .delete('/', async (c) => {
+      await deleteAccount(db, c.get('user').id)
+      return c.json({ ok: true })
+    })
 
   const attempts = new Hono<{ Variables: Variables }>().use('*', requireUser).post(
     '/',
@@ -100,7 +131,28 @@ export function createApp({ env, db, auth }: AppDeps) {
     },
   )
 
-  const routes = app.route('/me', me).route('/attempts', attempts)
+  const answersSchema = z
+    .array(z.object({ exerciseId: z.string().min(1), answer: AnswerSchema }))
+    .max(50)
+
+  const review = new Hono<{ Variables: Variables }>()
+    .use('*', requireUser)
+    .post('/', zValidator('json', z.object({ answers: answersSchema })), async (c) =>
+      c.json(
+        await submitReview(db, { userId: c.get('user').id, answers: c.req.valid('json').answers }),
+        201,
+      ),
+    )
+
+  const leaderboard = new Hono<{ Variables: Variables }>()
+    .use('*', requireUser)
+    .get('/', async (c) => c.json(await getLeaderboard(db, c.get('user').id)))
+
+  const routes = app
+    .route('/me', me)
+    .route('/attempts', attempts)
+    .route('/review', review)
+    .route('/leaderboard', leaderboard)
 
   app.notFound((c) => c.json({ error: 'not_found' }, 404))
   app.onError((err, c) => {
