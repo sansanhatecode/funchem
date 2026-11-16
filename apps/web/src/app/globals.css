@@ -1,0 +1,347 @@
+@import 'tailwindcss';
+
+/*
+ * Design tokens của FunChem.
+ * Mỗi Unit có màu riêng (lấy từ content), các màu dưới đây là nền chung của giao diện.
+ */
+@theme {
+  --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #1f2a37;
+  --color-ink-soft: #5b6777;
+  --color-paper: #ffffff;
+  --color-canvas: #f6f8fb;
+  --color-line: #e3e8ef;
+
+  --color-brand: #12b886; /* xanh phòng thí nghiệm */
+  --color-brand-deep: #0b8f68;
+  --color-brand-soft: #e3f9f1;
+
+  --color-sun: #ffc233; /* XP, streak */
+  --color-sun-deep: #e0a100;
+  --color-flame: #ff7a45;
+
+  --color-good: #2fb344;
+  --color-good-soft: #e6f6e9;
+  --color-bad: #e5484d;
+  --color-bad-soft: #fdecec;
+
+  --radius-card: 1.25rem;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgb(31 42 55 / 0.06), 0 8px 24px rgb(31 42 55 / 0.06);
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Trong @layer base để utility của Tailwind (ví dụ outline-none trên ô nhập) ghi đè được */
+@layer base {
+  :focus-visible {
+    outline: 3px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
+
+/* Tôn trọng cài đặt giảm chuyển động của hệ điều hành */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes atom-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* ───────────── Hoạt ảnh cho cảnh minh hoạ (SVG) ───────────── */
+.sc {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.sc-float {
+  animation: sc-float 4s ease-in-out infinite;
+}
+.sc-drift {
+  animation: sc-drift 26s linear infinite;
+}
+.sc-rain {
+  animation: sc-rain 0.9s linear infinite;
+}
+.sc-flicker {
+  transform-origin: 50% 100%;
+  animation: sc-flicker 0.55s ease-in-out infinite alternate;
+}
+.sc-rise {
+  animation: sc-rise 3.2s ease-in infinite;
+}
+.sc-twinkle {
+  animation: sc-twinkle 2.2s ease-in-out infinite;
+}
+.sc-sway {
+  transform-origin: 50% 100%;
+  animation: sc-sway 3.6s ease-in-out infinite alternate;
+}
+.sc-pulse {
+  animation: sc-pulse 2.4s ease-in-out infinite;
+}
+.sc-ripple {
+  animation: sc-ripple 2.2s ease-out infinite;
+}
+.sc-spin {
+  animation: sc-spin 9s linear infinite;
+}
+/* Ảnh thu nhỏ: đứng yên để nhẹ máy khi có nhiều cảnh trên một trang */
+.scene-still * {
+  animation: none !important;
+}
+
+@keyframes sc-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes sc-drift {
+  from {
+    transform: translateX(-40px);
+  }
+  to {
+    transform: translateX(360px);
+  }
+}
+@keyframes sc-rain {
+  from {
+    transform: translate(6px, -30px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  to {
+    transform: translate(-6px, 60px);
+    opacity: 0;
+  }
+}
+@keyframes sc-flicker {
+  from {
+    transform: scale(1, 1) skewX(-3deg);
+  }
+  to {
+    transform: scale(0.92, 1.12) skewX(3deg);
+  }
+}
+@keyframes sc-rise {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-46px) scale(1.15);
+    opacity: 0;
+  }
+}
+@keyframes sc-twinkle {
+  0%,
+  100% {
+    transform: scale(0.4) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1) rotate(45deg);
+    opacity: 1;
+  }
+}
+@keyframes sc-sway {
+  from {
+    transform: rotate(-4deg);
+  }
+  to {
+    transform: rotate(4deg);
+  }
+}
+@keyframes sc-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+@keyframes sc-ripple {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+@keyframes sc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ───────────── Thế giới hạt (sau khi phóng to) ───────────── */
+.particle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: particle-move var(--dur, 6s) ease-in-out var(--delay, 0s) infinite alternate;
+}
+@keyframes particle-move {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(var(--rot, 0deg));
+  }
+}
+@keyframes lens-ping {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+@keyframes confetti-fall {
+  0% {
+    transform: translate3d(0, -20px, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--cx, 0px), 420px, 0) rotate(var(--cr, 540deg));
+    opacity: 0;
+  }
+}
+
+/* ───────────── Linh vật ───────────── */
+@keyframes mascot-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+@keyframes mascot-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(-1.5deg);
+  }
+}
+@keyframes mascot-cheer {
+  0%,
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  30% {
+    transform: translateY(-12px) scale(0.96, 1.05);
+  }
+  60% {
+    transform: translateY(0) scale(1.04, 0.96);
+  }
+}
+@keyframes mascot-wave {
+  from {
+    transform: rotate(-12deg);
+  }
+  to {
+    transform: rotate(18deg);
+  }
+}
+
+/* ───────────── Trang chủ ───────────── */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 60s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
+}
+@keyframes drift-atom {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(var(--ax, 10px), var(--ay, -14px));
+  }
+}
