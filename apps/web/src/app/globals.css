@@ -345,3 +345,10 @@ body {
     transform: translate(var(--ax, 10px), var(--ay, -14px));
   }
 }
+
+/* ───────────── Mô hình nguyên tử ───────────── */
+.orbit {
+  transform-box: view-box;
+  transform-origin: 160px 100px;
+  animation: sc-spin var(--dur, 12s) linear infinite;
+}

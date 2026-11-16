@@ -1,0 +1,35 @@
+import { content } from '@funchem/content'
+import { notFound } from 'next/navigation'
+import { AtomZoom, PeriodicTableZoom, StatesLab } from '@/components/chem/intro-visuals'
+
+/** Trang xem trước các hình mở đầu đặc biệt. Chỉ có ở môi trường phát triển. */
+export default function DevVisualsPage() {
+  if (process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_ENABLE_DEV_PAGES !== '1')
+    notFound()
+  return (
+    <main className="mx-auto grid max-w-5xl gap-8 p-5 sm:grid-cols-2">
+      <section data-visual="table">
+        <h2 className="mb-2 font-extrabold">Bảng tuần hoàn</h2>
+        <PeriodicTableZoom
+          scene="classroom"
+          highlight={['H', 'He', 'C', 'N', 'O', 'Fe', 'Cu', 'Au']}
+        />
+      </section>
+      <section data-visual="states">
+        <h2 className="mb-2 font-extrabold">Ba trạng thái</h2>
+        <StatesLab
+          molecule={content.molecules.get('h2o')!}
+          scenes={{ solid: 'ice-cubes', liquid: 'glass-of-water', gas: 'boiling-kettle' }}
+        />
+      </section>
+      <section data-visual="atom-he">
+        <h2 className="mb-2 font-extrabold">Nguyên tử helium</h2>
+        <AtomZoom scene="balloons" element="He" />
+      </section>
+      <section data-visual="atom-na">
+        <h2 className="mb-2 font-extrabold">Nguyên tử sodium</h2>
+        <AtomZoom scene="salt-shaker" element="Na" />
+      </section>
+    </main>
+  )
+}

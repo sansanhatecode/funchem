@@ -1,8 +1,8 @@
 import { content, type IntroCard as IntroCardData } from '@funchem/content'
+import { AtomZoom, PeriodicTableZoom, StatesLab } from '@/components/chem/intro-visuals'
 import { MoleculeView } from '@/components/chem/molecule-view'
 import { MoleculeZoom } from '@/components/chem/molecule-zoom'
 import { ReactionPlayer } from '@/components/chem/reaction-player'
-import { SceneView } from '@/components/scenes'
 
 /**
  * Thẻ "Khám phá" mở đầu bài học: hiện tượng ngoài đời trước,
@@ -32,13 +32,11 @@ export function IntroCard({ intro }: { intro: IntroCardData }) {
         </div>
       )}
       {reaction && <ReactionPlayer reaction={reaction} />}
-      {/* các dạng hình mới (ba trạng thái, bảng tuần hoàn, bên trong nguyên tử): tạm hiện cảnh đời sống cho tới khi có phần phóng to riêng */}
-      {v.type === 'states' && (
-        <SceneView id={v.scenes.liquid} className="rounded-2xl border border-line" />
+      {v.type === 'states' && content.molecules.get(v.moleculeId) && (
+        <StatesLab molecule={content.molecules.get(v.moleculeId)!} scenes={v.scenes} />
       )}
-      {(v.type === 'periodic-table' || v.type === 'atom') && (
-        <SceneView id={v.scene} className="rounded-2xl border border-line" />
-      )}
+      {v.type === 'periodic-table' && <PeriodicTableZoom scene={v.scene} highlight={v.highlight} />}
+      {v.type === 'atom' && <AtomZoom scene={v.scene} element={v.element} />}
 
       <div className="flex flex-col gap-3 text-lg leading-relaxed">
         {intro.story.map((p) => (

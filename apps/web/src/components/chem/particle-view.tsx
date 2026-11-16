@@ -87,9 +87,18 @@ function MoleculeGlyph({
  * "Thế giới hạt" của một chất: rất nhiều nguyên tử hoặc phân tử chuyển động
  * đúng với trạng thái của chất đó. Đây là thứ hiện ra khi phóng to một cảnh đời sống.
  */
-export function ParticleView({ molecule, className }: { molecule: Molecule; className?: string }) {
-  const mode = particleMode(molecule)
-  const rand = rng(molecule.id)
+export function ParticleView({
+  molecule,
+  className,
+  mode: modeOverride,
+}: {
+  molecule: Molecule
+  className?: string
+  /** ép một trạng thái khác với trạng thái thường gặp của chất, ví dụ nước ở thể rắn hay thể khí */
+  mode?: ParticleMode
+}) {
+  const mode = modeOverride ?? particleMode(molecule)
+  const rand = rng(`${molecule.id}:${mode}`)
   const label = `Cận cảnh ${moleculeLabel(molecule)} (${formatFormula(molecule.formula)}) ở cấp nguyên tử. ${PARTICLE_CAPTION[mode]}`
   let content: React.ReactNode
 

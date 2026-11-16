@@ -57,8 +57,9 @@ export function BondShape({ bond }: { bond: PlacedBond }) {
   const dx = bond.x2 - bond.x1
   const dy = bond.y2 - bond.y1
   const len = Math.hypot(dx, dy) || 1
-  const nx = -dy / len
-  const ny = dx / len
+  // làm tròn để server và trình duyệt cho ra đúng một chuỗi toạ độ
+  const nx = Math.round((-dy / len) * 1000) / 1000
+  const ny = Math.round((dx / len) * 1000) / 1000
   const gap = bond.width * 0.95
   const offsets =
     bond.order === 1 ? [0] : bond.order === 2 ? [-gap, gap] : [-gap * 1.6, 0, gap * 1.6]
