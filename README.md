@@ -78,6 +78,7 @@ E2E_DATABASE_URL=postgres://localhost:5432/funchem_e2e pnpm e2e
 
 Các trang chỉ có khi dev, để xem nhanh:
 
+- http://localhost:3000/dev/content: toàn bộ kiến thức và câu hỏi trên một trang, kèm đáp án và giải thích. Lọc theo Unit (`?unit=3`), ẩn đáp án (`?answers=0`), in hoặc lưu PDF để gửi người soát.
 - http://localhost:3000/dev/scenes: mọi cảnh đời sống, bấm kính lúp để thử phóng to.
 - http://localhost:3000/dev/exercises: mọi dạng bài tập và hoạt hình phản ứng.
 - http://localhost:3000/dev/mascot: các biểu cảm của linh vật.
