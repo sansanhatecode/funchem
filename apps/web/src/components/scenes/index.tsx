@@ -149,13 +149,13 @@ export const SCENES: Record<SceneId, SceneDef> = {
   },
   'boiling-kettle': {
     Component: BoilingKettleScene,
-    label: 'Ấm nước màu đỏ đang sôi trên bếp ga lửa xanh, hơi nước trắng phun mạnh từ vòi ấm',
-    hotspot: { x: 90, y: 52 },
+    label: 'Ấm nước màu đỏ đang sôi trên bếp ga lửa xanh, làn sương trắng bốc lên phía trên vòi ấm',
+    hotspot: { x: 97, y: 76 },
   },
   'wet-clothes': {
     Component: WetClothesScene,
     label:
-      'Áo phông, khăn tắm và đôi tất còn ướt phơi trên dây ngoài trời nắng, nước nhỏ giọt và hơi nước bốc lên',
+      'Áo phông, khăn tắm và đôi tất còn ướt phơi trên dây ngoài trời nắng, nước nhỏ giọt xuống cỏ',
     hotspot: { x: 160, y: 142 },
   },
   'sugar-tea': {

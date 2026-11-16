@@ -170,7 +170,7 @@ export function StatesLab({
 
   return (
     <div className="flex flex-col gap-3">
-      <div role="radiogroup" aria-label="Chọn trạng thái" className="grid grid-cols-3 gap-2">
+      <div role="radiogroup" aria-label="Chọn thể của chất" className="grid grid-cols-3 gap-2">
         {STATES.map((s) => (
           <button
             key={s.id}
@@ -204,7 +204,7 @@ export function StatesLab({
             {PARTICLE_CAPTION[current.mode]}
           </>
         ) : (
-          'Chọn một trạng thái rồi bấm kính lúp. Đổi trạng thái khi đang phóng to để so sánh.'
+          'Chọn một thể rồi bấm kính lúp. Đổi thể khi đang phóng to để so sánh.'
         )}
       </p>
     </div>

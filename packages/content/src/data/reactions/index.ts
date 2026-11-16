@@ -36,7 +36,7 @@ export const reactions: ReactionInput[] = [
       illustration: 'rusty-nail',
       title: 'Cây đinh để quên ngoài mưa',
       description:
-        'Sắt gặp oxygen và hơi nước lâu ngày sẽ dần biến thành gỉ. Đây là phản ứng chậm, nhưng mỗi năm làm hỏng hàng triệu tấn thép trên thế giới.',
+        'Iron (sắt) trong cây đinh gặp oxygen và hơi nước lâu ngày sẽ dần biến thành gỉ. Đây là phản ứng chậm, nhưng mỗi năm làm hỏng hàng triệu tấn thép trên thế giới.',
     },
     conceptIds: ['reaction', 'conservation-of-mass', 'oxidation'],
   },
@@ -48,12 +48,13 @@ export const reactions: ReactionInput[] = [
       { moleculeId: 'o2', coefficient: 1 },
     ],
     products: [{ moleculeId: 'h2o', coefficient: 2 }],
-    signs: ['Nổ nhẹ', 'Toả nhiệt mạnh'],
+    signs: ['Có tiếng nổ', 'Toả nhiệt mạnh'],
     condition: 'tia lửa',
     story: {
       illustration: 'rocket',
       title: 'Nhiên liệu tên lửa',
-      description: 'Tên lửa đốt hydrogen với oxygen; sản phẩm phụt ra phía sau chỉ là hơi nước.',
+      description:
+        'Một số tên lửa đốt hydrogen với oxygen. Sản phẩm phụt ra phía sau chủ yếu là hơi nước.',
     },
     conceptIds: ['reaction', 'conservation-of-mass'],
   },
@@ -89,7 +90,7 @@ export const reactions: ReactionInput[] = [
       illustration: 'sparkler',
       title: 'Que pháo bông đêm giao thừa',
       description:
-        'Trong que pháo bông có bột kim loại, thường là magnesium. Khi cháy, magnesium kết hợp với oxygen thành magnesium oxide, một chất bột màu trắng, đồng thời phát ra ánh sáng trắng chói mắt.',
+        'Lớp thuốc bọc quanh que pháo bông có trộn bột kim loại. Loại cho tia sáng trắng thường có magnesium. Khi cháy, magnesium kết hợp với oxygen thành magnesium oxide, một chất rắn màu trắng, đồng thời toả nhiệt và phát sáng rất mạnh.',
     },
     conceptIds: ['reaction', 'conservation-of-mass', 'combustion', 'balancing'],
   },
@@ -125,7 +126,7 @@ export const reactions: ReactionInput[] = [
       illustration: 'coal-stove',
       title: 'Ngọn lửa xanh trên bếp than tổ ong',
       description:
-        'Than cháy thiếu không khí sinh ra khí độc carbon monoxide. Phía trên viên than đang đỏ, CO gặp thêm oxygen và cháy tiếp với ngọn lửa xanh lam, thành carbon dioxide. Phần CO chưa kịp cháy sẽ thoát ra ngoài, vì thế đừng bao giờ đốt than trong phòng kín.',
+        'Than cháy thiếu oxygen sinh ra khí độc carbon monoxide. Phía trên viên than đang đỏ, CO gặp thêm oxygen và cháy tiếp với ngọn lửa xanh lam, thành carbon dioxide. Phần CO chưa kịp cháy sẽ thoát ra ngoài, vì thế đừng bao giờ đốt than trong phòng kín.',
     },
     conceptIds: ['reaction', 'conservation-of-mass', 'combustion', 'balancing'],
   },
@@ -143,7 +144,7 @@ export const reactions: ReactionInput[] = [
       illustration: 'hydrogen-peroxide',
       title: 'Oxy già sủi bọt trên vết xước',
       description:
-        'Nhỏ oxy già lên vết xước, bạn thấy bọt trắng sủi lên. Một chất có sẵn trong máu và tế bào giúp hydrogen peroxide tách rất nhanh thành nước và khí oxygen. Bọt trắng đó chính là những bong bóng oxygen.',
+        'Nhỏ oxy già lên vết xước, bạn thấy bọt trắng sủi lên. Một chất có sẵn trong máu và tế bào giúp hydrogen peroxide tách rất nhanh thành nước và khí oxygen. Bọt trắng đó chính là những bong bóng oxygen. Chất như vậy gọi là chất xúc tác: nó giúp phản ứng xảy ra nhanh hơn mà bản thân không bị dùng hết.',
     },
     conceptIds: ['reaction', 'conservation-of-mass', 'reaction-signs', 'balancing'],
   },

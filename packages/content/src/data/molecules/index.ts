@@ -43,7 +43,8 @@ export const molecules: MoleculeInput[] = [
       {
         illustration: 'candle',
         title: 'Ngọn lửa',
-        description: 'Lửa cần oxygen. Úp ly lên nến, oxygen hết, nến tắt.',
+        description:
+          'Lửa cần oxygen. Úp ly lên nến, oxygen trong ly giảm dần, đến khi không còn đủ để nuôi lửa thì nến tắt.',
       },
       {
         title: 'Hơi thở',
@@ -111,7 +112,8 @@ export const molecules: MoleculeInput[] = [
       {
         illustration: 'salt-shaker',
         title: 'Lọ muối trong bếp',
-        description: 'Hạt muối là hàng triệu cặp Na⁺ và Cl⁻ xếp thành khối lập phương.',
+        description:
+          'Một hạt muối nhỏ xíu đã gồm hàng trăm triệu tỉ cặp Na⁺ và Cl⁻ xếp thành khối lập phương.',
       },
       { title: 'Nước biển mặn', description: 'Biển mặn vì chứa rất nhiều muối hoà tan.' },
     ],
@@ -193,7 +195,7 @@ export const molecules: MoleculeInput[] = [
       {
         illustration: 'rusty-nail',
         title: 'Đinh để ngoài mưa',
-        description: 'Lớp nâu đỏ bong tróc trên sắt cũ chính là Fe₂O₃.',
+        description: 'Lớp nâu đỏ bong tróc trên sắt cũ chủ yếu là Fe₂O₃.',
       },
     ],
     conceptIds: ['compound', 'oxidation'],
@@ -357,7 +359,7 @@ export const molecules: MoleculeInput[] = [
         illustration: 'coal-stove',
         title: 'Đốt than trong phòng kín',
         description:
-          'Than cháy thiếu không khí sinh ra CO, một khí độc không màu, không mùi. Đừng bao giờ sưởi than trong phòng đóng kín.',
+          'Than cháy thiếu oxygen sinh ra CO, một khí độc không màu, không mùi. Đừng bao giờ sưởi than trong phòng đóng kín.',
       },
       {
         title: 'Khói xe',
@@ -499,7 +501,7 @@ export const molecules: MoleculeInput[] = [
         illustration: 'sparkler',
         title: 'Que pháo bông',
         description:
-          'Bột kim loại như magnesium trong que pháo bông cháy thành những tia sáng trắng chói mắt.',
+          'Một số loại que pháo bông có bột magnesium, cháy thành những tia sáng trắng chói mắt.',
       },
       {
         title: 'Rau xanh',
@@ -524,7 +526,7 @@ export const molecules: MoleculeInput[] = [
     lifeExamples: [
       {
         illustration: 'sparkler',
-        title: 'Tro trắng của pháo bông',
+        title: 'Bột trắng sau khi magnesium cháy',
         description:
           'Magnesium cháy xong để lại một chất bột màu trắng. Đó là magnesium oxide, sản phẩm của magnesium với oxygen.',
       },
@@ -560,7 +562,7 @@ export const molecules: MoleculeInput[] = [
         illustration: 'hydrogen-peroxide',
         title: 'Chai oxy già trong tủ thuốc',
         description:
-          'Chai oxy già ở hiệu thuốc là hydrogen peroxide pha loãng trong nước, khoảng 3%. Nhỏ lên vết xước, nó sủi bọt trắng vì tách thành nước và khí oxygen.',
+          'Chai oxy già ở hiệu thuốc là hydrogen peroxide pha loãng trong nước, khoảng 3%. Nhỏ lên vết xước, nó sủi bọt trắng vì tách thành nước và khí oxygen. Ngày nay bác sĩ khuyên rửa vết xước bằng nước sạch là đủ.',
       },
       {
         title: 'Thuốc tẩy tóc',
@@ -641,8 +643,9 @@ export const molecules: MoleculeInput[] = [
           'Giấm ăn không phải là acetic acid nguyên chất mà là một dung dịch: chỉ khoảng 2 đến 5% acetic acid hoà tan trong nước. Chừng đó đã đủ tạo vị chua.',
       },
       {
-        title: 'Dưa muối, cà muối',
-        description: 'Nước giấm chua giúp dưa và cà muối giữ được lâu mà không hỏng.',
+        title: 'Đồ chua ngâm giấm',
+        description:
+          'Cà rốt, củ cải, dưa chuột ngâm giấm giữ được lâu vì acetic acid kìm hãm vi khuẩn làm hỏng thức ăn.',
       },
     ],
     funFact:

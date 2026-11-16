@@ -55,9 +55,9 @@ export function BoilingKettleScene(props: SceneProps) {
           />
         ))}
 
-        {/* hơi nước phun mạnh từ vòi */}
+        {/* Hơi nước thật thì không màu: ngay miệng vòi gần như trong suốt, lên cao gặp lạnh mới ngưng thành sương trắng */}
         <g fill={C.white}>
-          <path d="M92 83 C90 74 84 68 80 60 H106 C103 68 102 76 103 81 Z" />
+          <path d="M92 83 C90 74 84 68 80 60 H106 C103 68 102 76 103 81 Z" opacity="0.18" />
           <g className="sc sc-pulse" style={{ transformOrigin: '50% 100%' }}>
             {HEAD.map(([x, y, r], i) => (
               <circle key={i} cx={x} cy={y} r={r} />

@@ -9,7 +9,7 @@ export const concepts: Concept[] = [
   { id: 'covalent-bond', title: 'Liên kết cộng hoá trị' },
   { id: 'ionic-bond', title: 'Liên kết ion' },
   { id: 'formula', title: 'Đọc công thức' },
-  { id: 'state-of-matter', title: 'Trạng thái vật chất' },
+  { id: 'state-of-matter', title: 'Các thể của chất' },
   { id: 'reaction', title: 'Phản ứng hoá học' },
   { id: 'conservation-of-mass', title: 'Bảo toàn khối lượng' },
   { id: 'combustion', title: 'Sự cháy' },

@@ -400,6 +400,24 @@ Kiểm chứng: 132 test đơn vị và tích hợp, 20 test trình duyệt (g�
 
 Cần người có chuyên môn rà lại nội dung Unit 3-4, đặc biệt các chỗ đơn giản hoá: trứng rán là biến đổi hoá học, pháo bông là magnesium cháy, chất rắn ion vẽ thành một đơn vị công thức.
 
+### Soát nội dung Unit 3-4 — ngày 2026-11-16
+
+Hai lượt soát độc lập (mỗi Unit một người soát đóng vai giáo viên, đọc từ đầu và tra cứu nguồn) cùng một lượt soát cấu trúc bằng máy. Không có đáp án nào sai hẳn, không có phương trình nào cân bằng sai. 43 phát hiện, đã sửa 42:
+
+- **Sai kiến thức (đã sửa):** số cặp ion trong một hạt muối (không phải "hàng triệu" mà hàng trăm triệu tỉ); dưa muối chua do lên men lactic chứ không do giấm; nến tắt khi oxygen không còn đủ chứ không phải hết sạch; pháo bông không phải lúc nào cũng là magnesium; carbon và oxygen của CO₂ trong "núi lửa" đến từ baking soda.
+- **An toàn (đã sửa):** bỏ gợi ý làm phản ứng sinh khí trong chai đậy kín; người lớn châm pháo bông chứ không phải người học; ghi chú y khoa cho oxy già.
+- **Đáp án có thể bị cãi (đã sửa):** mô tả thể lỏng trùng với thể khí; thứ tự rót giấm và baking soda; "nến cháy" trong bài phân loại; bộ chấm đòi hệ số tối giản mà bài chưa dạy.
+- **Dễ gây hiểu lầm (đã sửa):** hình ấm nước vẽ sương trắng dính vào vòi rồi lại chấm "sương trắng là hơi nước" là sai; chữ "tan" dùng cho cả nóng chảy lẫn hoà tan; hệ số chỉ được định nghĩa là "số phân tử".
+- **Thuật ngữ theo sách 2018 (đã sửa):** "thể" thay cho "trạng thái", "hỗn hợp đồng nhất", "chất tham gia", "kết tủa", "sơ đồ phản ứng", "cô cạn", "cân bằng phương trình".
+- **Chưa sửa (1):** mùi nước hoa lan khắp phòng chủ yếu nhờ luồng không khí chứ không chỉ khuếch tán. Đây là cách đơn giản hoá mà sách giáo khoa cũng dùng.
+
+Người soát chưa đối chiếu được với bản sách giáo khoa gốc, chỉ qua các trang tóm tắt. Vẫn nên nhờ một giáo viên đọc lại.
+
+Kiến thức còn thiếu, đề xuất bổ sung sau:
+
+- Unit 3: thể tích và tính nén của chất khí; nhiệt độ giữ nguyên trong lúc đang nóng chảy hoặc sôi; bài tập phân biệt nóng chảy với hoà tan; chất khí tan trong nước; huyền phù và nhũ tương; tách chất bằng lọc, cô cạn, chiết.
+- Unit 4: phản ứng thu nhiệt và toả nhiệt; bài toán tìm khối lượng còn thiếu; kiểm tra một phương trình cho sẵn đã cân bằng chưa; ý nghĩa tỉ lệ của hệ số; điều kiện để phản ứng xảy ra.
+
 Chưa làm:
 
 - [ ] Sentry và phân tích học tập (cần tài khoản dịch vụ).

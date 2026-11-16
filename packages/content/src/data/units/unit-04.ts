@@ -21,8 +21,8 @@ export const unit04: UnitInput = {
         story: [
           'Cây đinh sắt sáng bóng để quên ngoài mưa. Vài tuần sau, nó phủ một lớp nâu đỏ, sần sùi và dễ bong.',
           'Lớp gỉ ấy không phải là sắt bị bẩn. Các nguyên tử iron (sắt) đã kết hợp với oxygen trong không khí thành một chất mới: iron(III) oxide.',
-          'Quá trình biến chất này thành chất khác gọi là phản ứng hoá học. Chất ban đầu gọi là chất phản ứng, chất mới sinh ra gọi là sản phẩm.',
-          'Trong phản ứng, các nguyên tử không biến mất. Chúng chỉ rời bạn cũ và sắp xếp lại thành chất mới.',
+          'Quá trình biến chất này thành chất khác gọi là phản ứng hoá học. Chất ban đầu gọi là chất phản ứng (còn gọi là chất tham gia), chất mới sinh ra gọi là sản phẩm.',
+          'Trong phản ứng, các nguyên tử không biến mất. Chúng chỉ rời bạn cũ và sắp xếp lại thành chất mới. Con số đứng trước mỗi công thức trong hình cho biết cần mấy nguyên tử hay phân tử. Bài 4 sẽ nói kỹ.',
         ],
         visual: { type: 'reaction', reactionId: 'rusting' },
       },
@@ -72,7 +72,7 @@ export const unit04: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Sắt và oxygen là hai chất phản ứng. Chúng kết hợp thành iron(III) oxide, tức gỉ sắt. Đó là sản phẩm.',
+            'Iron (sắt) và oxygen là hai chất phản ứng. Chúng kết hợp thành iron(III) oxide, tức gỉ sắt. Đó là sản phẩm.',
           conceptIds: ['reactants-products', 'oxidation'],
         },
         {
@@ -80,7 +80,7 @@ export const unit04: UnitInput = {
           type: 'fill-blank',
           prompt: 'Chọn từ đúng cho từng chỗ trống',
           template:
-            'Sắt + oxygen → gỉ sắt. Các chất đứng trước mũi tên là ___, chất đứng sau mũi tên là ___.',
+            'Iron (sắt) + oxygen → iron(III) oxide (gỉ sắt). Các chất đứng trước mũi tên là ___, chất đứng sau mũi tên là ___.',
           blanks: [
             { accepted: ['chất phản ứng'], wordBank: ['chất phản ứng', 'sản phẩm', 'dung môi'] },
             { accepted: ['sản phẩm'], wordBank: ['chất phản ứng', 'sản phẩm', 'dung môi'] },
@@ -133,7 +133,7 @@ export const unit04: UnitInput = {
             },
           ],
           explanation:
-            'Sản phẩm chỉ chứa những nguyên tố đã có trong chất phản ứng. Than chỉ có carbon nên cháy không thể sinh ra nước. Methane CH₄ có cả hydrogen nên sinh ra cả nước.',
+            'Sản phẩm chỉ chứa những nguyên tố đã có trong chất phản ứng. Carbon cháy không thể sinh ra nước vì không có hydrogen. Methane CH₄ có cả hydrogen nên sinh ra cả nước.',
           conceptIds: ['reactants-products', 'reaction'],
         },
         {
@@ -186,7 +186,7 @@ export const unit04: UnitInput = {
         story: [
           'Đổ giấm vào một cốc có vài thìa baking soda. Bọt trắng sủi lên ùn ùn rồi trào ra ngoài như núi lửa phun.',
           'Bọt đó chứa khí carbon dioxide, một chất mới vừa sinh ra. Baking soda (NaHCO₃) đã phản ứng với acetic acid (CH₃COOH) trong giấm.',
-          'Ta không nhìn thấy nguyên tử, nhưng có thể nhận ra phản ứng qua các dấu hiệu: sủi bọt khí, đổi màu, toả nhiệt hay phát sáng, hoặc xuất hiện chất rắn mới.',
+          'Ta không nhìn thấy nguyên tử, nhưng có thể nhận ra phản ứng qua các dấu hiệu: sủi bọt khí, đổi màu, toả nhiệt hay phát sáng, hoặc xuất hiện chất rắn mới (kết tủa).',
         ],
         visual: { type: 'reaction', reactionId: 'baking-soda-vinegar' },
       },
@@ -249,7 +249,7 @@ export const unit04: UnitInput = {
           targetMoleculeId: 'co2',
           availableAtoms: { C: 2, O: 3, H: 2, Na: 1 },
           explanation:
-            'CO₂ gồm 1 nguyên tử carbon và 2 nguyên tử oxygen. Các nguyên tử này vốn nằm trong baking soda và acetic acid, sau phản ứng thì sắp xếp lại thành chất khí.',
+            'CO₂ gồm 1 nguyên tử carbon và 2 nguyên tử oxygen. Các nguyên tử này vốn nằm trong baking soda NaHCO₃. Khi gặp acetic acid, chúng tách ra và sắp xếp lại thành chất khí.',
           conceptIds: ['reaction', 'formula'],
         },
         {
@@ -313,7 +313,7 @@ export const unit04: UnitInput = {
           prompt: 'Phản ứng hoá học nào cũng có dấu hiệu nhìn thấy được bằng mắt.',
           answer: false,
           explanation:
-            'Nhiều phản ứng diễn ra lặng lẽ: không đổi màu, không sủi bọt, hoặc quá chậm để nhận ra, như cây đinh gỉ dần từng ngày. Không thấy dấu hiệu chưa chắc là không có phản ứng.',
+            'Nhiều phản ứng diễn ra lặng lẽ: chất trước và sau đều không màu, không sủi bọt, không phát sáng, như các phản ứng xảy ra trong cơ thể bạn mỗi giây. Có phản ứng lại rất chậm, phải nhiều ngày mới thấy dấu hiệu. Không thấy dấu hiệu chưa chắc là không có phản ứng.',
           conceptIds: ['reaction-signs'],
         },
         {
@@ -337,7 +337,7 @@ export const unit04: UnitInput = {
           prompt: 'Làm "núi lửa" trong bếp. Sắp xếp theo thứ tự',
           steps: [
             { id: 's1', text: 'Cho vài thìa baking soda vào cốc' },
-            { id: 's2', text: 'Rót giấm vào cốc' },
+            { id: 's2', text: 'Rót giấm lên lớp baking soda trong cốc' },
             { id: 's3', text: 'Acetic acid trong giấm phản ứng với baking soda' },
             { id: 's4', text: 'Khí carbon dioxide sinh ra, đẩy bọt trào khỏi cốc' },
           ],
@@ -357,7 +357,7 @@ export const unit04: UnitInput = {
       intro: {
         title: 'Đếm trước, đếm sau',
         story: [
-          'Bật bếp biogas: methane gặp oxygen, cháy thành khí carbon dioxide và hơi nước. Hãy thử đếm số nguyên tử trước và sau phản ứng.',
+          'Bật bếp biogas: mỗi phân tử methane gặp 2 phân tử oxygen, cháy thành 1 phân tử carbon dioxide và 2 phân tử nước. Hãy thử đếm số nguyên tử trước và sau phản ứng.',
           'Trước: 1 carbon, 4 hydrogen, 4 oxygen. Sau: vẫn 1 carbon, 4 hydrogen, 4 oxygen. Không nguyên tử nào mất đi, không nguyên tử nào sinh thêm. Chúng chỉ đổi chỗ.',
           'Nguyên tử còn đủ nên tổng khối lượng cũng không đổi. Đó là định luật bảo toàn khối lượng: tổng khối lượng các chất phản ứng bằng tổng khối lượng các sản phẩm.',
         ],
@@ -447,7 +447,7 @@ export const unit04: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Khối lượng không mất đi, nó theo khí carbon dioxide bay vào không khí. Nếu làm trong chai đậy kín, cân sẽ chỉ đúng như lúc đầu.',
+            'Khối lượng không mất đi, nó theo khí carbon dioxide bay vào không khí. Nếu giữ lại được toàn bộ lượng khí đó thì cân sẽ chỉ đúng như lúc đầu. Đừng tự đậy kín chai để thử: khí sinh ra có thể làm bật nắp hoặc vỡ chai.',
           conceptIds: ['conservation-of-mass'],
         },
         {
@@ -499,7 +499,7 @@ export const unit04: UnitInput = {
           visual: { id: 'v', image: 'rusty-nail' },
           answer: true,
           explanation:
-            'Gỉ sắt gồm các nguyên tử sắt ban đầu cộng thêm các nguyên tử oxygen lấy từ không khí. Khối lượng tăng thêm đúng bằng lượng oxygen đã kết hợp vào.',
+            'Gỉ sắt gồm các nguyên tử iron (sắt) ban đầu cộng thêm các nguyên tử oxygen lấy từ không khí. Khối lượng tăng thêm đúng bằng lượng oxygen đã kết hợp vào.',
           conceptIds: ['conservation-of-mass', 'oxidation'],
         },
         {
@@ -526,7 +526,7 @@ export const unit04: UnitInput = {
         story: [
           'Than trong bếp nướng cháy đỏ rực: mỗi nguyên tử carbon lấy một phân tử oxygen, thành một phân tử carbon dioxide. Viết gọn lại: C + O₂ → CO₂. Đó là một phương trình hoá học.',
           'Phương trình đúng phải có số nguyên tử mỗi loại bằng nhau ở hai vế. Phương trình này vừa khít: mỗi vế có 1 C và 2 O.',
-          'Nếu chưa bằng thì sao? Ta thêm phân tử bằng cách viết một con số đứng trước công thức, gọi là hệ số. 2H₂O nghĩa là 2 phân tử nước.',
+          'Nếu chưa bằng thì sao? Ta viết một con số đứng trước công thức, gọi là hệ số, để lấy thêm chất đó. 2H₂O nghĩa là 2 phân tử nước, 2Mg nghĩa là 2 nguyên tử magnesium. Hệ số luôn chọn nhỏ nhất có thể: viết 2H₂ + O₂ → 2H₂O, không viết 4H₂ + 2O₂ → 4H₂O.',
           'Tuyệt đối không sửa con số nhỏ bên dưới, gọi là chỉ số. Đổi H₂O thành H₂O₂ là biến nước thành một chất khác: oxy già.',
         ],
         visual: { type: 'reaction', reactionId: 'carbon-combustion' },
@@ -571,9 +571,10 @@ export const unit04: UnitInput = {
           id: 'u4-l4-e3',
           type: 'balance-reaction',
           reactionId: 'carbon-combustion',
-          prompt: 'Cân bằng phản ứng than cháy. Hãy đếm nguyên tử trước khi đổi hệ số!',
+          prompt:
+            'Cân bằng phương trình của phản ứng than cháy. Hãy đếm nguyên tử trước khi đổi hệ số!',
           explanation:
-            'Mỗi vế đều có 1 C và 2 O nên phương trình đã cân bằng sẵn: C + O₂ → CO₂, mọi hệ số đều là 1.',
+            'Mỗi vế đều có 1 C và 2 O nên phương trình đã cân bằng sẵn: C + O₂ → CO₂, mọi hệ số đều là 1. Viết 2C + 2O₂ → 2CO₂ cũng đủ nguyên tử nhưng chưa tối giản.',
           conceptIds: ['balancing', 'chemical-equation'],
         },
         {
@@ -605,7 +606,7 @@ export const unit04: UnitInput = {
         {
           id: 'u4-l4-e6',
           type: 'order-steps',
-          prompt: 'Cân bằng H₂ + O₂ → H₂O. Sắp xếp các bước theo thứ tự',
+          prompt: 'Cân bằng sơ đồ phản ứng H₂ + O₂ → H₂O. Sắp xếp các bước theo thứ tự',
           steps: [
             { id: 's1', text: 'Đếm nguyên tử ở hai vế: oxygen bị lệch, trái 2, phải 1' },
             { id: 's2', text: 'Đặt hệ số 2 trước H₂O để vế phải có 2 oxygen' },
@@ -631,7 +632,7 @@ export const unit04: UnitInput = {
           type: 'fill-blank',
           prompt: 'Chọn từ đúng cho từng chỗ trống',
           template:
-            'Con số đứng trước công thức, cho biết số phân tử, gọi là ___. Con số nhỏ bên dưới, là một phần của công thức, gọi là ___.',
+            'Con số đứng trước công thức, cho biết lấy mấy phân tử hay mấy nguyên tử của chất đó, gọi là ___. Con số nhỏ bên dưới, là một phần của công thức, gọi là ___.',
           blanks: [
             { accepted: ['hệ số'], wordBank: ['hệ số', 'chỉ số', 'ký hiệu'] },
             { accepted: ['chỉ số'], wordBank: ['hệ số', 'chỉ số', 'ký hiệu'] },
@@ -644,9 +645,10 @@ export const unit04: UnitInput = {
           id: 'u4-l4-e9',
           type: 'balance-reaction',
           reactionId: 'carbon-monoxide-burning',
-          prompt: 'Cân bằng phản ứng khí carbon monoxide cháy trên bếp than tổ ong',
+          prompt:
+            'Cân bằng phương trình của phản ứng khí carbon monoxide cháy trên bếp than tổ ong',
           explanation:
-            'Carbon đã bằng nhau, chỉ oxygen bị lệch: trái 3, phải 2. Lấy 2 phân tử CO và 2 phân tử CO₂ thì mỗi vế có 2 C và 4 O. Kết quả: 2CO + O₂ → 2CO₂.',
+            'Carbon đã bằng nhau, chỉ oxygen bị lệch: trái 3, phải 2. Thử lấy 2 CO₂: vế phải có 2 C và 4 O. Vế trái cần 2 C nên lấy 2 CO, khi đó oxygen là 2 + 2 = 4, vừa khít. Kết quả: 2CO + O₂ → 2CO₂.',
           conceptIds: ['balancing', 'combustion'],
         },
         {
@@ -654,7 +656,7 @@ export const unit04: UnitInput = {
           type: 'balance-reaction',
           reactionId: 'peroxide-decomposition',
           prompt:
-            'Cân bằng phản ứng oxy già sủi bọt: hydrogen peroxide tách thành nước và khí oxygen',
+            'Cân bằng phương trình của phản ứng oxy già sủi bọt: hydrogen peroxide tách thành nước và khí oxygen',
           explanation:
             'Một phân tử H₂O₂ tạo ra 1 phân tử H₂O thì dư 1 nguyên tử O, chưa đủ làm một phân tử O₂. Lấy 2 phân tử H₂O₂ thì vừa đủ. Kết quả: 2H₂O₂ → 2H₂O + O₂.',
           conceptIds: ['balancing', 'chemical-equation'],
@@ -671,8 +673,8 @@ export const unit04: UnitInput = {
       intro: {
         title: 'Pháo bông đêm giao thừa',
         story: [
-          'Đêm giao thừa, bạn châm một que pháo bông. Những tia sáng trắng bắn ra tí tách, chói đến mức phải nheo mắt.',
-          'Trong que pháo có bột kim loại, thường là magnesium. Khi cháy, magnesium kết hợp với oxygen thành magnesium oxide, một chất bột màu trắng, đồng thời toả nhiệt và phát sáng rất mạnh.',
+          'Đêm giao thừa, bố châm một que pháo bông cho cả nhà cùng ngắm. Những tia sáng bắn ra tí tách, chói đến mức phải nheo mắt.',
+          'Lớp thuốc bọc quanh que pháo có trộn bột kim loại. Loại cho tia sáng trắng thường có magnesium. Khi cháy, magnesium kết hợp với oxygen thành magnesium oxide, một chất rắn màu trắng, đồng thời toả nhiệt và phát sáng rất mạnh.',
           'Bếp than, bếp biogas, cây đinh gỉ, nhà máy phân đạm: quanh bạn đâu đâu cũng có phản ứng hoá học. Phương trình nào cũng cân bằng được bằng cách đếm nguyên tử.',
         ],
         visual: { type: 'reaction', reactionId: 'magnesium-burning' },
@@ -697,7 +699,7 @@ export const unit04: UnitInput = {
           id: 'u4-l5-e2',
           type: 'balance-reaction',
           reactionId: 'magnesium-burning',
-          prompt: 'Cân bằng phản ứng magnesium cháy trong que pháo bông',
+          prompt: 'Cân bằng phương trình của phản ứng magnesium cháy',
           explanation:
             'Vế trái có 2 O nên cần 2 MgO. Khi đó vế phải có 2 Mg, nên cần 2 Mg ở vế trái. Kết quả: 2Mg + O₂ → 2MgO.',
           conceptIds: ['balancing', 'combustion'],
@@ -712,7 +714,7 @@ export const unit04: UnitInput = {
               right: { id: 'r1', text: 'Carbon dioxide' },
             },
             {
-              left: { id: 'l2', text: 'Pháo bông cháy', image: 'sparkler' },
+              left: { id: 'l2', text: 'Magnesium trong pháo bông cháy', image: 'sparkler' },
               right: { id: 'r2', text: 'Magnesium oxide' },
             },
             {
@@ -724,19 +726,23 @@ export const unit04: UnitInput = {
               right: { id: 'r4', text: 'Carbon dioxide và nước' },
             },
             {
-              left: { id: 'l5', text: 'Sản xuất phân đạm', image: 'rice-field' },
+              left: {
+                id: 'l5',
+                text: 'Nitrogen gặp hydrogen trong nhà máy phân đạm',
+                image: 'rice-field',
+              },
               right: { id: 'r5', text: 'Ammonia' },
             },
           ],
           explanation:
-            'Sản phẩm chỉ chứa các nguyên tố có trong chất phản ứng. Than chỉ có carbon nên cháy thành carbon dioxide. Methane có thêm hydrogen nên còn sinh ra nước.',
+            'Sản phẩm chỉ chứa các nguyên tố có trong chất phản ứng. Than gồm chủ yếu là carbon nên cháy thành carbon dioxide. Methane có thêm hydrogen nên còn sinh ra nước.',
           conceptIds: ['reactants-products', 'reaction'],
         },
         {
           id: 'u4-l5-e4',
           type: 'balance-reaction',
           reactionId: 'methane-combustion',
-          prompt: 'Cân bằng phản ứng methane cháy trên bếp biogas',
+          prompt: 'Cân bằng phương trình của phản ứng methane cháy trên bếp biogas',
           explanation:
             'CH₄ có 4 H nên cần 2 H₂O. Lúc này vế phải có 2 + 2 = 4 O, nên cần 2 O₂. Kết quả: CH₄ + 2O₂ → CO₂ + 2H₂O.',
           conceptIds: ['balancing', 'combustion'],
@@ -771,7 +777,7 @@ export const unit04: UnitInput = {
           id: 'u4-l5-e7',
           type: 'balance-reaction',
           reactionId: 'ammonia-synthesis',
-          prompt: 'Cân bằng phản ứng tổng hợp ammonia để làm phân đạm',
+          prompt: 'Cân bằng phương trình của phản ứng tổng hợp ammonia để làm phân đạm',
           explanation:
             'Vế trái có 2 N nên cần 2 NH₃. Hai phân tử NH₃ có 6 H, nên cần 3 H₂. Kết quả: N₂ + 3H₂ → 2NH₃.',
           conceptIds: ['balancing', 'chemical-equation'],
@@ -792,13 +798,13 @@ export const unit04: UnitInput = {
               groupId: 'burning',
             },
             { id: 'i2', text: 'Đinh sắt gỉ dần', image: 'rusty-nail', groupId: 'other' },
-            { id: 'i3', text: 'Que pháo bông', image: 'sparkler', groupId: 'burning' },
+            { id: 'i3', text: 'Que pháo bông cháy', image: 'sparkler', groupId: 'burning' },
             { id: 'i4', text: 'Oxy già sủi bọt', image: 'hydrogen-peroxide', groupId: 'other' },
             { id: 'i5', text: 'Ngọn lửa bếp biogas', image: 'biogas-stove', groupId: 'burning' },
             { id: 'i6', text: 'Giấm gặp baking soda', image: 'vinegar-volcano', groupId: 'other' },
           ],
           explanation:
-            'Sự cháy là phản ứng với oxygen xảy ra nhanh, toả nhiều nhiệt và phát sáng. Sắt gỉ cũng là phản ứng với oxygen nhưng rất chậm nên không có lửa.',
+            'Sự cháy là phản ứng với oxygen xảy ra nhanh, toả nhiều nhiệt và phát sáng. Sắt gỉ cũng là phản ứng với oxygen nhưng rất chậm, không phát sáng, nên không phải sự cháy.',
           conceptIds: ['combustion', 'oxidation'],
         },
         {
@@ -823,7 +829,7 @@ export const unit04: UnitInput = {
             },
           ],
           explanation:
-            'Sự cháy cần oxygen. Úp chiếc lọ lên ngọn nến, oxygen bên trong cạn dần và nến tắt.',
+            'Sự cháy cần oxygen. Úp chiếc lọ lên ngọn nến, oxygen bên trong giảm dần, đến lúc không còn đủ thì nến tắt.',
           conceptIds: ['combustion'],
         },
       ],
@@ -880,7 +886,7 @@ export const unit04: UnitInput = {
           id: 'u4-cp-e3',
           type: 'balance-reaction',
           reactionId: 'water-formation',
-          prompt: 'Cân bằng phản ứng tạo thành nước',
+          prompt: 'Cân bằng phương trình của phản ứng tạo thành nước',
           explanation:
             'Cần 2 phân tử H₂O để đủ 2 O, rồi cần 2 phân tử H₂ để đủ 4 H. Kết quả: 2H₂ + O₂ → 2H₂O.',
           conceptIds: ['balancing'],
@@ -938,7 +944,7 @@ export const unit04: UnitInput = {
           id: 'u4-cp-e7',
           type: 'balance-reaction',
           reactionId: 'magnesium-burning',
-          prompt: 'Cân bằng phản ứng magnesium cháy',
+          prompt: 'Cân bằng phương trình của phản ứng magnesium cháy',
           explanation:
             'Một phân tử O₂ có 2 nguyên tử oxygen, đủ cho 2 MgO. Vậy cần 2 Mg. Kết quả: 2Mg + O₂ → 2MgO.',
           conceptIds: ['balancing', 'combustion'],
@@ -947,7 +953,7 @@ export const unit04: UnitInput = {
           id: 'u4-cp-e8',
           type: 'mcq',
           prompt:
-            'Trong một chai đậy kín, 8,4 g baking soda phản ứng vừa hết với 6 g acetic acid. Tổng khối lượng các sản phẩm là bao nhiêu?',
+            '8,4 g baking soda phản ứng vừa hết với 6 g acetic acid. Tổng khối lượng các sản phẩm, kể cả khí bay đi, là bao nhiêu?',
           options: [
             { id: 'a', text: '2,4 g' },
             { id: 'b', text: '8,4 g' },
@@ -972,7 +978,7 @@ export const unit04: UnitInput = {
           id: 'u4-cp-e10',
           type: 'balance-reaction',
           reactionId: 'methane-combustion',
-          prompt: 'Cân bằng phản ứng methane cháy',
+          prompt: 'Cân bằng phương trình của phản ứng methane cháy',
           explanation:
             '4 H trong CH₄ cần 2 H₂O. Vế phải khi đó có 4 O, nên cần 2 O₂. Kết quả: CH₄ + 2O₂ → CO₂ + 2H₂O.',
           conceptIds: ['balancing', 'combustion'],
@@ -995,7 +1001,7 @@ export const unit04: UnitInput = {
           id: 'u4-cp-e12',
           type: 'balance-reaction',
           reactionId: 'ammonia-synthesis',
-          prompt: 'Cân bằng phản ứng tổng hợp ammonia',
+          prompt: 'Cân bằng phương trình của phản ứng tổng hợp ammonia',
           explanation:
             '2 N ở vế trái cần 2 NH₃. Hai phân tử NH₃ có 6 H, nên cần 3 H₂. Kết quả: N₂ + 3H₂ → 2NH₃.',
           conceptIds: ['balancing', 'chemical-equation'],
