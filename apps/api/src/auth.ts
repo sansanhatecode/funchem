@@ -37,7 +37,8 @@ export function createAuth(env: Env, db: Db, mailer: Mailer) {
     session: {
       expiresIn: 60 * 60 * 24 * 30,
       updateAge: 60 * 60 * 24,
-      cookieCache: { enabled: true, maxAge: 5 * 60 },
+      // Không bật cookieCache: bộ đệm phiên trong cookie vẫn trả về tài khoản khách đã bị xoá sau khi
+      // khách đăng ký, và vẫn coi phiên là hợp lệ sau khi người dùng xoá tài khoản. Mỗi request tra database một lần.
     },
     advanced: {
       // Production: web (funchem.vn) và API (api.funchem.vn) cùng domain gốc,
