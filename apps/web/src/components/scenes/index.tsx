@@ -78,7 +78,7 @@ const coreScenes: Record<CoreSceneId, SceneDef> = {
   },
   'glass-of-water': {
     Component: GlassOfWaterScene,
-    label: 'Ly nước đá có ống hút và lát chanh trên bàn',
+    label: 'Ly nước trong có ống hút đặt trên bàn, nắng chiếu qua cửa sổ',
     hotspot: { x: 160, y: 128 },
   },
   'soda-can': {
