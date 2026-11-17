@@ -448,7 +448,7 @@ Còn thiếu so với chương trình THCS, đề xuất cho các Unit sau:
 
 Việc cần chủ dự án quyết định hoặc làm tiếp:
 
-- Unit 5–8 **chưa qua lượt soát độc lập** như Unit 1–4. Nên soát trước khi cho học sinh thật dùng.
+- Unit 5–8 đã qua một lượt soát độc lập (2026-11-17), sửa khoảng 70 chỗ, không có đáp án hay phương trình sai. Người soát chưa đối chiếu sách in, vẫn nên nhờ giáo viên đọc.
 - Phân tử lớn (glucose 24 nguyên tử) vẽ chật trong khung hiện tại. Saccharose chưa có hình phân tử.
 - Hình phóng to chưa vẽ được dung dịch có ion, nên cốc acid vẫn hiện phân tử HCl nguyên vẹn.
 - Bảng tuần hoàn có nhóm "Á kim" mà sách chỉ chia kim loại, phi kim, khí hiếm.
@@ -458,6 +458,10 @@ Việc cần chủ dự án quyết định hoặc làm tiếp:
 ### Trình duyệt không còn tải cả kho nội dung — ngày 2026-11-17
 
 Nội dung vẫn nằm trong mã (không ở database), nhưng trình duyệt chỉ nhận phần màn hình đang cần: trang chủ nhận một bài thử, trang học nhận một bài cùng phân tử và phản ứng của nó, bản đồ học nhận dàn ý, ôn tập lấy đúng các câu cần ôn qua `/content/exercises`. Mã trình duyệt nhập từ `@funchem/content/lib`; luật lint chặn nhập cả kho. JavaScript tải về (đã nén) giảm khoảng 110 KB mỗi trang, ví dụ trang chủ từ 408 KB còn 299 KB, và không còn tăng theo số Unit. Chưa làm: tách cảnh minh hoạ theo Unit và gỡ zod khỏi gói trình duyệt.
+
+### Server chặn bài chưa mở và giới hạn XP — ngày 2026-11-17
+
+API tự xét bài đã mở khoá chưa (trước chỉ chặn ở giao diện). Mỗi bài mỗi ngày chỉ cho tối đa bằng lần làm tốt nhất trong ngày, ôn tập chỉ 3 lượt đầu mỗi ngày được cộng XP, các lần nộp cùng lúc phải xếp hàng. Còn lại từ lượt review mã: giám sát lỗi, giới hạn gửi OTP khi chạy nhiều máy, Dockerfile chưa build thử, web chưa có test đơn vị. Một bài thường vẫn tính là xong dù trả lời sai hết, nên bài kế tiếp mở ngay: cần quyết định có đặt ngưỡng tối thiểu không.
 
 ### Tiếp theo: Giai đoạn 2
 
