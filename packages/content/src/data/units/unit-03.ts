@@ -2,7 +2,7 @@ import type { UnitInput } from '../../schema/lesson.js'
 
 /**
  * Unit 3: Rắn, lỏng, khí
- * 5 bài học + checkpoint: ba trạng thái, sự chuyển thể, hoà tan và dung dịch,
+ * 5 bài học + checkpoint: ba thể của chất, sự chuyển thể, hoà tan và dung dịch,
  * chuyển động của hạt, biến đổi vật lí và biến đổi hoá học.
  */
 export const unit03: UnitInput = {
@@ -12,16 +12,16 @@ export const unit03: UnitInput = {
   tagline: 'Ba thể của chất, sự hoà tan và hai kiểu biến đổi',
   color: '#FF9600',
   lessons: [
-    // ───────────────────────── Bài 1: Ba trạng thái ─────────────────────────
+    // ───────────────────────── Bài 1: Ba thể của chất ─────────────────────────
     {
       id: 'u3-l1-three-states',
       title: 'Một chất, ba dáng vẻ',
       intro: {
         title: 'Đá, nước và hơi nước',
         story: [
-          'Viên đá trong cốc trà đá, nước trong ly và hơi nước thoát ra từ vòi ấm đang sôi: ba thứ khác hẳn nhau, nhưng đều là nước.',
-          'Đó là ba thể của chất, còn gọi là ba trạng thái: rắn, lỏng và khí. Phân tử H₂O vẫn y nguyên, chỉ cách chúng xếp và chuyển động là khác.',
-          'Trong nước đá, các phân tử xếp ngay hàng thẳng lối và chỉ rung tại chỗ. Trong nước lỏng, chúng vẫn ở sát nhau nhưng trượt qua nhau được. Trong hơi nước, chúng ở rất xa nhau và bay tự do.',
+          'Viên đá trong cốc trà đá, nước trong ly và hơi nước thoát ra từ vòi ấm đang sôi. Ba thứ trông khác hẳn nhau, nhưng đều là nước.',
+          'Đó là ba thể (hay ba trạng thái) của chất: rắn, lỏng và khí. Viên đá cứng, tự giữ hình dạng. Nước lỏng chảy được, rót vào ly nào thì mang hình ly đó. Hơi nước thì lan ra khắp gian bếp.',
+          'Vì sao lại khác nhau như vậy? Phóng to lên, cả ba đều gồm cùng một loại hạt là phân tử H₂O. Chỉ cách các hạt xếp và chuyển động là khác. Trong nước đá, chúng xếp ngay hàng thẳng lối và chỉ rung tại chỗ. Trong nước lỏng, chúng vẫn ở sát nhau nhưng trượt qua nhau được. Trong hơi nước, chúng ở rất xa nhau và bay tự do.',
           'Hơi nước không màu nên mắt không thấy được. Làn trắng phía trên vòi ấm là thứ khác, bài sau bạn sẽ biết.',
         ],
         visual: {
@@ -43,7 +43,7 @@ export const unit03: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Nước đá là nước ở thể rắn: có hình dạng riêng và không tự chảy. Chất tạo nên nó vẫn là H₂O.',
+            'Nước đá là nước ở thể rắn: cứng, tự giữ hình dạng, không rót được như nước lỏng. Chất tạo nên nó vẫn là H₂O.',
           conceptIds: ['state-of-matter'],
         },
         {
@@ -75,7 +75,7 @@ export const unit03: UnitInput = {
         {
           id: 'u3-l1-e3',
           type: 'mcq',
-          prompt: 'Trong nước đá, các phân tử nước như thế nào?',
+          prompt: 'Trong nước đá, các phân tử nước xếp và chuyển động ra sao?',
           options: [
             { id: 'a', text: 'Ở rất xa nhau và bay tự do' },
             { id: 'b', text: 'Xếp theo hàng lối và chỉ rung tại chỗ' },
@@ -83,14 +83,14 @@ export const unit03: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Ở thể rắn, các hạt bị giữ chặt tại chỗ theo một trật tự nhất định. Vì thế viên đá cứng và giữ được hình dạng.',
+            'Ở thể rắn, các hạt bị giữ tại chỗ theo một trật tự nhất định và chỉ rung nhẹ. Vì thế viên đá cứng và giữ được hình dạng. Ở rất xa nhau và bay tự do là hơi nước, còn trượt qua nhau là nước lỏng.',
           conceptIds: ['particle-model', 'state-of-matter'],
         },
         {
           id: 'u3-l1-e4',
           type: 'true-false',
           prompt:
-            'Khi nước đá tan chảy thành nước lỏng, các phân tử H₂O biến thành một loại phân tử khác.',
+            'Khi nước đá chảy thành nước lỏng, các phân tử H₂O biến thành một loại phân tử khác.',
           visual: { id: 'v', moleculeId: 'h2o' },
           answer: false,
           explanation:
@@ -107,16 +107,16 @@ export const unit03: UnitInput = {
             { id: 'gas', label: 'Khí' },
           ],
           items: [
-            { id: 'i1', text: 'Có hình dạng riêng, không tự chảy', groupId: 'solid' },
+            { id: 'i1', text: 'Tự giữ hình dạng, không rót được', groupId: 'solid' },
             {
               id: 'i2',
-              text: 'Rót được, chỉ mang hình dạng của phần vật chứa mà nó chiếm',
+              text: 'Rót được, nằm gọn ở đáy và mang hình vật chứa',
               groupId: 'liquid',
             },
-            { id: 'i3', text: 'Lan ra chiếm hết khoảng trống của vật chứa', groupId: 'gas' },
+            { id: 'i3', text: 'Tự lan ra chiếm hết khoảng trống của vật chứa', groupId: 'gas' },
             { id: 'i4', text: 'Các hạt ở rất xa nhau', groupId: 'gas' },
             { id: 'i5', text: 'Các hạt ở sát nhau nhưng trượt qua nhau được', groupId: 'liquid' },
-            { id: 'i6', text: 'Các hạt xếp theo hàng lối cố định', groupId: 'solid' },
+            { id: 'i6', text: 'Các hạt xếp theo hàng lối, chỉ rung tại chỗ', groupId: 'solid' },
           ],
           explanation:
             'Chất rắn giữ nguyên hình dạng vì các hạt bị giữ tại chỗ. Chất lỏng chảy được vì các hạt trượt qua nhau. Chất khí lan khắp nơi vì các hạt ở xa nhau và bay tự do.',
@@ -130,11 +130,11 @@ export const unit03: UnitInput = {
           options: [
             { id: 'a', moleculeId: 'co2', text: 'Bọt khí carbon dioxide' },
             { id: 'b', moleculeId: 'h2o', text: 'Nước trong lon' },
-            { id: 'c', moleculeId: 'al', text: 'Vỏ lon bằng nhôm' },
+            { id: 'c', moleculeId: 'al', text: 'Vỏ lon bằng aluminium (nhôm)' },
           ],
           correctOptionId: 'c',
           explanation:
-            'Vỏ lon làm bằng aluminium (nhôm), một kim loại ở thể rắn. Nước trong lon ở thể lỏng, còn bọt carbon dioxide ở thể khí.',
+            'Vỏ lon làm bằng nhôm, một kim loại ở thể rắn: nó cứng và tự giữ hình dạng. Nước trong lon ở thể lỏng, còn bọt carbon dioxide ở thể khí.',
           conceptIds: ['state-of-matter'],
         },
         {
@@ -145,7 +145,7 @@ export const unit03: UnitInput = {
             'Bơm helium vào quả bóng bay, helium lan ra khắp quả bóng. Chất ở thể ___ luôn chiếm hết khoảng trống của vật chứa nó.',
           blanks: [{ accepted: ['khí'], wordBank: ['rắn', 'lỏng', 'khí'] }],
           explanation:
-            'Các hạt của chất khí ở xa nhau và bay tự do theo mọi hướng, nên chất khí không có hình dạng hay thể tích riêng.',
+            'Các hạt của chất khí ở xa nhau và bay tự do theo mọi hướng. Vì thế chất khí không có hình dạng riêng: vật chứa rộng bao nhiêu, nó lan ra chiếm hết bấy nhiêu.',
           conceptIds: ['state-of-matter', 'particle-model'],
         },
         {
@@ -160,17 +160,15 @@ export const unit03: UnitInput = {
         },
         {
           id: 'u3-l1-e9',
-          type: 'order-steps',
+          type: 'fill-blank',
           prompt:
-            'Sắp xếp theo mức độ tự do của các phân tử nước, từ bị giữ chặt nhất đến tự do nhất',
-          steps: [
-            { id: 's1', text: 'Nước đá', image: 'ice-cubes' },
-            { id: 's2', text: 'Nước lỏng', image: 'glass-of-water' },
-            { id: 's3', text: 'Hơi nước', image: 'boiling-kettle' },
-          ],
+            'Khi bơm xe đạp, mỗi lần ấn tay bơm xuống là không khí trong ống bơm bị ép lại, chiếm ít chỗ hơn. Chọn từ đúng',
+          template:
+            'Chất khí nén lại được vì các hạt của nó ở rất ___ nhau, còn nhiều khoảng trống để dồn lại gần hơn.',
+          blanks: [{ accepted: ['xa'], wordBank: ['xa', 'sát'] }],
           explanation:
-            'Trong nước đá, phân tử chỉ rung tại chỗ. Trong nước lỏng, chúng trượt qua nhau. Trong hơi nước, chúng bay tự do khắp nơi.',
-          conceptIds: ['particle-model', 'state-of-matter'],
+            'Trong chất khí, các hạt ở rất xa nhau nên ép lại gần nhau được. Trong chất rắn và chất lỏng, các hạt đã ở sát nhau sẵn nên rất khó nén. Khi bị nén, từng hạt không nhỏ đi, chỉ khoảng trống giữa chúng hẹp lại.',
+          conceptIds: ['state-of-matter', 'particle-model'],
         },
         {
           id: 'u3-l1-e10',
@@ -183,7 +181,7 @@ export const unit03: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Phân tử nước ở thể nào cũng to như nhau. Nước lỏng chảy được vì các phân tử không bị giữ tại chỗ mà trượt qua nhau.',
+            'Phân tử nước ở thể nào cũng to như nhau, và viên đá hay ly nước đều có vô vàn phân tử. Nước lỏng rót được vì các phân tử không bị giữ tại chỗ mà trượt qua nhau.',
           conceptIds: ['particle-model', 'state-of-matter'],
         },
       ],
@@ -198,9 +196,10 @@ export const unit03: UnitInput = {
       intro: {
         title: 'Quần áo ướt rồi lại khô',
         story: [
-          'Phơi quần áo ướt ngoài sân, vài giờ sau là khô. Nước không biến mất: từng phân tử nước rời khỏi vải và bay vào không khí. Đó là sự bay hơi.',
-          'Chất có thể chuyển từ thể này sang thể khác. Nóng lên, nước đá nóng chảy thành nước, nước bay hơi thành hơi nước. Đun tới khoảng 100 °C thì nước sôi: nước chuyển thành hơi rất nhanh. Lạnh đi thì ngược lại: hơi nước ngưng tụ thành giọt, nước đông đặc thành đá.',
-          'Đổi qua đổi lại bao nhiêu lần, nó vẫn là nước. Phân tử H₂O không hề thay đổi.',
+          'Phơi quần áo ướt ngoài sân, vài giờ sau là khô. Nước đi đâu? Từng phân tử nước rời khỏi vải, bay vào không khí thành hơi nước. Chất lỏng chuyển thành khí như vậy gọi là sự bay hơi.',
+          'Chiều ngược lại cũng có. Hơi nước gặp lạnh thì tụ lại thành giọt, như những giọt nước đọng bên ngoài ly nước đá. Đó là sự ngưng tụ.',
+          'Rắn và lỏng cũng đổi qua lại được. Viên đá để ngoài tủ lạnh chảy thành nước: đó là sự nóng chảy. Nước trong ngăn đá cứng lại thành đá: đó là sự đông đặc. Với nước, cả hai đều xảy ra ở 0 °C.',
+          'Còn sôi thì sao? Bay hơi diễn ra lặng lẽ trên mặt nước, ở nhiệt độ nào cũng có. Khi đun tới khoảng 100 °C, nước chuyển thành hơi ngay cả trong lòng nó, bọt hơi nổi lên ùng ục: đó là sự sôi. Dù chuyển thể kiểu nào, phân tử H₂O vẫn y nguyên.',
         ],
         visual: { type: 'molecule', moleculeId: 'h2o', scene: 'wet-clothes' },
       },
@@ -208,7 +207,8 @@ export const unit03: UnitInput = {
         {
           id: 'u3-l2-e1',
           type: 'match-pairs',
-          prompt: 'Nối mỗi sự chuyển thể với tên của nó',
+          prompt:
+            'Chất đổi từ thể này sang thể khác gọi là sự chuyển thể. Nối mỗi sự chuyển thể với tên của nó',
           pairs: [
             { left: { id: 'l1', text: 'Rắn thành lỏng' }, right: { id: 'r1', text: 'Nóng chảy' } },
             { left: { id: 'l2', text: 'Lỏng thành rắn' }, right: { id: 'r2', text: 'Đông đặc' } },
@@ -216,7 +216,7 @@ export const unit03: UnitInput = {
             { left: { id: 'l4', text: 'Khí thành lỏng' }, right: { id: 'r4', text: 'Ngưng tụ' } },
           ],
           explanation:
-            'Nóng chảy và đông đặc là hai chiều ngược nhau giữa rắn và lỏng. Bay hơi và ngưng tụ là hai chiều ngược nhau giữa lỏng và khí.',
+            'Nóng chảy và đông đặc là hai chiều ngược nhau giữa rắn và lỏng. Bay hơi và ngưng tụ là hai chiều ngược nhau giữa lỏng và khí. Sôi cũng là lỏng thành khí, nhưng xảy ra cả trong lòng chất lỏng.',
           conceptIds: ['state-change'],
         },
         {
@@ -231,7 +231,7 @@ export const unit03: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Không khí quanh bạn luôn có hơi nước. Gặp thành ly lạnh, các phân tử nước chậm lại, tụ vào nhau thành giọt. Đó là sự ngưng tụ.',
+            'Thuỷ tinh không cho nước thấm qua. Những giọt nước ấy đến từ bên ngoài: không khí quanh bạn luôn có hơi nước. Gặp thành ly lạnh, các phân tử nước chậm lại, tụ vào nhau thành giọt. Đó là sự ngưng tụ.',
           conceptIds: ['state-change'],
         },
         {
@@ -245,38 +245,29 @@ export const unit03: UnitInput = {
           conceptIds: ['state-change', 'state-of-matter'],
         },
         {
-          id: 'u3-l2-e4',
-          type: 'build-molecule',
-          prompt: 'Hơi nước thoát ra từ ấm đang sôi gồm những phân tử nào? Hãy ghép một phân tử',
-          targetMoleculeId: 'h2o',
-          availableAtoms: { H: 4, O: 3, C: 1 },
-          explanation:
-            'Hơi nước vẫn là H₂O: 2 nguyên tử hydrogen và 1 nguyên tử oxygen. Sôi không tách phân tử nước thành khí hydrogen và khí oxygen.',
-          conceptIds: ['state-change', 'molecule'],
-        },
-        {
           id: 'u3-l2-e5',
           type: 'sort',
-          prompt: 'Để chuyển thể, nước cần nhận thêm nhiệt hay mất bớt nhiệt?',
+          prompt:
+            'Nóng chảy, bay hơi và sôi cần nhận thêm nhiệt. Ngưng tụ và đông đặc thì ngược lại: chúng xảy ra khi chất mất bớt nhiệt. Mỗi hiện tượng dưới đây thuộc nhóm nào?',
           groups: [
             { id: 'gain', label: 'Nhận thêm nhiệt' },
             { id: 'lose', label: 'Mất bớt nhiệt' },
           ],
           items: [
-            { id: 'i1', text: 'Viên đá tan chảy', image: 'ice-cubes', groupId: 'gain' },
+            { id: 'i1', text: 'Viên đá chảy thành nước', image: 'ice-cubes', groupId: 'gain' },
             { id: 'i2', text: 'Nước sôi trong ấm', image: 'boiling-kettle', groupId: 'gain' },
             { id: 'i3', text: 'Hơi nước đọng thành giọt ngoài ly lạnh', groupId: 'lose' },
             { id: 'i4', text: 'Nước trong khay đông thành đá', groupId: 'lose' },
             { id: 'i5', text: 'Quần áo ướt khô dần', image: 'wet-clothes', groupId: 'gain' },
           ],
           explanation:
-            'Nóng chảy và bay hơi cần nhận thêm nhiệt: nhiệt giúp các phân tử thắng được lực hút đang giữ chúng lại với nhau. Ngưng tụ và đông đặc xảy ra khi chất mất bớt nhiệt.',
+            'Đá chảy là nóng chảy, quần áo khô là bay hơi, nước trong ấm thì sôi. Cả ba đều cần nhận thêm nhiệt, vì nhiệt giúp các phân tử thắng được lực hút đang giữ chúng lại với nhau. Hơi nước đọng thành giọt là ngưng tụ, nước đông thành đá là đông đặc: cả hai xảy ra khi mất bớt nhiệt.',
           conceptIds: ['state-change'],
         },
         {
           id: 'u3-l2-e6',
           type: 'mcq',
-          prompt: 'Bay hơi và sôi khác nhau ở điểm nào?',
+          prompt: 'Bay hơi và sôi đều là chất lỏng chuyển thành hơi. Chúng khác nhau ở điểm nào?',
           options: [
             { id: 'a', text: 'Bay hơi tạo ra chất mới, còn sôi thì không' },
             { id: 'b', text: 'Bay hơi chỉ xảy ra ở 100 °C, còn sôi thì ở nhiệt độ nào cũng được' },
@@ -284,7 +275,7 @@ export const unit03: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Quần áo vẫn khô ở nhiệt độ thường vì nước bay hơi từ từ trên bề mặt. Sôi là kiểu bay hơi đặc biệt, chỉ xảy ra ở nhiệt độ sôi: nước chuyển thành hơi ngay cả trong lòng chất lỏng, tạo thành các bọt hơi nổi lên.',
+            'Quần áo vẫn khô ở nhiệt độ thường vì nước bay hơi từ từ trên bề mặt, ở nhiệt độ nào cũng được. Sôi thì chỉ xảy ra khi nước nóng tới nhiệt độ sôi, khoảng 100 °C: lúc đó nước chuyển thành hơi cả ở trong lòng nó, tạo thành các bọt hơi nổi lên. Bọt ấy là nước ở thể khí, không phải không khí. Cả bay hơi lẫn sôi đều không tạo ra chất mới.',
           conceptIds: ['state-change'],
         },
         {
@@ -295,7 +286,25 @@ export const unit03: UnitInput = {
             'Nước đá nóng chảy ở ___ °C. Nước lỏng cũng đông đặc thành đá ở đúng nhiệt độ đó.',
           blanks: [{ accepted: ['0'], wordBank: ['0', '37', '100'] }],
           explanation:
-            'Ở 0 °C nước đá bắt đầu nóng chảy, và cũng ở 0 °C nước bắt đầu đông đặc. Còn 100 °C là nhiệt độ sôi của nước ở áp suất thường.',
+            'Ở 0 °C nước đá bắt đầu nóng chảy, và cũng ở 0 °C nước lỏng bắt đầu đông đặc. Còn khoảng 100 °C là nhiệt độ sôi của nước, 37 °C là thân nhiệt của bạn.',
+          conceptIds: ['state-change'],
+        },
+        // e4 đứng sau e7 có chủ ý: người học cần gặp 0 °C và 100 °C trước khi
+        // được hỏi vì sao nhiệt độ giữ nguyên trong lúc chuyển thể.
+        {
+          id: 'u3-l2-e4',
+          type: 'mcq',
+          prompt:
+            'Khi nước đang sôi, nhiệt từ bếp chỉ dùng để chuyển nước thành hơi, nên nhiệt độ của nước giữ nguyên ở khoảng 100 °C. Ấm nước đang sôi mà bếp được vặn lửa to hơn thì chuyện gì xảy ra?',
+          visual: { id: 'v', image: 'boiling-kettle' },
+          options: [
+            { id: 'a', text: 'Nước nóng lên quá 100 °C rất nhiều' },
+            { id: 'b', text: 'Nước vẫn khoảng 100 °C, chỉ sôi mạnh hơn và cạn nhanh hơn' },
+            { id: 'c', text: 'Nước nguội dần vì hơi nước mang hết nhiệt đi' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'Lửa to hơn thì cấp nhiệt nhanh hơn, nhưng chừng nào nước còn đang sôi, nhiệt ấy chỉ làm nước chuyển thành hơi nhanh hơn. Nhiệt độ của nước vẫn đứng ở khoảng 100 °C. Nước đá cũng vậy: trong lúc đang nóng chảy, nó giữ nguyên 0 °C cho tới khi chảy hết.',
           conceptIds: ['state-change'],
         },
         {
@@ -313,14 +322,14 @@ export const unit03: UnitInput = {
           id: 'u3-l2-e9',
           type: 'order-steps',
           prompt:
-            'Bỏ vài viên đá vào nồi, đậy nắp rồi bật bếp. Sắp xếp các việc xảy ra theo thứ tự',
+            'Một nồi đựng vài viên đá, đậy nắp, được đun trên bếp. Sắp xếp các việc xảy ra theo thứ tự',
           steps: [
             { id: 's1', text: 'Đá nóng chảy thành nước lỏng' },
             { id: 's2', text: 'Nước nóng dần lên' },
             { id: 's3', text: 'Nước sôi, hơi nước bốc lên rất mạnh' },
             {
               id: 's4',
-              text: 'Tắt bếp rồi mở nắp: mặt trong nắp đọng đầy giọt nước do hơi nước ngưng tụ',
+              text: 'Bếp tắt, nắp nồi được mở ra: mặt trong nắp đọng đầy giọt nước do hơi nước ngưng tụ',
             },
           ],
           explanation:
@@ -330,16 +339,17 @@ export const unit03: UnitInput = {
         {
           id: 'u3-l2-e10',
           type: 'mcq',
-          prompt: 'Xoa nước rửa tay khô, vài giây sau tay đã khô và thấy mát. Vì sao?',
+          prompt:
+            'Nước rửa tay khô chứa nhiều ethanol (cồn). Xoa lên tay, vài giây sau tay đã khô và thấy mát. Vì sao?',
           visual: { id: 'v', image: 'hand-sanitizer' },
           options: [
             { id: 'a', text: 'Ethanol bay hơi rất nhanh và lấy nhiệt từ da tay' },
-            { id: 'b', text: 'Ethanol biến thành nước' },
-            { id: 'c', text: 'Ethanol đông đặc lại trên da' },
+            { id: 'b', text: 'Ethanol thấm hết vào trong da' },
+            { id: 'c', text: 'Ethanol biến thành nước rồi chảy đi' },
           ],
           correctOptionId: 'a',
           explanation:
-            'Ethanol bay hơi nhanh hơn nước nhiều. Chất lỏng muốn bay hơi phải lấy nhiệt từ xung quanh, nên da tay bạn thấy mát.',
+            'Ethanol bay hơi nhanh hơn nước nhiều, nên tay khô chỉ sau vài giây. Bay hơi cần nhận thêm nhiệt, và ethanol lấy nhiệt ấy từ chính da tay bạn. Vì thế bạn thấy mát.',
           conceptIds: ['state-change'],
         },
       ],
@@ -355,9 +365,9 @@ export const unit03: UnitInput = {
         title: 'Đường đi đâu mất rồi?',
         story: [
           'Thả một thìa đường vào cốc trà rồi khuấy lên. Hạt đường biến mất, nhưng trà lại ngọt. Vậy là đường vẫn còn đó.',
-          'Các phân tử nước đã kéo từng phân tử đường rời khỏi hạt đường rồi chen vào giữa chúng. Đường tách ra thành từng phân tử riêng lẻ, nhỏ đến mức mắt không thấy nữa. Đó là sự hoà tan.',
-          'Chất bị hoà tan (đường) gọi là chất tan. Chất hoà tan chất khác (nước) gọi là dung môi. Hỗn hợp đồng nhất thu được gọi là dung dịch.',
-          'Đường tan trong nước là hoà tan, khác với viên đá tan chảy là nóng chảy.',
+          'Phóng to lên: các phân tử nước bám quanh hạt đường và kéo từng phân tử đường rời ra. Đường tách thành từng phân tử riêng lẻ, lẫn vào giữa các phân tử nước, nhỏ đến mức mắt không thấy nữa. Đó là sự hoà tan.',
+          'Chất bị hoà tan, ở đây là đường, gọi là chất tan. Chất hoà tan chất khác, ở đây là nước, gọi là dung môi. Hỗn hợp thu được gọi là dung dịch. Nó đồng nhất, nghĩa là chỗ nào cũng như nhau: ngụm trà nào cũng ngọt như ngụm nào.',
+          'Đừng nhầm hoà tan với nóng chảy. Viên đá nóng chảy là một chất tự chuyển từ rắn sang lỏng khi nóng lên. Còn hoà tan cần hai chất: đường phải gặp nước mới tan.',
         ],
         visual: { type: 'molecule', moleculeId: 'h2o', scene: 'sugar-tea' },
       },
@@ -383,7 +393,7 @@ export const unit03: UnitInput = {
           prompt: 'Pha một cốc nước muối. Nối mỗi thứ với vai trò của nó',
           pairs: [
             {
-              left: { id: 'l1', moleculeId: 'nacl', text: 'Muối ăn' },
+              left: { id: 'l1', moleculeId: 'nacl', text: 'Sodium chloride (muối ăn)' },
               right: { id: 'r1', text: 'Chất tan' },
             },
             {
@@ -409,7 +419,7 @@ export const unit03: UnitInput = {
         {
           id: 'u3-l3-e4',
           type: 'mcq',
-          prompt: 'Làm sao lấy lại muối từ một bát nước muối?',
+          prompt: 'Muối đã tan hết trong một bát nước muối. Làm sao lấy lại muối?',
           visual: { id: 'v', image: 'salt-shaker' },
           options: [
             { id: 'a', text: 'Lọc qua giấy lọc' },
@@ -418,7 +428,7 @@ export const unit03: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Nước bay hơi đi, muối ở lại. Người làm muối cũng phơi nước biển theo cách này. Cách làm này gọi là cô cạn. Lọc không giữ được muối vì muối đã tách thành các ion Na⁺ và Cl⁻ riêng lẻ, nhỏ đến mức chui lọt qua giấy lọc cùng với nước.',
+            'Nước bay hơi đi, muối ở lại. Cách này gọi là cô cạn, và người làm muối cũng phơi nước biển như vậy. Lọc thì không được: khi tan, muối đã tách thành các ion Na⁺ và Cl⁻ riêng lẻ, nhỏ đến mức chui qua giấy lọc cùng với nước. Khuấy mạnh chỉ làm muối lẫn đều hơn.',
           conceptIds: ['solution', 'mixture'],
         },
         {
@@ -435,10 +445,10 @@ export const unit03: UnitInput = {
             { id: 'i3', text: 'Muối ăn', image: 'salt-shaker', groupId: 'soluble' },
             { id: 'i4', text: 'Dầu ăn', groupId: 'insoluble' },
             { id: 'i5', text: 'Cây đinh sắt', image: 'iron-nail', groupId: 'insoluble' },
-            { id: 'i6', text: 'Cồn (ethanol)', image: 'hand-sanitizer', groupId: 'soluble' },
+            { id: 'i6', text: 'Bột ngọt (mì chính)', groupId: 'soluble' },
           ],
           explanation:
-            'Đường, muối và ethanol tan trong nước, tạo thành dung dịch. Cát và đinh sắt chìm xuống đáy, dầu ăn nổi lên trên: chúng không tan trong nước.',
+            'Đường, muối và bột ngọt tan trong nước, tạo thành dung dịch: khuấy xong bạn không còn thấy chúng nữa. Cát và đinh sắt chìm xuống đáy, dầu ăn nổi lên trên. Khuấy bao lâu bạn vẫn nhìn thấy chúng, vì chúng không tan trong nước.',
           conceptIds: ['solution'],
         },
         {
@@ -461,45 +471,79 @@ export const unit03: UnitInput = {
           id: 'u3-l3-e7',
           type: 'build-molecule',
           prompt:
-            'Ghép phân tử acetic acid CH₃COOH, chất tạo vị chua của giấm. Gợi ý: C, H và O đều xuất hiện ở hai chỗ, hãy cộng cả hai chỗ lại',
+            'Ghép phân tử acetic acid CH₃COOH, chất tạo vị chua của giấm. Mẹo đếm: trong công thức này chữ C xuất hiện 2 lần, chữ O 2 lần, còn H có ở hai chỗ là H₃ và H',
           targetMoleculeId: 'c2h4o2',
           availableAtoms: { C: 3, H: 6, O: 3, N: 1 },
           explanation:
-            'Đếm từng nhóm trong CH₃COOH: 2 nguyên tử carbon, 3 + 1 = 4 nguyên tử hydrogen và 2 nguyên tử oxygen. Vì thế công thức còn được viết gộp là C₂H₄O₂.',
+            'Đếm từng chỗ trong CH₃COOH: 2 nguyên tử carbon, 3 + 1 = 4 nguyên tử hydrogen và 2 nguyên tử oxygen. Vì thế công thức còn được viết gộp là C₂H₄O₂.',
           conceptIds: ['formula', 'molecule'],
         },
         {
           id: 'u3-l3-e8',
           type: 'fill-blank',
-          prompt: 'Điền vào chỗ trống',
-          template: 'Hỗn hợp đồng nhất của chất tan và dung môi gọi là ___.',
+          prompt: 'Chọn từ đúng',
+          template:
+            'Nước đường ngọt đều từ trên xuống dưới, không còn thấy hạt đường nào. Hỗn hợp đồng nhất như vậy của chất tan và dung môi gọi là ___.',
           blanks: [{ accepted: ['dung dịch'], wordBank: ['dung dịch', 'hợp chất', 'đơn chất'] }],
           explanation:
-            'Nước đường, nước muối, giấm đều là dung dịch. Chất tan và dung môi chỉ trộn lẫn với nhau chứ không liên kết thành hợp chất mới.',
+            'Nước đường, nước muối, giấm đều là dung dịch. Chất tan và dung môi chỉ trộn lẫn với nhau chứ không liên kết thành chất mới, nên dung dịch là hỗn hợp chứ không phải hợp chất.',
           conceptIds: ['solution', 'mixture'],
         },
         {
           id: 'u3-l3-e9',
-          type: 'true-false',
-          prompt: 'Chỉ cần khuấy đủ lâu thì cho bao nhiêu đường vào một cốc nước cũng tan hết.',
-          answer: false,
+          type: 'mcq',
+          prompt:
+            'Bạn cho thêm mãi đường vào một cốc nước và khuấy thật kĩ. Tới một lúc, đường không tan thêm nữa mà lắng xuống đáy. Vì sao?',
+          options: [
+            { id: 'a', text: 'Vì bạn khuấy chưa đủ lâu' },
+            { id: 'b', text: 'Vì một cốc nước chỉ hoà tan được một lượng đường nhất định' },
+            { id: 'c', text: 'Vì phần đường cho vào sau đã biến thành chất khác' },
+          ],
+          correctOptionId: 'b',
           explanation:
-            'Ở mỗi nhiệt độ, một lượng nước chỉ hoà tan được một lượng đường nhất định. Quá mức đó, đường thừa lắng xuống đáy cốc dù bạn khuấy bao lâu. Khi ấy ta nói dung dịch đã bão hoà.',
+            'Ở mỗi nhiệt độ, một lượng nước chỉ hoà tan được tối đa một lượng đường nhất định. Quá mức đó, đường thừa lắng xuống đáy dù bạn khuấy bao lâu: khuấy chỉ giúp tan nhanh hơn chứ không giúp tan nhiều hơn. Khi ấy ta nói dung dịch đã bão hoà. Muốn đường tan thêm, phải thêm nước hoặc dùng nước nóng hơn.',
           conceptIds: ['solution'],
         },
         {
           id: 'u3-l3-e10',
-          type: 'order-steps',
-          prompt: 'Chuyện gì xảy ra khi viên đường tan trong nước? Sắp xếp theo thứ tự',
-          steps: [
-            { id: 's1', text: 'Viên đường rơi vào nước' },
-            { id: 's2', text: 'Các phân tử nước bám quanh những phân tử đường ở mặt ngoài' },
-            { id: 's3', text: 'Từng phân tử đường bị kéo rời khỏi viên đường' },
-            { id: 's4', text: 'Các phân tử đường lẫn đều vào giữa các phân tử nước' },
+          type: 'sort',
+          prompt:
+            'Nóng chảy chỉ cần một chất và nhiệt. Hoà tan thì cần hai chất: chất tan và dung môi. Mỗi việc dưới đây là nóng chảy hay hoà tan?',
+          groups: [
+            { id: 'melt', label: 'Nóng chảy' },
+            { id: 'dissolve', label: 'Hoà tan' },
+          ],
+          items: [
+            {
+              id: 'i1',
+              text: 'Viên đá để trên bàn tan thành nước',
+              image: 'ice-cubes',
+              groupId: 'melt',
+            },
+            {
+              id: 'i2',
+              text: 'Thìa đường khuấy trong cốc trà',
+              image: 'sugar-tea',
+              groupId: 'dissolve',
+            },
+            {
+              id: 'i3',
+              text: 'Sáp nến mềm ra rồi nhỏ giọt cạnh ngọn lửa',
+              image: 'candle',
+              groupId: 'melt',
+            },
+            {
+              id: 'i4',
+              text: 'Muối nêm vào nồi canh',
+              image: 'salt-shaker',
+              groupId: 'dissolve',
+            },
+            { id: 'i5', text: 'Lon nhôm cũ hoá lỏng trong lò nung', groupId: 'melt' },
+            { id: 'i6', text: 'Bột ngọt (mì chính) khuấy vào bát nước dùng', groupId: 'dissolve' },
           ],
           explanation:
-            'Viên đường tan dần từ ngoài vào trong. Cuối cùng không còn hạt đường nào: đường đã tách hết thành từng phân tử riêng lẻ, mắt không thấy được, nhưng mọi phân tử đường vẫn còn nguyên.',
-          conceptIds: ['solution', 'particle-motion'],
+            'Đá, sáp nến và nhôm tự chuyển từ rắn sang lỏng khi đủ nóng: đó là nóng chảy, không cần thêm chất nào khác. Đường, muối và bột ngọt thì phải gặp nước mới tan: đó là hoà tan. Đời thường ta hay nói "đá tan", nhưng viên đá không tan vào chất nào cả. Trong hoá học, đó là nóng chảy.',
+          conceptIds: ['solution', 'state-change'],
         },
       ],
       unlocksMolecules: ['c2h4o2'],
@@ -514,8 +558,9 @@ export const unit03: UnitInput = {
         title: 'Mùi nước hoa đi khắp phòng',
         story: [
           'Ai đó xịt nước hoa ở góc phòng. Một lát sau, bạn ngồi tận góc kia cũng ngửi thấy, dù không có ngọn gió nào.',
-          'Nước hoa là các chất thơm hoà tan trong ethanol. Khi xịt ra, chúng bay hơi. Các phân tử bay hỗn loạn, va vào phân tử không khí, đổi hướng liên tục và dần lan ra khắp phòng. Hiện tượng này gọi là khuếch tán.',
-          'Các hạt không bao giờ đứng yên. Càng nóng, chúng chuyển động càng nhanh. Vì thế mùi bát canh nóng lan xa hơn nhiều so với lúc canh đã nguội.',
+          'Nước hoa gồm các chất thơm hoà tan trong ethanol (cồn). Xịt ra, chúng bay hơi. Các phân tử bay lung tung, va vào phân tử không khí, đổi hướng liên tục và cứ thế lan dần ra khắp phòng. Hiện tượng các hạt tự lan ra như vậy gọi là khuếch tán.',
+          'Khuếch tán xảy ra được vì các hạt không bao giờ đứng yên. Càng nóng, chúng chuyển động càng nhanh. Vì thế bát canh nóng thơm lừng cả bếp: các phân tử mùi thoát khỏi bát canh nhiều hơn và lan đi nhanh hơn so với lúc canh đã nguội.',
+          'Nhớ nhé: nóng lên, từng hạt không to ra và cũng không nhiều thêm. Chúng chỉ chuyển động nhanh hơn.',
         ],
         visual: { type: 'molecule', moleculeId: 'c2h6o', scene: 'perfume' },
       },
@@ -532,13 +577,13 @@ export const unit03: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Các phân tử luôn chuyển động hỗn loạn nên tự lan từ nơi có nhiều đến nơi có ít. Trong chất khí, các hạt bay nhanh và ở xa nhau nên mùi lan đi rất dễ.',
+            'Các phân tử luôn chuyển động hỗn loạn nên tự lan từ nơi có nhiều đến nơi có ít. Nước hoa không biến thành không khí, và mũi bạn cũng không hút được nó từ xa: chính các phân tử mùi thơm tự bay tới chỗ bạn.',
           conceptIds: ['diffusion', 'particle-motion'],
         },
         {
           id: 'u3-l4-e2',
           type: 'fill-blank',
-          prompt: 'Điền vào chỗ trống',
+          prompt: 'Chọn từ đúng',
           template:
             'Hiện tượng các hạt của một chất tự lan ra và xen lẫn vào giữa các hạt của chất khác gọi là sự ___.',
           blanks: [
@@ -588,7 +633,7 @@ export const unit03: UnitInput = {
             { id: 's3', text: 'Nước đang sôi trong ấm', image: 'boiling-kettle' },
           ],
           explanation:
-            'Nhiệt độ càng cao, các phân tử chuyển động càng nhanh. Thật ra nhiệt độ chính là thước đo mức độ chuyển động của các hạt.',
+            'Nhiệt độ càng cao, các phân tử chuyển động càng nhanh. Có thể nói nhiệt độ cho biết các hạt đang chuyển động mạnh tới đâu.',
           conceptIds: ['particle-motion'],
         },
         {
@@ -610,12 +655,11 @@ export const unit03: UnitInput = {
         {
           id: 'u3-l4-e7',
           type: 'true-false',
-          prompt:
-            'Mùi nước hoa lan ra khắp phòng, còn khí carbon monoxide thì không lan ra vì nó không có mùi.',
+          prompt: 'Khí carbon monoxide không có mùi nên không khuếch tán được như mùi nước hoa.',
           visual: { id: 'v', moleculeId: 'co' },
           answer: false,
           explanation:
-            'Khuếch tán là do các hạt chuyển động, không liên quan đến mùi. Chất khí nào cũng lan ra. Với CO, chỉ là mũi bạn không phát hiện được.',
+            'Khuếch tán là do các hạt chuyển động, không liên quan đến mùi. Chất khí nào cũng tự lan ra. Với CO, chỉ là mũi bạn không phát hiện được, và chính vì thế nó càng nguy hiểm.',
           conceptIds: ['diffusion'],
         },
         {
@@ -703,8 +747,8 @@ export const unit03: UnitInput = {
       intro: {
         title: 'Một cây nến, hai kiểu biến đổi',
         story: [
-          'Thắp một cây nến. Sáp gần ngọn lửa chảy thành giọt, lăn xuống rồi đông đặc lại. Nó vẫn là sáp, chỉ đổi dạng. Đó là biến đổi vật lí.',
-          'Nhưng cây nến cứ ngắn dần. Phần sáp thấm lên bấc đã cháy: nó kết hợp với oxygen trong không khí, biến thành khí carbon dioxide và hơi nước. Chất mới đã sinh ra. Đó là biến đổi hoá học.',
+          'Bạn hẳn đã thấy một cây nến đang cháy. Sáp gần ngọn lửa chảy thành giọt, lăn xuống rồi đông đặc lại. Nó vẫn là sáp, chỉ đổi dạng. Biến đổi không tạo ra chất mới như vậy gọi là biến đổi vật lí.',
+          'Nhưng cây nến cứ ngắn dần. Phần sáp thấm lên bấc đã cháy: nó kết hợp với oxygen trong không khí, biến thành khí carbon dioxide và hơi nước. Chất mới đã sinh ra. Biến đổi có tạo ra chất mới gọi là biến đổi hoá học.',
           'Muốn phân biệt, hãy tự hỏi: sau khi biến đổi, chất có còn là chất cũ không?',
         ],
         visual: { type: 'molecule', moleculeId: 'o2', scene: 'candle' },
@@ -713,7 +757,7 @@ export const unit03: UnitInput = {
         {
           id: 'u3-l5-e1',
           type: 'mcq',
-          prompt: 'Viên đá tan chảy thành nước. Đây là biến đổi gì?',
+          prompt: 'Viên đá nóng chảy thành nước. Đây là biến đổi gì?',
           visual: { id: 'v', image: 'ice-cubes' },
           options: [
             { id: 'a', text: 'Biến đổi hoá học, vì viên đá đã biến mất' },
@@ -722,7 +766,7 @@ export const unit03: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Trước và sau đều là H₂O, chỉ đổi từ thể rắn sang thể lỏng. Không có chất mới nên đây là biến đổi vật lí.',
+            'Viên đá không biến mất, nó chỉ đổi từ thể rắn sang thể lỏng. Trước và sau đều là H₂O. Không có chất mới nên đây là biến đổi vật lí.',
           conceptIds: ['physical-change'],
         },
         {
@@ -738,7 +782,7 @@ export const unit03: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Nhiệt làm các chất trong trứng biến thành chất khác, có màu và mùi mới. Có chất mới sinh ra nên đây là biến đổi hoá học.',
+            'Nhiệt làm các chất trong trứng biến thành chất khác. Màu mới và mùi mới là dấu hiệu cho thấy có chất mới sinh ra, nên đây là biến đổi hoá học. Còn hoà tan thì phải có một chất tan vào chất khác, ở đây không có.',
           conceptIds: ['chemical-change'],
         },
         {
@@ -750,15 +794,25 @@ export const unit03: UnitInput = {
             { id: 'chemical', label: 'Biến đổi hoá học' },
           ],
           items: [
-            { id: 'i1', text: 'Đá tan chảy', image: 'ice-cubes', groupId: 'physical' },
-            { id: 'i2', text: 'Đinh sắt bị gỉ', image: 'rusty-nail', groupId: 'chemical' },
+            { id: 'i1', text: 'Viên đá chảy thành nước', image: 'ice-cubes', groupId: 'physical' },
+            {
+              id: 'i2',
+              text: 'Đinh sắt bị gỉ, phủ một lớp nâu đỏ xốp',
+              image: 'rusty-nail',
+              groupId: 'chemical',
+            },
             { id: 'i3', text: 'Đường tan trong trà', image: 'sugar-tea', groupId: 'physical' },
-            { id: 'i4', text: 'Than cháy', image: 'charcoal-grill', groupId: 'chemical' },
+            {
+              id: 'i4',
+              text: 'Than cháy thành tro và khí',
+              image: 'charcoal-grill',
+              groupId: 'chemical',
+            },
             { id: 'i5', text: 'Quần áo ướt khô đi', image: 'wet-clothes', groupId: 'physical' },
             { id: 'i6', text: 'Trứng rán chín', image: 'frying-egg', groupId: 'chemical' },
           ],
           explanation:
-            'Nóng chảy, hoà tan, bay hơi chỉ làm chất đổi dạng: đó là biến đổi vật lí. Gỉ, cháy, rán chín tạo ra chất mới: đó là biến đổi hoá học.',
+            'Nóng chảy, hoà tan, bay hơi chỉ làm chất đổi dạng, chất vẫn là chất cũ: đó là biến đổi vật lí. Gỉ, cháy, rán chín tạo ra chất mới, có màu, mùi hay tính chất khác hẳn: đó là biến đổi hoá học.',
           conceptIds: ['physical-change', 'chemical-change'],
         },
         {
@@ -785,23 +839,18 @@ export const unit03: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Trong không khí ẩm, các nguyên tử iron (sắt) đã kết hợp với oxygen thành iron(III) oxide: một chất mới, giòn, xốp, màu nâu đỏ, không còn tính chất của sắt.',
+            'Trong không khí ẩm, các nguyên tử iron (sắt) đã kết hợp với oxygen thành iron(III) oxide: một chất mới, giòn, xốp, màu nâu đỏ, không còn tính chất của sắt. Chỉ bị ướt hay đổi hình dạng thôi thì sắt vẫn là sắt.',
           conceptIds: ['chemical-change', 'oxidation'],
         },
         {
           id: 'u3-l5-e6',
-          type: 'mcq',
+          type: 'true-false',
           prompt:
-            'Vỏ trứng chủ yếu là calcium carbonate CaCO₃. Bạn đập quả trứng, vỏ vỡ thành nhiều mảnh. Các mảnh vỏ đó là chất gì?',
+            'Vỏ trứng chủ yếu là calcium carbonate (CaCO₃). Đập quả trứng, vỏ vỡ thành nhiều mảnh. Mỗi mảnh vỏ vẫn là calcium carbonate.',
           visual: { id: 'v', moleculeId: 'caco3' },
-          options: [
-            { id: 'a', text: 'Một chất mới sinh ra khi vỏ vỡ' },
-            { id: 'b', text: 'Khí carbon dioxide' },
-            { id: 'c', text: 'Vẫn là calcium carbonate như lúc đầu' },
-          ],
-          correctOptionId: 'c',
+          answer: true,
           explanation:
-            'Đập vỡ chỉ làm đổi kích thước và hình dạng. Mảnh vỏ nhỏ đến đâu vẫn là calcium carbonate, nên đây là biến đổi vật lí.',
+            'Đập vỡ chỉ làm đổi kích thước và hình dạng, không có chất mới nào sinh ra. Mảnh vỏ nhỏ đến đâu vẫn là calcium carbonate, nên đây là biến đổi vật lí.',
           conceptIds: ['physical-change'],
         },
         {
@@ -810,11 +859,11 @@ export const unit03: UnitInput = {
           prompt: 'Nối mỗi việc với điều xảy ra với chất',
           pairs: [
             {
-              left: { id: 'l1', text: 'Xé tờ giấy' },
+              left: { id: 'l1', text: 'Tờ giấy bị xé' },
               right: { id: 'r1', text: 'Vẫn là giấy, chỉ nhỏ hơn' },
             },
             {
-              left: { id: 'l2', text: 'Đốt tờ giấy' },
+              left: { id: 'l2', text: 'Tờ giấy bị cháy' },
               right: { id: 'r2', text: 'Thành tro và khói: chất mới' },
             },
             {
@@ -827,7 +876,7 @@ export const unit03: UnitInput = {
             },
           ],
           explanation:
-            'Xé, đập vỡ, nóng chảy không tạo ra chất mới, dù có khi không làm lại như cũ được. Đốt thì khác: giấy biến thành tro, khói và các chất khí.',
+            'Xé, đập vỡ, nóng chảy không tạo ra chất mới, dù có khi không làm lại như cũ được. Cháy thì khác: giấy biến thành tro, khói và các chất khí.',
           conceptIds: ['physical-change', 'chemical-change'],
         },
         {
@@ -837,8 +886,8 @@ export const unit03: UnitInput = {
           template:
             'Biến đổi không tạo ra chất mới là biến đổi ___. Biến đổi có tạo ra chất mới là biến đổi ___.',
           blanks: [
-            { accepted: ['vật lí'], wordBank: ['vật lí', 'hoá học', 'trạng thái'] },
-            { accepted: ['hoá học'], wordBank: ['vật lí', 'hoá học', 'trạng thái'] },
+            { accepted: ['vật lí'], wordBank: ['vật lí', 'hoá học', 'sinh học'] },
+            { accepted: ['hoá học'], wordBank: ['vật lí', 'hoá học', 'sinh học'] },
           ],
           explanation:
             'Câu hỏi quyết định luôn là: có chất mới sinh ra hay không? Không có là biến đổi vật lí, có là biến đổi hoá học.',
@@ -847,16 +896,16 @@ export const unit03: UnitInput = {
         {
           id: 'u3-l5-e9',
           type: 'mcq',
-          prompt: 'Đun nước sôi, bọt nổi lên ùng ục. Có chất mới sinh ra không?',
+          prompt: 'Nước đang sôi, bọt nổi lên ùng ục. Bọt đó là gì?',
           visual: { id: 'v', image: 'boiling-kettle' },
           options: [
-            { id: 'a', text: 'Không, bọt đó là hơi nước, vẫn là H₂O' },
-            { id: 'b', text: 'Có, bọt đó là khí hydrogen và khí oxygen' },
-            { id: 'c', text: 'Có, bọt đó là một chất khí mới' },
+            { id: 'a', text: 'Hơi nước, tức vẫn là H₂O ở thể khí' },
+            { id: 'b', text: 'Khí hydrogen và khí oxygen do nước bị tách ra' },
+            { id: 'c', text: 'Không khí từ bên ngoài chui vào nước' },
           ],
           correctOptionId: 'a',
           explanation:
-            'Sôi chỉ là nước chuyển từ thể lỏng sang thể khí. Thấy sủi bọt chưa chắc là có chất mới: phải xem bọt đó là chất gì.',
+            'Sôi chỉ là nước chuyển từ thể lỏng sang thể khí ngay trong lòng nó, nên bọt là hơi nước. Phân tử H₂O không bị tách ra, và không khí cũng không chui vào. Không có chất mới nên sôi là biến đổi vật lí. Thấy sủi bọt chưa chắc là có chất mới: phải xem bọt đó là chất gì.',
           conceptIds: ['physical-change', 'state-change'],
         },
         {
@@ -890,24 +939,24 @@ export const unit03: UnitInput = {
           prompt: 'Nối hiện tượng với tên sự chuyển thể',
           pairs: [
             {
-              left: { id: 'l1', text: 'Viên đá tan chảy', image: 'ice-cubes' },
+              left: { id: 'l1', text: 'Miếng bơ chảy ra trên lát bánh mì nóng' },
               right: { id: 'r1', text: 'Nóng chảy' },
             },
             {
-              left: { id: 'l2', text: 'Quần áo ướt khô đi', image: 'wet-clothes' },
+              left: { id: 'l2', text: 'Vũng nước mưa trên sân khô dần dưới nắng' },
               right: { id: 'r2', text: 'Bay hơi' },
             },
             {
-              left: { id: 'l3', text: 'Giọt nước đọng ngoài ly lạnh', image: 'glass-of-water' },
+              left: { id: 'l3', text: 'Gương nhà tắm mờ đi khi có người tắm nước nóng' },
               right: { id: 'r3', text: 'Ngưng tụ' },
             },
             {
-              left: { id: 'l4', text: 'Nước trong khay thành đá' },
+              left: { id: 'l4', text: 'Mỡ trong bát canh để nguội đóng lại thành váng trắng' },
               right: { id: 'r4', text: 'Đông đặc' },
             },
           ],
           explanation:
-            'Rắn thành lỏng là nóng chảy, lỏng thành khí là bay hơi, khí thành lỏng là ngưng tụ, lỏng thành rắn là đông đặc.',
+            'Bơ từ rắn thành lỏng là nóng chảy. Nước mưa từ lỏng thành hơi là bay hơi. Hơi nước gặp mặt gương mát, tụ thành những giọt li ti là ngưng tụ. Mỡ lỏng nguội đi rồi cứng lại là đông đặc.',
           conceptIds: ['state-change'],
         },
         {
@@ -947,8 +996,8 @@ export const unit03: UnitInput = {
             { id: 'i1', moleculeId: 'fe', text: 'Iron (sắt)', groupId: 'solid' },
             { id: 'i2', moleculeId: 'h2o', text: 'Nước', groupId: 'liquid' },
             { id: 'i3', moleculeId: 'o2', text: 'Khí oxygen', groupId: 'gas' },
-            { id: 'i4', moleculeId: 'nacl', text: 'Muối ăn', groupId: 'solid' },
-            { id: 'i5', moleculeId: 'c2h6o', text: 'Ethanol', groupId: 'liquid' },
+            { id: 'i4', moleculeId: 'nacl', text: 'Sodium chloride (muối ăn)', groupId: 'solid' },
+            { id: 'i5', moleculeId: 'c2h6o', text: 'Ethanol (cồn)', groupId: 'liquid' },
             { id: 'i6', moleculeId: 'co2', text: 'Carbon dioxide', groupId: 'gas' },
           ],
           explanation:
@@ -986,8 +1035,8 @@ export const unit03: UnitInput = {
         {
           id: 'u3-cp-e7',
           type: 'mcq',
-          prompt: 'Mùi nước hoa tự lan khắp phòng nhờ hiện tượng nào?',
-          visual: { id: 'v', image: 'perfume' },
+          prompt:
+            'Bổ một quả mít chín trong bếp, lát sau cả nhà đều ngửi thấy. Mùi mít tự lan đi nhờ hiện tượng nào?',
           options: [
             { id: 'a', text: 'Ngưng tụ' },
             { id: 'b', text: 'Khuếch tán' },
