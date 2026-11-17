@@ -192,7 +192,7 @@ export const unit03: UnitInput = {
     // ───────────────────────── Bài 2: Sự chuyển thể ─────────────────────────
     {
       id: 'u3-l2-changing-state',
-      title: 'Tan chảy, bay hơi, đọng lại',
+      title: 'Chảy ra, bay hơi, đọng lại',
       intro: {
         title: 'Quần áo ướt rồi lại khô',
         story: [

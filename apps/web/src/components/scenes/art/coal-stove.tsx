@@ -87,9 +87,9 @@ export function CoalStoveScene(props: SceneProps) {
           <ellipse cx={160 + dx} cy={84.3 + dy} rx="1.8" ry="0.9" fill={C.flameCore} />
         </g>
       ))}
-      <Flame x={145} y={83} size={10} />
-      <Flame x={160} y={85} size={13} delay={-0.2} />
-      <Flame x={175} y={83} size={10} delay={-0.35} />
+      <Flame x={145} y={83} size={11} outer={C.blueFlame} core={C.blueFlameCore} />
+      <Flame x={160} y={85} size={15} outer={C.blueFlame} core={C.blueFlameCore} delay={-0.2} />
+      <Flame x={175} y={83} size={11} outer={C.blueFlame} core={C.blueFlameCore} delay={-0.35} />
 
       {/* làn khí xám mờ bốc lên */}
       {[

@@ -47,28 +47,6 @@ export function GlassOfWaterScene(props: SceneProps) {
         className="sc sc-float"
       />
 
-      {/* đá viên */}
-      <rect
-        x="132"
-        y="92"
-        width="20"
-        height="20"
-        rx="4"
-        fill={C.white}
-        opacity="0.78"
-        transform="rotate(-14 142 102)"
-      />
-      <rect
-        x="164"
-        y="98"
-        width="18"
-        height="18"
-        rx="4"
-        fill={C.white}
-        opacity="0.7"
-        transform="rotate(18 173 107)"
-      />
-
       <Bubble x={146} y={150} r={2.6} delay={0} />
       <Bubble x={170} y={154} r={3.2} delay={-1.1} />
       <Bubble x={158} y={146} r={2} delay={-2.2} />
@@ -105,14 +83,6 @@ export function GlassOfWaterScene(props: SceneProps) {
         strokeLinecap="round"
         opacity="0.6"
       />
-
-      {/* lát chanh cài miệng ly */}
-      <g transform="translate(203 60)">
-        <circle r="15" fill={C.gold} />
-        <circle r="11.5" fill={C.yellow} />
-        <path d="M0 -11 V11 M-11 0 H11 M-8 -8 L8 8 M8 -8 L-8 8" stroke={C.gold} strokeWidth="1.6" />
-        <circle r="2.4" fill={C.gold} />
-      </g>
 
       {/* giọt nước đọng ngoài ly */}
       <path
