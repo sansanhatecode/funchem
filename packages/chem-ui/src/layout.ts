@@ -212,7 +212,7 @@ export function layoutReaction(
 
 /** Các bước của hoạt hình phản ứng, dùng chung cho mọi nền tảng. */
 export const REACTION_STEPS = [
-  { id: 'reactants', title: 'Chất phản ứng', caption: 'Các chất ban đầu gặp nhau.' },
+  { id: 'reactants', title: 'Chất tham gia', caption: 'Các chất ban đầu gặp nhau.' },
   { id: 'break', title: 'Liên kết đứt', caption: 'Liên kết cũ giữa các nguyên tử bị bẻ gãy.' },
   {
     id: 'rearrange',
