@@ -232,7 +232,7 @@ export const unit05Molecules: MoleculeInput[] = [
       {
         title: 'Nước ót làm đậu phụ',
         description:
-          'Nước ót, phần nước đắng còn lại ở ruộng muối, có nhiều magnesium chloride. Người ta dùng nó để làm sữa đậu nành đông lại thành đậu phụ.',
+          'Nước ót, phần nước đắng còn lại ở ruộng muối, có nhiều magnesium chloride. Ở nhiều nơi, người ta dùng nó để làm sữa đậu nành đông lại thành đậu phụ.',
       },
     ],
     funFact:

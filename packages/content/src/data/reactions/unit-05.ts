@@ -38,7 +38,7 @@ export const unit05Reactions: ReactionInput[] = [
       illustration: 'salt-shaker',
       title: 'Hai chất gây bỏng thành nước muối',
       description:
-        'Hydrochloric acid và sodium hydroxide đều gây bỏng. Vậy mà trong phòng thí nghiệm, khi cho chúng gặp nhau với lượng vừa đủ, thứ thu được chỉ là nước và sodium chloride, đúng chất làm nên hạt muối bạn nêm vào canh. Ion H⁺ của acid đã kết hợp với ion OH⁻ của base thành nước.',
+        'Hydrochloric acid và sodium hydroxide đều gây bỏng. Vậy mà trong phòng thí nghiệm, khi cho chúng gặp nhau với lượng vừa đủ, thứ thu được chỉ là nước và sodium chloride, đúng chất làm nên hạt muối bạn nêm vào canh. Ion H⁺ của acid đã kết hợp với ion OH⁻ của base thành nước. Phản ứng toả nhiệt và hai chất đều nguy hiểm, nên chỉ làm ở trường, có thầy cô hướng dẫn.',
     },
     conceptIds: ['neutralisation', 'acid', 'base', 'salt'],
   },
@@ -115,7 +115,7 @@ export const unit05Reactions: ReactionInput[] = [
       illustration: 'limewash',
       title: 'Vì sao vôi quét tường cứng lại',
       description:
-        'Lớp vôi mới quét còn ướt và mềm. Dần dần, calcium hydroxide trong vôi tác dụng với khí carbon dioxide của không khí, thành calcium carbonate cứng như đá vôi, còn nước thì bay hơi. Thổi hơi thở vào cốc nước vôi trong, bạn cũng thấy đúng chất rắn ấy làm nước hoá đục.',
+        'Lớp vôi mới quét còn ướt và mềm. Dần dần, calcium hydroxide trong vôi tác dụng với khí carbon dioxide của không khí, thành calcium carbonate cứng như đá vôi, còn nước thì bay hơi. Ở phòng thí nghiệm, khi thầy cô sục khí carbon dioxide vào cốc nước vôi trong, cũng chính chất rắn ấy làm nước hoá đục.',
     },
     conceptIds: ['oxide', 'base', 'salt', 'reaction-signs'],
   },

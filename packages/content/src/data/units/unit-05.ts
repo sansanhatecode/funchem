@@ -122,7 +122,7 @@ export const unit05: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Magnesium chỉ có nguyên tử Mg, nên hydrogen phải đến từ acid. Acid tác dụng được với một số kim loại như magnesium, kẽm, sắt và sinh ra khí hydrogen. Đồng và vàng thì không bị hydrochloric acid làm gì.',
+            'Magnesium chỉ có nguyên tử Mg, nên hydrogen phải đến từ acid. Acid tác dụng được với một số kim loại như magnesium, kẽm, sắt và sinh ra khí hydrogen. Còn đồng và vàng thì không phản ứng với hydrochloric acid.',
           conceptIds: ['acid', 'conservation-of-mass'],
         },
         {
@@ -139,7 +139,7 @@ export const unit05: UnitInput = {
           id: 'u5-l1-e9',
           type: 'match-pairs',
           prompt:
-            'Ba acid được dùng nhiều nhất: hydrochloric acid HCl để tẩy gỉ cho thép, sulfuric acid H₂SO₄ nằm trong bình ắc quy xe máy, acetic acid CH₃COOH làm nên giấm ăn. Nối mỗi acid với nơi bạn gặp nó',
+            'Ba acid thông dụng: hydrochloric acid HCl để tẩy gỉ cho thép, sulfuric acid H₂SO₄ nằm trong bình ắc quy xe máy, acetic acid CH₃COOH làm nên giấm ăn. Nối mỗi acid với nơi bạn gặp nó',
           pairs: [
             {
               left: { id: 'l1', moleculeId: 'hcl', text: 'HCl' },
@@ -259,7 +259,7 @@ export const unit05: UnitInput = {
             },
           ],
           explanation:
-            'Cả ba công thức đều có nhóm OH đi cùng một kim loại. Bánh xà phòng thành phẩm không còn xút, nhưng nước xà phòng vẫn có tính base nhẹ. Dung dịch base thường cho cảm giác trơn nhờn, giống nước xà phòng.',
+            'Cả ba công thức đều có nhóm OH đi cùng một kim loại. Bánh xà phòng thành phẩm không còn xút, nhưng nước xà phòng vẫn có tính base nhẹ.',
           conceptIds: ['base'],
         },
         {
@@ -278,7 +278,7 @@ export const unit05: UnitInput = {
             { id: 'i4', text: 'Cu(OH)₂', groupId: 'insoluble' },
           ],
           explanation:
-            'Kiềm là tên riêng của những base tan tốt trong nước, như NaOH và KOH. Base không tan thì vẫn là base, chỉ là nó không hoà vào nước được.',
+            'Kiềm là tên riêng của những base tan tốt trong nước, như NaOH và KOH. Base không tan vẫn là base vì vẫn có nhóm OH đi với kim loại, chỉ là nó gần như không tan trong nước.',
           conceptIds: ['base', 'solution'],
         },
         {
@@ -344,7 +344,7 @@ export const unit05: UnitInput = {
       intro: {
         title: 'Ba cốc nước bắp cải tím',
         story: [
-          'Thái nhỏ vài lá bắp cải tím, ngâm với nước ấm sẽ được một thứ nước màu tím. Chia ra ba cốc. Cốc giữa để nguyên. Nhỏ giấm vào cốc bên trái, nước chuyển sang hồng đỏ. Khuấy chút baking soda vào cốc bên phải, nước ngả sang xanh.',
+          'Thái nhỏ vài lá bắp cải tím rồi ngâm với nước ấm (phần dao và nước nóng thì nhờ người lớn), bạn sẽ được một thứ nước màu tím. Chia ra ba cốc. Cốc giữa để nguyên. Nhỏ giấm vào cốc bên trái, nước chuyển sang hồng đỏ. Khuấy chút baking soda vào cốc bên phải, nước ngả sang xanh.',
           'Giấm chứa acid. Baking soda tan trong nước thì cho một dung dịch có tính base nhẹ. Nước bắp cải tím đổi màu theo từng loại: gặp acid thì hồng đỏ, gặp base thì xanh. Chất đổi màu để báo tin như vậy gọi là chất chỉ thị.',
           'Phòng thí nghiệm hay dùng giấy quỳ tím. Gặp dung dịch acid, quỳ tím hoá đỏ. Gặp dung dịch base, quỳ tím hoá xanh. Còn phenolphthalein thì vốn không màu, chỉ hoá hồng khi gặp dung dịch base.',
           'Nhờ chất chỉ thị, ta biết một dung dịch là acid hay base mà không cần nếm hay chạm. Chỉ cần một lượng rất nhỏ. Nó báo tin chứ không biến dung dịch thành acid hay base.',
@@ -435,7 +435,7 @@ export const unit05: UnitInput = {
           id: 'u5-l3-e6',
           type: 'sort',
           prompt:
-            'Nhớ lại: nước xà phòng và nước vôi trong đều có tính base. Mỗi dung dịch sau làm quỳ tím đổi sang màu nào?',
+            'Nước xà phòng có tính base nhẹ. Nước vôi trong là phần nước trong gạn ra từ xô vôi, có chứa calcium hydroxide nên cũng có tính base. Mỗi dung dịch sau làm quỳ tím đổi sang màu nào?',
           groups: [
             { id: 'red', label: 'Quỳ tím hoá đỏ' },
             { id: 'blue', label: 'Quỳ tím hoá xanh' },
@@ -518,7 +518,7 @@ export const unit05: UnitInput = {
         title: 'Chua tới mức nào?',
         story: [
           'Pha một ly nước chanh rồi nhúng vào đó một mẩu giấy pH, loại giấy tẩm sẵn nhiều chất chỉ thị. Mẩu giấy vàng đổi ngay sang cam đỏ. Đem so với bảng màu in trên hộp giấy, ta đọc được một con số: pH khoảng 2,5.',
-          'pH là con số cho biết một dung dịch có tính acid hay base, và mạnh tới đâu. Nhỏ hơn 7 là acid, càng nhỏ thì tính acid càng mạnh. Bằng 7 là trung tính, như nước tinh khiết. Lớn hơn 7 là base, càng lớn thì tính base càng mạnh.',
+          'pH là con số cho biết một dung dịch có tính acid hay base, và mạnh tới đâu. Xếp các con số ấy thành một hàng, ta có thang pH. Nhỏ hơn 7 là acid, càng nhỏ thì tính acid càng mạnh. Bằng 7 là trung tính, như nước tinh khiết. Lớn hơn 7 là base, càng lớn thì tính base càng mạnh.',
           'Hãy chọn từng thứ ở hình trên rồi phóng to. pH càng nhỏ thì trong dung dịch càng nhiều ion H⁺. pH càng lớn thì càng nhiều ion OH⁻.',
           'pH có mặt ở khắp nơi. Dịch dạ dày rất chua, pH khoảng 1,5 tới 3,5. Máu của bạn luôn có pH khoảng 7,4. Nước mưa sạch có pH khoảng 5,6 vì khí carbon dioxide trong không khí tan vào. Còn đa số cây trồng ưa đất có pH khoảng 5 tới 8.',
         ],
@@ -621,7 +621,8 @@ export const unit05: UnitInput = {
         {
           id: 'u5-l4-e6',
           type: 'match-pairs',
-          prompt: 'Nối mỗi thứ với pH của nó',
+          prompt:
+            'Dịch dạ dày chứa hydrochloric acid nên rất chua. Nước mưa sạch chỉ hơi chua. Máu lệch rất nhẹ về phía base. Nước xà phòng là base rõ rệt. Nối mỗi thứ với pH của nó',
           pairs: [
             {
               left: { id: 'l1', text: 'Dịch dạ dày' },
@@ -635,7 +636,7 @@ export const unit05: UnitInput = {
             },
           ],
           explanation:
-            'Dịch dạ dày chứa hydrochloric acid nên pH rất nhỏ. Nước mưa sạch chỉ hơi chua. Máu lệch rất nhẹ về phía base. Nước xà phòng là base rõ rệt.',
+            'Càng chua thì pH càng nhỏ, nên dịch dạ dày nhận con số nhỏ nhất. Nước mưa sạch hơi chua nên ở dưới 7 một chút. Máu chỉ nhỉnh hơn 7. Nước xà phòng là base rõ rệt nên nhận con số lớn nhất.',
           conceptIds: ['ph-scale'],
         },
         {
@@ -819,7 +820,7 @@ export const unit05: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Mỗi ion OH⁻ thêm vào lấy đi một ion H⁺. Càng ít H⁺ thì pH càng lớn. Khi acid vừa hết, pH lên tới khoảng 7.',
+            'Mỗi ion OH⁻ thêm vào lấy đi một ion H⁺. Càng ít H⁺ thì pH càng lớn. Khi acid vừa hết, pH lên tới khoảng 7. Nếu vẫn nhỏ tiếp thì base bị thừa và pH vượt lên trên 7.',
           conceptIds: ['neutralisation', 'ph-scale'],
         },
         {
@@ -861,7 +862,7 @@ export const unit05: UnitInput = {
         title: 'Cơn mưa làm mòn tượng đá',
         story: [
           'Ở những vùng nhiều nhà máy và xe cộ, mưa có thể chua hơn bình thường, pH xuống dưới 5,6. Người ta gọi đó là mưa acid. Lâu ngày, nó làm tượng đá mòn dần và cây cối úa lá.',
-          'Thủ phạm chính bốc ra từ ống khói: khí sulfur dioxide SO₂, sinh ra khi đốt than và dầu có lẫn sulfur (lưu huỳnh). Trong không khí ẩm, SO₂ dần biến thành acid rồi theo mưa rơi xuống.',
+          'Một thủ phạm chính bốc ra từ ống khói: khí sulfur dioxide SO₂, sinh ra khi đốt than và dầu có lẫn sulfur (lưu huỳnh). Trong không khí ẩm, SO₂ dần biến thành sulfuric acid H₂SO₄ rồi theo mưa rơi xuống.',
           'SO₂ là một oxide: hợp chất chỉ gồm hai nguyên tố, trong đó một nguyên tố là oxygen. Bạn đã gặp nhiều oxide rồi: carbon dioxide CO₂, magnesium oxide MgO, gỉ sắt Fe₂O₃.',
           'Oxide của phi kim như SO₂, CO₂ thường là oxide acid: chúng đứng về phe acid và tác dụng được với base. Oxide của kim loại như MgO hay vôi sống CaO thường là oxide base: chúng đứng về phe base và tác dụng được với acid.',
         ],
@@ -940,7 +941,7 @@ export const unit05: UnitInput = {
           id: 'u5-l6-e6',
           type: 'mcq',
           prompt:
-            'Than cháy: C + O₂ → CO₂. Carbon là phi kim. Vậy sản phẩm CO₂ thường được xếp vào loại nào?',
+            'Than cháy: C + O₂ → CO₂. Carbon là phi kim. Vậy sản phẩm CO₂ được xếp vào loại nào?',
           visual: { id: 'v', image: 'charcoal-grill' },
           options: [
             { id: 'a', text: 'Oxide acid' },
@@ -989,7 +990,7 @@ export const unit05: UnitInput = {
           steps: [
             { id: 's1', text: 'Nhà máy đốt than có lẫn sulfur' },
             { id: 's2', text: 'Khí sulfur dioxide SO₂ theo ống khói bay lên trời' },
-            { id: 's3', text: 'SO₂ gặp oxygen và hơi nước, dần biến thành acid' },
+            { id: 's3', text: 'SO₂ gặp oxygen và hơi nước, dần biến thành sulfuric acid' },
             { id: 's4', text: 'Acid tan trong giọt mưa, rơi xuống làm mòn tượng đá' },
           ],
           explanation:
@@ -1009,7 +1010,7 @@ export const unit05: UnitInput = {
         title: 'Quả trứng sủi bọt trong giấm',
         story: [
           'Thả một quả trứng sống vào cốc giấm. Chỉ một lát, vỏ trứng phủ kín những bọt khí li ti. Để qua một hai ngày, lớp vỏ cứng tan gần hết, chỉ còn lớp màng mềm bọc lấy quả trứng.',
-          'Vỏ trứng làm từ calcium carbonate CaCO₃. Acetic acid trong giấm phản ứng với nó và sinh ra khí carbon dioxide. Đá vôi, vỏ sò, lớp cặn trắng trong ấm nước cũng là CaCO₃, và cũng sủi bọt khi gặp acid.',
+          'Vỏ trứng gần như toàn là calcium carbonate CaCO₃. Acetic acid trong giấm phản ứng với nó và sinh ra khí carbon dioxide. Đá vôi, vỏ sò, lớp cặn trắng trong ấm nước cũng chủ yếu là CaCO₃, và cũng sủi bọt khi gặp acid.',
           'Calcium carbonate là một muối. Trong hoá học, muối là cả một họ chất: ion kim loại đi với phần còn lại của một acid, gọi là gốc acid. Hãy nhìn HCl: thay ion H⁺ bằng ion Na⁺, bạn được muối NaCl.',
           'Tên muối ghép từ tên kim loại và tên gốc acid. NaCl là sodium chloride. CaCO₃ là calcium carbonate. Baking soda NaHCO₃ là sodium hydrogencarbonate. Nhiều muối không hề mặn, và phần lớn không ăn được.',
         ],
@@ -1140,7 +1141,7 @@ export const unit05: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Ion magnesium đã thế chỗ ion H⁺ của HCl, tạo thành muối MgCl₂. Hydrogen bị thế chỗ thì thoát ra thành khí H₂. Vậy là bạn đã gặp ba cách tạo muối: acid với kim loại, acid với base, và oxide acid với base.',
+            'Ion magnesium đã thế chỗ ion H⁺ của HCl, tạo thành muối MgCl₂. Hydrogen bị thế chỗ thì thoát ra thành khí H₂. Vậy là bạn đã gặp bốn cách tạo muối: acid với kim loại, acid với base, oxide base với acid, và oxide acid với base.',
           conceptIds: ['salt', 'acid'],
         },
         {
@@ -1149,7 +1150,7 @@ export const unit05: UnitInput = {
           prompt: 'Muối nào cũng mặn và ăn được như muối ăn.',
           answer: false,
           explanation:
-            'Calcium carbonate trong vỏ trứng và đá vôi là muối nhưng chẳng mặn chút nào. Copper(II) sulfate là muối nhưng độc. Trong hoá học, chữ "muối" chỉ nói về cách chất đó được tạo thành, không nói về vị.',
+            'Calcium carbonate trong vỏ trứng và đá vôi là muối nhưng chẳng mặn chút nào. Copper(II) sulfate là muối nhưng độc. Trong hoá học, chữ "muối" nói về thành phần của chất, tức ion kim loại đi với gốc acid, chứ không nói về vị.',
           conceptIds: ['salt'],
         },
         {
@@ -1236,7 +1237,7 @@ export const unit05: UnitInput = {
           id: 'u5-cp-e5',
           type: 'mcq',
           prompt:
-            'Nọc của nhiều loài kiến có chứa một acid. Dân gian hay rửa chỗ kiến đốt bằng nước xà phòng, thứ có tính base nhẹ. Về mặt hoá học, cách làm này dựa trên phản ứng nào?',
+            'Nọc của một số loài kiến có chứa một acid tên là formic acid. Dân gian hay rửa chỗ kiến đốt bằng nước xà phòng, thứ có tính base nhẹ. Về mặt hoá học, cách làm này dựa trên phản ứng nào?',
           options: [
             { id: 'a', text: 'Phản ứng cháy' },
             { id: 'b', text: 'Phản ứng trung hoà giữa acid và base' },
@@ -1305,7 +1306,7 @@ export const unit05: UnitInput = {
           type: 'balance-reaction',
           reactionId: 'acid-rain-formation',
           prompt:
-            'Mưa acid: khí sulfur dioxide SO₂ gặp oxygen và nước, tạo thành sulfuric acid H₂SO₄. Cân bằng phương trình này',
+            'Mưa acid: khí sulfur dioxide SO₂ gặp oxygen và nước, qua vài bước thì thành sulfuric acid H₂SO₄. Viết gộp các bước lại, ta được một phương trình. Cân bằng phương trình này',
           explanation:
             'Thử với 2 SO₂: cần 2 H₂SO₄ để đủ 2 S, và 2 H₂O để đủ 4 H. Đếm oxygen: vế trái 4 + 2 + 2 = 8, vế phải 2 × 4 = 8. Kết quả: 2SO₂ + O₂ + 2H₂O → 2H₂SO₄.',
           conceptIds: ['oxide', 'acid', 'balancing'],
@@ -1345,7 +1346,7 @@ export const unit05: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Muối có gốc carbonate gặp acid thì sinh ra khí carbon dioxide, giống vỏ trứng trong giấm và núi lửa baking soda. Khí hydrogen chỉ sinh ra khi acid gặp kim loại như magnesium.',
+            'Muối có gốc carbonate hay hydrogencarbonate gặp acid thì sinh ra khí carbon dioxide, giống vỏ trứng trong giấm và núi lửa baking soda. Khí hydrogen chỉ sinh ra khi acid gặp kim loại như magnesium.',
           conceptIds: ['salt', 'acid', 'reaction-signs'],
         },
       ],
