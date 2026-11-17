@@ -1,5 +1,4 @@
-import type { SceneId } from '@funchem/content'
-import type { ComponentType } from 'react'
+import type { CoreSceneId, SceneId } from '@funchem/content'
 import { cn } from '@/lib/cn'
 import { BalloonsScene } from './art/balloons'
 import { BiogasStoveScene } from './art/biogas-stove'
@@ -30,21 +29,16 @@ import { CharcoalGrillScene } from './art/charcoal-grill'
 import { HydrogenPeroxideScene } from './art/hydrogen-peroxide'
 import { BakingCakeScene } from './art/baking-cake'
 import { VinegarBottleScene } from './art/vinegar-bottle'
-import type { SceneProps } from './kit'
+import type { SceneDef } from './scene-def'
+import { unit05Scenes } from './unit-05'
+import { unit06Scenes } from './unit-06'
+import { unit07Scenes } from './unit-07'
+import { unit08Scenes } from './unit-08'
 
-export interface SceneDef {
-  Component: ComponentType<SceneProps>
-  /** mô tả cảnh cho trình đọc màn hình */
-  label: string
-  /** điểm sẽ phóng to vào, theo toạ độ khung 320x200 */
-  hotspot: { x: number; y: number }
-}
+export type { SceneDef } from './scene-def'
 
-/**
- * Mọi cảnh đời sống. Kiểu Record<SceneId, …> bảo đảm nội dung không thể
- * tham chiếu tới một cảnh chưa được vẽ.
- */
-export const SCENES: Record<SceneId, SceneDef> = {
+/** Cảnh của Unit 1-4. Từ Unit 5, mỗi Unit có file riêng (unit-05.tsx, …). */
+const coreScenes: Record<CoreSceneId, SceneDef> = {
   'iron-nail': {
     Component: IronNailScene,
     label: 'Cây đinh sắt sáng bóng trên bàn thợ, cạnh cây búa',
@@ -209,6 +203,18 @@ export const SCENES: Record<SceneId, SceneDef> = {
     label: 'Chai thuỷ tinh đựng giấm vàng nhạt ngâm tỏi ớt trên bàn bếp, bên cạnh là bát đồ chua',
     hotspot: { x: 166, y: 106 },
   },
+}
+
+/**
+ * Mọi cảnh đời sống. Kiểu Record<SceneId, …> bảo đảm nội dung không thể
+ * tham chiếu tới một cảnh chưa được vẽ.
+ */
+export const SCENES: Record<SceneId, SceneDef> = {
+  ...coreScenes,
+  ...unit05Scenes,
+  ...unit06Scenes,
+  ...unit07Scenes,
+  ...unit08Scenes,
 }
 
 export interface SceneViewProps {

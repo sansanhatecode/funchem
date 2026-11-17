@@ -1,4 +1,4 @@
-import { concepts as rawConcepts } from './data/concepts.js'
+import { concepts as rawConcepts } from './data/concepts/index.js'
 import { molecules as rawMolecules } from './data/molecules/index.js'
 import { reactions as rawReactions } from './data/reactions/index.js'
 import { units as rawUnits } from './data/units/index.js'

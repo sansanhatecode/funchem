@@ -1,4 +1,8 @@
 import type { MoleculeInput } from '../../schema/molecule.js'
+import { unit05Molecules } from './unit-05.js'
+import { unit06Molecules } from './unit-06.js'
+import { unit07Molecules } from './unit-07.js'
+import { unit08Molecules } from './unit-08.js'
 
 export const molecules: MoleculeInput[] = [
   {
@@ -693,4 +697,8 @@ export const molecules: MoleculeInput[] = [
       'Công thức thường được viết là CH₃COONa: giống acetic acid CH₃COOH, chỉ khác là sodium đã thế chỗ một nguyên tử hydrogen.',
     conceptIds: ['compound', 'ionic-bond', 'formula', 'conservation-of-mass'],
   },
+  ...unit05Molecules,
+  ...unit06Molecules,
+  ...unit07Molecules,
+  ...unit08Molecules,
 ]

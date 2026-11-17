@@ -1,4 +1,8 @@
-import type { Concept } from '../schema/lesson.js'
+import type { Concept } from '../../schema/lesson.js'
+import { unit05Concepts } from './unit-05.js'
+import { unit06Concepts } from './unit-06.js'
+import { unit07Concepts } from './unit-07.js'
+import { unit08Concepts } from './unit-08.js'
 
 export const concepts: Concept[] = [
   { id: 'atom', title: 'Nguyên tử' },
@@ -35,4 +39,8 @@ export const concepts: Concept[] = [
   { id: 'chemical-equation', title: 'Phương trình hoá học' },
   { id: 'coefficient', title: 'Hệ số và chỉ số' },
   { id: 'balancing', title: 'Cân bằng phương trình' },
+  ...unit05Concepts,
+  ...unit06Concepts,
+  ...unit07Concepts,
+  ...unit08Concepts,
 ]

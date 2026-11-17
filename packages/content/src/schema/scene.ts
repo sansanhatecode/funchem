@@ -1,11 +1,16 @@
 import { z } from 'zod'
+import { UNIT05_SCENE_IDS } from './scenes/unit-05.js'
+import { UNIT06_SCENE_IDS } from './scenes/unit-06.js'
+import { UNIT07_SCENE_IDS } from './scenes/unit-07.js'
+import { UNIT08_SCENE_IDS } from './scenes/unit-08.js'
 
 /**
  * Các cảnh minh hoạ đời sống. Nội dung chỉ tham chiếu theo id;
  * mỗi nền tảng (web, mobile) tự vẽ cảnh tương ứng.
- * Thêm id mới ở đây thì web sẽ báo lỗi biên dịch cho tới khi cảnh được vẽ.
+ * Thêm id mới thì web sẽ báo lỗi biên dịch cho tới khi cảnh được vẽ.
+ * Cảnh của Unit 1-4 nằm ở đây; từ Unit 5 mỗi Unit có một file riêng trong ./scenes.
  */
-export const SCENE_IDS = [
+export const CORE_SCENE_IDS = [
   'iron-nail',
   'rusty-nail',
   'gold-ring',
@@ -38,5 +43,18 @@ export const SCENE_IDS = [
   'vinegar-bottle',
 ] as const
 
+export const SCENE_IDS = [
+  ...CORE_SCENE_IDS,
+  ...UNIT05_SCENE_IDS,
+  ...UNIT06_SCENE_IDS,
+  ...UNIT07_SCENE_IDS,
+  ...UNIT08_SCENE_IDS,
+] as const
+
+export type CoreSceneId = (typeof CORE_SCENE_IDS)[number]
+export type Unit05SceneId = (typeof UNIT05_SCENE_IDS)[number]
+export type Unit06SceneId = (typeof UNIT06_SCENE_IDS)[number]
+export type Unit07SceneId = (typeof UNIT07_SCENE_IDS)[number]
+export type Unit08SceneId = (typeof UNIT08_SCENE_IDS)[number]
 export type SceneId = (typeof SCENE_IDS)[number]
 export const SceneIdSchema = z.enum(SCENE_IDS)

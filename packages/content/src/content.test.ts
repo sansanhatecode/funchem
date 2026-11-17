@@ -3,7 +3,7 @@ import { buildRegistry, content, ContentValidationError } from './registry.js'
 import { formatFormula, parseFormula } from './formula.js'
 import { molecules } from './data/molecules/index.js'
 import { reactions } from './data/reactions/index.js'
-import { concepts } from './data/concepts.js'
+import { concepts } from './data/concepts/index.js'
 
 describe('parseFormula', () => {
   it('đếm đúng công thức đơn giản', () => {

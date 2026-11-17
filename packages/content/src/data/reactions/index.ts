@@ -1,4 +1,8 @@
 import type { ReactionInput } from '../../schema/reaction.js'
+import { unit05Reactions } from './unit-05.js'
+import { unit06Reactions } from './unit-06.js'
+import { unit07Reactions } from './unit-07.js'
+import { unit08Reactions } from './unit-08.js'
 
 export const reactions: ReactionInput[] = [
   {
@@ -169,4 +173,8 @@ export const reactions: ReactionInput[] = [
     },
     conceptIds: ['reaction', 'reaction-signs', 'conservation-of-mass'],
   },
+  ...unit05Reactions,
+  ...unit06Reactions,
+  ...unit07Reactions,
+  ...unit08Reactions,
 ]

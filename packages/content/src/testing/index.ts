@@ -1,4 +1,4 @@
-import { concepts } from '../data/concepts.js'
+import { concepts } from '../data/concepts/index.js'
 import { molecules } from '../data/molecules/index.js'
 import { reactions } from '../data/reactions/index.js'
 import { buildRegistry, type ContentRegistry } from '../registry.js'
