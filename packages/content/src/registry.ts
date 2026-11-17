@@ -17,7 +17,7 @@ import {
 } from './schema/index.js'
 
 /** Phiên bản nội dung, tăng khi thay đổi bài học đã phát hành. Lưu kèm mỗi lần làm bài. */
-export const CONTENT_VERSION = '2026.11.1'
+export const CONTENT_VERSION = '2026.11.2'
 
 export interface ContentRegistry {
   version: string
@@ -103,6 +103,7 @@ export function buildRegistry(input: {
   const units: Unit[] = []
   const lessons = new Map<string, { lesson: Lesson; unit: Unit; index: number }>()
   const exercises = new Map<string, { exercise: Exercise; lesson: Lesson }>()
+  const unlockedBy = new Map<string, string>()
   for (const raw of input.units) {
     const r = UnitSchema.safeParse(raw)
     if (!r.success) {
@@ -117,6 +118,11 @@ export function buildRegistry(input: {
       for (const mid of lesson.unlocksMolecules) {
         if (!molecules.has(mid))
           problems.push(`lesson "${lesson.id}": unlocksMolecules "${mid}" không tồn tại`)
+        // một phân tử chỉ được mở khoá ở một bài, nếu không lần sau sẽ không còn gì để mở
+        const first = unlockedBy.get(mid)
+        if (first)
+          problems.push(`lesson "${lesson.id}": phân tử "${mid}" đã được mở khoá ở "${first}"`)
+        else unlockedBy.set(mid, lesson.id)
       }
       if (lesson.intro) {
         const v = lesson.intro.visual

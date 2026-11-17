@@ -73,7 +73,7 @@ Bên cạnh luôn có khung **"Ngoài đời"**: hình minh hoạ hiện tượn
 | 7   | **Hoá học quanh nhà**             | Oxi hoá – khử cơ bản, pin, chất tẩy, polymer/nhựa                                                                | Pin điện thoại, nước tẩy, chai nhựa            |
 | 8   | **Hoá học trong cơ thể**          | Hô hấp tế bào, tiêu hoá, đường/đạm/béo, nước và muối khoáng                                                      | Thở, ăn, uống nước điện giải                   |
 
-**MVP làm trọn Unit 1–4.** Unit 5–8 làm ở giai đoạn sau khi khung đã ổn.
+**Cả 8 Unit đã có nội dung** (2026-11-17). Unit 5–8 đã được chỉnh lại cho bám Chương trình 2018, xem bảng đối chiếu ở mục 9.
 
 Mỗi Unit: 4–6 bài học + 1 Checkpoint. Mỗi bài học: 1 thẻ "Khám phá" (hoạt hình + câu chuyện) + 8–12 bài tập.
 
@@ -423,6 +423,37 @@ Chưa làm:
 - [ ] Sentry và phân tích học tập (cần tài khoản dịch vụ).
 - [ ] Rà soát accessibility có hệ thống; giao diện tối.
 - [ ] Học offline (service worker).
+
+### Chương trình 2018, rà soát cả 4 Unit và Unit 5–8 — ngày 2026-11-17
+
+- **Tài liệu chương trình** trong [docs/curriculum/](docs/curriculum/README.md): yêu cầu cần đạt phần hoá của KHTN 6–9 (chép từ văn bản chương trình), dàn ý Hoá học 10–12, thuật ngữ và giá trị chuẩn, hiểu lầm thường gặp. Mỗi mục có nguồn và mức xác minh. Phần yếu nhất là danh sách hiểu lầm và các định nghĩa "theo sách" (mới đối chiếu qua trang tóm tắt, chưa qua sách in).
+- **Quy tắc viết nội dung** trong [docs/content-guide.md](docs/content-guide.md): giọng văn, cách dẫn dắt từng bước, đáp án, an toàn.
+- **Rà soát Unit 1–4** theo hai tài liệu trên, mỗi Unit một người soát độc lập, sửa trực tiếp. Không có đáp án sai. Sửa chính: nhiều câu hỏi cần kiến thức chưa được dạy (đã đưa vào thẻ Khám phá hoặc lời dẫn), lời giải thích chỉ lặp đáp án (viết lại để dạy lần hai), thêm khí hiếm, chu kì và nhóm (Unit 1), thêm bậc thang trước bài cân bằng đầu tiên (Unit 4), bài kiểm tra có tình huống đời sống mới, thuật ngữ "chất tham gia", "kí hiệu", "thể".
+- **Unit 5–8** viết mới, mỗi Unit 6–7 bài và một bài kiểm tra, 37 cảnh mới, hình mở đầu thang pH.
+
+| Unit | Bám chương trình                                                                    | Cố ý chưa dạy                                            |
+| ---- | ----------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| 5    | KHTN 8: Acid, Base, thang pH, Oxide, Muối                                           | Bảng tính tan, điều chế muối, phân bón                   |
+| 6    | KHTN 8: phản ứng toả nhiệt và thu nhiệt, tốc độ phản ứng, chất xúc tác; lên men     | Hiệu suất, tính toán năng lượng                          |
+| 7    | KHTN 9: tính chất kim loại, dãy hoạt động hoá học, tách kim loại, hợp kim, polymer  | Điện phân nhôm, luyện gang thép chi tiết, phi kim        |
+| 8    | KHTN 9: glucose, saccharose, tinh bột, cellulose, lipid, protein; hô hấp, quang hợp | Tráng bạc, phương trình thuỷ phân, xà phòng hoá, peptide |
+
+Còn thiếu so với chương trình THCS, đề xuất cho các Unit sau:
+
+- **Unit 9, Công thức và hoá trị** (KHTN 7): lớp electron và quy tắc khí hiếm, hoá trị, lập công thức, khối lượng nguyên tử và phân tử theo amu.
+- **Unit 10, Đếm bằng mol** (KHTN 8): mol, khối lượng mol, thể tích mol 24,79 L, tỉ khối, tính theo phương trình.
+- **Unit 11, Dung dịch và tách chất** (KHTN 6, 8): độ tan, nồng độ, huyền phù, nhũ tương, lọc, cô cạn, chiết.
+- **Unit 12, Nhiên liệu và hợp chất hữu cơ** (KHTN 9): alkane, alkene, dầu mỏ, ethylic alcohol, acetic acid.
+- Rải rác: oxygen và không khí (KHTN 6), phân bón (KHTN 8), phi kim, khai thác tài nguyên (KHTN 9).
+
+Việc cần chủ dự án quyết định hoặc làm tiếp:
+
+- Unit 5–8 **chưa qua lượt soát độc lập** như Unit 1–4. Nên soát trước khi cho học sinh thật dùng.
+- Phân tử lớn (glucose 24 nguyên tử) vẽ chật trong khung hiện tại. Saccharose chưa có hình phân tử.
+- Hình phóng to chưa vẽ được dung dịch có ion, nên cốc acid vẫn hiện phân tử HCl nguyên vẹn.
+- Bảng tuần hoàn có nhóm "Á kim" mà sách chỉ chia kim loại, phi kim, khí hiếm.
+- Trình đọc màn hình đọc tên phân tử ở các lựa chọn chỉ có hình, làm lộ đáp án.
+- Unit 5 có 7 bài học, Bài 4 của Unit 4 có 12 câu: dài hơn mức 5–8 phút.
 
 ### Tiếp theo: Giai đoạn 2
 

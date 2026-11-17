@@ -185,7 +185,7 @@ export const unit08: UnitInput = {
           conceptIds: ['respiration', 'state-change'],
         },
       ],
-      unlocksMolecules: ['c6h12o6'],
+      unlocksMolecules: [],
       baseXp: 10,
     },
 
