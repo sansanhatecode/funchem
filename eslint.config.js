@@ -5,6 +5,7 @@ export default tseslint.config(
   {
     ignores: [
       '**/dist/**',
+      '.claude/**',
       '**/.next/**',
       '**/.next-e2e/**',
       '**/.next-art/**',
