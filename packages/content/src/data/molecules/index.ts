@@ -228,7 +228,7 @@ export const molecules: MoleculeInput[] = [
       },
     ],
     funFact: 'Helium là nguyên tố nhiều thứ hai trong vũ trụ, chỉ sau hydrogen.',
-    conceptIds: ['atom', 'element', 'nonmetal', 'atomic-number'],
+    conceptIds: ['atom', 'element', 'atomic-number'],
   },
   {
     id: 'c',
@@ -271,7 +271,7 @@ export const molecules: MoleculeInput[] = [
         description: 'Người Việt cổ đã đúc trống từ đồng pha thiếc cách đây hơn 2.000 năm.',
       },
     ],
-    funFact: 'Ký hiệu Cu đến từ "cuprum", tên Latinh của đồng.',
+    funFact: 'Kí hiệu Cu đến từ "cuprum", tên Latin của đồng.',
     conceptIds: ['element', 'metal', 'chemical-symbol'],
   },
   {

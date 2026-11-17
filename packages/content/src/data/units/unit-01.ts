@@ -1,8 +1,8 @@
 import type { UnitInput } from '../../schema/lesson.js'
 
 /**
- * Unit 1 — Mọi thứ được làm từ gì?
- * 5 bài học + checkpoint: nguyên tử, nguyên tố, ký hiệu, bảng tuần hoàn, bên trong nguyên tử.
+ * Unit 1: Mọi thứ được làm từ gì?
+ * 5 bài học + checkpoint: nguyên tử, nguyên tố, kí hiệu, bảng tuần hoàn, bên trong nguyên tử.
  */
 export const unit01: UnitInput = {
   id: 'u1-building-blocks',
@@ -20,7 +20,8 @@ export const unit01: UnitInput = {
         story: [
           'Cầm một cây đinh sắt. Tưởng tượng bạn chia đôi nó, rồi lại chia đôi, cứ thế mãi.',
           'Đến một lúc, bạn chỉ còn một hạt bé xíu, không thể chia nhỏ hơn mà vẫn là sắt. Hạt đó gọi là nguyên tử.',
-          'Cây đinh, ly nước, không khí và cả cơ thể bạn đều xếp từ những hạt bé xíu như vậy.',
+          'Nguyên tử nhỏ tới mức mắt thường và cả kính hiển vi ở trường đều không thấy được. Vì thế trong hình vẽ, mỗi nguyên tử được vẽ thành một quả bóng nhỏ cho dễ hình dung.',
+          'Không chỉ cây đinh. Ly nước, không khí và cả cơ thể bạn đều xếp từ những hạt bé xíu như vậy.',
         ],
         visual: { type: 'molecule', moleculeId: 'fe' },
       },
@@ -36,7 +37,7 @@ export const unit01: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Nguyên tử là những viên gạch nhỏ xíu xếp nên mọi vật. Tế bào lớn hơn rất nhiều và chính nó cũng được xếp từ nguyên tử.',
+            'Đó là nguyên tử, viên gạch nhỏ xíu xếp nên mọi vật. Tế bào chỉ có ở sinh vật, và chính nó cũng xếp từ vô số nguyên tử. Hạt bụi tuy bé nhưng vẫn chia nhỏ tiếp được.',
           conceptIds: ['atom'],
         },
         {
@@ -45,7 +46,7 @@ export const unit01: UnitInput = {
           prompt: 'Cơ thể bạn cũng được tạo nên từ nguyên tử.',
           answer: true,
           explanation:
-            'Đúng. Da, xương, máu đều xếp từ nguyên tử, nhiều nhất là oxygen, carbon, hydrogen và nitrogen.',
+            'Đúng. Da, xương, máu, tóc của bạn đều xếp từ nguyên tử, giống như cây đinh hay ly nước. Vật sống và vật không sống đều làm từ nguyên tử, còn bản thân nguyên tử thì không phải là vật sống.',
           conceptIds: ['atom'],
         },
         {
@@ -60,13 +61,14 @@ export const unit01: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Có 3 quả bóng, 1 đỏ và 2 trắng, tức là 3 nguyên tử. Chúng dính vào nhau thành một hạt nước tí hon, bạn sẽ gặp lại nó ở Unit 2.',
+            'Có 3 quả bóng, 1 đỏ và 2 trắng, tức là 3 nguyên tử. Màu chỉ là quy ước để dễ phân biệt, nguyên tử thật không có màu. Ba nguyên tử này dính vào nhau thành một hạt nước tí hon, bạn sẽ gặp lại nó ở Unit 2.',
           conceptIds: ['atom'],
         },
         {
           id: 'u1-l1-e4',
           type: 'match-pairs',
-          prompt: 'Mỗi vật dưới đây xếp chủ yếu từ loại nguyên tử nào?',
+          prompt:
+            'Nguyên tử có nhiều loại. Trong hoá học, sắt có tên quốc tế là iron, vàng là gold, đồng là copper. Mỗi vật dưới đây xếp chủ yếu từ loại nguyên tử nào?',
           pairs: [
             {
               left: { id: 'l1', text: 'Cây đinh', image: 'iron-nail' },
@@ -86,22 +88,23 @@ export const unit01: UnitInput = {
             },
           ],
           explanation:
-            'Nguyên tử không chỉ có một loại. Iron (sắt), gold (vàng), copper (đồng), carbon là những loại nguyên tử khác nhau, bài sau bạn sẽ gọi tên chúng.',
+            'Cây đinh xếp chủ yếu từ nguyên tử iron (sắt), nhẫn vàng từ nguyên tử gold (vàng), lõi dây điện từ nguyên tử copper (đồng). Còn cục than xếp chủ yếu từ nguyên tử carbon. Bài sau bạn sẽ tìm hiểu kĩ hơn về các loại nguyên tử này.',
           conceptIds: ['atom', 'element'],
         },
         {
           id: 'u1-l1-e5',
           type: 'true-false',
-          prompt: 'Nguyên tử to cỡ hạt cát, nhìn kỹ bằng mắt thường là thấy.',
+          prompt: 'Nguyên tử to cỡ hạt cát, nhìn kĩ bằng mắt thường là thấy.',
           answer: false,
           explanation:
-            'Nguyên tử nhỏ đến mức mắt thường và cả kính hiển vi thông thường đều không thấy được. Bề ngang một sợi tóc xếp vừa hàng trăm nghìn nguyên tử.',
+            'Nguyên tử nhỏ hơn hạt cát rất nhiều. Mắt thường và cả kính hiển vi ở trường đều không thấy được nó. Bề ngang một sợi tóc đã xếp vừa hàng trăm nghìn nguyên tử.',
           conceptIds: ['atom'],
         },
         {
           id: 'u1-l1-e6',
           type: 'sort',
-          prompt: 'Thứ nào được tạo nên từ nguyên tử?',
+          prompt:
+            'Thứ gì cân được và chiếm chỗ thì đều làm từ nguyên tử. Bạn thử xếp các thứ sau vào đúng nhóm.',
           groups: [
             { id: 'matter', label: 'Làm từ nguyên tử' },
             { id: 'not', label: 'Không làm từ nguyên tử' },
@@ -114,36 +117,37 @@ export const unit01: UnitInput = {
             { id: 'i5', text: 'Tiếng nhạc', groupId: 'not' },
           ],
           explanation:
-            'Thứ gì cân được hay chứa được trong bình đều làm từ nguyên tử, kể cả không khí. Ánh nắng là năng lượng, còn âm thanh là sự rung động truyền đi, chúng không phải là vật chất.',
+            'Ly nước, không khí, chiếc điện thoại đều cân được và chiếm chỗ, nên đều làm từ nguyên tử. Không khí nhẹ nhưng vẫn cân được: quả bóng đá bơm căng nặng hơn lúc còn xẹp. Ánh nắng và tiếng nhạc thì không cân được, cũng không chứa được trong bình. Ánh nắng là năng lượng, còn tiếng nhạc là sự rung động truyền đi trong không khí.',
           conceptIds: ['atom'],
         },
         {
           id: 'u1-l1-e7',
           type: 'order-steps',
-          prompt: 'Sắp xếp từ nhỏ đến lớn',
+          prompt: 'Sắp xếp các thứ sau từ nhỏ đến lớn',
           steps: [
             { id: 's1', text: 'Một nguyên tử iron (sắt)' },
-            { id: 's2', text: 'Một hạt mạt sắt' },
+            { id: 's2', text: 'Một hạt mạt sắt (vụn sắt rơi ra khi giũa)' },
             { id: 's3', text: 'Một cây đinh' },
             { id: 's4', text: 'Cầu Long Biên' },
           ],
           explanation:
-            'Một hạt mạt sắt bé tí đã chứa hàng tỉ tỉ nguyên tử iron (sắt). Càng nhiều nguyên tử xếp lại, vật càng lớn.',
+            'Một hạt mạt sắt bé tí đã chứa hàng tỉ tỉ nguyên tử iron (sắt). Càng nhiều nguyên tử xếp lại, vật càng lớn: từ hạt mạt sắt, tới cây đinh, tới cả một cây cầu thép.',
           conceptIds: ['atom'],
         },
         {
           id: 'u1-l1-e8',
           type: 'mcq',
           visual: { id: 'v', image: 'iron-nail' },
-          prompt: 'Một cây đinh sắt nhỏ chứa khoảng bao nhiêu nguyên tử iron (sắt)?',
+          prompt:
+            'Một hạt mạt sắt bé tí đã chứa hàng tỉ tỉ nguyên tử. Vậy một cây đinh sắt nhỏ chứa khoảng bao nhiêu nguyên tử iron (sắt)?',
           options: [
-            { id: 'a', text: 'Khoảng một trăm' },
-            { id: 'b', text: 'Khoảng một triệu' },
+            { id: 'a', text: 'Cỡ số người trong một sân vận động' },
+            { id: 'b', text: 'Cỡ số người trên cả Trái Đất' },
             { id: 'c', text: 'Nhiều hơn số hạt cát trên mọi bãi biển' },
           ],
           correctOptionId: 'c',
           explanation:
-            'Một cây đinh nhỏ chứa hàng chục nghìn tỉ tỉ nguyên tử iron (sắt), nhiều hơn hẳn số hạt cát trên mọi bãi biển cộng lại. Nguyên tử nhỏ đến mức khó tưởng tượng nổi.',
+            'Trái Đất có khoảng 8 tỉ người, vẫn còn quá ít so với "tỉ tỉ". Một cây đinh nhỏ chứa hàng chục nghìn tỉ tỉ nguyên tử iron (sắt), theo ước tính còn nhiều hơn số hạt cát trên mọi bãi biển cộng lại. Nguyên tử nhỏ đến mức khó tưởng tượng nổi.',
           conceptIds: ['atom'],
         },
         {
@@ -152,7 +156,8 @@ export const unit01: UnitInput = {
           prompt: 'Điền vào chỗ trống',
           template: 'Mọi vật quanh ta đều được xếp từ những hạt vô cùng nhỏ gọi là ___.',
           blanks: [{ accepted: ['nguyên tử'], wordBank: ['tế bào', 'nguyên tử', 'hạt cát'] }],
-          explanation: 'Nguyên tử là viên gạch xây nên mọi vật chất: rắn, lỏng hay khí.',
+          explanation:
+            'Nguyên tử là viên gạch xây nên mọi vật, dù vật đó ở thể rắn, lỏng hay khí. Tế bào thì chỉ có ở sinh vật, còn hạt cát vẫn to hơn nguyên tử rất nhiều.',
           conceptIds: ['atom'],
         },
         {
@@ -163,11 +168,11 @@ export const unit01: UnitInput = {
           options: [
             { id: 'a', text: 'Các mảnh không còn là sắt nữa' },
             { id: 'b', text: 'Được hai nguyên tử iron (sắt) nhỏ hơn' },
-            { id: 'c', text: 'Được hai cây đinh tí hon' },
+            { id: 'c', text: 'Được hai hạt mạt sắt tí hon' },
           ],
           correctOptionId: 'a',
           explanation:
-            'Nguyên tử vẫn có thể bị phá vỡ, nhưng các mảnh thu được không còn là sắt. Vì thế nguyên tử là hạt nhỏ nhất còn giữ được "chất sắt".',
+            'Nguyên tử vẫn có thể bị phá vỡ, nhưng các mảnh thu được không còn là sắt. Vì thế nguyên tử là hạt nhỏ nhất còn giữ được "chất sắt". Cuối Unit này bạn sẽ được nhìn vào bên trong nguyên tử.',
           conceptIds: ['atom'],
         },
       ],
@@ -182,9 +187,9 @@ export const unit01: UnitInput = {
       intro: {
         title: 'Hơn 100 loại gạch',
         story: [
-          'Một chiếc nhẫn vàng ta gần như chỉ gồm toàn nguyên tử gold (vàng). Lõi dây điện thì gồm toàn nguyên tử copper (đồng).',
-          'Mỗi loại nguyên tử như vậy là một nguyên tố, và có tên riêng. Vàng có tên quốc tế là gold, đồng là copper, sắt là iron, còn khí bạn thở là oxygen.',
-          'Con người mới biết khoảng 118 nguyên tố. Giống như vài chục chữ cái ghép thành mọi từ tiếng Việt, chừng ấy loại gạch ghép thành mọi thứ bạn thấy.',
+          'Một chiếc nhẫn vàng ta gần như chỉ gồm một loại nguyên tử: nguyên tử gold (vàng). Lõi dây điện thì gồm toàn nguyên tử copper (đồng), một loại khác hẳn.',
+          'Mỗi loại nguyên tử như vậy là một nguyên tố, và có tên riêng. Sách hoá học gọi nguyên tố bằng tên quốc tế: vàng là gold, đồng là copper, sắt là iron, còn oxi trong không khí là oxygen.',
+          'Đến nay con người đã tìm ra 118 nguyên tố. Giống như vài chục chữ cái ghép thành mọi từ tiếng Việt, chừng ấy loại gạch ghép thành mọi thứ bạn thấy.',
         ],
         visual: { type: 'molecule', moleculeId: 'au' },
       },
@@ -192,15 +197,15 @@ export const unit01: UnitInput = {
         {
           id: 'u1-l2-e1',
           type: 'mcq',
-          prompt: 'Nguyên tố là gì?',
+          prompt: 'Gold (vàng), copper (đồng), oxygen đều là nguyên tố. Vậy một nguyên tố là gì?',
           options: [
-            { id: 'a', text: 'Một vật rất nhỏ như hạt bụi' },
-            { id: 'b', text: 'Một vật làm bằng kim loại' },
+            { id: 'a', text: 'Một nguyên tử riêng lẻ' },
+            { id: 'b', text: 'Một đồ vật làm bằng kim loại' },
             { id: 'c', text: 'Một loại nguyên tử' },
           ],
           correctOptionId: 'c',
           explanation:
-            'Mỗi nguyên tố là một loại nguyên tử. Gold (vàng) là một nguyên tố, oxygen là một nguyên tố khác.',
+            'Mỗi nguyên tố là một loại nguyên tử. Chiếc nhẫn vàng ta chứa vô số nguyên tử, nhưng chúng cùng một loại nên chỉ thuộc một nguyên tố là gold (vàng). Nguyên tố cũng không phải lúc nào cũng là kim loại: oxygen có trong không khí bạn thở.',
           conceptIds: ['element'],
         },
         {
@@ -215,7 +220,7 @@ export const unit01: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Có 3 nguyên tử nhưng chỉ 2 loại: oxygen (đỏ) và hydrogen (trắng). Vậy hình này có 2 nguyên tố.',
+            'Có 3 nguyên tử nhưng chỉ 2 loại: oxygen (đỏ) và hydrogen (trắng). Vậy hình này có 2 nguyên tố. Con số 3 là số nguyên tử, không phải số nguyên tố.',
           conceptIds: ['element', 'atom'],
         },
         {
@@ -225,13 +230,14 @@ export const unit01: UnitInput = {
           visual: { id: 'v', moleculeId: 'o2' },
           answer: false,
           explanation:
-            'Hai nguyên tử trong hình cùng một loại, đều là oxygen. Có 2 nguyên tử nhưng chỉ có 1 nguyên tố.',
+            'Hai quả bóng cùng màu, tức là hai nguyên tử cùng một loại, đều là oxygen. Có 2 nguyên tử nhưng chỉ có 1 nguyên tố.',
           conceptIds: ['element', 'atom'],
         },
         {
           id: 'u1-l2-e4',
           type: 'sort',
-          prompt: 'Thứ nào là một nguyên tố?',
+          prompt:
+            'Một nguyên tố chỉ gồm một loại nguyên tử. Nước gồm hai loại nguyên tử, gỗ gồm ít nhất ba loại. Thứ nào dưới đây là một nguyên tố?',
           groups: [
             { id: 'element', label: 'Nguyên tố' },
             { id: 'not', label: 'Không phải nguyên tố' },
@@ -244,13 +250,13 @@ export const unit01: UnitInput = {
             { id: 'i5', text: 'Oxygen', groupId: 'element' },
           ],
           explanation:
-            'Gold (vàng), iron (sắt), oxygen mỗi thứ chỉ gồm một loại nguyên tử. Nước và gỗ do nhiều loại nguyên tử ghép lại nên không phải là nguyên tố.',
+            'Gold (vàng), iron (sắt), oxygen mỗi thứ chỉ gồm một loại nguyên tử nên là nguyên tố. Nước do hai loại nguyên tử là hydrogen và oxygen ghép lại. Gỗ do nhiều loại ghép lại, chủ yếu là carbon, hydrogen và oxygen. Vì thế nước và gỗ không phải là nguyên tố.',
           conceptIds: ['element'],
         },
         {
           id: 'u1-l2-e5',
           type: 'match-pairs',
-          prompt: 'Nối nguyên tố với nơi bạn gặp nó',
+          prompt: 'Nối mỗi nguyên tố với nơi bạn gặp nó',
           pairs: [
             {
               left: { id: 'l1', text: 'Oxygen' },
@@ -260,30 +266,34 @@ export const unit01: UnitInput = {
               left: { id: 'l2', text: 'Carbon' },
               right: { id: 'r2', text: 'Cục than, ruột bút chì' },
             },
-            { left: { id: 'l3', text: 'Calcium' }, right: { id: 'r3', text: 'Xương và răng' } },
+            {
+              left: { id: 'l3', text: 'Calcium (canxi)' },
+              right: { id: 'r3', text: 'Xương và răng' },
+            },
             {
               left: { id: 'l4', text: 'Aluminium (nhôm)' },
               right: { id: 'r4', text: 'Vỏ lon nước ngọt' },
             },
           ],
           explanation:
-            'Các nguyên tố không ở đâu xa: chúng có trong không khí, trong đồ dùng và ngay trong cơ thể bạn.',
+            'Oxygen có trong không khí bạn hít thở. Than và ruột bút chì gồm chủ yếu là carbon. Xương và răng chứa nhiều calcium (canxi). Vỏ lon làm bằng aluminium (nhôm) vì kim loại này rất nhẹ. Nguyên tố không ở đâu xa: chúng có ngay quanh bạn và trong cơ thể bạn.',
           conceptIds: ['element'],
         },
         {
           id: 'u1-l2-e6',
           type: 'fill-blank',
           prompt: 'Điền vào chỗ trống',
-          template: 'Đến nay con người biết khoảng ___ nguyên tố.',
+          template: 'Đến nay con người đã tìm ra ___ nguyên tố.',
           blanks: [{ accepted: ['118'], wordBank: ['18', '118', '1 triệu'] }],
           explanation:
-            'Chỉ khoảng 118 nguyên tố, trong đó chừng 90 loại có sẵn trong tự nhiên, số còn lại do con người tạo ra trong phòng thí nghiệm.',
+            'Con người mới tìm ra 118 nguyên tố. Khoảng 90 nguyên tố có sẵn trong tự nhiên, số còn lại do con người tạo ra trong phòng thí nghiệm.',
           conceptIds: ['element'],
         },
         {
           id: 'u1-l2-e7',
           type: 'mcq',
-          prompt: 'Chỉ có khoảng 118 nguyên tố, nhưng lại có hàng triệu chất khác nhau. Vì sao?',
+          prompt:
+            'Chỉ có 118 nguyên tố, nhưng quanh bạn lại có hàng triệu chất khác nhau như nước, đường, muối, nhựa. Vì sao?',
           options: [
             { id: 'a', text: 'Vì các nguyên tử ghép với nhau theo rất nhiều cách' },
             { id: 'b', text: 'Vì mỗi chất là một nguyên tố riêng' },
@@ -291,23 +301,24 @@ export const unit01: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Giống như vài chục chữ cái ghép thành vô số từ, các nguyên tố ghép với nhau thành hàng triệu chất khác nhau.',
+            'Giống như vài chục chữ cái ghép thành vô số từ, nguyên tử của các nguyên tố ghép với nhau theo rất nhiều cách, tạo thành hàng triệu chất. Nếu mỗi chất là một nguyên tố riêng thì phải có hàng triệu nguyên tố. Còn các nguyên tử quanh bạn thì hầu như không tự đổi sang loại khác.',
           conceptIds: ['element', 'atom'],
         },
         {
           id: 'u1-l2-e8',
           type: 'true-false',
           visual: { id: 'v', image: 'charcoal-pencil' },
-          prompt: 'Kim cương và ruột bút chì đều làm từ cùng một nguyên tố: carbon.',
+          prompt:
+            'Kim cương và than chì trong ruột bút chì trông khác hẳn nhau, nhưng đều chỉ gồm nguyên tử carbon. Vậy cả hai được tạo nên từ cùng một nguyên tố.',
           answer: true,
           explanation:
-            'Đúng. Cả hai đều chỉ gồm nguyên tử carbon, chỉ khác cách các nguyên tử xếp với nhau.',
+            'Đúng. Nguyên tố tính theo loại nguyên tử, không tính theo vẻ ngoài. Kim cương và than chì đều chỉ gồm nguyên tử carbon, chỉ khác cách các nguyên tử xếp với nhau.',
           conceptIds: ['element'],
         },
         {
           id: 'u1-l2-e9',
           type: 'mcq',
-          prompt: 'Hình nào chỉ gồm một nguyên tố?',
+          prompt: 'Mỗi màu là một loại nguyên tử. Hình nào chỉ gồm một nguyên tố?',
           options: [
             { id: 'a', moleculeId: 'co2' },
             { id: 'b', moleculeId: 'h2o' },
@@ -316,7 +327,7 @@ export const unit01: UnitInput = {
           ],
           correctOptionId: 'd',
           explanation:
-            'Hình có hai quả bóng trắng chỉ gồm một loại nguyên tử: hydrogen. Ba hình còn lại đều có hai loại nguyên tử khác màu.',
+            'Hình có hai quả bóng trắng chỉ gồm một loại nguyên tử là hydrogen, nên chỉ có một nguyên tố. Ba hình còn lại đều có hai màu, tức là hai nguyên tố.',
           conceptIds: ['element'],
         },
       ],
@@ -324,16 +335,16 @@ export const unit01: UnitInput = {
       baseXp: 10,
     },
 
-    // ───────────────────────── Bài 3: Ký hiệu hoá học ─────────────────────────
+    // ───────────────────────── Bài 3: Kí hiệu hoá học ─────────────────────────
     {
       id: 'u1-l3-symbols',
       title: 'Tên viết tắt của nguyên tố',
       intro: {
         title: 'Cu, Fe, Ca là gì?',
         story: [
-          'Trên cuộn dây điện hay hộp sữa, đôi khi bạn thấy những chữ như Cu, Fe, Ca. Đó là ký hiệu hoá học, tên viết tắt của nguyên tố.',
-          'Ký hiệu gồm một hoặc hai chữ cái, chữ đầu luôn viết hoa: O là oxygen, H là hydrogen, C là carbon.',
-          'Vài ký hiệu trông lạ vì lấy từ tên Latinh: copper (đồng) là Cu, từ "cuprum". Iron (sắt) là Fe, từ "ferrum". Gold (vàng) là Au, từ "aurum".',
+          'Trên cuộn dây điện hay hộp sữa, đôi khi bạn thấy những chữ như Cu, Fe, Ca. Đó là kí hiệu hoá học, tên viết tắt của nguyên tố.',
+          'Kí hiệu gồm một hoặc hai chữ cái lấy từ tên nguyên tố. Chữ đầu luôn viết hoa, chữ thứ hai nếu có thì viết thường: O là oxygen, H là hydrogen, C là carbon, Ca là calcium.',
+          'Vài kí hiệu trông lạ vì lấy từ tên Latin của nguyên tố: copper (đồng) là Cu, từ "cuprum". Iron (sắt) là Fe, từ "ferrum". Gold (vàng) là Au, từ "aurum".',
         ],
         visual: { type: 'molecule', moleculeId: 'cu' },
       },
@@ -341,7 +352,7 @@ export const unit01: UnitInput = {
         {
           id: 'u1-l3-e1',
           type: 'match-pairs',
-          prompt: 'Nối ký hiệu với tên nguyên tố',
+          prompt: 'Nối kí hiệu với tên nguyên tố',
           pairs: [
             { left: { id: 'l1', text: 'O' }, right: { id: 'r1', text: 'Oxygen' } },
             { left: { id: 'l2', text: 'H' }, right: { id: 'r2', text: 'Hydrogen' } },
@@ -349,13 +360,14 @@ export const unit01: UnitInput = {
             { left: { id: 'l4', text: 'N' }, right: { id: 'r4', text: 'Nitrogen' } },
           ],
           explanation:
-            'Nhiều ký hiệu chính là chữ cái đầu trong tên quốc tế của nguyên tố: Oxygen, Hydrogen, Carbon, Nitrogen.',
+            'Nhiều kí hiệu chính là chữ cái đầu trong tên quốc tế của nguyên tố: Oxygen, Hydrogen, Carbon, Nitrogen.',
           conceptIds: ['chemical-symbol'],
         },
         {
           id: 'u1-l3-e2',
           type: 'mcq',
-          prompt: 'Nguyên tử trong hình thuộc nguyên tố nào?',
+          prompt:
+            'Chữ trên quả bóng là kí hiệu hoá học của nguyên tử. Nguyên tử trong hình thuộc nguyên tố nào?',
           visual: { id: 'v', moleculeId: 'cu' },
           options: [
             { id: 'a', text: 'Calcium' },
@@ -364,13 +376,14 @@ export const unit01: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Cu là copper (đồng), viết tắt của tên Latinh "cuprum". Calcium là Ca, còn carbon là C.',
+            'Cu là copper (đồng), viết tắt của tên Latin "cuprum". Calcium có kí hiệu Ca, còn carbon chỉ có một chữ C.',
           conceptIds: ['chemical-symbol'],
         },
         {
           id: 'u1-l3-e3',
           type: 'mcq',
-          prompt: 'Cách viết nào đúng cho ký hiệu của sodium (natri)?',
+          prompt:
+            'Sodium (natri) là nguyên tố có trong muối ăn. Kí hiệu của nó viết thế nào mới đúng?',
           options: [
             { id: 'a', text: 'NA' },
             { id: 'b', text: 'Na' },
@@ -378,13 +391,15 @@ export const unit01: UnitInput = {
             { id: 'd', text: 'nA' },
           ],
           correctOptionId: 'b',
-          explanation: 'Chữ đầu luôn viết hoa, chữ thứ hai (nếu có) viết thường: Na, Fe, Cu, Au.',
+          explanation:
+            'Chữ đầu luôn viết hoa, chữ thứ hai viết thường, nên phải viết là Na. Các kí hiệu hai chữ khác cũng vậy: Fe, Cu, Au.',
           conceptIds: ['chemical-symbol'],
         },
         {
           id: 'u1-l3-e4',
           type: 'match-pairs',
-          prompt: 'Những ký hiệu này đến từ tên Latinh. Nối với tên nguyên tố',
+          prompt:
+            'Những kí hiệu này đến từ tên Latin nên không giống tên quốc tế. Nối mỗi kí hiệu với nguyên tố của nó',
           pairs: [
             { left: { id: 'l1', text: 'Fe' }, right: { id: 'r1', text: 'Iron (sắt)' } },
             { left: { id: 'l2', text: 'Na' }, right: { id: 'r2', text: 'Sodium (natri)' } },
@@ -393,31 +408,32 @@ export const unit01: UnitInput = {
             { left: { id: 'l5', text: 'Ag' }, right: { id: 'r5', text: 'Silver (bạc)' } },
           ],
           explanation:
-            'Tên Latinh của chúng là ferrum, natrium, kalium, aurum và argentum. Tên quen gọi natri và kali trong tiếng Việt cũng bắt nguồn từ đó.',
+            'Tên Latin của chúng là ferrum, natrium, kalium, aurum và argentum. Tên quen gọi natri và kali trong tiếng Việt cũng bắt nguồn từ đó.',
           conceptIds: ['chemical-symbol'],
         },
         {
           id: 'u1-l3-e5',
           type: 'fill-blank',
           prompt: 'Điền vào chỗ trống',
-          template: 'Ký hiệu hoá học của gold (vàng) là ___.',
+          template: 'Kí hiệu hoá học của gold (vàng) là ___.',
           blanks: [{ accepted: ['Au'], wordBank: ['Ag', 'Va', 'Au', 'V'] }],
           explanation:
-            'Gold (vàng) là Au, từ "aurum". Ag là silver (bạc), còn V là một kim loại khác tên vanadium.',
+            'Gold (vàng) là Au, từ tên Latin "aurum". Kí hiệu không lấy từ tên tiếng Việt nên không phải là Va hay V. Ag là silver (bạc), còn V là một kim loại khác tên vanadium.',
           conceptIds: ['chemical-symbol'],
         },
         {
           id: 'u1-l3-e6',
           type: 'true-false',
-          prompt: 'Ký hiệu hoá học của iron (sắt) là S.',
+          prompt: 'Kí hiệu hoá học của iron (sắt) là S.',
           answer: false,
-          explanation: 'S là sulfur (lưu huỳnh). Iron (sắt) có ký hiệu Fe, từ tên Latinh "ferrum".',
+          explanation:
+            'Kí hiệu không lấy từ chữ đầu của tên tiếng Việt. Iron (sắt) có kí hiệu Fe, từ tên Latin "ferrum". Còn S là kí hiệu của sulfur (lưu huỳnh).',
           conceptIds: ['chemical-symbol'],
         },
         {
           id: 'u1-l3-e7',
           type: 'sort',
-          prompt: 'Ký hiệu nào viết đúng quy tắc?',
+          prompt: 'Kí hiệu nào viết đúng quy tắc: chữ đầu viết hoa, chữ sau viết thường?',
           groups: [
             { id: 'right', label: 'Viết đúng' },
             { id: 'wrong', label: 'Viết sai' },
@@ -431,7 +447,7 @@ export const unit01: UnitInput = {
             { id: 'i6', text: 'hE', groupId: 'wrong' },
           ],
           explanation:
-            'Ký hiệu đúng có chữ đầu viết hoa, chữ sau viết thường. Vì vậy phải viết Cu, Au, He.',
+            'Kí hiệu đúng có chữ đầu viết hoa, chữ sau viết thường. Vì vậy phải viết Cu, Au, He. Viết đúng hoa thường rất quan trọng: Co là nguyên tố cobalt, còn CO lại là hai nguyên tố C và O đứng cạnh nhau.',
           conceptIds: ['chemical-symbol'],
         },
         {
@@ -439,13 +455,13 @@ export const unit01: UnitInput = {
           type: 'mcq',
           prompt: 'Trên hộp sữa ghi "giàu Ca". Sữa đó giàu nguyên tố gì?',
           options: [
-            { id: 'a', text: 'Calcium' },
+            { id: 'a', text: 'Calcium (canxi)' },
             { id: 'b', text: 'Carbon' },
             { id: 'c', text: 'Copper (đồng)' },
           ],
           correctOptionId: 'a',
           explanation:
-            'Ca là calcium, nguyên tố giúp xương và răng chắc khoẻ. Carbon là C, copper (đồng) là Cu.',
+            'Ca là calcium (canxi), nguyên tố có nhiều trong xương và răng. Carbon là C, còn copper (đồng) là Cu.',
           conceptIds: ['chemical-symbol', 'element'],
         },
         {
@@ -465,14 +481,14 @@ export const unit01: UnitInput = {
         {
           id: 'u1-l3-e10',
           type: 'fill-blank',
-          prompt: 'Chọn ký hiệu đúng cho từng chỗ trống',
-          template: 'Nước được tạo nên từ hydrogen (ký hiệu ___) và oxygen (ký hiệu ___).',
+          prompt: 'Chọn kí hiệu đúng cho từng chỗ trống',
+          template: 'Nước được tạo nên từ hydrogen (kí hiệu ___) và oxygen (kí hiệu ___).',
           blanks: [
             { accepted: ['H'], wordBank: ['Hy', 'H', 'He'] },
             { accepted: ['O'], wordBank: ['O', 'Ox', 'Os'] },
           ],
           explanation:
-            'Hydrogen là H, oxygen là O. Còn He là helium, một nguyên tố khác hẳn hydrogen.',
+            'Hydrogen là H, oxygen là O, đều lấy chữ cái đầu của tên. He là helium, còn Os là osmium, những nguyên tố khác hẳn.',
           conceptIds: ['chemical-symbol'],
         },
       ],
@@ -487,51 +503,54 @@ export const unit01: UnitInput = {
       intro: {
         title: 'Bản đồ của mọi nguyên tố',
         story: [
-          'Phòng học hoá nào cũng treo một tấm bảng đầy ô vuông. Đó là bảng tuần hoàn, tấm bản đồ xếp tất cả các nguyên tố.',
-          'Mỗi ô là một nguyên tố, đánh số lần lượt: hydrogen số 1, helium số 2... Carbon trong cục than nằm ở ô số 6.',
-          'Kim loại như sắt, đồng, vàng chiếm phần lớn tấm bảng, ở bên trái và ở giữa. Phi kim như carbon, nitrogen, oxygen tụ lại ở góc trên bên phải.',
+          'Trong phòng học hoá thường treo một tấm bảng đầy ô vuông. Đó là bảng tuần hoàn, tấm bản đồ xếp chỗ cho tất cả các nguyên tố.',
+          'Mỗi ô là một nguyên tố, đánh số lần lượt từ trái sang phải, hết hàng trên thì xuống hàng dưới. Hydrogen ở ô số 1, helium ô số 2, carbon trong cục than ô số 6, oxygen ô số 8.',
+          'Phần lớn tấm bảng, ở bên trái và ở giữa, là kim loại như sắt, đồng, vàng: sáng bóng, dẫn điện và dẫn nhiệt tốt. Góc trên bên phải là phi kim như carbon, nitrogen, oxygen: thường không sáng bóng và dẫn điện kém.',
+          'Cột ngoài cùng bên phải là các khí hiếm như helium, neon. Nguyên tử của chúng hầu như không ghép với nguyên tử nào khác. Bạn phóng to tấm bảng rồi chạm vào từng nguyên tố để xem mình gặp nó ở đâu nhé.',
         ],
         visual: {
           type: 'periodic-table',
           scene: 'classroom',
-          highlight: ['H', 'He', 'C', 'N', 'O', 'Fe', 'Cu', 'Au'],
+          highlight: ['H', 'He', 'C', 'N', 'O', 'Ne', 'Cl', 'K', 'Ca', 'Fe', 'Cu', 'Au'],
         },
       },
       exercises: [
         {
           id: 'u1-l4-e1',
           type: 'mcq',
-          prompt: 'Trong bảng tuần hoàn, các nguyên tố được xếp theo thứ tự nào?',
+          prompt: 'Các ô trong bảng tuần hoàn được đánh số như thế nào?',
           options: [
-            { id: 'a', text: 'Theo bảng chữ cái' },
-            { id: 'b', text: 'Theo số thứ tự tăng dần, bắt đầu từ hydrogen số 1' },
-            { id: 'c', text: 'Theo năm được tìm ra' },
+            { id: 'a', text: 'Theo thứ tự chữ cái của tên nguyên tố' },
+            { id: 'b', text: 'Lần lượt 1, 2, 3... bắt đầu từ hydrogen' },
+            { id: 'c', text: 'Theo năm nguyên tố được tìm ra' },
           ],
           correctOptionId: 'b',
           explanation:
-            'Mỗi nguyên tố có một số thứ tự riêng, gọi là số hiệu nguyên tử. Bài sau bạn sẽ biết con số này đến từ đâu.',
+            'Các ô được đánh số lần lượt, bắt đầu từ hydrogen ở ô số 1. Con số của mỗi ô gọi là số hiệu nguyên tử, mỗi nguyên tố có một số riêng. Bài sau bạn sẽ biết con số này đến từ đâu.',
           conceptIds: ['periodic-table', 'atomic-number'],
         },
         {
           id: 'u1-l4-e2',
           type: 'order-steps',
-          prompt: 'Sắp xếp theo thứ tự trong bảng tuần hoàn, bắt đầu từ ô số 1',
+          prompt: 'Sắp xếp bốn nguyên tố theo số ô trong bảng tuần hoàn, từ nhỏ đến lớn',
           steps: [
             { id: 's1', text: 'Hydrogen (H)' },
             { id: 's2', text: 'Helium (He)' },
             { id: 's3', text: 'Carbon (C)' },
             { id: 's4', text: 'Oxygen (O)' },
           ],
-          explanation: 'Hydrogen ở ô số 1, helium số 2, carbon số 6 và oxygen số 8.',
+          explanation: 'Hydrogen ở ô số 1, helium ô số 2, carbon ô số 6 và oxygen ô số 8.',
           conceptIds: ['periodic-table', 'atomic-number'],
         },
         {
           id: 'u1-l4-e3',
           type: 'sort',
-          prompt: 'Kim loại hay phi kim?',
+          prompt:
+            'Chữ trên mỗi quả bóng là kí hiệu của nguyên tố. Nguyên tố đó là kim loại, phi kim hay khí hiếm?',
           groups: [
             { id: 'metal', label: 'Kim loại' },
             { id: 'nonmetal', label: 'Phi kim' },
+            { id: 'noble', label: 'Khí hiếm' },
           ],
           items: [
             { id: 'i1', moleculeId: 'fe', groupId: 'metal' },
@@ -539,29 +558,31 @@ export const unit01: UnitInput = {
             { id: 'i3', moleculeId: 'cu', groupId: 'metal' },
             { id: 'i4', moleculeId: 'o2', groupId: 'nonmetal' },
             { id: 'i5', moleculeId: 'au', groupId: 'metal' },
+            { id: 'i6', moleculeId: 'he', groupId: 'noble' },
           ],
           explanation:
-            'Iron (sắt), copper (đồng), gold (vàng) là kim loại: sáng bóng, dẫn điện và dẫn nhiệt tốt. Carbon và oxygen là phi kim.',
+            'Iron (sắt), copper (đồng), gold (vàng) là kim loại: sáng bóng, dẫn điện và dẫn nhiệt tốt. Carbon và oxygen là phi kim, ở góc trên bên phải của bảng. Helium là khí hiếm, ở cột ngoài cùng bên phải.',
           conceptIds: ['metal', 'nonmetal'],
         },
         {
           id: 'u1-l4-e4',
           type: 'mcq',
-          prompt: 'Đặc điểm nào thường gặp ở kim loại?',
+          prompt: 'Sắt, đồng, vàng đều là kim loại. Kim loại thường có đặc điểm nào?',
           options: [
             { id: 'a', text: 'Trong suốt như thuỷ tinh' },
-            { id: 'b', text: 'Luôn ở dạng khí' },
+            { id: 'b', text: 'Xỉn màu và dẫn điện kém' },
             { id: 'c', text: 'Sáng bóng và dẫn điện tốt' },
           ],
           correctOptionId: 'c',
           explanation:
-            'Kim loại sáng bóng, dẫn điện và dẫn nhiệt tốt. Vì thế dây điện làm bằng đồng, còn nồi chảo làm bằng nhôm hay gang.',
+            'Kim loại sáng bóng, dẫn điện và dẫn nhiệt tốt. Vì thế dây điện làm bằng đồng, còn nồi chảo làm bằng nhôm hay gang. Dẫn điện kém là đặc điểm thường gặp ở phi kim.',
           conceptIds: ['metal'],
         },
         {
           id: 'u1-l4-e5',
           type: 'match-pairs',
-          prompt: 'Nối nguyên tố với nơi bạn gặp nó',
+          prompt:
+            'Nối mỗi nguyên tố với nơi bạn gặp nó. Chưa chắc cặp nào thì bạn nối các cặp đã biết trước rồi loại trừ dần.',
           pairs: [
             {
               left: { id: 'l1', text: 'Helium (He)' },
@@ -572,8 +593,8 @@ export const unit01: UnitInput = {
               right: { id: 'r2', text: 'Biển hiệu phát sáng đỏ cam' },
             },
             {
-              left: { id: 'l3', text: 'Silicon (Si)' },
-              right: { id: 'r3', text: 'Cát và chip điện thoại' },
+              left: { id: 'l3', text: 'Calcium (Ca)' },
+              right: { id: 'r3', text: 'Xương, răng, vỏ trứng' },
             },
             {
               left: { id: 'l4', text: 'Chlorine (Cl)' },
@@ -585,7 +606,7 @@ export const unit01: UnitInput = {
             },
           ],
           explanation:
-            'Cả năm đều nằm trong 20 ô đầu tiên của bảng tuần hoàn. Bạn gặp chúng mỗi ngày, từ quả chuối đến chiếc điện thoại.',
+            'Helium dùng để bơm bóng bay, neon phát sáng đỏ cam trong biển hiệu. Calcium có trong xương, răng và vỏ trứng. Chlorine có trong chất khử trùng nước hồ bơi, còn potassium (kali) có nhiều trong chuối. Cả năm đều nằm trong 20 ô đầu tiên của bảng tuần hoàn.',
           conceptIds: ['periodic-table', 'element'],
         },
         {
@@ -593,23 +614,41 @@ export const unit01: UnitInput = {
           type: 'true-false',
           prompt: 'Phần lớn các nguyên tố trong bảng tuần hoàn là kim loại.',
           answer: true,
-          explanation: 'Đúng. Hơn ba phần tư số nguyên tố là kim loại.',
+          explanation:
+            'Đúng. Trong 118 nguyên tố có hơn 90 nguyên tố là kim loại, tức là hơn ba phần tư.',
           conceptIds: ['periodic-table', 'metal'],
         },
         {
           id: 'u1-l4-e7',
           type: 'fill-blank',
           prompt: 'Điền vào chỗ trống',
-          template: 'Carbon ở ô số 6, nitrogen ở ô số 7. Ô kế tiếp, số ___, là của oxygen.',
-          blanks: [{ accepted: ['8', 'tám'], wordBank: ['5', '8', '9'] }],
+          template:
+            'Carbon ở ô số 6, oxygen ở ô số 8. Nitrogen nằm giữa hai nguyên tố này, ở ô số ___.',
+          blanks: [{ accepted: ['7', 'bảy'], wordBank: ['5', '7', '9'] }],
           explanation:
-            'Các ô được đánh số liên tiếp. Carbon 6, nitrogen 7, oxygen 8 là ba hàng xóm đứng cạnh nhau.',
+            'Các ô được đánh số liên tiếp, không bỏ số nào. Carbon 6, nitrogen 7, oxygen 8 là ba hàng xóm đứng cạnh nhau.',
           conceptIds: ['periodic-table', 'atomic-number'],
+        },
+        {
+          id: 'u1-l4-e11',
+          type: 'fill-blank',
+          prompt:
+            'Trong bảng tuần hoàn, mỗi hàng ngang gọi là một chu kì, mỗi cột dọc gọi là một nhóm. Chọn từ đúng cho từng chỗ trống',
+          template:
+            'Carbon, nitrogen, oxygen đứng cạnh nhau trên một hàng ngang nên thuộc cùng một ___. Helium và neon nằm chung một cột dọc nên thuộc cùng một ___.',
+          blanks: [
+            { accepted: ['chu kì', 'chu kỳ'], wordBank: ['nhóm', 'chu kì', 'ô'] },
+            { accepted: ['nhóm'], wordBank: ['nhóm', 'chu kì', 'ô'] },
+          ],
+          explanation:
+            'Hàng ngang là chu kì, cột dọc là nhóm. Các nguyên tố cùng một nhóm thường có tính chất giống nhau: helium và neon cùng nhóm, và đều là khí hiếm.',
+          conceptIds: ['periodic-table'],
         },
         {
           id: 'u1-l4-e8',
           type: 'mcq',
-          prompt: 'Nguyên tố này ở ô số 2, là một khí rất nhẹ dùng để bơm bóng bay. Tên nó là gì?',
+          prompt:
+            'Nguyên tố này ở ô số 2, là một khí hiếm rất nhẹ dùng để bơm bóng bay. Tên nó là gì?',
           visual: { id: 'v', moleculeId: 'he' },
           options: [
             { id: 'a', text: 'Helium' },
@@ -618,31 +657,32 @@ export const unit01: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'He là helium, ô số 2. Helium nhẹ hơn không khí và không cháy, nên an toàn để bơm bóng bay.',
+            'He là helium, ô số 2. Hydrogen ở ô số 1 có kí hiệu H, còn neon là Ne. Helium nhẹ hơn không khí và không cháy, nên an toàn để bơm bóng bay.',
           conceptIds: ['periodic-table', 'chemical-symbol'],
         },
         {
           id: 'u1-l4-e9',
           type: 'true-false',
-          prompt: 'Có kim loại ở dạng lỏng ngay ở nhiệt độ phòng.',
+          prompt:
+            'Mercury (thuỷ ngân) là chất lỏng trong nhiệt kế kiểu cũ. Nó sáng bóng như bạc và dẫn điện. Vậy thuỷ ngân là một kim loại.',
           answer: true,
           explanation:
-            'Đúng. Mercury (thuỷ ngân, Hg) là kim loại lỏng, từng được dùng trong nhiệt kế. Nó độc, nên nếu nhiệt kế vỡ thì đừng chạm tay vào.',
+            'Đúng. Sáng bóng và dẫn điện là dấu hiệu của kim loại, dù ở thể rắn hay thể lỏng. Mercury (thuỷ ngân, kí hiệu Hg) là kim loại duy nhất ở thể lỏng ngay ở nhiệt độ phòng. Nó độc, nên nếu nhiệt kế thuỷ ngân vỡ thì đừng chạm tay vào và báo ngay cho người lớn.',
           conceptIds: ['metal'],
         },
         {
           id: 'u1-l4-e10',
           type: 'mcq',
-          prompt: 'Nguyên tố nào sau đây là phi kim?',
+          prompt: 'Dựa vào vị trí trong bảng tuần hoàn, nguyên tố nào dưới đây là phi kim?',
           options: [
-            { id: 'a', text: 'Sodium (natri, Na)' },
-            { id: 'b', text: 'Zinc (kẽm, Zn)' },
-            { id: 'c', text: 'Calcium (Ca)' },
-            { id: 'd', text: 'Sulfur (lưu huỳnh, S)' },
+            { id: 'a', text: 'Sodium (natri, Na), cột ngoài cùng bên trái' },
+            { id: 'b', text: 'Zinc (kẽm, Zn), khoảng giữa bảng' },
+            { id: 'c', text: 'Calcium (Ca), cột thứ hai từ trái sang' },
+            { id: 'd', text: 'Sulfur (lưu huỳnh, S), góc trên bên phải' },
           ],
           correctOptionId: 'd',
           explanation:
-            'Sulfur (lưu huỳnh) là phi kim màu vàng. Bất ngờ chưa: sodium trong muối ăn và calcium trong xương đều là kim loại.',
+            'Phi kim tụ lại ở góc trên bên phải, nên sulfur (lưu huỳnh) là phi kim. Nó là chất rắn màu vàng, không sáng bóng. Bất ngờ chưa: sodium trong muối ăn và calcium trong xương đều là kim loại. Chỉ có hydrogen là ngoại lệ, đứng ở góc trên bên trái nhưng lại là phi kim.',
           conceptIds: ['metal', 'nonmetal'],
         },
       ],
@@ -657,9 +697,10 @@ export const unit01: UnitInput = {
       intro: {
         title: 'Nhìn vào bên trong',
         story: [
-          'Nguyên tử nhỏ xíu, nhưng bên trong nó còn có những hạt nhỏ hơn nữa.',
-          'Ở giữa là hạt nhân, gồm proton mang điện dương và neutron không mang điện. Chuyển động quanh hạt nhân là các electron mang điện âm, nhẹ hơn rất nhiều.',
-          'Số proton quyết định nguyên tử thuộc nguyên tố nào. Helium trong bóng bay luôn có đúng 2 proton, vì thế nó nằm ở ô số 2 của bảng tuần hoàn.',
+          'Quả bóng bay bay lên được vì chứa khí helium, nhẹ hơn không khí. Nguyên tử helium nhỏ xíu, nhưng bên trong nó còn có những hạt nhỏ hơn nữa.',
+          'Ở giữa là hạt nhân, gồm các proton mang điện dương và các neutron không mang điện. Chuyển động quanh hạt nhân là các electron mang điện âm, nhỏ và nhẹ hơn rất nhiều.',
+          'Nguyên tử có bao nhiêu proton thì có bấy nhiêu electron. Điện dương và điện âm bù trừ nhau nên cả nguyên tử không mang điện.',
+          'Số proton quyết định nguyên tử thuộc nguyên tố nào. Nguyên tử helium nào cũng có đúng 2 proton, vì thế helium nằm ở ô số 2 của bảng tuần hoàn.',
         ],
         visual: { type: 'atom', element: 'He', scene: 'balloons' },
       },
@@ -683,13 +724,13 @@ export const unit01: UnitInput = {
             },
           ],
           explanation:
-            'Proton (dương) và neutron (không mang điện) nằm chặt trong hạt nhân. Electron (âm) chuyển động ở vùng xung quanh.',
+            'Proton (mang điện dương) và neutron (không mang điện) nằm sát nhau trong hạt nhân. Electron (mang điện âm) chuyển động ở vùng xung quanh.',
           conceptIds: ['subatomic-particles'],
         },
         {
           id: 'u1-l5-e2',
           type: 'mcq',
-          prompt: 'Hạt nào chuyển động quanh hạt nhân?',
+          prompt: 'Trong nguyên tử, hạt nào chuyển động quanh hạt nhân?',
           options: [
             { id: 'a', text: 'Proton' },
             { id: 'b', text: 'Neutron' },
@@ -697,7 +738,7 @@ export const unit01: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Electron rất nhẹ và mang điện âm, bị hạt nhân mang điện dương hút nên luôn ở quanh hạt nhân.',
+            'Electron mang điện âm, bị hạt nhân mang điện dương hút nên luôn ở quanh hạt nhân. Proton và neutron thì nằm ngay trong hạt nhân. Hình electron chạy trên vòng tròn chỉ là mô hình để dễ hình dung.',
           conceptIds: ['subatomic-particles'],
         },
         {
@@ -705,10 +746,10 @@ export const unit01: UnitInput = {
           type: 'fill-blank',
           prompt: 'Điền vào chỗ trống',
           template:
-            'Số ô của một nguyên tố trong bảng tuần hoàn bằng số ___ trong nguyên tử của nó.',
+            'Số ô của một nguyên tố trong bảng tuần hoàn bằng số ___ trong mỗi nguyên tử của nó.',
           blanks: [{ accepted: ['proton'], wordBank: ['neutron', 'proton', 'hạt nhân'] }],
           explanation:
-            'Số ô, hay số hiệu nguyên tử, chính là số proton. Hydrogen có 1 proton nên ở ô số 1.',
+            'Số ô, còn gọi là số hiệu nguyên tử, chính là số proton. Hydrogen có 1 proton nên ở ô số 1, helium có 2 proton nên ở ô số 2. Số neutron thì không quyết định vị trí của nguyên tố.',
           conceptIds: ['atomic-number', 'subatomic-particles'],
         },
         {
@@ -722,22 +763,24 @@ export const unit01: UnitInput = {
             { id: 'c', text: '12' },
           ],
           correctOptionId: 'a',
-          explanation: 'Số hiệu nguyên tử chính là số proton. Carbon ở ô số 6 nên có 6 proton.',
+          explanation:
+            'Số ô chính là số proton. Carbon ở ô số 6 nên mỗi nguyên tử carbon có 6 proton.',
           conceptIds: ['atomic-number'],
         },
         {
           id: 'u1-l5-e5',
           type: 'true-false',
-          prompt: 'Một nguyên tử có 8 proton thì chắc chắn là oxygen.',
+          prompt: 'Oxygen ở ô số 8. Vậy một nguyên tử có 8 proton thì chắc chắn là oxygen.',
           answer: true,
           explanation:
-            'Đúng. Oxygen ở ô số 8. Nguyên tử nào có 8 proton cũng là oxygen, và chỉ oxygen mới có 8 proton.',
+            'Đúng. Nguyên tử nào có 8 proton cũng là oxygen, và chỉ oxygen mới có 8 proton. Các nguyên tử có cùng số proton thì thuộc cùng một nguyên tố.',
           conceptIds: ['atomic-number', 'element'],
         },
         {
           id: 'u1-l5-e6',
           type: 'sort',
-          prompt: 'Thay đổi nào biến nguyên tử thành một nguyên tố khác?',
+          prompt:
+            'Giả sử bạn thêm bớt được từng hạt trong một nguyên tử. Thay đổi nào biến nó thành nguyên tử của một nguyên tố khác?',
           groups: [
             { id: 'changed', label: 'Thành nguyên tố khác' },
             { id: 'same', label: 'Vẫn là nguyên tố cũ' },
@@ -750,13 +793,14 @@ export const unit01: UnitInput = {
             { id: 'i5', text: 'Thêm 1 neutron', groupId: 'same' },
           ],
           explanation:
-            'Chỉ số proton mới quyết định tên nguyên tố. Thêm bớt electron hay neutron thì nguyên tử vẫn thuộc nguyên tố cũ.',
+            'Chỉ số proton mới quyết định nguyên tử thuộc nguyên tố nào. Thêm hay bớt proton là đổi sang nguyên tố khác. Thêm bớt neutron thì nguyên tử vẫn thuộc nguyên tố cũ. Thêm bớt electron cũng vậy, nó chỉ làm nguyên tử mang điện, chuyện này bạn sẽ gặp lại ở Unit 2.',
           conceptIds: ['atomic-number', 'subatomic-particles'],
         },
         {
           id: 'u1-l5-e7',
           type: 'mcq',
-          prompt: 'Nguyên tử helium có 2 proton. Để trung hoà về điện, nó có mấy electron?',
+          prompt:
+            'Điện dương của một proton vừa đủ bù điện âm của một electron, và cả nguyên tử thì không mang điện. Nguyên tử helium có 2 proton. Vậy nó có mấy electron?',
           visual: { id: 'v', moleculeId: 'he' },
           options: [
             { id: 'a', text: '1' },
@@ -765,13 +809,13 @@ export const unit01: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Mỗi proton mang một điện tích dương, mỗi electron mang một điện tích âm. Nguyên tử có số electron bằng số proton nên trung hoà về điện.',
+            'Để điện dương và điện âm bù trừ hết cho nhau, số electron phải bằng số proton. Helium có 2 proton nên có 2 electron. Khi đó người ta nói nguyên tử trung hoà về điện.',
           conceptIds: ['subatomic-particles'],
         },
         {
           id: 'u1-l5-e8',
           type: 'order-steps',
-          prompt: 'Sắp xếp từ nhỏ đến lớn',
+          prompt: 'Sắp xếp các hạt sau từ nhỏ đến lớn',
           steps: [
             { id: 's1', text: 'Electron' },
             { id: 's2', text: 'Hạt nhân' },
@@ -779,7 +823,7 @@ export const unit01: UnitInput = {
             { id: 's4', text: 'Hạt cát' },
           ],
           explanation:
-            'Hạt nhân nhỏ hơn nguyên tử hàng chục nghìn lần. Nếu nguyên tử to bằng sân vận động Mỹ Đình thì hạt nhân chỉ như một hạt đậu đặt giữa sân.',
+            'Electron nhỏ hơn hạt nhân, hạt nhân nằm lọt trong nguyên tử, còn một hạt cát chứa vô số nguyên tử. Hạt nhân nhỏ hơn nguyên tử hàng chục nghìn lần: nếu nguyên tử to bằng sân vận động Mỹ Đình thì hạt nhân chỉ như một hạt đậu đặt giữa sân.',
           conceptIds: ['subatomic-particles', 'atom'],
         },
         {
@@ -788,20 +832,22 @@ export const unit01: UnitInput = {
           prompt: 'Nguyên tử gold (vàng) và nguyên tử iron (sắt) có cùng số proton.',
           answer: false,
           explanation:
-            'Iron (sắt) có 26 proton, gold (vàng) có 79 proton. Khác số proton nghĩa là khác nguyên tố.',
+            'Khác nguyên tố thì khác số proton. Iron (sắt) ở ô số 26 nên có 26 proton, gold (vàng) ở ô số 79 nên có 79 proton.',
           conceptIds: ['atomic-number', 'element'],
         },
         {
           id: 'u1-l5-e10',
           type: 'mcq',
-          prompt: 'Nguyên tử sodium có 11 proton. Sodium nằm ở ô số mấy trong bảng tuần hoàn?',
+          prompt:
+            'Nguyên tử sodium (natri) có 11 proton. Sodium nằm ở ô số mấy trong bảng tuần hoàn?',
           options: [
             { id: 'a', text: 'Ô số 1' },
             { id: 'b', text: 'Ô số 23' },
             { id: 'c', text: 'Ô số 11' },
           ],
           correctOptionId: 'c',
-          explanation: 'Số ô bằng số proton. Sodium có 11 proton nên nằm ở ô số 11.',
+          explanation:
+            'Số ô bằng số proton. Sodium (natri) có 11 proton nên nằm ở ô số 11. Bảng tuần hoàn xếp các nguyên tố theo số proton tăng dần.',
           conceptIds: ['atomic-number', 'periodic-table'],
         },
       ],
@@ -819,7 +865,7 @@ export const unit01: UnitInput = {
           id: 'u1-cp-e1',
           type: 'mcq',
           prompt:
-            'Một chiếc nhẫn vàng ta gần như chỉ gồm một loại nguyên tử. Mỗi loại nguyên tử được gọi là gì?',
+            'Tờ giấy bạc gói đồ ăn gần như chỉ gồm toàn nguyên tử aluminium (nhôm). Mỗi loại nguyên tử như vậy được gọi là gì?',
           options: [
             { id: 'a', text: 'Một nguyên tố' },
             { id: 'b', text: 'Một hạt nhân' },
@@ -827,13 +873,13 @@ export const unit01: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Mỗi loại nguyên tử là một nguyên tố. Gold (vàng) là một trong khoảng 118 nguyên tố đã biết.',
+            'Mỗi loại nguyên tử là một nguyên tố. Aluminium (nhôm) là một trong 118 nguyên tố đã biết. Hạt nhân và electron chỉ là những phần bên trong một nguyên tử.',
           conceptIds: ['element', 'atom'],
         },
         {
           id: 'u1-cp-e2',
           type: 'match-pairs',
-          prompt: 'Nối ký hiệu với tên nguyên tố',
+          prompt: 'Nối kí hiệu với tên nguyên tố',
           pairs: [
             { left: { id: 'l1', text: 'Na' }, right: { id: 'r1', text: 'Sodium (natri)' } },
             { left: { id: 'l2', text: 'Cu' }, right: { id: 'r2', text: 'Copper (đồng)' } },
@@ -842,23 +888,23 @@ export const unit01: UnitInput = {
             { left: { id: 'l5', text: 'C' }, right: { id: 'r5', text: 'Carbon' } },
           ],
           explanation:
-            'Na, Cu, Ag, K đến từ tên Latinh: natrium, cuprum, argentum, kalium. C là chữ đầu của "carbon".',
+            'Na, Cu, Ag, K đến từ tên Latin: natrium, cuprum, argentum, kalium. C là chữ đầu của "carbon".',
           conceptIds: ['chemical-symbol'],
         },
         {
           id: 'u1-cp-e3',
           type: 'mcq',
-          prompt: 'Hình nào là nguyên tử iron (sắt)?',
+          prompt:
+            'Đáy nồi, chảo thường làm bằng kim loại như aluminium (nhôm) để thức ăn nóng nhanh. Người ta dựa vào đặc điểm nào của kim loại?',
           options: [
-            { id: 'a', moleculeId: 'cu' },
-            { id: 'b', moleculeId: 'fe' },
-            { id: 'c', moleculeId: 'au' },
-            { id: 'd', moleculeId: 'he' },
+            { id: 'a', text: 'Kim loại sáng bóng' },
+            { id: 'b', text: 'Kim loại dẫn nhiệt tốt' },
+            { id: 'c', text: 'Kim loại chiếm phần lớn bảng tuần hoàn' },
           ],
           correctOptionId: 'b',
           explanation:
-            'Fe là iron (sắt), từ "ferrum". Cu là copper (đồng), Au là gold (vàng), He là helium.',
-          conceptIds: ['chemical-symbol'],
+            'Kim loại dẫn nhiệt tốt nên hơi nóng từ bếp truyền nhanh qua đáy nồi tới thức ăn. Kim loại cũng sáng bóng và chiếm phần lớn bảng tuần hoàn, nhưng hai điều đó không giúp nấu nhanh hơn.',
+          conceptIds: ['metal'],
         },
         {
           id: 'u1-cp-e4',
@@ -885,27 +931,30 @@ export const unit01: UnitInput = {
         {
           id: 'u1-cp-e6',
           type: 'sort',
-          prompt: 'Kim loại hay phi kim?',
+          prompt: 'Kim loại, phi kim hay khí hiếm?',
           groups: [
             { id: 'metal', label: 'Kim loại' },
             { id: 'nonmetal', label: 'Phi kim' },
+            { id: 'noble', label: 'Khí hiếm' },
           ],
           items: [
             { id: 'i1', text: 'Aluminium (nhôm, Al)', groupId: 'metal' },
             { id: 'i2', text: 'Oxygen (O)', groupId: 'nonmetal' },
             { id: 'i3', text: 'Silver (bạc, Ag)', groupId: 'metal' },
             { id: 'i4', text: 'Carbon (C)', groupId: 'nonmetal' },
-            { id: 'i5', text: 'Sodium (natri, Na)', groupId: 'metal' },
-            { id: 'i6', text: 'Sulfur (lưu huỳnh, S)', groupId: 'nonmetal' },
+            { id: 'i5', text: 'Helium (He)', groupId: 'noble' },
+            { id: 'i6', text: 'Neon (Ne)', groupId: 'noble' },
           ],
           explanation:
-            'Aluminium (nhôm), silver (bạc), sodium là kim loại. Oxygen, carbon, sulfur (lưu huỳnh) là phi kim, nằm ở góc trên bên phải bảng tuần hoàn.',
+            'Aluminium (nhôm) và silver (bạc) là kim loại. Oxygen và carbon là phi kim, nằm ở góc trên bên phải bảng tuần hoàn. Helium và neon là khí hiếm, nằm ở cột ngoài cùng bên phải.',
           conceptIds: ['metal', 'nonmetal'],
         },
         {
           id: 'u1-cp-e7',
           type: 'mcq',
-          prompt: 'Nitrogen nằm ở ô số 7. Một nguyên tử nitrogen có bao nhiêu proton?',
+          visual: { id: 'v', image: 'snack-bag' },
+          prompt:
+            'Gói bim bim phồng căng vì được bơm đầy khí nitrogen. Nitrogen nằm ở ô số 7 của bảng tuần hoàn. Một nguyên tử nitrogen có bao nhiêu proton?',
           options: [
             { id: 'a', text: '3' },
             { id: 'b', text: '14' },
@@ -913,13 +962,14 @@ export const unit01: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Số ô trong bảng tuần hoàn bằng số proton. Nitrogen ở ô số 7 nên có 7 proton.',
+            'Số ô trong bảng tuần hoàn bằng số proton. Nitrogen ở ô số 7 nên mỗi nguyên tử nitrogen có 7 proton.',
           conceptIds: ['atomic-number'],
         },
         {
           id: 'u1-cp-e8',
           type: 'order-steps',
-          prompt: 'Sắp xếp theo số proton, từ ít đến nhiều',
+          prompt:
+            'Trong bảng tuần hoàn, hydrogen ở ô số 1, carbon ô số 6, sodium (natri) ô số 11, iron (sắt) ô số 26, gold (vàng) ô số 79. Sắp xếp các nguyên tử theo số proton, từ ít đến nhiều',
           steps: [
             { id: 's1', text: 'Hydrogen (H)' },
             { id: 's2', text: 'Carbon (C)' },
@@ -934,7 +984,8 @@ export const unit01: UnitInput = {
         {
           id: 'u1-cp-e9',
           type: 'mcq',
-          prompt: 'Hình này có mấy nguyên tử và mấy nguyên tố?',
+          prompt:
+            'Mỗi quả bóng là một nguyên tử, mỗi màu là một loại nguyên tử. Hình này có mấy nguyên tử và mấy nguyên tố?',
           visual: { id: 'v', moleculeId: 'h2o' },
           options: [
             { id: 'a', text: '2 nguyên tử, 3 nguyên tố' },
@@ -949,10 +1000,10 @@ export const unit01: UnitInput = {
         {
           id: 'u1-cp-e10',
           type: 'true-false',
-          prompt: 'Ký hiệu hoá học của silver (bạc) là Ba.',
+          prompt: 'Kí hiệu hoá học của silver (bạc) là Ba.',
           answer: false,
           explanation:
-            'Silver (bạc) là Ag, từ tên Latinh "argentum". Ba là ký hiệu của barium, một nguyên tố khác.',
+            'Kí hiệu không lấy từ tên tiếng Việt. Silver (bạc) là Ag, từ tên Latin "argentum". Ba là kí hiệu của barium, một nguyên tố khác.',
           conceptIds: ['chemical-symbol'],
         },
         {
@@ -966,7 +1017,7 @@ export const unit01: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Số proton quyết định tên nguyên tố: 1 proton là hydrogen, 6 proton là carbon, 79 proton là gold (vàng).',
+            'Số proton quyết định tên nguyên tố: 1 proton là hydrogen, 6 proton là carbon, 79 proton là gold (vàng). Thêm bớt electron hay neutron thì nguyên tử vẫn thuộc nguyên tố cũ.',
           conceptIds: ['atomic-number', 'subatomic-particles'],
         },
         {
@@ -996,7 +1047,7 @@ export const unit01: UnitInput = {
             },
           ],
           explanation:
-            'Fe là iron (sắt), Cu là copper (đồng), He là helium, C là carbon, Au là gold (vàng). Biết ký hiệu là bạn đọc được thành phần của rất nhiều thứ quanh mình.',
+            'Fe là iron (sắt), Cu là copper (đồng), He là helium, C là carbon, Au là gold (vàng). Biết kí hiệu là bạn đọc được thành phần của rất nhiều thứ quanh mình.',
           conceptIds: ['chemical-symbol', 'element'],
         },
       ],
