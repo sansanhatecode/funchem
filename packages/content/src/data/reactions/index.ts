@@ -148,7 +148,7 @@ export const reactions: ReactionInput[] = [
       illustration: 'hydrogen-peroxide',
       title: 'Oxy già sủi bọt trên vết xước',
       description:
-        'Nhỏ oxy già lên vết xước, bạn thấy bọt trắng sủi lên. Một chất có sẵn trong máu và tế bào giúp hydrogen peroxide tách rất nhanh thành nước và khí oxygen. Bọt trắng đó chính là những bong bóng oxygen. Chất như vậy gọi là chất xúc tác: nó giúp phản ứng xảy ra nhanh hơn mà bản thân không bị dùng hết.',
+        'Hydrogen peroxide (oxy già) chạm vào vết xước là sủi bọt trắng. Một chất có sẵn trong máu và tế bào giúp nó tách rất nhanh thành nước và khí oxygen. Bọt trắng đó chính là những bong bóng oxygen. Chất giúp phản ứng xảy ra nhanh hơn, còn bản thân nó sau phản ứng vẫn nguyên như cũ, gọi là chất xúc tác.',
     },
     conceptIds: ['reaction', 'conservation-of-mass', 'reaction-signs', 'balancing'],
   },
@@ -169,7 +169,7 @@ export const reactions: ReactionInput[] = [
       illustration: 'vinegar-volcano',
       title: 'Núi lửa trong bếp',
       description:
-        'Đổ giấm vào baking soda, bọt trắng sủi lên ùn ùn như núi lửa phun. Acetic acid trong giấm phản ứng với baking soda, sinh ra khí carbon dioxide. Trong cốc còn lại nước và sodium acetate hoà tan.',
+        'Đổ giấm vào baking soda, bọt trắng sủi lên ùn ùn như núi lửa phun. Acetic acid trong giấm phản ứng với sodium hydrogencarbonate (baking soda), sinh ra khí carbon dioxide. Trong cốc còn lại nước và sodium acetate tan trong đó.',
     },
     conceptIds: ['reaction', 'reaction-signs', 'conservation-of-mass'],
   },

@@ -172,7 +172,7 @@ const coreScenes: Record<CoreSceneId, SceneDef> = {
   'vinegar-volcano': {
     Component: VinegarVolcanoScene,
     label:
-      'Mô hình núi lửa trên khay đang phun bọt trắng hồng chảy xuống sườn núi, bên cạnh là chai giấm và một thìa bột nở',
+      'Mô hình núi lửa trên khay đang phun bọt trắng hồng chảy xuống sườn núi, bên cạnh là chai giấm và một thìa baking soda',
     hotspot: { x: 152, y: 68 },
   },
   sparkler: {
@@ -195,7 +195,7 @@ const coreScenes: Record<CoreSceneId, SceneDef> = {
   'baking-cake': {
     Component: BakingCakeScene,
     label:
-      'Chiếc bánh bông lan vàng mới nướng đã cắt một miếng, lộ ruột bánh xốp đầy lỗ khí, bên cạnh là hộp và thìa bột nở',
+      'Chiếc bánh bông lan vàng mới nướng đã cắt một miếng, lộ ruột bánh xốp đầy lỗ khí, bên cạnh là hộp và thìa baking soda',
     hotspot: { x: 86, y: 178 },
   },
   'vinegar-bottle': {
