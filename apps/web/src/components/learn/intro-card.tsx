@@ -32,7 +32,9 @@ export function IntroCard({ intro }: { intro: IntroCardData }) {
           <MoleculeView molecule={molecule} size={200} animated showLabel />
         </div>
       )}
-      {reaction && <ReactionPlayer reaction={reaction} />}
+      {reaction && (
+        <ReactionPlayer reaction={reaction} scene={v.type === 'reaction' ? v.scene : undefined} />
+      )}
       {v.type === 'states' && content.molecules.get(v.moleculeId) && (
         <StatesLab molecule={content.molecules.get(v.moleculeId)!} scenes={v.scenes} />
       )}

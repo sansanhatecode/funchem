@@ -1,7 +1,14 @@
 'use client'
 
 import { layoutReaction, REACTION_STEPS } from '@funchem/chem-ui'
-import { content, elementLabel, ELEMENTS, equationText, type Reaction } from '@funchem/content'
+import {
+  content,
+  elementLabel,
+  ELEMENTS,
+  equationText,
+  type Reaction,
+  type SceneId,
+} from '@funchem/content'
 import { useEffect, useMemo, useState } from 'react'
 import { ZoomScene } from '@/components/scenes/zoom-scene'
 import { Button } from '@/components/ui/button'
@@ -19,6 +26,8 @@ export interface ReactionPlayerProps {
   reaction: Reaction
   /** hiện câu chuyện đời sống và dấu hiệu phản ứng bên dưới */
   showStory?: boolean
+  /** cảnh mở đầu thay cho cảnh trong câu chuyện của phản ứng */
+  scene?: SceneId | undefined
 }
 
 /**
@@ -28,9 +37,13 @@ export interface ReactionPlayerProps {
  * Mỗi nguyên tử là một phần tử duy nhất di chuyển từ vị trí cũ sang vị trí mới,
  * nên người học thấy tận mắt không nguyên tử nào mất đi hay sinh ra.
  */
-export function ReactionPlayer({ reaction, showStory = false }: ReactionPlayerProps) {
+export function ReactionPlayer({
+  reaction,
+  showStory = false,
+  scene: sceneOverride,
+}: ReactionPlayerProps) {
   const layout = useMemo(() => layoutReaction(reaction, content.molecules, STAGE), [reaction])
-  const scene = reaction.story.illustration
+  const scene = sceneOverride ?? reaction.story.illustration
   const [zoomed, setZoomed] = useState(!scene)
   const [step, setStep] = useState(0)
   const [playing, setPlaying] = useState(false)
