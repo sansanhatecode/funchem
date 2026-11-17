@@ -48,7 +48,7 @@ export const unit06: UnitInput = {
           prompt:
             'Propane cháy: propane và oxygen biến thành carbon dioxide và nước. Xếp mỗi chất vào đúng nhóm',
           groups: [
-            { id: 'reactant', label: 'Chất phản ứng' },
+            { id: 'reactant', label: 'Chất tham gia' },
             { id: 'product', label: 'Sản phẩm' },
           ],
           items: [
@@ -58,7 +58,7 @@ export const unit06: UnitInput = {
             { id: 'i4', moleculeId: 'o2', text: 'Oxygen', groupId: 'reactant' },
           ],
           explanation:
-            'Propane và oxygen có từ đầu nên là chất phản ứng. Carbon dioxide và nước sinh ra sau khi cháy nên là sản phẩm. Nhiệt không phải là một chất, nên nó không nằm trong nhóm nào.',
+            'Propane và oxygen có từ đầu nên là chất tham gia. Carbon dioxide và nước sinh ra sau khi cháy nên là sản phẩm. Nhiệt không phải là một chất, nên nó không nằm trong nhóm nào.',
           conceptIds: ['reactants-products', 'combustion'],
         },
         {
@@ -223,7 +223,7 @@ export const unit06: UnitInput = {
           visual: { id: 'v', image: 'lime-kiln' },
           answer: false,
           explanation:
-            'Phản ứng thu nhiệt chỉ diễn ra khi còn được cấp nhiệt. Ngừng cấp nhiệt là phản ứng dừng. Nấu ăn cũng thế: nhiều biến đổi làm chín thức ăn chỉ diễn ra khi bếp còn nóng.',
+            'Phản ứng thu nhiệt chỉ diễn ra khi còn được cấp nhiệt. Ngừng cấp nhiệt là phản ứng dừng. Nó khác hẳn gas trên bếp: gas đã cháy thì tự toả nhiệt để cháy tiếp, còn đá vôi không tự làm nóng mình được.',
           conceptIds: ['exothermic-endothermic'],
         },
         {
@@ -381,8 +381,8 @@ export const unit06: UnitInput = {
       intro: {
         title: 'Cốc sữa để quên trên bàn',
         story: [
-          'Tối hè, bạn rót hai cốc sữa tươi. Một cốc cất vào tủ lạnh, một cốc để quên trên bàn. Sáng hôm sau, cốc trên bàn đã có mùi chua và vón lợn cợn. Cốc trong tủ lạnh vẫn như lúc mới rót.',
-          'Sữa chua đi vì vi khuẩn biến đường trong sữa thành lactic acid, một chất có vị chua. Đó là một phản ứng hoá học, và nó xảy ra ở cả hai cốc. Khác nhau là ở ngoài bàn nó diễn ra nhanh, còn trong tủ lạnh thì rất chậm.',
+          'Tối hè, bạn rót hai cốc sữa tươi. Một cốc cất vào tủ lạnh, một cốc để quên trên bàn. Sáng hôm sau, cốc trên bàn đã có mùi chua, có khi còn vón lợn cợn. Cốc trong tủ lạnh vẫn như lúc mới rót.',
+          'Sữa bị chua vì vi khuẩn cắt đường trong sữa thành những phân tử đường nhỏ hơn như glucose, rồi biến glucose thành lactic acid, một chất có vị chua. Đó là một phản ứng hoá học, và nó xảy ra ở cả hai cốc. Khác nhau là ở ngoài bàn nó diễn ra nhanh, còn trong tủ lạnh thì rất chậm.',
           'Mức độ nhanh hay chậm của một phản ứng gọi là tốc độ phản ứng. Nhiệt độ càng cao thì tốc độ phản ứng càng lớn. Bạn đã biết càng nóng, các hạt chuyển động càng nhanh. Chúng va vào nhau nhiều hơn và mạnh hơn, nên phản ứng cũng xảy ra nhanh hơn.',
           'Tủ lạnh không làm phản ứng dừng hẳn, nó chỉ làm phản ứng chậm lại. Vì thế thức ăn để trong tủ lạnh vẫn hỏng, chỉ là lâu hơn nhiều.',
         ],
@@ -417,7 +417,7 @@ export const unit06: UnitInput = {
             { id: 'i3', text: 'Gas bắt lửa trên bếp', image: 'gas-stove-wok', groupId: 'fast' },
             {
               id: 'i4',
-              text: 'Sữa chua dần trong tủ lạnh',
+              text: 'Sữa bị chua dần trong tủ lạnh',
               image: 'open-fridge',
               groupId: 'slow',
             },
@@ -430,7 +430,7 @@ export const unit06: UnitInput = {
             { id: 'i6', text: 'Dưa cải muối chua dần', image: 'pickle-jars', groupId: 'slow' },
           ],
           explanation:
-            'Mỗi phản ứng có tốc độ riêng. Sự cháy và giấm gặp baking soda xảy ra gần như tức thì. Sắt gỉ, sữa chua dần và dưa muối chua dần là những phản ứng chậm, phải nhiều ngày mới thấy rõ.',
+            'Mỗi phản ứng có tốc độ riêng. Sự cháy và giấm gặp baking soda xảy ra gần như tức thì. Sắt gỉ, sữa bị chua trong tủ lạnh và dưa muối chua dần là những phản ứng chậm, phải nhiều ngày mới thấy rõ.',
           conceptIds: ['reaction-rate'],
         },
         {
@@ -473,7 +473,7 @@ export const unit06: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Nấu chín và làm mềm thức ăn gồm nhiều phản ứng hoá học. Nóng hơn 20 °C, các phản ứng đó nhanh hơn hẳn, nên thời gian hầm rút xuống chỉ còn khoảng một phần ba. Nồi áp suất phải do người lớn dùng, và không được mở nắp khi hơi chưa xả hết.',
+            'Nấu chín và làm mềm thức ăn gồm nhiều phản ứng hoá học. Nóng hơn 20 °C, các phản ứng đó nhanh hơn hẳn, nên thời gian hầm thường rút xuống chỉ còn khoảng một phần ba tới một nửa. Nồi áp suất phải do người lớn dùng, và không được mở nắp khi hơi chưa xả hết.',
           conceptIds: ['reaction-rate'],
         },
         {
@@ -521,7 +521,7 @@ export const unit06: UnitInput = {
           type: 'balance-reaction',
           reactionId: 'lactic-fermentation',
           prompt:
-            'Trong cốc sữa để quên, vi khuẩn biến đường glucose C₆H₁₂O₆ thành lactic acid C₃H₆O₃. Cân bằng phương trình của phản ứng này',
+            'Trong cốc sữa để quên, vi khuẩn cắt đường của sữa thành glucose C₆H₁₂O₆, rồi biến glucose thành lactic acid C₃H₆O₃. Cân bằng phương trình của bước thứ hai',
           explanation:
             'Glucose có 6 C, 12 H, 6 O. Mỗi phân tử lactic acid có 3 C, 6 H, 3 O, đúng bằng một nửa. Vậy một phân tử glucose tách thành 2 phân tử lactic acid: C₆H₁₂O₆ → 2C₃H₆O₃.',
           conceptIds: ['balancing', 'conservation-of-mass'],
@@ -559,7 +559,7 @@ export const unit06: UnitInput = {
           'Bà nhóm bếp củi. Bà không châm lửa vào khúc gỗ to, mà chẻ nó thành những thanh nhỏ rồi mới nhóm. Thanh củi nhỏ bén lửa ngay, còn khúc gỗ to thì hơ mãi chỉ ám khói.',
           'Muốn cháy, gỗ phải gặp oxygen. Nhưng các phân tử oxygen trong không khí chỉ chạm được vào lớp ngoài cùng của thanh củi. Mặt ngoài ấy, nơi hai chất gặp nhau, gọi là bề mặt tiếp xúc.',
           'Chẻ khúc gỗ ra, những mặt gỗ mới lộ ra ngoài. Vẫn chừng ấy gỗ, nhưng diện tích bề mặt tiếp xúc lớn hơn nhiều. Oxygen chạm được nhiều chỗ hơn cùng một lúc, nên củi cháy nhanh hơn.',
-          'Lửa yếu thì bà quạt mấy cái, lửa lại bùng lên. Quạt đưa không khí mới tới, nên quanh củi có nhiều oxygen hơn. Một chất có càng nhiều hạt trong cùng một khoảng không gian thì ta nói nồng độ của nó càng cao. Nồng độ chất phản ứng càng cao, phản ứng càng nhanh.',
+          'Lửa yếu thì bà quạt mấy cái, lửa lại bùng lên. Quạt đưa không khí mới tới, nên quanh củi có nhiều oxygen hơn. Một chất có càng nhiều hạt trong cùng một khoảng không gian thì ta nói nồng độ của nó càng cao. Nồng độ chất tham gia càng cao, phản ứng càng nhanh.',
         ],
         visual: { type: 'molecule', moleculeId: 'o2', scene: 'firewood-stove' },
       },
@@ -662,7 +662,7 @@ export const unit06: UnitInput = {
           id: 'u6-l4-e6',
           type: 'mcq',
           prompt:
-            'Không khí chỉ có khoảng một phần năm là oxygen. Trong phòng thí nghiệm, cô giáo đưa một que đóm còn tàn đỏ vào lọ chứa toàn khí oxygen. Que đóm lập tức bùng cháy sáng rực. Vì sao?',
+            'Không khí chỉ có khoảng một phần năm là oxygen. Trong phòng thí nghiệm, cô giáo đưa một que đóm (que gỗ nhỏ) còn tàn đỏ vào lọ chứa toàn khí oxygen. Que đóm lập tức bùng cháy sáng rực. Vì sao?',
           options: [
             { id: 'a', text: 'Vì trong lọ nóng hơn ở ngoài' },
             {
@@ -673,7 +673,7 @@ export const unit06: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Vẫn que đóm ấy, vẫn nhiệt độ ấy, chỉ khác là quanh nó có nhiều phân tử oxygen hơn gấp mấy lần. Nồng độ chất phản ứng càng cao thì các hạt gặp nhau càng thường xuyên, phản ứng càng nhanh.',
+            'Vẫn que đóm ấy, vẫn nhiệt độ ấy, chỉ khác là quanh nó có nhiều phân tử oxygen hơn gấp mấy lần. Nồng độ chất tham gia càng cao thì các hạt gặp nhau càng thường xuyên, phản ứng càng nhanh.',
           conceptIds: ['reaction-rate', 'combustion'],
         },
         {
@@ -682,7 +682,7 @@ export const unit06: UnitInput = {
           prompt: 'Mỗi ví dụ dưới đây nói về yếu tố nào làm thay đổi tốc độ phản ứng?',
           pairs: [
             {
-              left: { id: 'l1', text: 'Sữa để tủ lạnh lâu chua hơn', image: 'open-fridge' },
+              left: { id: 'l1', text: 'Sữa cất tủ lạnh thì lâu bị chua hơn', image: 'open-fridge' },
               right: { id: 'r1', text: 'Nhiệt độ' },
             },
             {
@@ -717,7 +717,7 @@ export const unit06: UnitInput = {
           id: 'u6-l4-e9',
           type: 'mcq',
           prompt:
-            'Bạn ngâm hai phần vỏ trứng nặng bằng nhau vào hai cốc giấm đầy như nhau: một phần để nguyên mảnh, một phần giã nhỏ. Chờ tới khi vỏ trứng ở cả hai cốc phản ứng hết thì kết quả thế nào?',
+            'Bạn ngâm hai phần vỏ trứng nặng bằng nhau vào hai cốc giấm đầy như nhau: một phần để nguyên mảnh, một phần giã nhỏ. Giấm rất nhiều, thừa đủ để phản ứng hết chỗ vỏ trứng. Khi vỏ trứng ở cả hai cốc đã phản ứng hết thì kết quả thế nào?',
           options: [
             {
               id: 'a',
@@ -734,7 +734,7 @@ export const unit06: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Giã nhỏ chỉ làm phản ứng nhanh hơn. Lượng khí sinh ra phụ thuộc vào lượng vỏ trứng, mà hai cốc có lượng vỏ trứng bằng nhau. Nguyên tử không tự sinh thêm, nên nhanh hơn không có nghĩa là nhiều hơn.',
+            'Giã nhỏ chỉ làm phản ứng nhanh hơn. Giấm thì cốc nào cũng thừa, nên lượng khí sinh ra phụ thuộc vào lượng vỏ trứng, mà hai cốc có lượng vỏ trứng bằng nhau. Nguyên tử không tự sinh thêm, nên nhanh hơn không có nghĩa là nhiều hơn.',
           conceptIds: ['reaction-rate', 'conservation-of-mass'],
         },
         {
@@ -775,13 +775,13 @@ export const unit06: UnitInput = {
             'Lát khoai tây làm oxy già sủi bọt nhanh hơn hẳn. Chất có trong khoai tây đóng vai trò gì trong phản ứng này?',
           visual: { id: 'v', image: 'potato-peroxide' },
           options: [
-            { id: 'a', text: 'Chất phản ứng: nó bị dùng hết dần' },
+            { id: 'a', text: 'Chất tham gia: nó bị dùng hết dần' },
             { id: 'b', text: 'Chất xúc tác: nó làm phản ứng nhanh hơn mà không bị tiêu hao' },
             { id: 'c', text: 'Sản phẩm: nó được sinh ra từ phản ứng' },
           ],
           correctOptionId: 'b',
           explanation:
-            'Chất phản ứng duy nhất là hydrogen peroxide, sản phẩm là nước và khí oxygen. Chất trong khoai tây chỉ giúp phản ứng nhanh hơn và vẫn còn nguyên sau phản ứng. Đó là chất xúc tác.',
+            'Chất tham gia duy nhất là hydrogen peroxide, sản phẩm là nước và khí oxygen. Chất trong khoai tây chỉ giúp phản ứng nhanh hơn và vẫn còn nguyên sau phản ứng. Đó là chất xúc tác.',
           conceptIds: ['catalyst'],
         },
         {
@@ -792,7 +792,7 @@ export const unit06: UnitInput = {
           visual: { id: 'v', image: 'potato-peroxide' },
           answer: false,
           explanation:
-            'Thứ đã hết là hydrogen peroxide, chất phản ứng. Chất xúc tác thì vẫn còn đó: rót thêm oxy già mới vào, lát khoai lại sủi bọt tiếp.',
+            'Thứ đã hết là hydrogen peroxide, chất tham gia. Chất xúc tác thì vẫn còn đó: rót thêm oxy già mới vào, lát khoai lại sủi bọt tiếp. Nếu muốn tự thử, hãy làm cùng người lớn và chỉ dùng oxy già loại 3% của tủ thuốc.',
           conceptIds: ['catalyst'],
         },
         {
@@ -800,7 +800,7 @@ export const unit06: UnitInput = {
           type: 'sort',
           prompt: 'Trong phản ứng oxy già sủi bọt trên lát khoai tây, mỗi chất đóng vai gì?',
           groups: [
-            { id: 'reactant', label: 'Chất phản ứng' },
+            { id: 'reactant', label: 'Chất tham gia' },
             { id: 'product', label: 'Sản phẩm' },
             { id: 'catalyst', label: 'Chất xúc tác' },
           ],
@@ -811,7 +811,7 @@ export const unit06: UnitInput = {
             { id: 'i4', moleculeId: 'h2o', text: 'Nước', groupId: 'product' },
           ],
           explanation:
-            'Hydrogen peroxide mất đi nên là chất phản ứng. Nước và oxygen sinh ra nên là sản phẩm. Enzyme trước và sau phản ứng vẫn thế, nó là chất xúc tác.',
+            'Hydrogen peroxide mất đi nên là chất tham gia. Nước và oxygen sinh ra nên là sản phẩm. Enzyme trước và sau phản ứng vẫn thế, nó là chất xúc tác.',
           conceptIds: ['catalyst', 'reactants-products'],
         },
         {
@@ -941,7 +941,7 @@ export const unit06: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Chất xúc tác không phải chất phản ứng nên không bị dùng hết, cũng không phải sản phẩm nên không sinh thêm. Chừng ấy kim loại xử lí khí thải suốt đời xe. Chất xúc tác không chỉ có trong cơ thể sống: enzyme chỉ là một loại chất xúc tác.',
+            'Chất xúc tác không phải chất tham gia nên không bị dùng hết, cũng không phải sản phẩm nên không sinh thêm. Chừng ấy kim loại xử lí khí thải suốt đời xe. Chất xúc tác không chỉ có trong cơ thể sống: enzyme chỉ là một loại chất xúc tác.',
           conceptIds: ['catalyst'],
         },
       ],
@@ -959,7 +959,7 @@ export const unit06: UnitInput = {
           'Cục bột mì vừa nhào xong chỉ bằng nắm tay. Ủ ấm một tiếng, nó phồng lên gấp đôi. Cho vào lò, nó thành ổ bánh mì vàng ruộm, ruột đầy lỗ xốp.',
           'Thủ phạm là men làm bánh, một loại nấm bé xíu còn sống. Men ăn đường có trong bột, như glucose (C₆H₁₂O₆), rồi nhờ enzyme biến nó thành ethanol và khí carbon dioxide. Hàng triệu bong bóng khí kẹt lại trong bột, đẩy bột phồng lên. Ethanol thì bay hơi gần hết khi nướng.',
           'Nấm men, vi khuẩn là những sinh vật nhỏ tới mức mắt thường không thấy, gọi chung là vi sinh vật. Quá trình vi sinh vật dùng enzyme biến chất này thành chất khác gọi là lên men.',
-          'Lên men có ở khắp gian bếp. Vi khuẩn lactic biến đường thành lactic acid, làm sữa thành sữa chua và làm dưa cải chua giòn. Vi khuẩn giấm biến rượu thành giấm.',
+          'Lên men có ở khắp gian bếp. Vi khuẩn lactic biến đường thành lactic acid, làm sữa thành sữa chua và làm dưa cải chua giòn. Vi khuẩn giấm biến ethanol trong rượu thành acetic acid, chất làm nên vị chua của giấm.',
         ],
         visual: { type: 'reaction', reactionId: 'alcoholic-fermentation' },
       },
@@ -993,7 +993,7 @@ export const unit06: UnitInput = {
         {
           id: 'u6-l6-e3',
           type: 'true-false',
-          prompt: 'Men làm bánh là một loại bột hoá chất không có sự sống, giống như baking soda.',
+          prompt: 'Men làm bánh là một chất bột không có sự sống, giống như baking soda.',
           answer: false,
           explanation:
             'Men làm bánh là nấm men, một sinh vật sống đang ngủ khi ở dạng khô. Gặp nước ấm và đường, nó thức dậy và bắt đầu lên men. Baking soda thì là một hợp chất, không có sự sống.',
@@ -1004,7 +1004,7 @@ export const unit06: UnitInput = {
           type: 'balance-reaction',
           reactionId: 'alcoholic-fermentation',
           prompt:
-            'Cân bằng phương trình lên men trong bột bánh mì: glucose C₆H₁₂O₆ thành ethanol C₂H₆O và carbon dioxide',
+            'Cân bằng phương trình lên men trong bột bánh mì: glucose C₆H₁₂O₆ thành ethanol C₂H₆O và carbon dioxide. Gợi ý: xét hydrogen trước, rồi carbon, cuối cùng đếm lại oxygen',
           explanation:
             'Thử 2 phân tử ethanol: đã có 4 C và 12 H, vừa đủ hydrogen. Còn thiếu 2 C, nên cần 2 CO₂. Đếm oxygen: 2 + 4 = 6, vừa khít. Kết quả: C₆H₁₂O₆ → 2C₂H₆O + 2CO₂.',
           conceptIds: ['balancing', 'fermentation'],
@@ -1029,7 +1029,8 @@ export const unit06: UnitInput = {
           id: 'u6-l6-e6',
           type: 'balance-reaction',
           reactionId: 'baking-soda-decomposition',
-          prompt: 'Cân bằng phương trình baking soda bị nhiệt phân trong lò nướng',
+          prompt:
+            'Cân bằng phương trình baking soda bị nhiệt phân trong lò nướng. Gợi ý: bắt đầu từ sodium (Na)',
           explanation:
             'Na₂CO₃ có 2 Na nên cần 2 NaHCO₃. Khi đó vế trái có 2 H, 2 C và 6 O. Vế phải: Na₂CO₃, H₂O và CO₂ cũng có 2 H, 2 C và 3 + 1 + 2 = 6 O. Kết quả: 2NaHCO₃ → Na₂CO₃ + H₂O + CO₂.',
           conceptIds: ['balancing'],
@@ -1064,7 +1065,7 @@ export const unit06: UnitInput = {
           id: 'u6-l6-e8',
           type: 'mcq',
           prompt:
-            'Muốn làm giấm, người ta cho rượu loãng và vi khuẩn giấm vào hũ, rồi chỉ đậy miệng hũ bằng vải thưa cho thoáng khí. Vi khuẩn giấm cần lấy chất nào từ không khí để biến ethanol thành acetic acid?',
+            'Muốn làm giấm, người ta cho rượu loãng và vi khuẩn giấm vào hũ, rồi chỉ đậy miệng hũ bằng vải thưa cho thoáng khí. Vi khuẩn giấm biến ethanol thành acetic acid và nước: C₂H₆O + ? → CH₃COOH + H₂O. Vế phải có 3 nguyên tử oxygen, vế trái mới có 1, còn carbon và hydrogen thì đã đủ. Vi khuẩn giấm phải lấy thêm chất nào từ không khí?',
           visual: { id: 'v', image: 'vinegar-bottle' },
           options: [
             { id: 'a', moleculeId: 'co2', text: 'Carbon dioxide' },
@@ -1073,7 +1074,7 @@ export const unit06: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Lên men giấm cần oxygen: C₂H₆O + O₂ → CH₃COOH + H₂O. Đậy kín hũ thì vi khuẩn giấm thiếu oxygen và rượu không thành giấm được. Sách lớp 9 gọi ethanol là ethylic alcohol, hai tên chỉ cùng một chất.',
+            'Vế trái còn thiếu đúng 2 nguyên tử oxygen, tức là một phân tử O₂: C₂H₆O + O₂ → CH₃COOH + H₂O. Carbon dioxide cũng có oxygen, nhưng nó mang theo cả carbon, mà carbon thì đã đủ rồi. Đậy kín hũ thì vi khuẩn giấm thiếu oxygen và rượu không thành giấm được. Sách lớp 9 gọi ethanol là ethylic alcohol, hai tên chỉ cùng một chất.',
           conceptIds: ['fermentation', 'reactants-products'],
         },
         {
@@ -1108,7 +1109,7 @@ export const unit06: UnitInput = {
             { id: 'i6', text: 'Miếng bơ chảy ra trên chảo nóng', groupId: 'physical' },
           ],
           explanation:
-            'Màu mới và mùi mới là dấu hiệu có chất mới: đường thành caramel, thịt nướng vàng thơm đều là biến đổi hoá học khi đun nóng. Bột nở là do lên men sinh ra khí. Còn sôi, tan và chảy chỉ làm chất đổi dạng.',
+            'Màu mới và mùi mới là dấu hiệu có chất mới: đường thành caramel, thịt nướng vàng thơm đều là biến đổi hoá học khi đun nóng. Bột nở là do lên men sinh ra khí. Còn sôi, tan và chảy thì không tạo ra chất mới nào: nước vẫn là nước, đường vẫn là đường, bơ vẫn là bơ.',
           conceptIds: ['chemical-change', 'physical-change', 'reaction-signs'],
         },
         {
@@ -1189,7 +1190,7 @@ export const unit06: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Túi và bàn tay ấm lên, tức là phản ứng giải phóng nhiệt ra xung quanh: toả nhiệt. Không cần có lửa, cũng không cần phải nhanh. Đây chính là phản ứng sắt gỉ, được làm cho nhanh hơn nhờ dùng bột sắt mịn.',
+            'Túi và bàn tay ấm lên, tức là phản ứng giải phóng nhiệt ra xung quanh: toả nhiệt. Không cần có lửa, cũng không cần phải nhanh. Đây chính là phản ứng sắt gỉ, được làm cho nhanh hơn, một phần nhờ dùng bột sắt mịn.',
           conceptIds: ['exothermic-endothermic'],
         },
         {
@@ -1282,10 +1283,10 @@ export const unit06: UnitInput = {
           id: 'u6-cp-e9',
           type: 'true-false',
           prompt:
-            'Dùng chất xúc tác hay nghiền nhỏ chất phản ứng đều làm phản ứng nhanh hơn, nhưng không làm tăng lượng sản phẩm thu được.',
+            'Dùng chất xúc tác hay nghiền nhỏ chất tham gia đều làm phản ứng nhanh hơn, nhưng không làm tăng lượng sản phẩm thu được.',
           answer: true,
           explanation:
-            'Lượng sản phẩm do lượng chất phản ứng quyết định, vì nguyên tử không tự sinh thêm. Chất xúc tác và việc nghiền nhỏ chỉ giúp bạn tới đích sớm hơn.',
+            'Lượng sản phẩm do lượng chất tham gia quyết định, vì nguyên tử không tự sinh thêm. Chất xúc tác và việc nghiền nhỏ chỉ giúp bạn tới đích sớm hơn.',
           conceptIds: ['reaction-rate', 'catalyst', 'conservation-of-mass'],
         },
         {
