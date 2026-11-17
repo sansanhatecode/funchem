@@ -1,5 +1,5 @@
 import type { PlacedBond } from '@funchem/chem-ui'
-import { ELEMENTS, type ElementSymbol } from '@funchem/content'
+import { ELEMENTS, type ElementSymbol } from '@funchem/content/lib'
 
 /** Một nguyên tử vẽ quanh gốc toạ độ (0,0) với bán kính r. Đặt vị trí bằng transform ở phần tử cha. */
 export function AtomShape({

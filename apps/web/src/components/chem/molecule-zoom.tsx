@@ -6,7 +6,7 @@ import {
   type Molecule,
   moleculeLabel,
   type SceneId,
-} from '@funchem/content'
+} from '@funchem/content/lib'
 import { useState } from 'react'
 import { ZoomScene } from '@/components/scenes/zoom-scene'
 import { MoleculeView } from './molecule-view'

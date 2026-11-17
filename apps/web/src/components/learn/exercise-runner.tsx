@@ -1,6 +1,6 @@
 'use client'
 
-import { type Answer, content, type Exercise } from '@funchem/content'
+import type { Answer, Exercise } from '@funchem/content/lib'
 import {
   describeCorrectAnswer,
   type GradeResult,
@@ -17,6 +17,7 @@ import { Card } from '@/components/ui/card'
 import { SpeakerHighIcon, SpeakerSlashIcon, XIcon } from '@/components/ui/icons'
 import { ProgressBar } from '@/components/ui/progress-bar'
 import { cn } from '@/lib/cn'
+import { useContent } from '@/lib/content-context'
 import { playSound, setMuted, useMuted } from '@/lib/sound'
 
 export type Submitted = { exerciseId: string; answer: Answer }
@@ -55,6 +56,7 @@ export function ExerciseRunner<R>({
 
   const [phase, setPhase] = useState<'intro' | 'exercise' | 'result'>(intro ? 'intro' : 'exercise')
   const [queue, setQueue] = useState<Item[]>(initialQueue)
+  const content = useContent()
   const [pos, setPos] = useState(0)
   const [answers, setAnswers] = useState<Submitted[]>([])
   const [draft, setDraft] = useState<Answer | null>(null)

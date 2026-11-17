@@ -1,7 +1,7 @@
 'use client'
 
 import { type AttemptResponse, unwrap } from '@funchem/api-client'
-import { content, moleculeLabel } from '@funchem/content'
+import { moleculeLabel } from '@funchem/content/lib'
 import { useQueryClient } from '@tanstack/react-query'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -11,14 +11,16 @@ import { Button, buttonClass } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Confetti } from '@/components/ui/confetti'
 import { api } from '@/lib/api'
+import type { LessonBundle } from '@/lib/content-types'
 import { progressKey, useProgress } from '@/lib/use-progress'
 import { ExerciseRunner, RunnerShell } from './exercise-runner'
 import { IntroCard } from './intro-card'
 import { NewBadges, Stat, StreakValue } from './result-parts'
+import { useContent } from '@/lib/content-context'
 
-export function LessonPlayer({ lessonId }: { lessonId: string }) {
-  const entry = content.lessons.get(lessonId)!
-  const { lesson, unit } = entry
+export function LessonPlayer({ bundle }: { bundle: LessonBundle }) {
+  const { lesson, unit } = bundle
+  const lessonId = lesson.id
   const { user, progress, isLoading, isError, refetch } = useProgress()
   const queryClient = useQueryClient()
 
@@ -80,7 +82,7 @@ export function LessonPlayer({ lessonId }: { lessonId: string }) {
         void queryClient.invalidateQueries({ queryKey: ['review'] })
       }}
       renderResult={(result, restart) => (
-        <ResultScreen result={result} lessonId={lessonId} onRetry={restart} />
+        <ResultScreen result={result} bundle={bundle} onRetry={restart} />
       )}
     />
   )
@@ -88,21 +90,20 @@ export function LessonPlayer({ lessonId }: { lessonId: string }) {
 
 function ResultScreen({
   result,
-  lessonId,
+  bundle,
   onRetry,
 }: {
   result: AttemptResponse
-  lessonId: string
+  bundle: LessonBundle
   onRetry: () => void
 }) {
+  const content = useContent()
   const { grade } = result
-  const entry = content.lessons.get(lessonId)!
   const pct = Math.round(grade.accuracy * 100)
-  const isCheckpoint = entry.lesson.kind === 'checkpoint'
+  const isCheckpoint = bundle.lesson.kind === 'checkpoint'
 
   // bài kế tiếp theo thứ tự chương trình
-  const flat = content.units.flatMap((u) => u.lessons)
-  const nextLesson = flat[flat.findIndex((l) => l.id === lessonId) + 1]
+  const nextLesson = bundle.next
   const unlocked = result.newlyUnlockedMolecules
     .map((id) => content.molecules.get(id))
     .filter((m): m is NonNullable<typeof m> => Boolean(m))
@@ -110,7 +111,7 @@ function ResultScreen({
   const headline = !grade.passed
     ? 'Gần được rồi!'
     : isCheckpoint
-      ? `Hoàn thành Unit ${entry.unit.order}!`
+      ? `Hoàn thành Unit ${bundle.unit.order}!`
       : pct === 100
         ? 'Hoàn hảo!'
         : 'Xong bài!'
@@ -140,7 +141,7 @@ function ResultScreen({
         </p>
       )}
 
-      <NewBadges ids={result.newBadges} />
+      <NewBadges ids={result.newBadges} unitCount={bundle.unitCount} />
 
       {unlocked.length > 0 && (
         <Card className="w-full">

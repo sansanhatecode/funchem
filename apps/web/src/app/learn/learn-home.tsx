@@ -1,6 +1,6 @@
 'use client'
 
-import { content } from '@funchem/content'
+import type { OutlineUnit } from '@/lib/content-types'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { AppShell } from '@/components/learn/app-shell'
@@ -13,7 +13,7 @@ import { ProgressBar } from '@/components/ui/progress-bar'
 import { signOut } from '@/lib/auth-client'
 import { useProgress } from '@/lib/use-progress'
 
-export function LearnHome() {
+export function LearnHome({ units }: { units: OutlineUnit[] }) {
   const router = useRouter()
   const { user, isGuest, progress: p, isLoading, isError, refetch } = useProgress()
 
@@ -44,9 +44,7 @@ export function LearnHome() {
   const statusOf = (id: string) => (p.lessons[id]?.status ?? 'locked') as LessonStatus
   const goalRatio = p.profile.dailyGoalXp ? p.stats.xpToday / p.profile.dailyGoalXp : 0
   const completedCount = Object.values(p.lessons).filter((l) => l.status === 'completed').length
-  const current = content.units
-    .flatMap((u) => u.lessons)
-    .find((l) => statusOf(l.id) === 'available')
+  const current = units.flatMap((u) => u.lessons).find((l) => statusOf(l.id) === 'available')
 
   return (
     <AppShell stats={{ streak: p.stats.streak, xpTotal: p.stats.xpTotal }}>
@@ -112,7 +110,7 @@ export function LearnHome() {
           </Link>
         )}
 
-        {content.units.map((unit) => (
+        {units.map((unit) => (
           <UnitPath
             key={unit.id}
             unit={unit}

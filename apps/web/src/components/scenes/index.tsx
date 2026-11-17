@@ -1,4 +1,4 @@
-import type { CoreSceneId, SceneId } from '@funchem/content'
+import type { CoreSceneId, SceneId } from '@funchem/content/lib'
 import { cn } from '@/lib/cn'
 import { BalloonsScene } from './art/balloons'
 import { BiogasStoveScene } from './art/biogas-stove'

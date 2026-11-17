@@ -1,4 +1,4 @@
-import type { Unit07SceneId } from '@funchem/content'
+import type { Unit07SceneId } from '@funchem/content/lib'
 import { AluminiumCansScene } from './art/aluminium-cans'
 import { BananaBagScene } from './art/banana-bag'
 import { BlastFurnaceScene } from './art/blast-furnace'

@@ -1,4 +1,4 @@
-import type { Unit05SceneId } from '@funchem/content'
+import type { Unit05SceneId } from '@funchem/content/lib'
 import { AcidRainScene } from './art/acid-rain'
 import { AntacidScene } from './art/antacid'
 import { CabbageIndicatorScene } from './art/cabbage-indicator'

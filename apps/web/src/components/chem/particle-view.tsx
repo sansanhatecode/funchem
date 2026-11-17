@@ -6,7 +6,7 @@ import {
   formatFormula,
   type Molecule,
   moleculeLabel,
-} from '@funchem/content'
+} from '@funchem/content/lib'
 import type { CSSProperties } from 'react'
 import { AtomShape, BondShape } from './shapes'
 

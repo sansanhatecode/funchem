@@ -1,6 +1,6 @@
 'use client'
 
-import type { Answer, Exercise } from '@funchem/content'
+import type { Answer, Exercise } from '@funchem/content/lib'
 import { BalanceReactionExercise } from './balance-reaction'
 import { BuildMoleculeExercise } from './build-molecule'
 import { FillBlankExercise } from './fill-blank'

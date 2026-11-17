@@ -1,21 +1,21 @@
 'use client'
 
-import { type Answer, content } from '@funchem/content'
+import type { Answer, Exercise } from '@funchem/content/lib'
 import { gradeExercise, isAnswerComplete } from '@funchem/core'
 import Link from 'next/link'
 import { useCallback, useState } from 'react'
 import { ExerciseView } from '@/components/exercises/exercise-view'
 import { Mascot } from '@/components/mascot'
 import { Button, buttonClass } from '@/components/ui/button'
+import { useContent } from '@/lib/content-context'
 
 /** Một bài tập thật của khoá học, làm được ngay trên trang chủ: ghép một phân tử nước. */
-export function TryExercise() {
-  const exercise = content.exercises.get('u2-l1-e3')?.exercise
+export function TryExercise({ exercise }: { exercise: Exercise }) {
+  const content = useContent()
   const [value, setValue] = useState<Answer | null>(null)
   const [checked, setChecked] = useState(false)
   const [round, setRound] = useState(0)
   const onChange = useCallback((a: Answer) => setValue(a), [])
-  if (!exercise) return null
   const correct = checked && value ? gradeExercise(exercise, value, content).correct : false
 
   return (

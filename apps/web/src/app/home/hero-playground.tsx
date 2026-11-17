@@ -1,12 +1,13 @@
 'use client'
 
-import { content, formatFormula, lowerFirst, moleculeLabel, type SceneId } from '@funchem/content'
+import { formatFormula, lowerFirst, moleculeLabel, type SceneId } from '@funchem/content/lib'
 import { useState } from 'react'
 import { MoleculeView } from '@/components/chem/molecule-view'
 import { PARTICLE_CAPTION, particleMode, ParticleView } from '@/components/chem/particle-view'
 import { SceneView } from '@/components/scenes'
 import { ZoomScene } from '@/components/scenes/zoom-scene'
 import { cn } from '@/lib/cn'
+import { useContent } from '@/lib/content-context'
 
 const THINGS: { scene: SceneId; molecule: string; label: string }[] = [
   { scene: 'glass-of-water', molecule: 'h2o', label: 'Ly nước' },
@@ -25,7 +26,8 @@ export function HeroPlayground() {
   const [index, setIndex] = useState(0)
   const [zoomed, setZoomed] = useState(false)
   const thing = THINGS[index]!
-  const molecule = content.molecules.get(thing.molecule)!
+  const molecule = useContent().molecules.get(thing.molecule)
+  if (!molecule) return null
 
   return (
     <div className="flex flex-col gap-3">

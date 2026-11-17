@@ -1,6 +1,6 @@
 import {
   type ContentItem,
-  type ContentRegistry,
+  type ContentLookup,
   ELEMENTS,
   type ElementSymbol,
   equationText,
@@ -8,9 +8,9 @@ import {
   formatFormula,
   moleculeLabel,
   parseFormula,
-} from '@funchem/content'
+} from '@funchem/content/lib'
 
-function itemLabel(item: ContentItem, registry: ContentRegistry): string {
+function itemLabel(item: ContentItem, registry: ContentLookup): string {
   if (item.text) return item.text
   if (item.moleculeId) {
     const m = registry.molecules.get(item.moleculeId)
@@ -23,7 +23,7 @@ function itemLabel(item: ContentItem, registry: ContentRegistry): string {
  * Mô tả đáp án đúng bằng chữ, để hiện trong khung phản hồi khi người học trả lời sai.
  * Dùng chung cho web và mobile.
  */
-export function describeCorrectAnswer(exercise: Exercise, registry: ContentRegistry): string {
+export function describeCorrectAnswer(exercise: Exercise, registry: ContentLookup): string {
   switch (exercise.type) {
     case 'mcq': {
       const opt = exercise.options.find((o) => o.id === exercise.correctOptionId)

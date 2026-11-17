@@ -1,4 +1,4 @@
-import type { Unit08SceneId } from '@funchem/content'
+import type { Unit08SceneId } from '@funchem/content/lib'
 import { CurdledMilkScene } from './art/curdled-milk'
 import { FruitPlateScene } from './art/fruit-plate'
 import { IodinePotatoScene } from './art/iodine-potato'

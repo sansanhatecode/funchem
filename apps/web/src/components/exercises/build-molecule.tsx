@@ -1,16 +1,16 @@
 'use client'
 
 import {
-  content,
   elementLabel,
   ELEMENTS,
   type ElementCounts,
   type ElementSymbol,
-} from '@funchem/content'
+} from '@funchem/content/lib'
 import { AtomChip } from '@/components/chem/atom-chip'
 import { MoleculeView } from '@/components/chem/molecule-view'
 import { cn } from '@/lib/cn'
 import type { ExerciseProps } from './shared'
+import { useContent } from '@/lib/content-context'
 
 export function BuildMoleculeExercise({
   exercise,
@@ -20,6 +20,7 @@ export function BuildMoleculeExercise({
 }: ExerciseProps<'build-molecule'>) {
   const placed: ElementCounts = value?.atoms ?? {}
   const elements = Object.keys(exercise.availableAtoms) as ElementSymbol[]
+  const content = useContent()
   const target = content.molecules.get(exercise.targetMoleculeId)
 
   const change = (el: ElementSymbol, delta: number) => {

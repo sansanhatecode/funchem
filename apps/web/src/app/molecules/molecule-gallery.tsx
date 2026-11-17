@@ -1,6 +1,6 @@
 'use client'
 
-import { content, formatFormula, type Molecule, moleculeLabel } from '@funchem/content'
+import { formatFormula, type Molecule, moleculeLabel } from '@funchem/content/lib'
 import { useRef, useState } from 'react'
 import { MoleculeView } from '@/components/chem/molecule-view'
 import { MoleculeZoom } from '@/components/chem/molecule-zoom'
@@ -19,12 +19,11 @@ const STATE_LABEL: Record<Molecule['state'], string> = {
 
 const sceneOf = (m: Molecule) => m.lifeExamples.find((e) => e.illustration)?.illustration
 
-export function MoleculeGallery() {
+export function MoleculeGallery({ molecules: all }: { molecules: Molecule[] }) {
   const { progress: p, isLoading } = useProgress()
   const dialogRef = useRef<HTMLDialogElement>(null)
   const [open, setOpen] = useState<Molecule | null>(null)
   const unlocked = new Set(p?.molecules ?? [])
-  const all = [...content.molecules.values()]
 
   const show = (m: Molecule) => {
     setOpen(m)

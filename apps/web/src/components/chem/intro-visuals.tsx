@@ -9,7 +9,7 @@ import {
   type Molecule,
   moleculeLabel,
   type SceneId,
-} from '@funchem/content'
+} from '@funchem/content/lib'
 import { CloudIcon, DropIcon, SnowflakeIcon } from '@phosphor-icons/react'
 import { useState } from 'react'
 import { ZoomScene } from '@/components/scenes/zoom-scene'

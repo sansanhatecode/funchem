@@ -1,5 +1,5 @@
 import { atomStructure, layoutNucleus, round2 } from '@funchem/chem-ui'
-import { elementLabel, ELEMENTS, type ElementSymbol } from '@funchem/content'
+import { elementLabel, ELEMENTS, type ElementSymbol } from '@funchem/content/lib'
 import type { CSSProperties } from 'react'
 import { MicroBackdrop } from './particle-view'
 

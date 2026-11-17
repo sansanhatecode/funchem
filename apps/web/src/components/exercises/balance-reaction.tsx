@@ -1,18 +1,18 @@
 'use client'
 
 import {
-  content,
   elementLabel,
   ELEMENTS,
   type ElementSymbol,
   formatFormula,
   type ReactionSide,
   sideAtomCounts,
-} from '@funchem/content'
+} from '@funchem/content/lib'
 import { Fragment, useEffect } from 'react'
 import { MoleculeView } from '@/components/chem/molecule-view'
 import { cn } from '@/lib/cn'
 import type { ExerciseProps } from './shared'
+import { useContent } from '@/lib/content-context'
 
 export function BalanceReactionExercise({
   exercise,
@@ -20,6 +20,7 @@ export function BalanceReactionExercise({
   onChange,
   checked,
 }: ExerciseProps<'balance-reaction'>) {
+  const content = useContent()
   const rx = content.reactions.get(exercise.reactionId)
 
   // Hệ số ban đầu đều là 1; phát ra ngay vì có phản ứng vốn đã cân bằng với hệ số 1

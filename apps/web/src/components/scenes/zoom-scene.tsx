@@ -1,6 +1,6 @@
 'use client'
 
-import type { SceneId } from '@funchem/content'
+import type { SceneId } from '@funchem/content/lib'
 import { MagnifyingGlassMinusIcon, MagnifyingGlassPlusIcon } from '@phosphor-icons/react'
 import { type ReactNode, useState } from 'react'
 import { cn } from '@/lib/cn'

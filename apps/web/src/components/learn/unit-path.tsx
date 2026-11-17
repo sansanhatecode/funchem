@@ -1,4 +1,3 @@
-import type { Lesson, Unit } from '@funchem/content'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { Mascot } from '@/components/mascot'
@@ -6,7 +5,7 @@ import { SceneView } from '@/components/scenes'
 import { CheckIcon, LockIcon, StarIcon } from '@/components/ui/icons'
 import { ProgressBar } from '@/components/ui/progress-bar'
 import { cn } from '@/lib/cn'
-import { lessonScene } from '@/lib/lesson-scene'
+import type { OutlineLesson, OutlineUnit } from '@/lib/content-types'
 
 export type LessonStatus = 'locked' | 'available' | 'completed'
 
@@ -25,13 +24,13 @@ export function UnitPath({
   ratio,
   currentLessonId,
 }: {
-  unit: Unit
+  unit: OutlineUnit
   statusOf: (lessonId: string) => LessonStatus
   ratio: number
   /** bài đang chờ học: có bong bóng "Bắt đầu" và linh vật đứng cạnh */
   currentLessonId: string | undefined
 }) {
-  const bannerScene = unit.lessons.map(lessonScene).find(Boolean)
+  const bannerScene = unit.lessons.map((l) => l.scene).find(Boolean)
   return (
     <section aria-labelledby={`unit-${unit.id}`} className="mt-8">
       <div
@@ -113,12 +112,12 @@ function Sticker({
   locked,
   index,
 }: {
-  lesson: Lesson
+  lesson: OutlineLesson
   side: 'left' | 'right'
   locked: boolean
   index: number
 }) {
-  const scene = lessonScene(lesson)
+  const scene = lesson.scene
   if (!scene) return null
   return (
     <span
@@ -143,7 +142,7 @@ function LessonNode({
   isCurrent,
   aside,
 }: {
-  lesson: Lesson
+  lesson: OutlineLesson
   index: number
   status: LessonStatus
   color: string

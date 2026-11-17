@@ -2,13 +2,12 @@
 
 import { layoutReaction, REACTION_STEPS } from '@funchem/chem-ui'
 import {
-  content,
   elementLabel,
   ELEMENTS,
   equationText,
   type Reaction,
   type SceneId,
-} from '@funchem/content'
+} from '@funchem/content/lib'
 import { useEffect, useMemo, useState } from 'react'
 import { ZoomScene } from '@/components/scenes/zoom-scene'
 import { Button } from '@/components/ui/button'
@@ -16,6 +15,7 @@ import { ArrowCounterClockwiseIcon, ArrowRightIcon, PlayIcon } from '@/component
 import { cn } from '@/lib/cn'
 import { MicroBackdrop } from './particle-view'
 import { AtomShape, BondShape } from './shapes'
+import { useContent } from '@/lib/content-context'
 
 const FRAME = { width: 320, height: 200 }
 const STAGE = { width: 320, height: 184 }
@@ -42,7 +42,11 @@ export function ReactionPlayer({
   showStory = false,
   scene: sceneOverride,
 }: ReactionPlayerProps) {
-  const layout = useMemo(() => layoutReaction(reaction, content.molecules, STAGE), [reaction])
+  const content = useContent()
+  const layout = useMemo(
+    () => layoutReaction(reaction, content.molecules, STAGE),
+    [reaction, content.molecules],
+  )
   const scene = sceneOverride ?? reaction.story.illustration
   const [zoomed, setZoomed] = useState(!scene)
   const [step, setStep] = useState(0)

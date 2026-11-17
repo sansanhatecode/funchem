@@ -1,15 +1,19 @@
-import { content, type IntroCard as IntroCardData } from '@funchem/content'
+'use client'
+
+import { type IntroCard as IntroCardData } from '@funchem/content/lib'
 import { AtomZoom, PeriodicTableZoom, StatesLab } from '@/components/chem/intro-visuals'
 import { MoleculeView } from '@/components/chem/molecule-view'
 import { MoleculeZoom } from '@/components/chem/molecule-zoom'
 import { PhScaleLab } from '@/components/chem/ph-scale'
 import { ReactionPlayer } from '@/components/chem/reaction-player'
+import { useContent } from '@/lib/content-context'
 
 /**
  * Thẻ "Khám phá" mở đầu bài học: hiện tượng ngoài đời trước,
  * bấm kính lúp để phóng to xuống cấp nguyên tử, rồi mới tới câu chuyện.
  */
 export function IntroCard({ intro }: { intro: IntroCardData }) {
+  const content = useContent()
   const v = intro.visual
   const molecule = v.type === 'molecule' ? content.molecules.get(v.moleculeId) : undefined
   const reaction = v.type === 'reaction' ? content.reactions.get(v.reactionId) : undefined

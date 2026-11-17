@@ -1,4 +1,4 @@
-import { ELEMENTS, type ElementSymbol } from '@funchem/content'
+import { ELEMENTS, type ElementSymbol } from '@funchem/content/lib'
 import { cn } from '@/lib/cn'
 import { AtomShape } from './shapes'
 

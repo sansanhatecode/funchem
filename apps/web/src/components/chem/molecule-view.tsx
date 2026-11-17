@@ -1,5 +1,5 @@
 import { moleculeViewBox, placeMolecule } from '@funchem/chem-ui'
-import { formatFormula, type Molecule, moleculeLabel } from '@funchem/content'
+import { formatFormula, type Molecule, moleculeLabel } from '@funchem/content/lib'
 import { AtomShape, BondShape } from './shapes'
 
 export interface MoleculeViewProps {

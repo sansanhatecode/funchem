@@ -1,4 +1,3 @@
-import { content } from '@funchem/content'
 import { badgeCatalog } from '@funchem/core'
 import type { ReactNode } from 'react'
 import { BadgeMedal } from '@/components/ui/badge-medal'
@@ -30,9 +29,9 @@ export function StreakValue({ days }: { days: number }) {
 }
 
 /** Huy hiệu vừa nhận ở lượt này. */
-export function NewBadges({ ids }: { ids: string[] }) {
+export function NewBadges({ ids, unitCount }: { ids: string[]; unitCount: number }) {
   if (ids.length === 0) return null
-  const catalog = new Map(badgeCatalog(content.units.length).map((b) => [b.id, b]))
+  const catalog = new Map(badgeCatalog(unitCount).map((b) => [b.id, b]))
   const badges = ids
     .map((id) => catalog.get(id))
     .filter((b): b is NonNullable<typeof b> => Boolean(b))

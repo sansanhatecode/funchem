@@ -1,11 +1,11 @@
 import {
   type Answer,
-  type ContentRegistry,
+  type ContentLookup,
   type Exercise,
   type Lesson,
   parseFormula,
   sameCounts,
-} from '@funchem/content'
+} from '@funchem/content/lib'
 
 export interface GradeResult {
   exerciseId: string
@@ -24,7 +24,7 @@ function gcd(a: number, b: number): number {
 export function gradeExercise(
   exercise: Exercise,
   answer: Answer,
-  registry: ContentRegistry,
+  registry: ContentLookup,
 ): GradeResult {
   const id = exercise.id
   if (answer.type !== exercise.type) {
@@ -174,7 +174,7 @@ export function xpBonus(accuracy: number): number {
 export function gradeLesson(
   lesson: Lesson,
   submission: LessonSubmission,
-  registry: ContentRegistry,
+  registry: ContentLookup,
 ): LessonGrade {
   const byId = new Map(submission.answers.map((a) => [a.exerciseId, a.answer]))
   const results = lesson.exercises.map((ex) => {

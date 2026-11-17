@@ -4,7 +4,7 @@ import {
   type Molecule,
   type Reaction,
   type ReactionSide,
-} from '@funchem/content'
+} from '@funchem/content/lib'
 
 /** Bán kính vẽ của nguyên tử H trong hộp phân tử 100x100. */
 export const BASE_ATOM_RADIUS = 9

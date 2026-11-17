@@ -1,6 +1,6 @@
 'use client'
 
-import type { SceneId } from '@funchem/content'
+import type { SceneId } from '@funchem/content/lib'
 import { type CSSProperties, useState } from 'react'
 import { ZoomScene } from '@/components/scenes/zoom-scene'
 import { cn } from '@/lib/cn'

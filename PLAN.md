@@ -455,6 +455,10 @@ Việc cần chủ dự án quyết định hoặc làm tiếp:
 - Trình đọc màn hình đọc tên phân tử ở các lựa chọn chỉ có hình, làm lộ đáp án.
 - Unit 5 có 7 bài học, Bài 4 của Unit 4 có 12 câu: dài hơn mức 5–8 phút.
 
+### Trình duyệt không còn tải cả kho nội dung — ngày 2026-11-17
+
+Nội dung vẫn nằm trong mã (không ở database), nhưng trình duyệt chỉ nhận phần màn hình đang cần: trang chủ nhận một bài thử, trang học nhận một bài cùng phân tử và phản ứng của nó, bản đồ học nhận dàn ý, ôn tập lấy đúng các câu cần ôn qua `/content/exercises`. Mã trình duyệt nhập từ `@funchem/content/lib`; luật lint chặn nhập cả kho. JavaScript tải về (đã nén) giảm khoảng 110 KB mỗi trang, ví dụ trang chủ từ 408 KB còn 299 KB, và không còn tăng theo số Unit. Chưa làm: tách cảnh minh hoạ theo Unit và gỡ zod khỏi gói trình duyệt.
+
 ### Tiếp theo: Giai đoạn 2
 
 Unit 3–4 (có bài cân bằng phản ứng), ôn tập theo khái niệm yếu, hỏi lại câu sai, âm thanh, trang hồ sơ, bảng xếp hạng tuần, ba loại hình minh hoạ ở trên, pháp lý và phân tích học tập.

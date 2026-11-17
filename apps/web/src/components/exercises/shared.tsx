@@ -1,8 +1,11 @@
-import { type Answer, content, type ContentItem, type Exercise } from '@funchem/content'
+'use client'
+
+import type { Answer, ContentItem, Exercise } from '@funchem/content/lib'
 import { MoleculeView } from '@/components/chem/molecule-view'
 import { SceneView } from '@/components/scenes'
 import { CheckIcon, XIcon } from '@/components/ui/icons'
 import { cn } from '@/lib/cn'
+import { useContent } from '@/lib/content-context'
 
 export type ExerciseOf<T extends Exercise['type']> = Extract<Exercise, { type: T }>
 export type AnswerOf<T extends Answer['type']> = Extract<Answer, { type: T }>
@@ -39,6 +42,7 @@ export function ItemContent({
   item: ContentItem
   moleculeSize?: number
 }) {
+  const content = useContent()
   const molecule = item.moleculeId ? content.molecules.get(item.moleculeId) : undefined
   return (
     <span className="flex flex-col items-center gap-1.5 text-center">

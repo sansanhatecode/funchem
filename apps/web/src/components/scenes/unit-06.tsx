@@ -1,4 +1,4 @@
-import type { Unit06SceneId } from '@funchem/content'
+import type { Unit06SceneId } from '@funchem/content/lib'
 import { BreadOvenScene } from './art/bread-oven'
 import { FirewoodStoveScene } from './art/firewood-stove'
 import { FizzingColdCupScene } from './art/fizzing-cold-cup'
