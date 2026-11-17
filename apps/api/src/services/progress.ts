@@ -28,6 +28,14 @@ export class NotFoundError extends Error {
   }
 }
 
+/** Bài chưa được mở khoá: người học phải hoàn thành các bài trước. */
+export class LessonLockedError extends Error {
+  constructor(lessonId: string) {
+    super(`Bài học chưa được mở khoá: ${lessonId}`)
+    this.name = 'LessonLockedError'
+  }
+}
+
 export async function ensureProfile(db: Db, userId: string) {
   await db.insert(schema.profiles).values({ userId }).onConflictDoNothing()
   await db.insert(schema.userStats).values({ userId }).onConflictDoNothing()
@@ -56,26 +64,44 @@ export async function submitAttempt(
   )
 
   return db.transaction(async (tx) => {
-    // làm lại bài đã hoàn thành chỉ được một nửa XP
-    const [previous] = await tx
+    // khoá dòng thống kê của người dùng: hai lần nộp cùng lúc phải xếp hàng,
+    // nếu không cả hai sẽ cùng thấy "hôm nay chưa nhận XP" và cùng được cộng
+    await tx
+      .select({ userId: schema.userStats.userId })
+      .from(schema.userStats)
+      .where(eq(schema.userStats.userId, input.userId))
+      .for('update')
+
+    // server tự xét bài đã mở chưa; giao diện có chặn nhưng API có thể bị gọi thẳng
+    const lessonRows = await tx
       .select()
       .from(schema.userLessons)
+      .where(eq(schema.userLessons.userId, input.userId))
+    const records = new Map<string, LessonRecord>(
+      lessonRows.map((r) => [r.lessonId, { lessonId: r.lessonId, bestAccuracy: r.bestAccuracy }]),
+    )
+    if (computeLessonStatuses(content, records).get(input.lessonId) === 'locked') {
+      throw new LessonLockedError(input.lessonId)
+    }
+
+    // làm lại bài đã hoàn thành chỉ được một nửa XP, và mỗi bài mỗi ngày không cộng dồn
+    const alreadyCompleted = isLessonCompleted(input.lessonId, records, content)
+    const [today] = await tx
+      .select({ sum: sql<number>`coalesce(sum(${schema.lessonAttempts.xpEarned}), 0)::int` })
+      .from(schema.lessonAttempts)
       .where(
         and(
-          eq(schema.userLessons.userId, input.userId),
-          eq(schema.userLessons.lessonId, input.lessonId),
+          eq(schema.lessonAttempts.userId, input.userId),
+          eq(schema.lessonAttempts.lessonId, input.lessonId),
+          gte(schema.lessonAttempts.completedAt, startOfLocalDay(now, profile.timezone)),
         ),
       )
-    const alreadyCompleted = previous
-      ? isLessonCompleted(
-          input.lessonId,
-          new Map([
-            [input.lessonId, { lessonId: input.lessonId, bestAccuracy: previous.bestAccuracy }],
-          ]),
-          content,
-        )
-      : false
-    const grade = { ...graded, xpEarned: xpForAttempt(graded, { alreadyCompleted }) }
+    const fullXp = xpForAttempt(graded, { alreadyCompleted })
+    const xpEarned = xpForAttempt(graded, {
+      alreadyCompleted,
+      earnedTodayForLesson: today?.sum ?? 0,
+    })
+    const grade = { ...graded, xpEarned }
 
     const [attempt] = await tx
       .insert(schema.lessonAttempts)
@@ -200,6 +226,8 @@ export async function submitAttempt(
       grade,
       /** true nếu đây là lần làm lại một bài đã hoàn thành (XP giảm một nửa) */
       repeat: alreadyCompleted,
+      /** true nếu XP bị giảm vì hôm nay bài này đã được cộng XP rồi */
+      xpLimited: xpEarned < fullXp,
       streak: { current: streak.streakCurrent, longest: streak.streakLongest },
       xpTotal: stats!.xpTotal + grade.xpEarned,
       newlyUnlockedMolecules: newlyUnlocked,

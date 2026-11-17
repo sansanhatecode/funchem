@@ -135,10 +135,18 @@ function ResultScreen({
         <Stat label="Kinh nghiệm" value={`+${grade.xpEarned} XP`} tone="sun" />
         <Stat label="Chuỗi ngày" value={<StreakValue days={result.streak.current} />} />
       </dl>
-      {result.repeat && grade.passed && (
+      {result.xpLimited ? (
         <p className="-mt-2 text-sm text-ink-soft">
-          Bạn đã học bài này rồi nên lần làm lại được một nửa XP.
+          Hôm nay bạn đã nhận XP của bài này rồi. Làm lại để luyện thêm vẫn rất tốt, ngày mai bài
+          này lại có XP.
         </p>
+      ) : (
+        result.repeat &&
+        grade.passed && (
+          <p className="-mt-2 text-sm text-ink-soft">
+            Bạn đã học bài này rồi nên lần làm lại được một nửa XP.
+          </p>
+        )
       )}
 
       <NewBadges ids={result.newBadges} unitCount={bundle.unitCount} />

@@ -13,6 +13,7 @@ import { logger } from './lib/logger.js'
 import {
   getProgress,
   getRecentAttempts,
+  LessonLockedError,
   NotFoundError,
   submitAttempt,
 } from './services/progress.js'
@@ -126,6 +127,7 @@ export function createApp({ env, db, auth }: AppDeps) {
         return c.json(result, 201)
       } catch (err) {
         if (err instanceof NotFoundError) return c.json({ error: err.message }, 404)
+        if (err instanceof LessonLockedError) return c.json({ error: 'lesson_locked' }, 403)
         throw err
       }
     },

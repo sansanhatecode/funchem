@@ -1,7 +1,13 @@
 import { fixtureContent } from '@funchem/content/testing'
 import { createDb, schema, sql } from '@funchem/db'
 import { afterAll, beforeEach, describe, expect, it } from 'vitest'
-import { getProgress, mergeProgress, NotFoundError, submitAttempt } from './progress.js'
+import {
+  getProgress,
+  LessonLockedError,
+  mergeProgress,
+  NotFoundError,
+  submitAttempt,
+} from './progress.js'
 import {
   deleteAccount,
   getLeaderboard,
@@ -140,8 +146,100 @@ d('progress service (Postgres)', () => {
     expect(first.repeat).toBe(false)
     expect(first.newBadges.sort()).toEqual(['first-lesson', 'perfect-lesson'])
     const again = await submitAttempt(db, { userId: u, ...lesson1 }, fixtureContent)
-    expect(again.grade.xpEarned).toBe(8)
+    // cùng ngày nên không được cộng thêm XP
+    expect(again.grade.xpEarned).toBe(0)
+    expect(again.xpLimited).toBe(true)
     expect(again.newBadges).toEqual([])
+  })
+
+  it('bài chưa mở khoá: gọi thẳng API cũng bị từ chối, không ghi gì', async () => {
+    const u = await mkUser('u-locked')
+    for (const lessonId of ['u1-l2-elements', 'u1-checkpoint', 'u2-l1-reactions']) {
+      await expect(
+        submitAttempt(db, { userId: u, lessonId, answers: [] }, fixtureContent),
+      ).rejects.toBeInstanceOf(LessonLockedError)
+    }
+    const [n] = await db.select({ c: sql<number>`count(*)::int` }).from(schema.lessonAttempts)
+    expect(n?.c).toBe(0)
+    const p = await getProgress(db, u, new Date(), fixtureContent)
+    expect(p.stats.xpTotal).toBe(0)
+
+    // học xong bài 1 thì bài 2 mở, bài kiểm tra vẫn khoá
+    await submitAttempt(db, { userId: u, ...lesson1 }, fixtureContent)
+    await expect(
+      submitAttempt(db, { userId: u, lessonId: 'u1-checkpoint', answers: [] }, fixtureContent),
+    ).rejects.toBeInstanceOf(LessonLockedError)
+    await expect(
+      submitAttempt(db, { userId: u, lessonId: 'u1-l2-elements', answers: [] }, fixtureContent),
+    ).resolves.toBeDefined()
+    // Unit 2 chỉ mở khi bài kiểm tra Unit 1 đạt
+    await submitAttempt(db, { userId: u, lessonId: 'u1-checkpoint', answers: [] }, fixtureContent)
+    await expect(
+      submitAttempt(db, { userId: u, lessonId: 'u2-l1-reactions', answers: [] }, fixtureContent),
+    ).rejects.toBeInstanceOf(LessonLockedError)
+  })
+
+  it('cày lại một bài trong cùng ngày không cộng dồn XP, sang ngày mới được nửa XP', async () => {
+    const u = await mkUser('u-farm')
+    const day1 = new Date('2026-11-10T03:00:00Z')
+    const first = await submitAttempt(db, { userId: u, ...lesson1, now: day1 }, fixtureContent)
+    expect(first.grade.xpEarned).toBe(15)
+    expect(first.xpLimited).toBe(false)
+
+    for (let i = 1; i <= 5; i++) {
+      const again = await submitAttempt(
+        db,
+        { userId: u, ...lesson1, now: new Date(day1.getTime() + i * 60_000) },
+        fixtureContent,
+      )
+      expect(again.grade.xpEarned).toBe(0)
+      expect(again.xpLimited).toBe(true)
+    }
+    const p1 = await getProgress(db, u, new Date('2026-11-10T05:00:00Z'), fixtureContent)
+    expect(p1.stats.xpTotal).toBe(15)
+
+    const nextDay = await submitAttempt(
+      db,
+      { userId: u, ...lesson1, now: new Date('2026-11-11T03:00:00Z') },
+      fixtureContent,
+    )
+    expect(nextDay.grade.xpEarned).toBe(8)
+    expect(nextDay.xpLimited).toBe(false)
+  })
+
+  it('hai lần nộp cùng lúc chỉ một lần được XP', async () => {
+    const u = await mkUser('u-race')
+    const now = new Date('2026-11-10T03:00:00Z')
+    const results = await Promise.all(
+      Array.from({ length: 6 }, () =>
+        submitAttempt(db, { userId: u, ...lesson1, now }, fixtureContent),
+      ),
+    )
+    expect(results.reduce((n, r) => n + r.grade.xpEarned, 0)).toBe(15)
+    const p = await getProgress(db, u, new Date('2026-11-10T04:00:00Z'), fixtureContent)
+    expect(p.stats.xpTotal).toBe(15)
+  })
+
+  it('ôn tập: chỉ 3 lượt đầu trong ngày được cộng XP', async () => {
+    const u = await mkUser('u-review-cap')
+    const day = new Date('2026-11-10T03:00:00Z')
+    await submitAttempt(db, { userId: u, ...lesson1, now: day }, fixtureContent)
+    const run = (at: Date) =>
+      submitReview(db, { userId: u, answers: lesson1.answers, now: at }, fixtureContent)
+    for (let i = 1; i <= 3; i++) {
+      const r = await run(new Date(day.getTime() + i * 60_000))
+      expect(r.xpEarned).toBe(4)
+      expect(r.xpLimited).toBe(false)
+    }
+    const fourth = await run(new Date(day.getTime() + 4 * 60_000))
+    expect(fourth.correct).toBe(4)
+    expect(fourth.xpEarned).toBe(0)
+    expect(fourth.xpLimited).toBe(true)
+    const p = await getProgress(db, u, new Date(day.getTime() + 5 * 60_000), fixtureContent)
+    expect(p.stats.xpTotal).toBe(15 + 12)
+
+    const tomorrow = await run(new Date('2026-11-11T03:00:00Z'))
+    expect(tomorrow.xpEarned).toBe(4)
   })
 
   it('ôn tập: chỉ lấy câu từ bài đã học, chấm ở server, cộng XP theo số câu đúng', async () => {

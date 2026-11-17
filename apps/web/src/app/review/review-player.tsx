@@ -98,6 +98,11 @@ export function ReviewPlayer() {
               <Stat label="Kinh nghiệm" value={`+${result.xpEarned} XP`} tone="sun" />
               <Stat label="Chuỗi ngày" value={<StreakValue days={result.streak.current} />} />
             </dl>
+            {result.xpLimited && (
+              <p className="-mt-2 text-sm text-ink-soft">
+                Hôm nay bạn đã nhận đủ XP ôn tập. Ôn thêm vẫn giúp bạn nhớ lâu hơn.
+              </p>
+            )}
             <NewBadges ids={result.newBadges} unitCount={unitCount} />
             <Link href="/learn" className={buttonClass('primary', 'lg', 'mt-2 w-full')}>
               Về bản đồ học

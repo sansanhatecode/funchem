@@ -14,7 +14,7 @@ import {
   xpForReview,
 } from '@funchem/core'
 import { type Db, and, eq, gte, schema, sql } from '@funchem/db'
-import { awardBadges, ensureProfile } from './progress.js'
+import { awardBadges, ensureProfile, startOfLocalDay } from './progress.js'
 
 /** Múi giờ dùng để chia tuần của bảng xếp hạng. */
 const LEADERBOARD_TZ = 'Asia/Ho_Chi_Minh'
@@ -91,9 +91,27 @@ export async function submitReview(
     .filter((a) => allowed.has(a.exerciseId) && !seen.has(a.exerciseId) && seen.add(a.exerciseId))
     .map((a) => gradeExercise(content.exercises.get(a.exerciseId)!.exercise, a.answer, content))
   const correct = results.filter((r) => r.correct).length
-  const xpEarned = xpForReview(correct)
 
   return db.transaction(async (tx) => {
+    // khoá dòng thống kê để các lượt nộp cùng lúc không cùng lách qua giới hạn trong ngày
+    await tx
+      .select({ userId: schema.userStats.userId })
+      .from(schema.userStats)
+      .where(eq(schema.userStats.userId, input.userId))
+      .for('update')
+    const [rewarded] = await tx
+      .select({ n: sql<number>`count(*)::int` })
+      .from(schema.xpEvents)
+      .where(
+        and(
+          eq(schema.xpEvents.userId, input.userId),
+          eq(schema.xpEvents.source, 'review'),
+          gte(schema.xpEvents.createdAt, startOfLocalDay(now, profile.timezone)),
+        ),
+      )
+    const rewardedRunsToday = rewarded?.n ?? 0
+    const xpEarned = xpForReview(correct, { rewardedRunsToday })
+    const xpLimited = correct > 0 && xpEarned === 0
     const byConcept = new Map<string, boolean>()
     for (const r of results) {
       for (const c of content.exercises.get(r.exerciseId)?.exercise.conceptIds ?? []) {
@@ -157,6 +175,8 @@ export async function submitReview(
       total: results.length,
       correct,
       xpEarned,
+      /** true nếu hôm nay đã hết số lượt ôn được cộng XP */
+      xpLimited,
       streak: { current: streak.streakCurrent, longest: streak.streakLongest },
       xpTotal: stats!.xpTotal + xpEarned,
       newBadges,

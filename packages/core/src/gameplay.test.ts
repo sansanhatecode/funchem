@@ -2,13 +2,31 @@ import { fixtureContent as content } from '@funchem/content/testing'
 import { describe, expect, it } from 'vitest'
 import { badgeCatalog, earnedBadges } from './badges.js'
 import { pickReviewExercises } from './review.js'
-import { xpForAttempt, xpForReview } from './xp.js'
+import { REVIEW_REWARDED_RUNS_PER_DAY, xpForAttempt, xpForReview } from './xp.js'
 
 describe('xpForAttempt', () => {
   it('lần đầu được đủ XP, làm lại được một nửa (làm tròn lên)', () => {
     expect(xpForAttempt({ xpEarned: 15 }, { alreadyCompleted: false })).toBe(15)
     expect(xpForAttempt({ xpEarned: 15 }, { alreadyCompleted: true })).toBe(8)
     expect(xpForAttempt({ xpEarned: 0 }, { alreadyCompleted: true })).toBe(0)
+  })
+  it('mỗi bài mỗi ngày không cộng dồn: chỉ được phần chênh so với XP đã nhận hôm nay', () => {
+    // đã nhận 15 hôm nay, làm lại (nửa XP = 8) không được gì
+    expect(
+      xpForAttempt({ xpEarned: 15 }, { alreadyCompleted: true, earnedTodayForLesson: 15 }),
+    ).toBe(0)
+    // trượt bài kiểm tra được 4, làm lại đạt 15 thì nhận phần chênh 11
+    expect(
+      xpForAttempt({ xpEarned: 15 }, { alreadyCompleted: false, earnedTodayForLesson: 4 }),
+    ).toBe(11)
+    // làm lại kém hơn không bị trừ
+    expect(
+      xpForAttempt({ xpEarned: 2 }, { alreadyCompleted: false, earnedTodayForLesson: 4 }),
+    ).toBe(0)
+  })
+  it('ôn tập: quá số lượt được thưởng trong ngày thì không cộng XP', () => {
+    expect(xpForReview(6, { rewardedRunsToday: REVIEW_REWARDED_RUNS_PER_DAY - 1 })).toBe(6)
+    expect(xpForReview(6, { rewardedRunsToday: REVIEW_REWARDED_RUNS_PER_DAY })).toBe(0)
   })
   it('ôn tập: 1 XP mỗi câu đúng, tối đa 10', () => {
     expect(xpForReview(6)).toBe(6)
