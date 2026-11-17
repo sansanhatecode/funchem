@@ -16,7 +16,7 @@ export const unit07Scenes: Record<Unit07SceneId, SceneDef> = {
   'metal-kitchen': {
     Component: MetalKitchenScene,
     label:
-      'Góc bếp: nồi nhôm sáng bóng đang sôi trên bếp gas, chiếc chảo treo trên tường và chùm chìa khoá trên bàn',
+      'Góc bếp: chiếc nồi nhôm sáng bóng đang đun trên bếp gas, chiếc chảo treo trên tường và chùm chìa khoá trên bàn',
     hotspot: { x: 130, y: 112 },
   },
   'aluminium-cans': {

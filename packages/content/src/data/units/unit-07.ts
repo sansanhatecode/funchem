@@ -21,9 +21,9 @@ export const unit07: UnitInput = {
       intro: {
         title: 'Một góc bếp toàn kim loại',
         story: [
-          'Nhìn quanh bếp mà xem: nồi nhôm đang sôi trên bếp, chiếc chảo treo trên tường, chùm chìa khoá ai để quên trên bàn. Trong tường còn có dây điện lõi đồng. Vì sao những thứ này đều làm bằng kim loại mà không phải gỗ hay nhựa?',
+          'Nhìn quanh bếp mà xem: chiếc nồi nhôm đang đun canh trên bếp, chiếc chảo treo trên tường, chùm chìa khoá ai để quên trên bàn. Trong tường còn có dây điện lõi đồng. Vì sao những thứ này đều làm bằng kim loại mà không phải gỗ hay nhựa?',
           'Vì kim loại có bốn tài lẻ chung. Chúng dẫn nhiệt tốt, nên lửa ở đáy nồi làm chín cả nồi canh. Chúng dẫn điện tốt, nên làm được lõi dây điện. Chúng có ánh kim, tức là vẻ sáng lấp lánh của bề mặt. Và chúng có tính dẻo: bị đập hay kéo thì bẹp ra, dài ra chứ không vỡ vụn, nên dát được thành lá mỏng và kéo được thành sợi.',
-          'Phóng to vào thành nồi, bạn thấy các nguyên tử aluminium (nhôm) xếp khít thành hàng lối. Một số electron không ở yên bên nguyên tử nào mà chạy tự do khắp khối kim loại. Chính các electron tự do này mang dòng điện đi và truyền nhiệt rất nhanh. Còn khi bị đập, các lớp nguyên tử trượt lên nhau mà không rời nhau, nên kim loại chỉ đổi hình dạng.',
+          'Phóng to vào thành nồi, bạn thấy các nguyên tử aluminium (nhôm) xếp khít thành hàng lối. Một số electron không ở yên bên nguyên tử nào mà chạy tự do khắp khối kim loại. Chính các electron tự do này mang dòng điện đi và truyền nhiệt rất nhanh. Còn khi bị đập, các lớp nguyên tử trượt lên nhau nhưng vẫn được các electron tự do giữ lại, nên kim loại chỉ đổi hình dạng chứ không vỡ.',
           'Nhưng mỗi kim loại một tính. Nhôm nhẹ nên làm nồi, làm vỏ máy bay. Iron (sắt) nặng và chắc hơn nhôm, lại bị nam châm hút. Copper (đồng) dẫn điện gần như tốt nhất. Gold (vàng) dẻo nhất và gần như không bao giờ xỉn màu.',
         ],
         visual: { type: 'molecule', moleculeId: 'al', scene: 'metal-kitchen' },
@@ -91,7 +91,7 @@ export const unit07: UnitInput = {
           prompt: 'Kim loại nào cũng cứng, nặng và bị nam châm hút.',
           answer: false,
           explanation:
-            'Mỗi kim loại một tính. Nhôm nhẹ, sodium (natri) mềm tới mức cắt được bằng dao, mercury (thuỷ ngân) còn ở thể lỏng. Trong bốn kim loại của bài này, chỉ sắt bị nam châm hút. Điểm chung của kim loại là ánh kim, dẫn điện, dẫn nhiệt và tính dẻo.',
+            'Mỗi kim loại một tính. Nhôm nhẹ, sodium (natri) mềm tới mức cắt được bằng dao, mercury (thuỷ ngân) còn ở thể lỏng ngay ở nhiệt độ phòng. Trong bốn kim loại của bài này, chỉ sắt bị nam châm hút. Điểm chung của kim loại là ánh kim, dẫn điện, dẫn nhiệt và tính dẻo.',
           conceptIds: ['metal-properties', 'metal'],
         },
         {
@@ -113,10 +113,10 @@ export const unit07: UnitInput = {
         {
           id: 'u7-l1-e6',
           type: 'sort',
-          prompt: 'Điều nào đúng với mọi kim loại, điều nào chỉ đúng với một số kim loại?',
+          prompt: 'Điều nào là tính chất chung của kim loại, điều nào chỉ một số kim loại mới có?',
           groups: [
-            { id: 'all', label: 'Kim loại nào cũng có' },
-            { id: 'some', label: 'Chỉ một số kim loại' },
+            { id: 'all', label: 'Tính chất chung của kim loại' },
+            { id: 'some', label: 'Chỉ một số kim loại có' },
           ],
           items: [
             { id: 'i1', text: 'Dẫn điện', groupId: 'all' },
@@ -211,8 +211,8 @@ export const unit07: UnitInput = {
         story: [
           'Hai cái vỏ lon bị bỏ quên ở góc sân. Sau một mùa mưa, vỏ hộp sắt đã gỉ nâu, còn vỏ lon nhôm vẫn sáng. Có phải nhôm không phản ứng với oxygen?',
           'Ngược lại là khác. Aluminium (nhôm) phản ứng với oxygen còn nhanh hơn sắt. Mặt nhôm vừa lộ ra không khí là phủ ngay một lớp aluminium oxide Al₂O₃. Lớp này mỏng tới mức mắt không thấy, nhưng kín và bám rất chặt, nên oxygen không chạm được vào phần nhôm bên dưới. Gỉ sắt thì xốp và dễ bong, nên sắt cứ bị ăn dần vào trong.',
-          'Hợp chất của một nguyên tố với oxygen gọi là oxide. Nhiều kim loại phản ứng với oxygen tạo thành oxide: magnesium cháy sáng trong pháo bông thành magnesium oxide, sắt gỉ chậm chạp thành iron(III) oxide.',
-          'Kim loại còn phản ứng với acid. Acid là những chất khi tan trong nước tạo ra ion H⁺, như acetic acid làm giấm có vị chua. Trong phòng thí nghiệm, giáo viên thả một viên zinc (kẽm) vào dung dịch hydrochloric acid HCl: viên kẽm sủi bọt khí hydrogen và tan dần. Thí nghiệm này chỉ làm ở trường, có kính bảo hộ, vì acid ăn da và hydrogen dễ cháy.',
+          'Bạn đã biết oxide là hợp chất gồm hai nguyên tố, trong đó một nguyên tố là oxygen. Nhiều kim loại phản ứng với oxygen tạo thành oxide: magnesium cháy sáng chói thành magnesium oxide, sắt gỉ chậm chạp thành iron(III) oxide.',
+          'Nhiều kim loại còn phản ứng với acid, họ chất nhả ra ion H⁺ khi tan trong nước mà bạn đã gặp ở giấm và chanh. Trong phòng thí nghiệm, giáo viên thả một viên zinc (kẽm) vào dung dịch hydrochloric acid HCl: bọt khí hydrogen sủi lên quanh viên kẽm, còn viên kẽm tan dần. Thí nghiệm này chỉ làm ở trường, có kính bảo hộ, vì acid ăn da và hydrogen dễ cháy.',
         ],
         visual: { type: 'reaction', reactionId: 'aluminium-oxidation' },
       },
@@ -246,14 +246,14 @@ export const unit07: UnitInput = {
         {
           id: 'u7-l2-e3',
           type: 'match-pairs',
-          prompt: 'Kim loại gặp phi kim. Nối mỗi cặp chất phản ứng với sản phẩm của chúng',
+          prompt: 'Kim loại gặp phi kim. Nối mỗi cặp chất tham gia với sản phẩm của chúng',
           pairs: [
             {
               left: { id: 'l1', text: 'Magnesium + oxygen' },
               right: { id: 'r1', moleculeId: 'mgo', text: 'Magnesium oxide' },
             },
             {
-              left: { id: 'l2', text: 'Iron (sắt) + oxygen' },
+              left: { id: 'l2', text: 'Iron (sắt) + oxygen, khi sắt gỉ' },
               right: { id: 'r2', moleculeId: 'fe2o3', text: 'Iron(III) oxide' },
             },
             {
@@ -266,7 +266,7 @@ export const unit07: UnitInput = {
             },
           ],
           explanation:
-            'Sản phẩm chỉ chứa những nguyên tố có trong chất phản ứng. Kim loại với oxygen tạo thành oxide. Kim loại cũng phản ứng với phi kim khác: natri gặp khí chlorine tạo thành sodium chloride, chính là muối ăn.',
+            'Sản phẩm chỉ chứa những nguyên tố có trong chất tham gia. Kim loại với oxygen tạo thành oxide. Kim loại cũng phản ứng với phi kim khác: natri gặp khí chlorine tạo thành sodium chloride, chính là muối ăn.',
           conceptIds: ['oxide', 'reactants-products'],
         },
         {
@@ -301,7 +301,7 @@ export const unit07: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Sản phẩm chỉ chứa những nguyên tố có trong chất phản ứng: Zn, H và Cl. Kẽm và hydrochloric acid không có O hay C để tạo ra oxygen hay carbon dioxide. Kẽm đã đẩy hydrogen ra khỏi acid thành khí H₂.',
+            'Sản phẩm chỉ chứa những nguyên tố có trong chất tham gia: Zn, H và Cl. Kẽm và hydrochloric acid không có O hay C để tạo ra oxygen hay carbon dioxide. Kẽm đã đẩy hydrogen ra khỏi acid thành khí H₂.',
           conceptIds: ['acid', 'reactants-products'],
         },
         {
@@ -309,7 +309,7 @@ export const unit07: UnitInput = {
           type: 'sort',
           prompt: 'Kẽm gặp hydrochloric acid: Zn + 2HCl → ZnCl₂ + H₂. Xếp mỗi chất vào đúng nhóm',
           groups: [
-            { id: 'reactant', label: 'Chất phản ứng' },
+            { id: 'reactant', label: 'Chất tham gia' },
             { id: 'product', label: 'Sản phẩm' },
           ],
           items: [
@@ -319,7 +319,7 @@ export const unit07: UnitInput = {
             { id: 'i4', moleculeId: 'hcl', text: 'Hydrochloric acid', groupId: 'reactant' },
           ],
           explanation:
-            'Kẽm và hydrochloric acid đứng trước mũi tên nên là chất phản ứng. Khí hydrogen bay lên, còn zinc chloride tan trong nước nên bạn không nhìn thấy. Zinc chloride thuộc nhóm hợp chất gọi là muối, cùng họ với muối ăn.',
+            'Kẽm và hydrochloric acid đứng trước mũi tên nên là chất tham gia. Khí hydrogen bay lên, còn zinc chloride tan trong nước nên bạn không nhìn thấy. Zinc chloride là một muối: ion kim loại Zn²⁺ đi với gốc acid Cl của hydrochloric acid, giống như muối ăn NaCl.',
           conceptIds: ['acid', 'reactants-products', 'salt'],
         },
         {
@@ -339,7 +339,7 @@ export const unit07: UnitInput = {
           visual: { id: 'v', image: 'zinc-acid' },
           answer: false,
           explanation:
-            'Không nguyên tử nào mất đi. Các nguyên tử zinc rời viên kẽm, thành ion Zn²⁺ của zinc chloride tan trong nước. Chúng nhỏ tới mức mắt không thấy, giống như đường tan trong trà.',
+            'Không nguyên tử nào mất đi. Các nguyên tử zinc rời viên kẽm, thành ion Zn²⁺ của zinc chloride tan trong nước. Chúng vẫn còn đủ trong ống nghiệm, chỉ là nhỏ tới mức mắt không thấy, giống các hạt đường đã tan trong trà. Khác với đường tan, ở đây có chất mới sinh ra nên đây là phản ứng hoá học.',
           conceptIds: ['conservation-of-mass', 'solution'],
         },
         {
@@ -349,13 +349,13 @@ export const unit07: UnitInput = {
             'Dưa chua, canh chua có chứa acid. Vì sao không nên đựng những món này lâu ngày trong nồi nhôm?',
           visual: { id: 'v', image: 'metal-kitchen' },
           options: [
-            { id: 'a', text: 'Vì acid phản ứng dần với nhôm, làm mòn nồi và đưa nhôm vào thức ăn' },
+            { id: 'a', text: 'Vì acid phản ứng dần với nhôm, làm mòn nồi và nhôm lẫn vào thức ăn' },
             { id: 'b', text: 'Vì nhôm dẫn nhiệt tốt nên món chua để trong nồi mau bị nguội' },
             { id: 'c', text: 'Vì acid làm lớp aluminium oxide dày thêm, khiến nồi nặng hơn' },
           ],
           correctOptionId: 'a',
           explanation:
-            'Acid trong đồ chua phản ứng chậm với lớp aluminium oxide rồi với nhôm bên dưới. Nồi bị mòn dần, còn nhôm đi vào thức ăn. Vì thế đồ chua thường được đựng trong hũ thuỷ tinh, sành sứ hoặc inox.',
+            'Bạn đã biết oxide của kim loại thường tác dụng được với acid. Acid trong đồ chua phản ứng chậm với lớp aluminium oxide, rồi với nhôm bên dưới. Nồi mòn dần, còn một ít nhôm lẫn vào thức ăn. Nhôm dẫn nhiệt tốt là thật, nhưng đó không phải lí do. Vì thế đồ chua thường được đựng trong hũ thuỷ tinh hoặc sành sứ.',
           conceptIds: ['acid', 'oxide'],
         },
       ],
@@ -370,10 +370,10 @@ export const unit07: UnitInput = {
       intro: {
         title: 'Mẩu natri chạy trên mặt nước',
         story: [
-          'Trong một video thí nghiệm, thầy giáo đứng sau tấm chắn, thả một mẩu sodium (natri) nhỏ bằng hạt đậu vào chậu nước. Mẩu kim loại vo tròn lại, chạy vòng vòng trên mặt nước, xì xì rồi bốc cháy. Trong khi đó, chiếc nhẫn vàng ngâm nước cả đời vẫn y nguyên.',
+          'Trong một video thí nghiệm, thầy giáo đứng sau tấm chắn, thả một mẩu sodium (natri) nhỏ bằng hạt đậu vào chậu nước. Mẩu kim loại vo tròn lại, chạy vòng vòng trên mặt nước, kêu xì xì, có lúc còn bốc cháy. Trong khi đó, chiếc nhẫn vàng ngâm nước cả đời vẫn y nguyên.',
           'Natri đã phản ứng với nước và đẩy hydrogen ra khỏi nước thành khí. Chính khí hydrogen xì ra đẩy mẩu natri chạy. Có kim loại hăng hái phản ứng như thế, có kim loại lại gần như trơ. Ta nói chúng khác nhau về mức độ hoạt động hoá học.',
           `Xếp các kim loại quen thuộc từ hăng hái nhất tới trơ nhất, ta được dãy hoạt động hoá học: ${SERIES}. Đọc lần lượt: potassium (kali), sodium (natri), calcium, magnesium, aluminium (nhôm), zinc (kẽm), iron (sắt), lead (chì), hydrogen, copper (đồng), silver (bạc), gold (vàng). Càng đứng về bên trái, kim loại hoạt động càng mạnh.`,
-          'H là hydrogen, không phải kim loại. Nó được đặt vào làm mốc: kim loại đứng trước H đẩy được hydrogen ra khỏi dung dịch acid, kim loại đứng sau H thì không. Đứng đầu dãy, kali và natri phản ứng mạnh ngay cả với nước. Cuối dãy, bạc và vàng gần như trơ, nên được làm trang sức.',
+          'H là hydrogen, không phải kim loại. Nó được đặt vào làm mốc: kim loại đứng trước H đẩy được hydrogen ra khỏi dung dịch acid, kim loại đứng sau H thì không. Ba kim loại đứng đầu dãy là kali, natri và calcium phản ứng được ngay cả với nước. Cuối dãy, bạc và vàng gần như trơ, nên được làm trang sức.',
         ],
         visual: { type: 'molecule', moleculeId: 'h2', scene: 'sodium-water' },
       },
@@ -431,7 +431,7 @@ export const unit07: UnitInput = {
             { accepted: ['Cu'], wordBank: ['Zn', 'Cu', 'Hg'] },
           ],
           explanation:
-            'Zn (kẽm) đứng ngay trước Fe (sắt). Cu (đồng) đứng ngay sau H. Nhiều bạn nhớ cả dãy bằng một câu vần: "Khi Nào Cần May Áo Záp Sắt, Phải Hỏi Cửa Á Âu". Chữ "Záp" cố ý viết sai chính tả để nhớ chữ Z của Zn.',
+            'Zn (kẽm) đứng ngay trước Fe (sắt). Cu (đồng) đứng ngay sau H. Để nhớ cả dãy, bạn có thể dùng câu vần quen thuộc của học sinh Việt Nam, đã rút gọn cho vừa 12 chất: "Khi Nào Cần May Áo Záp Sắt, Phải Hỏi Cửa Á Âu". Mỗi tiếng ứng với một chất theo đúng thứ tự: K, Na, Ca, Mg, Al, Zn, Fe (sắt), Pb, H, Cu, Ag (Á), Au (Âu). Chữ "Giáp" cố ý viết thành "Záp" để nhớ chữ Z của Zn.',
           conceptIds: ['reactivity-series'],
         },
         {
@@ -528,7 +528,7 @@ export const unit07: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Natri đứng gần đầu dãy nên phản ứng với nước rất mãnh liệt: toả nhiệt, sinh khí hydrogen dễ cháy, có thể bắn tung toé và nổ. Kali còn dữ dội hơn. Đây là thí nghiệm tuyệt đối không tự làm.',
+            'Natri đứng gần đầu dãy nên phản ứng với nước rất mãnh liệt: toả nhiệt, sinh khí hydrogen dễ cháy, có thể bắn tung toé và nổ. Thứ còn lại trong chậu là dung dịch sodium hydroxide NaOH, chất kiềm ăn da bạn đã biết. Kali còn dữ dội hơn. Đây là thí nghiệm tuyệt đối không tự làm.',
           conceptIds: ['reactivity-series'],
         },
       ],
@@ -543,8 +543,8 @@ export const unit07: UnitInput = {
       intro: {
         title: 'Đồng ở đâu ra?',
         story: [
-          'Thả một cây đinh sắt xám bạc vào cốc dung dịch màu xanh lam. Ít phút sau nhấc lên, phần đinh ngập trong dung dịch đã phủ một lớp đỏ nâu. Đó là kim loại copper (đồng). Đồng ở đâu ra?',
-          'Dung dịch xanh ấy là copper(II) sulfate CuSO₄ tan trong nước. Nó là một muối, cùng họ với muối ăn NaCl: gồm ion kim loại Cu²⁺ và ion sulfate SO₄²⁻ hút nhau. Tan vào nước, hai loại ion này tách rời nhau. Chính ion Cu²⁺ làm dung dịch có màu xanh lam.',
+          'Trong phòng thí nghiệm, giáo viên thả một cây đinh sắt xám bạc vào cốc dung dịch màu xanh lam. Ít phút sau nhấc lên, phần đinh ngập trong dung dịch đã phủ một lớp đỏ nâu. Đó là kim loại copper (đồng). Đồng ở đâu ra?',
+          'Dung dịch xanh ấy là copper(II) sulfate CuSO₄ tan trong nước. Chất này độc nên chỉ dùng trong phòng thí nghiệm. Bạn đã biết nó là một muối: ion kim loại Cu²⁺ đi với gốc sulfate SO₄²⁻, một nhóm nguyên tử mang điện âm. Tan vào nước, hai loại ion này tách rời nhau. Chính ion Cu²⁺ làm dung dịch có màu xanh lam.',
           'Sắt hoạt động mạnh hơn đồng. Mỗi nguyên tử iron (sắt) trên mặt đinh nhường 2 electron cho một ion Cu²⁺. Nguyên tử sắt thành ion Fe²⁺ và tan vào dung dịch. Ion Cu²⁺ nhận electron, trở lại thành nguyên tử đồng và bám lên đinh. Sắt đã đẩy đồng ra khỏi dung dịch muối: Fe + CuSO₄ → FeSO₄ + Cu.',
           'Quy tắc chung: kim loại đứng trước trong dãy hoạt động hoá học đẩy được kim loại đứng sau ra khỏi dung dịch muối. Riêng kali, natri và calcium thì không, vì chúng phản ứng với nước trong dung dịch trước.',
         ],
@@ -572,7 +572,7 @@ export const unit07: UnitInput = {
           type: 'sort',
           prompt: 'Sắt đẩy đồng: Fe + CuSO₄ → FeSO₄ + Cu. Xếp mỗi chất vào đúng nhóm',
           groups: [
-            { id: 'reactant', label: 'Chất phản ứng' },
+            { id: 'reactant', label: 'Chất tham gia' },
             { id: 'product', label: 'Sản phẩm' },
           ],
           items: [
@@ -582,7 +582,7 @@ export const unit07: UnitInput = {
             { id: 'i4', moleculeId: 'cuso4', text: 'Copper(II) sulfate', groupId: 'reactant' },
           ],
           explanation:
-            'Sắt và copper(II) sulfate đứng trước mũi tên nên là chất phản ứng. Iron(II) sulfate và đồng sinh ra sau phản ứng nên là sản phẩm. Hai kim loại đã đổi chỗ cho nhau: sắt vào dung dịch, đồng ra ngoài.',
+            'Sắt và copper(II) sulfate đứng trước mũi tên nên là chất tham gia. Iron(II) sulfate và đồng sinh ra sau phản ứng nên là sản phẩm. Hai kim loại đã đổi chỗ cho nhau: sắt vào dung dịch, đồng ra ngoài.',
           conceptIds: ['displacement', 'reactants-products'],
         },
         {
@@ -678,6 +678,17 @@ export const unit07: UnitInput = {
           conceptIds: ['displacement', 'reactivity-series', 'ion'],
         },
         {
+          id: 'u7-l4-e11',
+          type: 'true-false',
+          prompt:
+            'Natri đứng trước đồng trong dãy hoạt động hoá học. Vì thế cho natri vào dung dịch copper(II) sulfate thì natri đẩy đồng ra, và ta thu được kim loại đồng.',
+          visual: { id: 'v', image: 'sodium-water' },
+          answer: false,
+          explanation:
+            'Quy tắc "kim loại đứng trước đẩy kim loại đứng sau" có ngoại lệ: kali, natri và calcium. Ba kim loại này hoạt động mạnh tới mức phản ứng ngay với nước trong dung dịch và sủi khí hydrogen, nên không có lớp đồng nào bám lên. Muốn đẩy đồng ra khỏi dung dịch muối, người ta dùng những kim loại như sắt hay kẽm. Natri gặp nước rất nguy hiểm, chỉ giáo viên mới làm thí nghiệm với nó.',
+          conceptIds: ['displacement', 'reactivity-series'],
+        },
+        {
           id: 'u7-l4-e10',
           type: 'mcq',
           prompt:
@@ -705,8 +716,8 @@ export const unit07: UnitInput = {
         title: 'Sắt trốn trong đá',
         story: [
           'Cây cầu thép, cái xoong, chiếc xe đạp: sắt ở khắp nơi. Nhưng đào đất lên, bạn gần như không bao giờ gặp một cục sắt sáng bóng. Trong tự nhiên, sắt nằm trong quặng: thứ đá nâu đỏ chứa nhiều iron(III) oxide Fe₂O₃, cùng chất với gỉ sắt.',
-          'Muốn có sắt, phải gỡ oxygen ra khỏi iron(III) oxide. Trong lò cao nóng tới khoảng 2.000 °C, than cốc cháy thiếu oxygen sinh ra khí carbon monoxide CO. Khí này lấy oxygen của iron(III) oxide và thành carbon dioxide, để lại sắt nóng chảy: Fe₂O₃ + 3CO → 2Fe + 3CO₂.',
-          'Sắt chảy ra từ lò còn lẫn vài phần trăm carbon, gọi là gang: cứng nhưng giòn. Bớt carbon đi, ta được thép: cứng mà dẻo dai hơn. Gang và thép đều là hợp kim, tức là vật liệu tạo ra bằng cách nấu chảy một kim loại cùng với một ít kim loại khác hoặc phi kim, rồi để nguội.',
+          'Muốn có sắt, phải gỡ oxygen ra khỏi iron(III) oxide. Việc này diễn ra trong lò cao, nơi chỗ nóng nhất lên tới khoảng 2.000 °C. Than cốc, một loại than gần như chỉ gồm carbon, cháy thiếu oxygen sinh ra khí carbon monoxide CO. Khí này lấy oxygen của iron(III) oxide và thành carbon dioxide, để lại sắt nóng chảy: Fe₂O₃ + 3CO → 2Fe + 3CO₂.',
+          'Sắt chảy ra từ lò còn lẫn vài phần trăm carbon, gọi là gang: cứng nhưng giòn. Bớt carbon đi, ta được thép: cứng mà dẻo dai hơn. Gang và thép đều là hợp kim, tức là vật liệu kim loại gồm một kim loại chính trộn với một ít kim loại khác hoặc phi kim. Người ta thường nấu chảy chúng cùng nhau rồi để nguội.',
           'Sắt nguyên chất khá mềm nên ít khi được dùng. Pha thêm chất khác, kim loại cứng hơn, bền hơn hoặc khó gỉ hơn. Vì thế hầu hết đồ kim loại quanh bạn là hợp kim.',
         ],
         visual: { type: 'reaction', reactionId: 'iron-extraction' },
@@ -732,7 +743,7 @@ export const unit07: UnitInput = {
           prompt:
             'Trong lò cao, iron(III) oxide gặp carbon monoxide, tạo thành sắt và carbon dioxide. Xếp mỗi chất vào đúng nhóm',
           groups: [
-            { id: 'reactant', label: 'Chất phản ứng' },
+            { id: 'reactant', label: 'Chất tham gia' },
             { id: 'product', label: 'Sản phẩm' },
           ],
           items: [
@@ -742,7 +753,7 @@ export const unit07: UnitInput = {
             { id: 'i4', moleculeId: 'co2', text: 'Carbon dioxide', groupId: 'product' },
           ],
           explanation:
-            'Iron(III) oxide và carbon monoxide là chất phản ứng. Carbon monoxide lấy oxygen của iron(III) oxide và thành carbon dioxide, để lại sắt. Carbon monoxide là khí độc, nên khí lò cao được thu lại để đốt tiếp chứ không thả thẳng ra ngoài.',
+            'Iron(III) oxide và carbon monoxide là chất tham gia. Carbon monoxide lấy oxygen của iron(III) oxide và thành carbon dioxide, để lại sắt. Carbon monoxide là khí độc, nên khí lò cao được thu lại để đốt tiếp chứ không thả thẳng ra ngoài.',
           conceptIds: ['metal-extraction', 'reactants-products'],
         },
         {
@@ -775,7 +786,7 @@ export const unit07: UnitInput = {
           visual: { id: 'v', image: 'steel-bridge' },
           answer: false,
           explanation:
-            'Hợp kim là hỗn hợp: các chất được nấu chảy và trộn vào nhau theo tỉ lệ do người làm chọn. Thép có thể chứa nhiều hay ít carbon tuỳ loại. Hợp chất như nước thì khác: lúc nào cũng đúng 2 hydrogen với 1 oxygen.',
+            'Ở mức này, ta coi hợp kim là một hỗn hợp: các chất được nấu chảy và trộn vào nhau theo tỉ lệ do người làm chọn. Thép có thể chứa nhiều hay ít carbon tuỳ loại. Hợp chất như nước thì khác: lúc nào cũng đúng 2 hydrogen với 1 oxygen.',
           conceptIds: ['alloy', 'mixture', 'compound'],
         },
         {
@@ -847,7 +858,7 @@ export const unit07: UnitInput = {
             },
           ],
           explanation:
-            'Vàng gần như trơ nên nằm sẵn trong đất cát ở dạng kim loại. Sắt hoạt động vừa phải nên carbon monoxide gỡ được oxygen ra khỏi nó. Nhôm giữ oxygen chặt tới mức carbon monoxide chịu thua, phải dùng dòng điện rất mạnh mới tách được. Vì thế hồi thế kỉ 19, nhôm từng quý hơn cả vàng.',
+            'Vàng gần như trơ nên nằm sẵn trong đất cát ở dạng kim loại. Sắt hoạt động vừa phải nên carbon monoxide gỡ được oxygen ra khỏi nó. Nhôm giữ oxygen chặt tới mức carbon monoxide chịu thua, phải dùng dòng điện rất mạnh mới tách được. Trước khi có cách này, vào giữa thế kỉ 19, nhôm khó làm ra tới mức có lúc đắt hơn cả vàng.',
           conceptIds: ['metal-extraction', 'reactivity-series'],
         },
         {
@@ -896,8 +907,8 @@ export const unit07: UnitInput = {
         story: [
           'Nải chuối xanh mua về, để vài hôm là chín vàng. Chuối chín toả ra một chất khí thúc cả nải cùng chín: ethylene C₂H₄. Mỗi phân tử ethylene nhỏ xíu, gồm 2 nguyên tử carbon nối với nhau bằng liên kết đôi và 4 nguyên tử hydrogen.',
           'Chiếc túi nilon đựng nải chuối cũng làm từ ethylene. Trong nhà máy, người ta làm liên kết đôi mở ra thành liên kết đơn. Mỗi nguyên tử carbon dư ra một tay để nắm lấy phân tử bên cạnh. Hàng nghìn, hàng vạn phân tử ethylene cứ thế nối đuôi nhau thành một sợi xích dài.',
-          'Phân tử khổng lồ gồm rất nhiều mắt xích giống nhau nối lại như vậy gọi là polymer. Phân tử nhỏ ban đầu gọi là monomer. Polymer làm từ ethylene có tên polyethylene, viết tắt là PE: một chất rắn dẻo, không tan trong nước.',
-          'Nhựa quanh bạn đều là polymer. Chúng nhẹ, bền, không gỉ, không thấm nước, lại rẻ. Nhưng chính vì quá bền mà túi nilon vứt đi có thể nằm lại trong đất, trong biển hàng trăm năm.',
+          'Phân tử khổng lồ gồm rất nhiều mắt xích giống nhau nối lại như vậy gọi là polymer. Phân tử nhỏ ban đầu gọi là monomer. Polymer làm từ ethylene có tên polyethylene, viết tắt là PE: một chất rắn dẻo, không tan trong nước. Chiếc túi ta quen gọi là túi nilon thật ra làm bằng PE.',
+          'Nhựa quanh bạn đều là polymer. Chúng nhẹ, bền, không gỉ, không thấm nước, lại rẻ. Nhưng chính vì quá bền mà túi nilon vứt đi được ước tính có thể nằm lại trong đất, trong biển tới hàng trăm năm.',
         ],
         visual: { type: 'molecule', moleculeId: 'c2h4' },
       },
@@ -1050,7 +1061,7 @@ export const unit07: UnitInput = {
             { id: 'i6', text: 'Lấy thật nhiều túi nilon dù không cần', groupId: 'bad' },
           ],
           explanation:
-            'Polyethylene không bị vi sinh vật phân huỷ, nên rác nhựa có thể nằm lại hàng trăm năm. Cách tốt nhất là dùng ít đi, dùng lại nhiều lần và phân loại để tái chế. Đốt nhựa sinh ra khói độc, còn vứt xuống sông thì nhựa trôi ra biển, làm hại cá và rùa.',
+            'Vi sinh vật gần như không phân huỷ được polyethylene, nên rác nhựa được ước tính có thể nằm lại tới hàng trăm năm. Cách tốt nhất là dùng ít đi, dùng lại nhiều lần và phân loại để tái chế. Đốt nhựa sinh ra khói độc, còn vứt xuống sông thì nhựa trôi ra biển, làm hại cá và rùa.',
           conceptIds: ['polymer'],
         },
         {
@@ -1118,7 +1129,7 @@ export const unit07: UnitInput = {
         {
           id: 'u7-cp-e4',
           type: 'match-pairs',
-          prompt: 'Nối mỗi cặp chất phản ứng với sản phẩm của chúng',
+          prompt: 'Nối mỗi cặp chất tham gia với sản phẩm của chúng',
           pairs: [
             {
               left: { id: 'l1', text: 'Aluminium (nhôm) + oxygen' },
@@ -1138,7 +1149,7 @@ export const unit07: UnitInput = {
             },
           ],
           explanation:
-            'Sản phẩm luôn chứa đúng những nguyên tố có trong chất phản ứng. Kim loại với oxygen tạo oxide. Kim loại đứng trước H với acid tạo muối và khí hydrogen. Kim loại mạnh đẩy kim loại yếu ra khỏi dung dịch muối. Carbon monoxide lấy oxygen của iron(III) oxide.',
+            'Sản phẩm luôn chứa đúng những nguyên tố có trong chất tham gia. Kim loại với oxygen tạo oxide. Kim loại đứng trước H với acid tạo muối và khí hydrogen. Kim loại mạnh đẩy kim loại yếu ra khỏi dung dịch muối. Carbon monoxide lấy oxygen của iron(III) oxide.',
           conceptIds: ['reactants-products', 'displacement', 'metal-extraction'],
         },
         {
@@ -1189,10 +1200,10 @@ export const unit07: UnitInput = {
           id: 'u7-cp-e8',
           type: 'true-false',
           prompt:
-            'Thả một chiếc nhẫn bạc vào dung dịch copper(II) sulfate thì không có phản ứng, vì bạc đứng sau đồng trong dãy hoạt động hoá học.',
+            'Trong phòng thí nghiệm, ngâm một sợi dây bạc vào dung dịch copper(II) sulfate thì không có phản ứng, vì bạc đứng sau đồng trong dãy hoạt động hoá học.',
           answer: true,
           explanation:
-            'Bạc hoạt động yếu hơn đồng. Kim loại yếu không đẩy được kim loại mạnh ra khỏi dung dịch muối, nên chiếc nhẫn vẫn y nguyên và dung dịch vẫn xanh lam.',
+            'Bạc hoạt động yếu hơn đồng. Kim loại yếu không đẩy được kim loại mạnh ra khỏi dung dịch muối, nên sợi dây bạc vẫn y nguyên và dung dịch vẫn xanh lam.',
           conceptIds: ['displacement', 'reactivity-series'],
         },
         {
@@ -1259,7 +1270,7 @@ export const unit07: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Nhựa và nhôm đều tái chế được: nấu chảy rồi đúc thành đồ mới. Đốt nhựa sinh ra khói độc. Chôn cũng không ổn, vì polyethylene không bị vi sinh vật phân huỷ và có thể nằm lại trong đất hàng trăm năm.',
+            'Nhựa và nhôm đều tái chế được: nấu chảy rồi đúc thành đồ mới. Đốt nhựa sinh ra khói độc. Chôn cũng không ổn, vì vi sinh vật gần như không phân huỷ được polyethylene, nên nó có thể nằm lại trong đất tới hàng trăm năm.',
           conceptIds: ['polymer'],
         },
       ],
