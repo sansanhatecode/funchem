@@ -71,7 +71,7 @@ export const unit08Molecules: MoleculeInput[] = [
       },
     ],
     funFact:
-      'Ký hiệu K lấy từ "kalium", tên Latinh của potassium. Vì thế tiếng Việt quen gọi nguyên tố này là kali.',
+      'Kí hiệu K lấy từ "kalium", tên Latinh của potassium. Vì thế tiếng Việt quen gọi nguyên tố này là kali.',
     conceptIds: ['compound', 'ionic-bond', 'ion', 'minerals'],
   },
 ]

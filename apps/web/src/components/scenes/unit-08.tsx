@@ -14,7 +14,7 @@ export const unit08Scenes: Record<Unit08SceneId, SceneDef> = {
   'jogging-breath': {
     Component: JoggingBreathScene,
     label:
-      'Bạn nhỏ đội mũ len chạy bộ trên đường chạy buổi sáng lạnh, thở ra những làn hơi trắng trước miệng',
+      'Bạn nhỏ đội mũ len chạy bộ trên đường chạy buổi sáng lạnh, thở ra những làn sương trắng trước miệng',
     hotspot: { x: 204, y: 56 },
   },
   'fruit-plate': {
@@ -30,7 +30,7 @@ export const unit08Scenes: Record<Unit08SceneId, SceneDef> = {
   },
   'rice-bowl': {
     Component: RiceBowlScene,
-    label: 'Bát cơm trắng đầy ngọn bốc khói trên bàn, bên cạnh là đôi đũa',
+    label: 'Bát cơm trắng đầy ngọn còn nóng hổi trên bàn, bên cạnh là đôi đũa',
     hotspot: { x: 160, y: 88 },
   },
   'iodine-potato': {

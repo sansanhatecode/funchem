@@ -21,7 +21,7 @@ export const unit08: UnitInput = {
         story: [
           'Sáng mùa đông, bạn chạy quanh sân. Người ấm dần lên, tim đập nhanh, và mỗi lần thở ra lại có một làn trắng bay trước mặt. Hơi ấm ấy ở đâu ra?',
           'Nó đến từ một phản ứng hoá học trong các tế bào, những "căn phòng" tí hon tạo nên cơ thể bạn. Ở đó, glucose (một loại đường lấy từ thức ăn) phản ứng với oxygen bạn hít vào, tạo thành carbon dioxide và nước, đồng thời giải phóng năng lượng. Phản ứng này gọi là hô hấp tế bào.',
-          'Đường cháy trong lửa cũng dùng oxygen và cũng sinh ra carbon dioxide với nước. Nhưng trong tế bào không có ngọn lửa nào. Phản ứng đi qua rất nhiều bước nhỏ ở khoảng 37 °C, năng lượng thoát ra từ từ, vừa đủ để giữ ấm và cho cơ bắp hoạt động.',
+          'Đường cháy trong lửa cũng dùng oxygen và cũng sinh ra carbon dioxide với nước. Nhưng trong tế bào không có ngọn lửa nào. Nhờ enzyme, phản ứng đi qua rất nhiều bước nhỏ ở khoảng 37 °C, năng lượng thoát ra từ từ, vừa đủ để giữ ấm và cho cơ bắp hoạt động.',
           'Carbon dioxide theo máu về phổi rồi ra ngoài cùng hơi thở, kèm theo hơi nước. Gặp không khí lạnh, hơi nước ngưng tụ thành những giọt li ti. Đó chính là làn trắng bạn thấy.',
         ],
         visual: { type: 'reaction', reactionId: 'cellular-respiration' },
@@ -64,17 +64,16 @@ export const unit08: UnitInput = {
           id: 'u8-l1-e3',
           type: 'fill-blank',
           prompt: 'Chọn từ đúng cho từng chỗ trống',
-          template:
-            'Hô hấp tế bào diễn ra ở ___ trong cơ thể và giải phóng ___ để cơ thể giữ ấm và hoạt động.',
+          template: 'Hô hấp tế bào diễn ra ở ___ và giải phóng ___ để cơ thể giữ ấm và hoạt động.',
           blanks: [
             {
-              accepted: ['mọi tế bào'],
-              wordBank: ['mọi tế bào', 'riêng lá phổi', 'riêng dạ dày'],
+              accepted: ['tế bào khắp cơ thể'],
+              wordBank: ['tế bào khắp cơ thể', 'riêng lá phổi', 'riêng dạ dày'],
             },
             { accepted: ['năng lượng'], wordBank: ['năng lượng', 'glucose', 'oxygen'] },
           ],
           explanation:
-            'Phổi chỉ là nơi đổi khí: nhận oxygen vào máu và thải carbon dioxide ra. Còn phản ứng giữa glucose và oxygen xảy ra trong mọi tế bào, từ não tới đầu ngón chân. Thứ tế bào cần lấy từ phản ứng này là năng lượng.',
+            'Phổi chỉ là nơi đổi khí: nhận oxygen vào máu và thải carbon dioxide ra. Còn phản ứng giữa glucose và oxygen xảy ra trong tế bào ở khắp cơ thể, từ não tới đầu ngón chân. Thứ tế bào cần lấy từ phản ứng này là năng lượng.',
           conceptIds: ['respiration'],
         },
         {
@@ -89,7 +88,7 @@ export const unit08: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            '6 carbon + 12 hydrogen + 6 oxygen = 24 nguyên tử. Số 3 là số nguyên tố có trong glucose, không phải số nguyên tử.',
+            '6 carbon + 12 hydrogen + 6 oxygen = 24 nguyên tử. Nếu ra 18 thì bạn đã bỏ sót một số 6. Còn 3 là số nguyên tố có trong glucose, không phải số nguyên tử.',
           conceptIds: ['formula'],
         },
         {
@@ -168,7 +167,7 @@ export const unit08: UnitInput = {
             { id: 'i3', text: 'Cần khí oxygen', groupId: 'both' },
             { id: 'i4', text: 'Sinh ra carbon dioxide và nước', groupId: 'both' },
             { id: 'i5', text: 'Năng lượng thoát ra từ từ qua nhiều bước nhỏ', groupId: 'cell' },
-            { id: 'i6', text: 'Nóng tới hàng trăm độ C', groupId: 'fire' },
+            { id: 'i6', text: 'Nóng hơn một nghìn độ C', groupId: 'fire' },
           ],
           explanation:
             'Hai phản ứng giống nhau ở chỗ đều cần oxygen và đều sinh ra carbon dioxide với nước. Khác nhau ở cách năng lượng thoát ra: ngọn lửa toả nhiệt dồn dập nên rất nóng và phát sáng, còn tế bào lấy năng lượng từng chút một ở nhiệt độ cơ thể.',
@@ -199,7 +198,7 @@ export const unit08: UnitInput = {
           'Cắn một quả nho chín, rồi uống một ngụm nước mía: cả hai đều ngọt lịm. Nhưng đó là hai loại đường khác nhau. Nho chín và mật ong có nhiều glucose. Mía và củ cải đường có nhiều saccharose (đường mía), cũng chính là đường kính trắng trong bếp.',
           'Glucose là C₆H₁₂O₆. Saccharose là C₁₂H₂₂O₁₁, phân tử to gần gấp đôi. Tách riêng ra, cả hai đều là chất rắn, vị ngọt, tan rất tốt trong nước. Hình phóng to cho thấy glucose khi đứng riêng như thế. Còn trong quả nho, các phân tử glucose tan lẫn giữa các phân tử nước.',
           'Cây lấy đường ở đâu? Nó tự làm ra. Lá cây hứng ánh sáng, dùng năng lượng đó ghép carbon dioxide trong không khí với nước hút từ rễ thành glucose, rồi nhả ra khí oxygen. Quá trình này gọi là quang hợp. Viết thành phương trình, nó đúng là hô hấp tế bào đảo ngược hai vế.',
-          'Cây mía nối glucose với một loại đường khác tên là fructose, thành saccharose, rồi trữ trong thân. Khi bạn ăn đường, cơ thể làm ngược lại: cắt mỗi phân tử saccharose thành một glucose và một fructose rồi mới đưa vào máu.',
+          'Cây mía nối glucose với một loại đường khác tên là fructose, thành saccharose, rồi trữ trong thân. Khi bạn ăn đường, cơ thể làm ngược lại: enzyme cắt mỗi phân tử saccharose thành một glucose và một fructose rồi mới đưa vào máu.',
         ],
         visual: { type: 'molecule', moleculeId: 'c6h12o6', scene: 'fruit-plate' },
       },
@@ -220,7 +219,7 @@ export const unit08: UnitInput = {
             { id: 'i5', text: 'Củ cải đường', groupId: 'saccharose' },
           ],
           explanation:
-            'Nho chín và mật ong ngọt phần lớn nhờ glucose. Mía và củ cải đường chứa nhiều saccharose. Đường kính trắng chính là saccharose được tách ra từ nước mía hoặc củ cải đường.',
+            'Nho chín và mật ong có nhiều glucose, đi cùng một loại đường họ hàng tên là fructose, còn saccharose thì rất ít. Mía và củ cải đường chứa nhiều saccharose. Đường kính trắng chính là saccharose được tách ra từ nước mía hoặc củ cải đường.',
           conceptIds: ['carbohydrate'],
         },
         {
@@ -347,7 +346,7 @@ export const unit08: UnitInput = {
             { id: 's5', text: 'Tế bào cho glucose phản ứng với oxygen, giải phóng năng lượng' },
           ],
           explanation:
-            'Năng lượng bạn dùng để chạy nhảy vốn là năng lượng ánh sáng mà lá mía đã hứng. Glucose là thứ mang năng lượng ấy từ chiếc lá tới tế bào của bạn.',
+            'Năng lượng bạn dùng để chạy nhảy vốn là năng lượng ánh sáng mà lá mía đã hứng. Glucose là thứ mang năng lượng ấy từ chiếc lá tới tế bào của bạn. Fructose có cùng công thức C₆H₁₂O₆ với glucose. Khi hai phân tử nối nhau, một phân tử nước tách ra, nên saccharose là C₁₂H₂₂O₁₁ chứ không phải C₁₂H₂₄O₁₂.',
           conceptIds: ['photosynthesis', 'respiration', 'carbohydrate'],
         },
       ],
@@ -361,10 +360,10 @@ export const unit08: UnitInput = {
       intro: {
         title: 'Bát cơm nhai lâu hoá ngọt',
         story: [
-          'Xới một bát cơm trắng còn bốc khói. Miếng đầu tiên gần như không có vị ngọt. Nhưng thử nhai thật lâu, bạn sẽ thấy nó ngọt dần. Đường ở đâu ra vậy?',
-          'Gạo, khoai, bột mì chứa đầy tinh bột. Mỗi phân tử tinh bột là một chuỗi rất dài, gồm hàng trăm tới hàng nghìn mắt xích glucose nối nhau như chuỗi hạt. Chuỗi dài như thế không có vị ngọt. Bấm kính lúp để thấy glucose, mắt xích của chuỗi, khi đứng riêng.',
-          'Trong nước bọt có enzyme, loại chất giúp phản ứng trong cơ thể diễn ra nhanh. Enzyme này cắt chuỗi tinh bột thành các phân tử đường nhỏ, và lưỡi bạn nhận ra vị ngọt. Ở trường, thầy cô còn có cách tìm tinh bột: nhỏ dung dịch iodine màu nâu vàng lên lát khoai tây, chỗ đó chuyển sang màu xanh tím.',
-          'Tinh bột là cách cây cất glucose để dành trong hạt và củ. Cây còn nối glucose theo một kiểu khác thành cellulose: những sợi dai chắc dựng nên thân, cành, lá. Gỗ, giấy, sợi bông và chất xơ trong rau đều là cellulose. Cơ thể người không có enzyme cắt được cellulose.',
+          'Xới một bát cơm trắng còn nóng hổi. Miếng đầu tiên gần như không có vị ngọt. Nhưng thử nhai thật lâu, bạn sẽ thấy nó ngọt dần. Đường ở đâu ra vậy?',
+          'Gạo, khoai, bột mì chứa đầy tinh bột. Mỗi phân tử tinh bột là một chuỗi rất dài, gồm từ vài trăm tới hàng nghìn mắt xích glucose nối nhau, có khi còn nhiều hơn thế. Bạn đã gặp kiểu phân tử này ở Unit 7: tinh bột là một polymer, chỉ khác là do cây tạo ra chứ không phải nhà máy. Chuỗi dài như thế không có vị ngọt. Bấm kính lúp để thấy glucose, mắt xích của chuỗi, khi đứng riêng.',
+          'Trong nước bọt có enzyme, chất xúc tác do cơ thể sống tạo ra. Enzyme này cắt chuỗi tinh bột thành các phân tử đường nhỏ, và lưỡi bạn nhận ra vị ngọt. Ở trường, thầy cô còn có cách tìm tinh bột: nhỏ dung dịch iodine (iốt) màu nâu vàng lên lát khoai tây, chỗ đó chuyển sang màu xanh tím.',
+          'Tinh bột là cách cây cất glucose để dành trong hạt và củ. Cây còn nối glucose theo một kiểu khác thành cellulose: những sợi dai chắc dựng nên thân, cành, lá. Gỗ, giấy và sợi bông chứa rất nhiều cellulose. Chất xơ trong rau phần lớn cũng là cellulose. Cơ thể người không có enzyme cắt được cellulose.',
         ],
         visual: { type: 'molecule', moleculeId: 'c6h12o6', scene: 'rice-bowl' },
       },
@@ -382,16 +381,16 @@ export const unit08: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Tinh bột là hàng trăm tới hàng nghìn mắt xích glucose nối thành chuỗi. Mỗi lần nối thêm một mắt xích, một phân tử nước tách ra. Khi enzyme cắt chuỗi, nước lại được gắn trở vào.',
+            'Tinh bột là rất nhiều mắt xích glucose nối thành chuỗi. Mỗi lần nối thêm một mắt xích, một phân tử nước H₂O tách ra. Vì thế mỗi mắt xích trong chuỗi là C₆H₁₀O₅, tức một glucose đã bớt đi H₂O, và công thức của tinh bột viết là (C₆H₁₀O₅)ₙ, với n là số mắt xích. Khi enzyme cắt chuỗi, nước được gắn trở vào và ta lại có glucose C₆H₁₂O₆.',
           conceptIds: ['carbohydrate'],
         },
         {
           id: 'u8-l3-e2',
           type: 'sort',
-          prompt: 'Thứ nào chứa nhiều tinh bột, thứ nào chủ yếu là cellulose?',
+          prompt: 'Thứ nào chứa nhiều tinh bột, thứ nào chứa nhiều cellulose?',
           groups: [
             { id: 'starch', label: 'Nhiều tinh bột' },
-            { id: 'cellulose', label: 'Chủ yếu là cellulose' },
+            { id: 'cellulose', label: 'Nhiều cellulose' },
           ],
           items: [
             { id: 'i1', text: 'Cơm trắng', image: 'rice-bowl', groupId: 'starch' },
@@ -402,7 +401,7 @@ export const unit08: UnitInput = {
             { id: 'i6', text: 'Tờ giấy', groupId: 'cellulose' },
           ],
           explanation:
-            'Hạt và củ là nơi cây cất tinh bột để dành: gạo, khoai, bột mì. Còn thân cây và sợi của cây thì dựng bằng cellulose: gỗ, giấy làm từ gỗ, sợi bông.',
+            'Hạt và củ là nơi cây cất tinh bột để dành: gạo, khoai, bột mì. Còn thân cây và sợi của cây thì dai chắc nhờ cellulose: gỗ, giấy làm từ gỗ, sợi bông.',
           conceptIds: ['carbohydrate'],
         },
         {
@@ -416,7 +415,7 @@ export const unit08: UnitInput = {
             { accepted: ['tinh bột'], wordBank: ['tinh bột', 'cellulose', 'muối ăn'] },
           ],
           explanation:
-            'Iodine gặp tinh bột thì tạo màu xanh tím. Đây là cách nhanh nhất để biết một thứ có tinh bột hay không. Dung dịch iodine chỉ dùng để thử, không uống và không nếm.',
+            'Iodine gặp tinh bột thì tạo màu xanh tím. Đây là cách quen thuộc để biết một thứ có tinh bột hay không. Dung dịch iodine chỉ dùng để thử, không uống và không nếm.',
           conceptIds: ['carbohydrate', 'reaction-signs'],
         },
         {
@@ -498,7 +497,7 @@ export const unit08: UnitInput = {
             },
             {
               left: { id: 'l4', text: 'Enzyme' },
-              right: { id: 'r4', text: 'Chất giúp phản ứng trong cơ thể diễn ra nhanh' },
+              right: { id: 'r4', text: 'Chất xúc tác do cơ thể sống tạo ra' },
             },
           ],
           explanation:
@@ -518,7 +517,7 @@ export const unit08: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Muối ăn NaCl gồm sodium và chlorine, không có carbon, hydrogen hay oxygen, nên không phải carbohydrate. Ba chất còn lại đều được xây từ các phân tử đường.',
+            'Muối ăn NaCl gồm sodium và chlorine, không có carbon, hydrogen hay oxygen, nên không phải carbohydrate. Ba chất còn lại đều được xây từ các phân tử đường. Lưu ý: chỉ gồm C, H, O thôi thì chưa đủ để là carbohydrate. Ethanol C₂H₆O cũng gồm ba nguyên tố ấy nhưng không phải đường.',
           conceptIds: ['carbohydrate', 'formula'],
         },
         {
@@ -667,7 +666,7 @@ export const unit08: UnitInput = {
           id: 'u8-l4-e8',
           type: 'mcq',
           prompt:
-            'Xà phòng được làm bằng cách đun chất béo với kiềm, ví dụ sodium hydroxide. Phân tử xà phòng có một đầu bám vào nước và một đầu bám vào dầu mỡ. Nhờ thế, xà phòng giúp gì khi rửa bát?',
+            'Ở Unit 5 bạn đã biết sodium hydroxide NaOH (xút) là một kiềm dùng để nấu xà phòng. Thứ được đun cùng với nó chính là chất béo. Phân tử xà phòng có một đầu bám vào nước và một đầu bám vào dầu mỡ. Nhờ thế, xà phòng giúp gì khi rửa bát?',
           options: [
             { id: 'a', text: 'Kéo dầu mỡ lẫn vào nước để trôi đi' },
             { id: 'b', text: 'Biến dầu mỡ thành nước' },
@@ -685,7 +684,7 @@ export const unit08: UnitInput = {
             'Dầu đang cháy trong chảo thì không được đổ nước vào, vì nước chìm xuống dưới lớp dầu nóng, sôi bùng lên và hất dầu cháy ra xung quanh.',
           answer: true,
           explanation:
-            'Nước nặng hơn dầu và không trộn với dầu, nên nó lọt xuống đáy chảo nóng rồi sôi bùng lên, làm dầu đang cháy bắn tung toé. Cách an toàn là tắt bếp, đậy kín vung để lửa hết oxygen, và gọi ngay người lớn.',
+            'Nước nặng hơn dầu và không trộn với dầu, nên nó lọt xuống đáy chảo nóng rồi sôi bùng lên, làm dầu đang cháy bắn tung toé. Cách an toàn là tắt bếp, đậy kín vung để lửa hết oxygen, và gọi ngay người lớn. Chuyện này chỉ để biết mà tránh, tuyệt đối không thử.',
           conceptIds: ['lipid', 'combustion'],
         },
         {
@@ -715,9 +714,9 @@ export const unit08: UnitInput = {
         title: 'Cốc sữa vón cục',
         story: [
           'Vắt vài giọt chanh vào cốc sữa. Sữa đang mịn bỗng lợn cợn rồi vón lại thành từng cục trắng. Đập quả trứng vào chảo nóng cũng thế: lòng trắng đang trong veo chuyển sang trắng đục và cứng lại.',
-          'Cả hai chuyện đều do protein, còn gọi là chất đạm. Mỗi phân tử protein là một chuỗi rất dài, gồm hàng trăm tới hàng nghìn mắt xích nhỏ gọi là amino acid. Chuỗi ấy cuộn gấp lại thành một hình dạng riêng. Bấm kính lúp để thấy glycine, amino acid nhỏ nhất.',
-          'Gặp nóng, hoặc gặp acid (loại chất tạo vị chua của chanh và giấm), chuỗi protein bung ra rồi dính chùm vào nhau thành khối. Hiện tượng này gọi là sự đông tụ. Trứng đã rán chín thì không trở lại thành trứng sống được nữa.',
-          'Protein có nhiều trong thịt, cá, trứng, sữa và các loại đậu. Cơ thể cắt chúng thành từng amino acid, rồi nối lại thành protein của riêng mình. Cơ bắp, tóc, móng tay của bạn đều là protein.',
+          'Cả hai chuyện đều do protein, còn gọi là chất đạm. Mỗi phân tử protein là một chuỗi dài, gồm từ vài chục tới hàng nghìn mắt xích nhỏ gọi là amino acid. Chuỗi ấy cuộn gấp lại thành một hình dạng riêng. Bấm kính lúp để thấy glycine, amino acid nhỏ nhất.',
+          'Gặp nóng, hoặc gặp acid như trong nước chanh và giấm, chuỗi protein bung ra rồi dính chùm vào nhau thành khối. Hiện tượng này gọi là sự đông tụ. Trứng đã rán chín thì không trở lại thành trứng sống được nữa.',
+          'Protein có nhiều trong thịt, cá, trứng, sữa và các loại đậu. Cơ thể cắt chúng thành từng amino acid, rồi nối lại thành protein của riêng mình. Cơ bắp, tóc, móng tay của bạn đều được dựng nên từ protein.',
         ],
         visual: { type: 'molecule', moleculeId: 'c2h5no2', scene: 'curdled-milk' },
       },
@@ -768,7 +767,7 @@ export const unit08: UnitInput = {
             { accepted: ['dính chùm'], wordBank: ['dính chùm', 'tan đều', 'bay hơi'] },
           ],
           explanation:
-            'Nóng và acid đều làm chuỗi protein mất hình dạng cuộn gấp ban đầu. Các chuỗi đã bung ra thì vướng và dính vào nhau, tạo thành khối đặc mà mắt thấy được.',
+            'Nóng và acid đều làm chuỗi protein mất hình dạng cuộn gấp ban đầu. Các chuỗi đã bung ra thì vướng và dính vào nhau, tạo thành khối đặc mà mắt thấy được. Base cũng làm protein đông tụ theo cách tương tự.',
           conceptIds: ['protein'],
         },
         {
@@ -869,7 +868,7 @@ export const unit08: UnitInput = {
             },
           ],
           explanation:
-            'Tinh bột, cellulose và protein đều là những chuỗi dài, chỉ khác loại mắt xích và cách nối. Chất béo thì nổi bật ở chỗ không tan trong nước.',
+            'Tinh bột, cellulose và protein đều là những chuỗi dài, tức là polymer do sinh vật tạo ra, chỉ khác loại mắt xích và cách nối. Chất béo thì nổi bật ở chỗ không tan trong nước.',
           conceptIds: ['protein', 'carbohydrate', 'lipid'],
         },
         {
@@ -884,7 +883,7 @@ export const unit08: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Tóc, lông, móng và tơ của động vật đều là protein. Sợi của cây như bông, đay, lanh là cellulose. Hai chiếc áo sờ gần giống nhau nhưng làm từ hai loại chuỗi khác hẳn.',
+            'Tóc, lông, móng và tơ của động vật đều là protein. Sợi của cây như bông, đay, lanh là cellulose. Hai chiếc áo đều dệt từ sợi tự nhiên, nhưng là hai loại chuỗi khác hẳn nhau.',
           conceptIds: ['protein', 'carbohydrate'],
         },
       ],
@@ -900,9 +899,9 @@ export const unit08: UnitInput = {
         title: 'Vệt trắng trên áo sau trận bóng',
         story: [
           'Đá bóng xong, áo bạn ướt đẫm mồ hôi. Giọt mồ hôi lăn qua môi có vị mằn mặn. Chiếc áo phơi khô còn để lại những vệt trắng loang lổ.',
-          'Khoảng 60% khối lượng cơ thể bạn là nước. Máu, mồ hôi, nước mắt đều là dung dịch: trong nước có hoà tan các ion bạn từng gặp ở muối ăn là Na⁺ và Cl⁻, cùng với ion K⁺ của potassium (kali). Mồ hôi bay hơi thì nước đi mất, còn muối ở lại thành vệt trắng.',
+          'Khoảng 60% khối lượng cơ thể bạn là nước. Máu, mồ hôi, nước mắt phần lớn đều là nước, trong đó hoà tan các ion bạn từng gặp ở muối ăn là Na⁺ và Cl⁻, cùng với ion K⁺ của potassium (kali). Mồ hôi bay hơi thì nước đi mất, còn muối ở lại thành vệt trắng.',
           'Các ion này giúp dây thần kinh truyền tín hiệu và giúp cơ co lại. Nước điện giải là nước hoà tan sẵn những ion ấy. Bấm kính lúp để thấy potassium chloride KCl, một loại muối hay có trong nước điện giải, lúc còn là hạt khô. Tan vào nước, ion K⁺ và ion Cl⁻ rời nhau ra và trôi tự do.',
-          'Sodium, potassium và những nguyên tố khác mà cơ thể cần không nhiều nhưng không thể thiếu được gọi là khoáng chất. Calcium (canxi) làm xương và răng cứng chắc. Iron (sắt) nằm trong máu, giúp chở oxygen đi khắp cơ thể. Iodine (iốt) cần cho tuyến giáp ở cổ, nên người ta thêm một lượng rất nhỏ vào muối iốt.',
+          'Cơ thể chỉ cần một lượng nhỏ sodium, potassium và vài nguyên tố khác, nhưng thiếu thì không được. Chúng được gọi là khoáng chất. Calcium (canxi) làm xương và răng cứng chắc. Iron (sắt) nằm trong máu, giúp chở oxygen đi khắp cơ thể. Iodine (iốt) cần cho tuyến giáp ở cổ, nên người ta thêm một lượng rất nhỏ vào muối iốt.',
         ],
         visual: { type: 'molecule', moleculeId: 'kcl', scene: 'sports-drink' },
       },
@@ -957,7 +956,7 @@ export const unit08: UnitInput = {
             { accepted: ['muối ăn'], wordBank: ['muối ăn', 'đường kính', 'dầu ăn'] },
           ],
           explanation:
-            'Muối ăn là sodium chloride, gồm ion Na⁺ và ion Cl⁻. Nguyên tử sodium cho đi 1 electron nên mang điện dương, viết là Na⁺. Ký hiệu của sodium là Na, còn N là nitrogen.',
+            'Muối ăn là sodium chloride, gồm ion Na⁺ và ion Cl⁻. Nguyên tử sodium cho đi 1 electron nên mang điện dương, viết là Na⁺. Kí hiệu của sodium là Na, còn N là nitrogen.',
           conceptIds: ['minerals', 'ion'],
         },
         {
@@ -977,7 +976,7 @@ export const unit08: UnitInput = {
           targetMoleculeId: 'kcl',
           availableAtoms: { K: 2, Cl: 2, Na: 1, C: 1 },
           explanation:
-            'KCl gồm 1 potassium và 1 chlorine. Giống sodium, nguyên tử potassium cho đi 1 electron thành ion K⁺, còn chlorine nhận vào thành ion Cl⁻. Ký hiệu K lấy từ tên Latinh "kalium".',
+            'KCl gồm 1 potassium và 1 chlorine. Giống sodium, nguyên tử potassium cho đi 1 electron thành ion K⁺, còn chlorine nhận vào thành ion Cl⁻. Kí hiệu K lấy từ tên Latinh "kalium".',
           conceptIds: ['minerals', 'ionic-bond', 'formula'],
         },
         {
@@ -1232,11 +1231,11 @@ export const unit08: UnitInput = {
           options: [
             { id: 'a', text: 'Những hạt muối nhỏ chưa tan, lơ lửng trong nước' },
             { id: 'b', text: 'Các ion Na⁺, K⁺, Cl⁻ trôi tự do giữa các phân tử nước' },
-            { id: 'c', text: 'Các nguyên tử kim loại natri và kali tách riêng ra' },
+            { id: 'c', text: 'Các nguyên tử kim loại sodium và potassium tách riêng ra' },
           ],
           correctOptionId: 'b',
           explanation:
-            'Khi tan, hai loại muối này tách thành các ion và trôi tự do trong nước, nên nước vẫn trong suốt. Đó là các ion Na⁺ và K⁺ chứ không phải kim loại natri hay kali.',
+            'Khi tan, hai loại muối này tách thành các ion và trôi tự do trong nước, nên nước vẫn trong suốt. Đó là các ion Na⁺ và K⁺ chứ không phải kim loại sodium hay potassium.',
           conceptIds: ['minerals', 'ion', 'solution'],
         },
       ],
