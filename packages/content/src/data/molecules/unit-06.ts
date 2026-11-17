@@ -212,31 +212,4 @@ export const unit06Molecules: MoleculeInput[] = [
       'Baking soda NaHCO₃ và soda Na₂CO₃ có tên gần giống nhau nhưng là hai chất khác nhau. Đun nóng chất thứ nhất thì thu được chất thứ hai.',
     conceptIds: ['compound', 'ionic-bond', 'formula'],
   },
-  // TAM: bản chính thuộc Unit 5
-  {
-    id: 'cao',
-    name: 'Calcium oxide',
-    commonName: 'vôi sống',
-    formula: 'CaO',
-    state: 'solid',
-    atoms: [
-      { id: 'ca', element: 'Ca', x: 35, y: 50 },
-      { id: 'o', element: 'O', x: 65, y: 50 },
-    ],
-    bonds: [{ a: 'ca', b: 'o', kind: 'ionic' }],
-    lifeExamples: [
-      {
-        illustration: 'lime-kiln',
-        title: 'Vôi sống ra lò',
-        description:
-          'Nung đá vôi ở khoảng 900 °C thì thu được calcium oxide, một chất rắn màu trắng mà người ta quen gọi là vôi sống.',
-      },
-      {
-        title: 'Khử chua đất trồng',
-        description:
-          'Nông dân rắc vôi để đất bớt chua. Vôi sống gặp nước thì nóng lên rất mạnh, nên chỉ người lớn có đồ bảo hộ mới được làm việc với nó.',
-      },
-    ],
-    conceptIds: ['compound', 'ionic-bond'],
-  },
 ]
