@@ -11,6 +11,8 @@ import { SceneIdSchema } from './scene.js'
  * - states: phòng thí nghiệm ba trạng thái của cùng một chất, mỗi trạng thái một cảnh.
  * - periodic-table: phóng to từ cảnh vào bảng tuần hoàn tương tác, làm nổi các nguyên tố trong `highlight`.
  * - atom: phóng to từ cảnh vào bên trong một nguyên tử (hạt nhân và các lớp electron).
+ * - ph-scale: vài thứ quen thuộc đặt lên thang pH 0-14; chọn từng thứ để xem cảnh của nó,
+ *   vị trí trên thang, rồi phóng to để thấy ion H⁺ hay ion OH⁻ nhiều hơn. Mục đầu được chọn sẵn.
  */
 export const IntroVisualSchema = z.discriminatedUnion('type', [
   z.object({ type: z.literal('molecule'), moleculeId: IdSchema, scene: SceneIdSchema.optional() }),
@@ -33,6 +35,20 @@ export const IntroVisualSchema = z.discriminatedUnion('type', [
       'chỉ hỗ trợ nguyên tố có số hiệu tới 20',
     ),
     scene: SceneIdSchema,
+  }),
+  z.object({
+    type: z.literal('ph-scale'),
+    items: z
+      .array(
+        z.object({
+          /** tên ngắn hiện trên nút, ví dụ "Nước chanh" */
+          label: z.string().min(1).max(24),
+          ph: z.number().min(0).max(14),
+          scene: SceneIdSchema,
+        }),
+      )
+      .min(2)
+      .max(6),
   }),
 ])
 export type IntroVisual = z.infer<typeof IntroVisualSchema>

@@ -299,7 +299,9 @@ function LessonBlock({
         ? `phản ứng ${equationText(content.reactions.get(v.reactionId)!, content.molecules)}`
         : v.type === 'periodic-table'
           ? 'bảng tuần hoàn'
-          : `bên trong nguyên tử ${ELEMENTS[v.element].name}`
+          : v.type === 'ph-scale'
+            ? `thang pH (${v.items.map((it) => `${it.label} ${it.ph}`).join(', ')})`
+            : `bên trong nguyên tử ${ELEMENTS[v.element].name}`
 
   return (
     <article id={lesson.id} className="scroll-mt-4">

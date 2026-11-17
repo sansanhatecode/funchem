@@ -17,5 +17,7 @@ export function lessonScene(lesson: Lesson): SceneId | undefined {
     case 'periodic-table':
     case 'atom':
       return v.scene
+    case 'ph-scale':
+      return v.items[0]?.scene
   }
 }

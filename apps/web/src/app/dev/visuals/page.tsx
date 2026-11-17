@@ -1,6 +1,7 @@
 import { content } from '@funchem/content'
 import { notFound } from 'next/navigation'
 import { AtomZoom, PeriodicTableZoom, StatesLab } from '@/components/chem/intro-visuals'
+import { PhScaleLab } from '@/components/chem/ph-scale'
 
 /** Trang xem trước các hình mở đầu đặc biệt. Chỉ có ở môi trường phát triển. */
 export default function DevVisualsPage() {
@@ -29,6 +30,16 @@ export default function DevVisualsPage() {
       <section data-visual="atom-na">
         <h2 className="mb-2 font-extrabold">Nguyên tử sodium</h2>
         <AtomZoom scene="salt-shaker" element="Na" />
+      </section>
+      <section data-visual="ph-scale">
+        <h2 className="mb-2 font-extrabold">Thang pH</h2>
+        <PhScaleLab
+          items={[
+            { label: 'Giấm', ph: 3, scene: 'vinegar-bottle' },
+            { label: 'Nước', ph: 7, scene: 'glass-of-water' },
+            { label: 'Kem đánh răng', ph: 9, scene: 'toothpaste' },
+          ]}
+        />
       </section>
     </main>
   )
