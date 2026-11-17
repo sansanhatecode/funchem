@@ -89,7 +89,7 @@ const coreScenes: Record<CoreSceneId, SceneDef> = {
   },
   rocket: {
     Component: RocketScene,
-    label: 'Tên lửa trắng mũi đỏ rời bệ phóng, phụt lửa và cuộn hơi nước trắng xoá dưới trời xanh',
+    label: 'Tên lửa trắng mũi đỏ rời bệ phóng, phụt lửa và cuộn mây trắng xoá dưới trời xanh',
     hotspot: { x: 160, y: 176 },
   },
   'salt-shaker': {

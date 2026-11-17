@@ -23,14 +23,14 @@ export const molecules: MoleculeInput[] = [
       {
         illustration: 'glass-of-water',
         title: 'Ly nước bạn uống',
-        description: 'Mỗi ngụm nước là hàng tỉ tỉ phân tử H₂O y hệt nhau.',
+        description: 'Mỗi ngụm nước chứa hàng trăm nghìn tỉ tỉ phân tử H₂O y hệt nhau.',
       },
       {
         title: 'Mưa và mây',
         description: 'Mây là nước ở dạng giọt li ti, mưa là khi các giọt gộp lại đủ nặng.',
       },
     ],
-    funFact: 'Hơn 60% cơ thể bạn là nước.',
+    funFact: 'Khoảng 60% khối lượng cơ thể bạn là nước.',
     conceptIds: ['molecule', 'covalent-bond'],
   },
   {
@@ -48,12 +48,12 @@ export const molecules: MoleculeInput[] = [
         illustration: 'candle',
         title: 'Ngọn lửa',
         description:
-          'Lửa cần oxygen. Úp ly lên nến, oxygen trong ly giảm dần, đến khi không còn đủ để nuôi lửa thì nến tắt.',
+          'Lửa cần oxygen. Khi cây nến bị úp trong một chiếc lọ thuỷ tinh, oxygen trong lọ giảm dần, đến khi không còn đủ để nuôi lửa thì nến tắt.',
       },
       {
         title: 'Hơi thở',
         description:
-          'Bạn hít oxygen vào phổi mỗi vài giây, không có nó cơ thể ngừng hoạt động trong vài phút.',
+          'Cứ vài giây bạn lại hít oxygen vào phổi. Cơ thể cần oxygen liên tục để lấy năng lượng từ thức ăn.',
       },
     ],
     conceptIds: ['molecule', 'element'],
@@ -71,8 +71,13 @@ export const molecules: MoleculeInput[] = [
     lifeExamples: [
       {
         illustration: 'rocket',
-        title: 'Nhiên liệu sạch',
-        description: 'Xe chạy hydrogen chỉ thải ra nước.',
+        title: 'Nhiên liệu của tên lửa',
+        description:
+          'Một số tên lửa đốt hydrogen với oxygen để bay lên. Thứ phụt ra phía sau chủ yếu là hơi nước.',
+      },
+      {
+        title: 'Xe chạy hydrogen',
+        description: 'Một số ô tô và xe buýt chạy bằng hydrogen. Thứ chúng thải ra chỉ là nước.',
       },
     ],
     conceptIds: ['molecule', 'element'],
@@ -122,7 +127,7 @@ export const molecules: MoleculeInput[] = [
       { title: 'Nước biển mặn', description: 'Biển mặn vì chứa rất nhiều muối hoà tan.' },
     ],
     funFact:
-      'Sodium là kim loại nổ khi gặp nước, chlorine là khí độc. Ghép lại thành thứ bạn rắc lên đồ ăn mỗi ngày.',
+      'Sodium là kim loại phản ứng mãnh liệt với nước, chlorine là khí độc. Liên kết với nhau, chúng thành thứ bạn rắc lên đồ ăn mỗi ngày.',
     conceptIds: ['compound', 'ionic-bond'],
   },
   {
@@ -376,6 +381,7 @@ export const molecules: MoleculeInput[] = [
   {
     id: 'c2h6o',
     name: 'Ethanol',
+    commonName: 'cồn',
     formula: 'C2H6O',
     state: 'liquid',
     atoms: [
@@ -410,7 +416,7 @@ export const molecules: MoleculeInput[] = [
         description: 'Men biến đường trong gạo, nho, lúa mạch thành ethanol, tạo nên rượu và bia.',
       },
     ],
-    funFact: 'Xăng E5 ở cây xăng có pha khoảng 5% ethanol.',
+    funFact: 'Xăng sinh học ở cây xăng có pha ethanol: xăng E5 khoảng 5%, xăng E10 khoảng 10%.',
     conceptIds: ['molecule', 'compound', 'formula', 'covalent-bond'],
   },
   {

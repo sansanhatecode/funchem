@@ -1,9 +1,9 @@
 import type { UnitInput } from '../../schema/lesson.js'
 
 /**
- * Unit 2 — Nguyên tử bắt tay nhau
+ * Unit 2: Nguyên tử bắt tay nhau
  * 5 bài học + checkpoint: phân tử, đọc công thức, liên kết cộng hoá trị, liên kết ion,
- * đơn chất – hợp chất – hỗn hợp.
+ * đơn chất, hợp chất, hỗn hợp.
  */
 export const unit02: UnitInput = {
   id: 'u2-bonding',
@@ -19,9 +19,10 @@ export const unit02: UnitInput = {
       intro: {
         title: 'Hiếm khi đi một mình',
         story: [
-          'Không khí bạn đang hít có khí oxygen. Nhưng các nguyên tử oxygen không bay lẻ loi: chúng đi thành từng đôi, dính chặt vào nhau.',
-          'Một nhóm nguyên tử dính chặt với nhau như vậy gọi là phân tử.',
-          'Ly nước trên bàn chứa vô số phân tử nước giống hệt nhau. Mỗi phân tử gồm 1 nguyên tử oxygen và 2 nguyên tử hydrogen.',
+          'Ở Unit 1, bạn chia nhỏ cây đinh sắt mãi và gặp nguyên tử. Giờ hãy tưởng tượng làm vậy với ly nước trên bàn: chia đôi, rồi lại chia đôi.',
+          'Lần này, hạt nhỏ nhất mà vẫn còn là nước không phải một nguyên tử. Đó là một nhóm 3 nguyên tử dính chặt vào nhau: 1 nguyên tử oxygen và 2 nguyên tử hydrogen.',
+          'Khi các nguyên tử dính chặt vào nhau như vậy, ta nói chúng liên kết với nhau. Một nhóm nguyên tử liên kết với nhau gọi là phân tử. Ly nước chứa vô số phân tử nước giống hệt nhau.',
+          'Khí oxygen bạn đang hít thở cũng thế. Các nguyên tử oxygen không bay lẻ loi mà đi thành từng đôi, mỗi đôi là một phân tử oxygen.',
         ],
         visual: { type: 'molecule', moleculeId: 'h2o' },
       },
@@ -51,7 +52,7 @@ export const unit02: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Phân tử nước gồm 1 nguyên tử oxygen (đỏ) ở giữa và 2 nguyên tử hydrogen (trắng) ở hai bên.',
+            'Phân tử nước gồm 1 nguyên tử oxygen (đỏ) ở giữa và 2 nguyên tử hydrogen (trắng) ở hai bên. Hai hình còn lại chỉ có một loại nguyên tử: hai O là phân tử khí oxygen, hai H là phân tử khí hydrogen.',
           conceptIds: ['molecule'],
         },
         {
@@ -70,7 +71,7 @@ export const unit02: UnitInput = {
           visual: { id: 'v', moleculeId: 'o2' },
           answer: true,
           explanation:
-            'Đúng. Khí oxygen bạn hít thở là các phân tử gồm hai nguyên tử O đi thành đôi.',
+            'Đúng. Khí oxygen bạn hít thở gồm rất nhiều phân tử, mỗi phân tử là hai nguyên tử oxygen đi thành đôi.',
           conceptIds: ['molecule'],
         },
         {
@@ -124,7 +125,7 @@ export const unit02: UnitInput = {
             { id: 'i5', moleculeId: 'o2', groupId: 'molecule' },
           ],
           explanation:
-            'Phân tử có từ hai nguyên tử trở lên liên kết với nhau. Hình He và hình Au mỗi hình chỉ có một nguyên tử. Helium còn đặc biệt ở chỗ nguyên tử của nó luôn ở một mình, không kết đôi với ai.',
+            'Phân tử có từ hai nguyên tử trở lên liên kết với nhau. Hình He và hình Au mỗi hình chỉ vẽ một nguyên tử. Khí helium trong bóng bay gồm các nguyên tử bay riêng lẻ, không liên kết với nhau.',
           conceptIds: ['molecule', 'atom'],
         },
         {
@@ -133,7 +134,7 @@ export const unit02: UnitInput = {
           prompt: 'Phân tử nào cũng phải gồm các nguyên tử khác loại.',
           answer: false,
           explanation:
-            'Phân tử có thể gồm các nguyên tử cùng loại, như O₂ và H₂, hoặc khác loại, như H₂O.',
+            'Không bắt buộc. Phân tử khí oxygen gồm 2 nguyên tử cùng loại, còn phân tử nước gồm 2 loại nguyên tử khác nhau. Chỉ cần từ hai nguyên tử trở lên liên kết với nhau là thành phân tử.',
           conceptIds: ['molecule', 'element'],
         },
         {
@@ -162,9 +163,10 @@ export const unit02: UnitInput = {
       intro: {
         title: 'H₂O, CO₂ nói gì?',
         story: [
-          'Chắc bạn đã nghe "H₂O" là nước. Đó là một công thức hoá học, giống như công thức nấu ăn của một phân tử.',
-          'Chữ cái cho biết có nguyên tố nào. Con số nhỏ phía dưới cho biết có mấy nguyên tử của nguyên tố đứng ngay trước nó. Không ghi số nghĩa là 1.',
-          'Tiếng xì khi bạn mở lon nước ngọt là khí CO₂ thoát ra. Mỗi phân tử CO₂ có 1 nguyên tử carbon và 2 nguyên tử oxygen.',
+          'Mở một lon nước ngọt, bạn nghe tiếng xì. Đó là khí carbon dioxide thoát ra. Các nhà hoá học ghi chất khí này thật gọn: CO₂.',
+          'CO₂ là một công thức hoá học. Giống công thức nấu ăn, nó cho biết một phân tử gồm những nguyên tử nào và mỗi loại có mấy nguyên tử.',
+          'Cách đọc: mỗi kí hiệu là một nguyên tố. Con số nhỏ ở chân, gọi là chỉ số, cho biết có mấy nguyên tử của nguyên tố đứng ngay trước nó. Không ghi số nghĩa là 1.',
+          'Vậy mỗi phân tử CO₂ có 1 nguyên tử carbon và 2 nguyên tử oxygen. Còn H₂O, công thức của nước, là 2 nguyên tử hydrogen và 1 nguyên tử oxygen.',
         ],
         visual: { type: 'molecule', moleculeId: 'co2' },
       },
@@ -181,7 +183,7 @@ export const unit02: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Số 2 nhỏ đứng sau chữ O cho biết có 2 nguyên tử oxygen. Trong hình là hai quả bóng đỏ.',
+            'Chỉ số 2 đứng ngay sau chữ O cho biết có 2 nguyên tử oxygen. Trong hình là hai quả bóng đỏ. Sau chữ C không ghi số nên chỉ có 1 nguyên tử carbon.',
           conceptIds: ['formula'],
         },
         {
@@ -195,7 +197,7 @@ export const unit02: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Không ghi số nghĩa là 1. Số 3 chỉ thuộc về chữ H đứng ngay trước nó: NH₃ có 1 nitrogen và 3 hydrogen.',
+            'Không ghi số nghĩa là 1. Chỉ số 3 chỉ thuộc về chữ H đứng ngay trước nó. Vậy NH₃ có 1 nguyên tử nitrogen và 3 nguyên tử hydrogen.',
           conceptIds: ['formula'],
         },
         {
@@ -210,7 +212,7 @@ export const unit02: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'CH₄ gồm 1 nguyên tử carbon và 4 nguyên tử hydrogen. Đây là methane, khí cháy được trong bếp biogas.',
+            'CH₄ gồm 1 nguyên tử carbon và 4 nguyên tử hydrogen: một quả bóng C ở giữa, bốn quả bóng H xung quanh. Chất này tên là methane, khí cháy được trong bếp biogas.',
           conceptIds: ['formula', 'molecule'],
         },
         {
@@ -227,7 +229,7 @@ export const unit02: UnitInput = {
             },
           ],
           explanation:
-            'Đọc từng chữ cái để biết nguyên tố, rồi nhìn số nhỏ ngay sau nó để biết có mấy nguyên tử.',
+            'Đọc từng kí hiệu để biết nguyên tố, rồi nhìn chỉ số ngay sau nó để biết có mấy nguyên tử. Không có chỉ số nghĩa là 1.',
           conceptIds: ['formula'],
         },
         {
@@ -247,14 +249,14 @@ export const unit02: UnitInput = {
           visual: { id: 'v', moleculeId: 'co' },
           answer: false,
           explanation:
-            'Chỉ khác một nguyên tử oxygen mà thành hai chất khác hẳn. CO₂ có trong nước ngọt có ga, còn CO là khí độc sinh ra khi đốt than trong phòng kín.',
+            'Chỉ hơn kém nhau một nguyên tử oxygen mà thành hai chất khác hẳn. CO₂ có trong nước ngọt có ga. Còn CO, tên là carbon monoxide, là khí độc sinh ra khi đốt than trong phòng kín.',
           conceptIds: ['formula'],
         },
         {
           id: 'u2-l2-e7',
           type: 'mcq',
           prompt:
-            'Đây là phân tử ethanol C₂H₆O, chất chính trong cồn sát khuẩn. Nó có tổng cộng bao nhiêu nguyên tử?',
+            'Ethanol (cồn) là chất chính trong chai cồn sát khuẩn. Phân tử ethanol có công thức C₂H₆O. Nó có tổng cộng bao nhiêu nguyên tử?',
           visual: { id: 'v', moleculeId: 'c2h6o' },
           options: [
             { id: 'a', text: '3' },
@@ -263,7 +265,7 @@ export const unit02: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            '2 carbon + 6 hydrogen + 1 oxygen = 9 nguyên tử. Cộng các chỉ số lại, và nhớ rằng không ghi số nghĩa là 1.',
+            '2 carbon + 6 hydrogen + 1 oxygen = 9 nguyên tử. Sau chữ O không ghi số nghĩa là 1, bỏ sót nó thì chỉ đếm được 8. Còn 3 là số nguyên tố, không phải số nguyên tử.',
           conceptIds: ['formula'],
         },
         {
@@ -303,7 +305,7 @@ export const unit02: UnitInput = {
             'Một phân tử có 1 nguyên tử carbon và 4 nguyên tử hydrogen. Công thức của nó là ___.',
           blanks: [{ accepted: ['CH₄', 'CH4'], wordBank: ['C₄H', 'CH₄', 'CH₃', 'C₄H₄'] }],
           explanation:
-            'Số nhỏ đứng ngay sau nguyên tố mà nó đếm. 4 hydrogen viết là H₄, 1 carbon chỉ viết C. Ghép lại thành CH₄.',
+            'Chỉ số đứng ngay sau nguyên tố mà nó đếm. 4 hydrogen viết là H₄, 1 carbon chỉ viết C. Ghép lại thành CH₄. Còn C₄H lại là 4 carbon và 1 hydrogen.',
           conceptIds: ['formula'],
         },
       ],
@@ -318,9 +320,10 @@ export const unit02: UnitInput = {
       intro: {
         title: 'Chia sẻ để gắn bó',
         story: [
-          'Vì sao hai nguyên tử hydrogen lại dính được vào nhau? Bí mật nằm ở các electron.',
-          'Mỗi nguyên tử hydrogen góp 1 electron để cả hai cùng dùng chung, như hai người bạn đưa tay ra nắm lấy nhau. Kiểu liên kết bằng cách chia sẻ electron này gọi là liên kết cộng hoá trị.',
-          'Một cái nắm tay là một cặp electron dùng chung, gọi là liên kết đơn. Có những nguyên tử nắm nhau bằng hai hay ba tay: đó là liên kết đôi và liên kết ba.',
+          'Tên lửa này bay lên nhờ đốt hydrogen. Trong khí hydrogen, các nguyên tử không đi lẻ mà dính với nhau thành từng đôi, mỗi đôi là một phân tử H₂. Thứ gì giữ chúng lại với nhau?',
+          'Đó là electron, hạt mang điện âm bạn đã gặp ở Unit 1. Mỗi nguyên tử hydrogen góp 1 electron để cả hai dùng chung. Cặp electron dùng chung này hút cả hai hạt nhân mang điện dương, nên giữ hai nguyên tử ở cạnh nhau.',
+          'Liên kết tạo ra nhờ dùng chung electron gọi là liên kết cộng hoá trị. Bạn có thể hình dung nó như hai người bạn nắm tay nhau. Trong hình, mỗi cái nắm tay được vẽ bằng một vạch nối.',
+          'Một cặp electron dùng chung là một liên kết đơn. Có những nguyên tử dùng chung hai hoặc ba cặp, như thể nắm nhau bằng hai, ba tay. Đó là liên kết đôi và liên kết ba.',
         ],
         visual: { type: 'molecule', moleculeId: 'h2' },
       },
@@ -336,7 +339,7 @@ export const unit02: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Cộng hoá trị nghĩa là cùng góp, cùng dùng. Cặp electron dùng chung giữ hai nguyên tử ở cạnh nhau.',
+            'Trong liên kết cộng hoá trị, mỗi nguyên tử góp electron để dùng chung. Cặp electron dùng chung hút cả hai hạt nhân nên giữ hai nguyên tử ở cạnh nhau. Chuyện một nguyên tử lấy hẳn electron thuộc về một kiểu liên kết khác, bạn sẽ gặp ở bài sau.',
           conceptIds: ['covalent-bond'],
         },
         {
@@ -351,7 +354,7 @@ export const unit02: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Mỗi vạch là một cái nắm tay, tức một cặp electron dùng chung. Hai vạch là liên kết đôi.',
+            'Mỗi vạch là một cặp electron dùng chung. Hai vạch là hai cặp, tức liên kết đôi. Vạch nối chỉ là cách vẽ: giữa hai nguyên tử không có cái que nào, chỉ có lực hút.',
           conceptIds: ['covalent-bond', 'multiple-bond'],
         },
         {
@@ -364,17 +367,17 @@ export const unit02: UnitInput = {
             { left: { id: 'l3', moleculeId: 'n2' }, right: { id: 'r3', text: 'Liên kết ba' } },
           ],
           explanation:
-            'H₂ nắm nhau một tay, O₂ hai tay, N₂ ba tay. Càng nhiều tay, hai nguyên tử càng khó bị tách rời.',
+            'Đếm số vạch nối: H₂ có một vạch là liên kết đơn, O₂ có hai vạch là liên kết đôi, N₂ có ba vạch là liên kết ba. Dùng chung càng nhiều cặp electron, hai nguyên tử thường càng khó bị tách rời.',
           conceptIds: ['multiple-bond'],
         },
         {
           id: 'u2-l3-e4',
           type: 'build-molecule',
-          prompt: 'Ghép phân tử khí nitrogen N₂',
+          prompt: 'Ghép phân tử khí nitrogen (nitơ) N₂',
           targetMoleculeId: 'n2',
           availableAtoms: { N: 3, O: 2, H: 1 },
           explanation:
-            'Hai nguyên tử nitrogen nắm nhau bằng ba tay, tức liên kết ba, nên rất khó tách. Khí nitrogen chiếm gần bốn phần năm không khí.',
+            'Phân tử N₂ gồm 2 nguyên tử nitrogen nối với nhau bằng liên kết ba nên rất khó tách. Khí nitrogen chiếm gần bốn phần năm không khí quanh bạn.',
           conceptIds: ['molecule', 'multiple-bond'],
         },
         {
@@ -389,7 +392,7 @@ export const unit02: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Carbon có 4 "tay", mỗi tay nắm một nguyên tử hydrogen bằng một liên kết đơn. Hydrogen thì chỉ có 1 tay.',
+            'Đếm các vạch nối quanh nguyên tử carbon: có 4 vạch, mỗi vạch là một liên kết đơn với một nguyên tử hydrogen. Có thể nói carbon có 4 "tay", còn mỗi nguyên tử hydrogen chỉ có 1 "tay".',
           conceptIds: ['covalent-bond'],
         },
         {
@@ -433,30 +436,32 @@ export const unit02: UnitInput = {
             { id: 's4', text: 'Cặp electron dùng chung giữ hai nguyên tử thành phân tử H₂' },
           ],
           explanation:
-            'Cặp electron dùng chung nằm giữa hai hạt nhân và hút cả hai, giống cái nắm tay giữ hai người bạn.',
+            'Cặp electron dùng chung mang điện âm, nằm giữa hai hạt nhân mang điện dương và hút cả hai. Nó giống cái nắm tay giữ hai người bạn ở cạnh nhau.',
           conceptIds: ['covalent-bond'],
         },
         {
           id: 'u2-l3-e9',
           type: 'true-false',
-          prompt: 'Một nguyên tử hydrogen có thể tạo liên kết đôi.',
+          prompt:
+            'Nguyên tử hydrogen chỉ có 1 electron. Nó có thể tạo liên kết đôi với một nguyên tử khác.',
           answer: false,
           explanation:
-            'Hydrogen chỉ có 1 electron nên chỉ góp được vào một cặp dùng chung. Nó luôn tạo đúng một liên kết đơn.',
+            'Liên kết đôi cần mỗi bên góp 2 electron. Hydrogen chỉ có 1 electron nên chỉ góp được vào một cặp dùng chung. Vì thế trong mọi phân tử ở Unit này, mỗi nguyên tử hydrogen chỉ có đúng một vạch nối.',
           conceptIds: ['covalent-bond', 'multiple-bond'],
         },
         {
           id: 'u2-l3-e10',
           type: 'mcq',
-          prompt: 'Liên kết cộng hoá trị thường hình thành giữa những nguyên tố nào?',
+          prompt:
+            'Các phân tử H₂, O₂, N₂, H₂O, CH₄ đều có liên kết cộng hoá trị. Chúng tạo từ hydrogen, carbon, nitrogen và oxygen, cả bốn đều là phi kim. Vậy liên kết cộng hoá trị thường hình thành giữa những nguyên tố nào?',
           options: [
             { id: 'a', text: 'Phi kim với phi kim' },
-            { id: 'b', text: 'Kim loại với kim loại' },
+            { id: 'b', text: 'Kim loại với phi kim' },
             { id: 'c', text: 'Chỉ giữa các nguyên tử cùng loại' },
           ],
           correctOptionId: 'a',
           explanation:
-            'Các phi kim như H, C, N, O thường chia sẻ electron với nhau. Bài sau bạn sẽ thấy kim loại gặp phi kim thì khác hẳn.',
+            'Các phi kim như H, C, N, O thường dùng chung electron với nhau. Không cần cùng loại: trong nước, oxygen liên kết với hydrogen. Còn kim loại gặp phi kim thì khác hẳn, bạn sẽ thấy ở bài sau.',
           conceptIds: ['covalent-bond', 'nonmetal'],
         },
       ],
@@ -471,9 +476,10 @@ export const unit02: UnitInput = {
       intro: {
         title: 'Một bên cho, một bên nhận',
         story: [
-          'Hạt muối bạn nêm vào canh làm từ sodium và chlorine. Hai nguyên tố này không chia sẻ electron như ở bài trước.',
-          'Nguyên tử sodium cho hẳn 1 electron sang nguyên tử chlorine. Mất electron, sodium mang điện dương (Na⁺). Nhận electron, chlorine mang điện âm (Cl⁻). Nguyên tử mang điện như vậy gọi là ion.',
-          'Trái dấu thì hút nhau: Na⁺ và Cl⁻ hút chặt lấy nhau. Lực hút đó chính là liên kết ion.',
+          'Hạt muối ăn bạn nêm vào canh có tên hoá học là sodium chloride. Nó tạo từ hai nguyên tố: sodium (natri), một kim loại, và chlorine, một phi kim. Hai nguyên tố này không dùng chung electron như ở bài trước.',
+          'Nguyên tử sodium cho hẳn 1 electron sang nguyên tử chlorine. Mất 1 electron mang điện âm, sodium dư điện dương, viết là Na⁺. Nhận thêm 1 electron, chlorine dư điện âm, viết là Cl⁻. Nguyên tử mang điện như vậy gọi là ion.',
+          'Điện trái dấu thì hút nhau, nên Na⁺ và Cl⁻ hút chặt lấy nhau. Lực hút đó chính là liên kết ion. Kim loại gặp phi kim thường liên kết theo kiểu này.',
+          'Phóng to một hạt muối, bạn sẽ thấy vô số ion Na⁺ và Cl⁻ xếp xen kẽ thành một khối đều đặn. Mỗi ion hút mọi ion trái dấu quanh nó, nên trong muối không có phân tử nào đứng riêng.',
         ],
         visual: { type: 'molecule', moleculeId: 'nacl' },
       },
@@ -481,7 +487,7 @@ export const unit02: UnitInput = {
         {
           id: 'u2-l4-e1',
           type: 'mcq',
-          prompt: 'Trong muối ăn, nguyên tử sodium làm gì với electron của nó?',
+          prompt: 'Khi tạo thành muối ăn, nguyên tử sodium làm gì với electron của nó?',
           options: [
             { id: 'a', text: 'Cho hẳn 1 electron sang chlorine' },
             { id: 'b', text: 'Dùng chung 1 electron với chlorine' },
@@ -489,7 +495,7 @@ export const unit02: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Sodium cho hẳn 1 electron, chlorine nhận lấy. Đây là kiểu cho–nhận, khác với kiểu dùng chung của liên kết cộng hoá trị.',
+            'Sodium cho hẳn 1 electron, chlorine nhận lấy. Đây là kiểu cho và nhận. Dùng chung electron là kiểu của liên kết cộng hoá trị ở bài trước.',
           conceptIds: ['ionic-bond'],
         },
         {
@@ -499,7 +505,7 @@ export const unit02: UnitInput = {
           template: 'Nguyên tử mang điện vì đã cho hoặc nhận electron được gọi là ___.',
           blanks: [{ accepted: ['ion'], wordBank: ['phân tử', 'ion', 'proton'] }],
           explanation:
-            'Ion là nguyên tử đã mất hoặc nhận thêm electron nên không còn trung hoà về điện.',
+            'Ion là nguyên tử đã mất hoặc nhận thêm electron nên không còn trung hoà về điện. Phân tử là nhóm nguyên tử liên kết với nhau, còn proton là một hạt nằm trong hạt nhân.',
           conceptIds: ['ion'],
         },
         {
@@ -514,7 +520,7 @@ export const unit02: UnitInput = {
         {
           id: 'u2-l4-e4',
           type: 'match-pairs',
-          prompt: 'Nối ký hiệu với mô tả',
+          prompt: 'Nối kí hiệu với mô tả',
           pairs: [
             {
               left: { id: 'l1', text: 'Na' },
@@ -534,13 +540,13 @@ export const unit02: UnitInput = {
             },
           ],
           explanation:
-            'Dấu + nghĩa là đã mất electron nên mang điện dương. Dấu − nghĩa là đã nhận thêm electron nên mang điện âm.',
+            'Dấu + nhỏ ở góc trên nghĩa là đã mất 1 electron nên mang điện dương. Dấu − nghĩa là đã nhận thêm 1 electron nên mang điện âm. Không có dấu là nguyên tử trung hoà về điện.',
           conceptIds: ['ion'],
         },
         {
           id: 'u2-l4-e5',
           type: 'order-steps',
-          prompt: 'Liên kết ion trong muối ăn hình thành thế nào?',
+          prompt: 'Liên kết ion trong muối ăn hình thành thế nào? Sắp xếp theo thứ tự',
           steps: [
             { id: 's1', text: 'Nguyên tử sodium gặp nguyên tử chlorine' },
             { id: 's2', text: 'Sodium cho chlorine 1 electron' },
@@ -548,7 +554,7 @@ export const unit02: UnitInput = {
             { id: 's4', text: 'Hai ion trái dấu hút chặt lấy nhau' },
           ],
           explanation:
-            'Cho–nhận electron tạo ra hai ion trái dấu. Lực hút giữa chúng chính là liên kết ion.',
+            'Cho và nhận electron tạo ra hai ion trái dấu. Lực hút giữa các ion trái dấu mới chính là liên kết ion. Kiểu liên kết này thường gặp khi một kim loại, như sodium, gặp một phi kim, như chlorine.',
           conceptIds: ['ionic-bond', 'ion'],
         },
         {
@@ -560,20 +566,20 @@ export const unit02: UnitInput = {
           options: [
             { id: 'a', text: 'Liên kết cộng hoá trị đơn' },
             { id: 'b', text: 'Liên kết ion' },
-            { id: 'c', text: 'Liên kết đôi' },
+            { id: 'c', text: 'Liên kết cộng hoá trị đôi' },
           ],
           correctOptionId: 'b',
           explanation:
-            'Kim loại gặp phi kim thường cho–nhận electron. Sodium cho fluorine 1 electron, tạo thành hai ion Na⁺ và F⁻ hút nhau.',
+            'Kim loại gặp phi kim thường cho và nhận electron. Sodium cho fluorine 1 electron, tạo thành hai ion Na⁺ và F⁻ hút nhau. Trong hình, liên kết ion được vẽ bằng nét đứt, khác với vạch liền của liên kết cộng hoá trị.',
           conceptIds: ['ionic-bond'],
         },
         {
           id: 'u2-l4-e7',
           type: 'sort',
-          prompt: 'Chia sẻ hay cho–nhận?',
+          prompt: 'Các nguyên tử trong mỗi chất dùng chung electron hay cho và nhận electron?',
           groups: [
-            { id: 'covalent', label: 'Chia sẻ electron (cộng hoá trị)' },
-            { id: 'ionic', label: 'Cho–nhận electron (ion)' },
+            { id: 'covalent', label: 'Dùng chung electron (cộng hoá trị)' },
+            { id: 'ionic', label: 'Cho và nhận electron (ion)' },
           ],
           items: [
             { id: 'i1', moleculeId: 'h2o', groupId: 'covalent' },
@@ -583,7 +589,7 @@ export const unit02: UnitInput = {
             { id: 'i5', moleculeId: 'co2', groupId: 'covalent' },
           ],
           explanation:
-            'H₂O, CH₄, CO₂ chỉ gồm phi kim nên chia sẻ electron. NaCl và NaF có kim loại sodium đi với phi kim nên cho–nhận electron.',
+            'H₂O, CH₄, CO₂ chỉ gồm phi kim nên các nguyên tử dùng chung electron. NaCl và NaF có kim loại sodium đi với phi kim nên cho và nhận electron.',
           conceptIds: ['ionic-bond', 'covalent-bond'],
         },
         {
@@ -593,13 +599,14 @@ export const unit02: UnitInput = {
           visual: { id: 'v', moleculeId: 'nacl' },
           answer: false,
           explanation:
-            'Trong hạt muối không có phân tử riêng lẻ. Vô số ion Na⁺ và Cl⁻ xếp xen kẽ thành một khối tinh thể. Công thức NaCl chỉ cho biết tỉ lệ: cứ 1 sodium thì có 1 chlorine.',
+            'Trong hạt muối không có phân tử riêng lẻ. Vô số ion Na⁺ và Cl⁻ xếp xen kẽ thành một khối, mỗi ion hút mọi ion trái dấu quanh nó. Hình chỉ vẽ một cặp ion cho dễ nhìn. Công thức NaCl cho biết tỉ lệ: cứ 1 ion Na⁺ thì có 1 ion Cl⁻.',
           conceptIds: ['ionic-bond', 'formula'],
         },
         {
           id: 'u2-l4-e9',
           type: 'mcq',
-          prompt: 'Cặp nguyên tố nào dễ tạo liên kết ion nhất?',
+          prompt:
+            'Potassium (kali) là kim loại. Hydrogen, carbon, oxygen và chlorine là phi kim. Cặp nguyên tố nào tạo liên kết ion?',
           options: [
             { id: 'a', text: 'Hydrogen và oxygen' },
             { id: 'b', text: 'Carbon và hydrogen' },
@@ -607,18 +614,18 @@ export const unit02: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Potassium là kim loại, chlorine là phi kim: potassium cho chlorine 1 electron, tạo hợp chất ion KCl. Hai cặp còn lại đều là phi kim nên chia sẻ electron.',
+            'Potassium là kim loại, chlorine là phi kim. Giống sodium, potassium cho chlorine 1 electron, tạo ra các ion K⁺ và Cl⁻ hút nhau. Hai cặp còn lại đều là phi kim với phi kim nên dùng chung electron.',
           conceptIds: ['ionic-bond', 'metal', 'nonmetal'],
         },
         {
           id: 'u2-l4-e10',
           type: 'build-molecule',
           prompt:
-            'Muối ăn NaCl cứ 1 sodium thì có 1 chlorine. Hãy chọn đúng các nguyên tử cho một cặp như vậy',
+            'Trong muối ăn NaCl, cứ 1 sodium thì có 1 chlorine. Chọn đúng các nguyên tử cho một cặp như vậy',
           targetMoleculeId: 'nacl',
           availableAtoms: { Na: 2, Cl: 2, O: 1 },
           explanation:
-            'Một sodium cho đúng 1 electron, một chlorine nhận đúng 1 electron, nên chúng đi với nhau theo tỉ lệ 1 : 1.',
+            'Một nguyên tử sodium cho đúng 1 electron, một nguyên tử chlorine nhận đúng 1 electron, nên chúng đi với nhau theo tỉ lệ 1 : 1.',
           conceptIds: ['ionic-bond', 'formula'],
         },
       ],
@@ -633,10 +640,10 @@ export const unit02: UnitInput = {
       intro: {
         title: 'Đổi bạn nắm tay',
         story: [
-          'Khí hydrogen H₂ và khí oxygen O₂ đều chỉ gồm một nguyên tố. Những chất như vậy gọi là đơn chất.',
-          'Khi có tia lửa, các nguyên tử buông tay bạn cũ và nắm tay bạn mới, tạo thành nước H₂O. Nước gồm hai nguyên tố liên kết với nhau nên là một hợp chất.',
+          'Tên lửa này mang theo hai chất: hydrogen H₂ và oxygen O₂. Mỗi chất chỉ tạo từ một nguyên tố. Những chất như vậy gọi là đơn chất.',
+          'Khi có tia lửa, các nguyên tử buông tay bạn cũ và nắm tay bạn mới, tạo thành nước H₂O. Nước tạo từ hai nguyên tố liên kết với nhau nên là một hợp chất.',
           'Hợp chất có tính chất khác hẳn các đơn chất tạo ra nó: hydrogen cháy được, oxygen nuôi ngọn lửa, còn nước lại dập được lửa.',
-          'Việc các nguyên tử đổi bạn như thế gọi là phản ứng hoá học. Bạn sẽ khám phá nó ở Unit 4.',
+          'Không khí thì khác. Khí nitrogen và khí oxygen trong không khí chỉ trộn lẫn với nhau, không có liên kết mới nào giữa chúng. Nhiều chất trộn lẫn như vậy gọi là hỗn hợp.',
         ],
         visual: { type: 'reaction', reactionId: 'water-formation' },
       },
@@ -645,7 +652,7 @@ export const unit02: UnitInput = {
           id: 'u2-l5-e1',
           type: 'mcq',
           prompt:
-            'Phân tử ethanol C₂H₆O, chất chính trong cồn sát khuẩn, gồm ba nguyên tố liên kết với nhau. Ethanol là gì?',
+            'Ethanol C₂H₆O, chất chính trong cồn sát khuẩn, tạo từ ba nguyên tố liên kết với nhau: carbon, hydrogen và oxygen. Ethanol là gì?',
           visual: { id: 'v', moleculeId: 'c2h6o' },
           options: [
             { id: 'a', text: 'Một đơn chất' },
@@ -654,7 +661,7 @@ export const unit02: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Hợp chất là chất gồm từ hai nguyên tố trở lên liên kết với nhau. Ethanol có carbon, hydrogen và oxygen trong cùng một phân tử.',
+            'Hợp chất là chất tạo từ hai nguyên tố trở lên liên kết với nhau. Ethanol có carbon, hydrogen và oxygen trong cùng một phân tử nên là hợp chất. Đơn chất thì chỉ tạo từ một nguyên tố.',
           conceptIds: ['compound'],
         },
         {
@@ -663,7 +670,7 @@ export const unit02: UnitInput = {
           prompt: 'Đơn chất hay hợp chất?',
           groups: [
             { id: 'elemental', label: 'Đơn chất (một nguyên tố)' },
-            { id: 'compound', label: 'Hợp chất (từ hai nguyên tố)' },
+            { id: 'compound', label: 'Hợp chất (từ hai nguyên tố trở lên)' },
           ],
           items: [
             { id: 'i1', moleculeId: 'o2', groupId: 'elemental' },
@@ -674,7 +681,7 @@ export const unit02: UnitInput = {
             { id: 'i6', moleculeId: 'au', groupId: 'elemental' },
           ],
           explanation:
-            'O₂ và N₂ có hai nguyên tử nhưng chỉ một nguyên tố nên vẫn là đơn chất, giống như gold (vàng). Hợp chất phải có từ hai nguyên tố khác nhau.',
+            'O₂ và N₂ có hai nguyên tử nhưng chỉ một nguyên tố nên vẫn là đơn chất, giống như gold (vàng). Hợp chất phải có từ hai nguyên tố khác nhau, như H₂O, CO₂ và NaCl.',
           conceptIds: ['elemental-substance', 'compound'],
         },
         {
@@ -684,7 +691,7 @@ export const unit02: UnitInput = {
           visual: { id: 'v', moleculeId: 'o2' },
           answer: false,
           explanation:
-            'Hợp chất cần từ hai nguyên tố khác nhau. O₂ có hai nguyên tử nhưng đều là oxygen, nên nó là đơn chất.',
+            'Muốn biết đơn chất hay hợp chất, bạn đếm số nguyên tố chứ không đếm số nguyên tử. O₂ có hai nguyên tử nhưng đều là oxygen nên là đơn chất. Hợp chất cần từ hai nguyên tố khác nhau.',
           conceptIds: ['elemental-substance', 'compound'],
         },
         {
@@ -699,7 +706,7 @@ export const unit02: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Hỗn hợp là nhiều chất trộn lẫn, pha nhiều hay ít tuỳ ý và mỗi chất vẫn là chính nó. Đun cạn nước muối, bạn lại thu được muối.',
+            'Hỗn hợp là nhiều chất trộn lẫn, pha nhiều hay ít tuỳ ý, và mỗi chất vẫn là chính nó. Khi nước bay hơi hết, muối vẫn còn lại. Người ta làm muối từ nước biển theo đúng cách đó.',
           conceptIds: ['mixture'],
         },
         {
@@ -719,7 +726,7 @@ export const unit02: UnitInput = {
             { id: 'i6', text: 'Ethanol (C₂H₆O)', groupId: 'compound' },
           ],
           explanation:
-            'Hợp chất có công thức cố định, như H₂O hay CO₂. Không khí, nước biển, nước ngọt có ga là nhiều chất trộn lẫn nên không viết được bằng một công thức.',
+            'Hợp chất có công thức cố định, như H₂O hay CO₂. Không khí, nước biển, nước ngọt có ga là nhiều chất trộn lẫn, pha nhiều hay ít đều được, nên không viết được bằng một công thức.',
           conceptIds: ['compound', 'mixture'],
         },
         {
@@ -756,10 +763,11 @@ export const unit02: UnitInput = {
           id: 'u2-l5-e7',
           type: 'true-false',
           visual: { id: 'v', image: 'salt-shaker' },
-          prompt: 'Muối ăn có tính chất giống hệt sodium và chlorine tạo ra nó.',
+          prompt:
+            'Khí chlorine rất độc. Muối ăn tạo từ sodium và chlorine nên cũng độc như khí chlorine.',
           answer: false,
           explanation:
-            'Sodium là kim loại phản ứng mãnh liệt với nước, chlorine là khí độc màu vàng lục. Liên kết lại, chúng thành muối ăn bạn nêm vào canh. Hợp chất có tính chất khác hẳn các nguyên tố tạo nên nó.',
+            'Hợp chất có tính chất khác hẳn các đơn chất tạo ra nó. Sodium là kim loại phản ứng mãnh liệt với nước, chlorine là khí độc màu vàng lục. Liên kết với nhau, chúng thành muối ăn bạn nêm vào canh mỗi ngày.',
           conceptIds: ['compound'],
         },
         {
@@ -770,7 +778,7 @@ export const unit02: UnitInput = {
             'Không khí gồm khí nitrogen, khí oxygen và vài khí khác trộn lẫn với nhau. Không khí là một ___.',
           blanks: [{ accepted: ['hỗn hợp'], wordBank: ['hợp chất', 'đơn chất', 'hỗn hợp'] }],
           explanation:
-            'Các khí trong không khí chỉ trộn lẫn, không liên kết với nhau. Mỗi phân tử N₂ hay O₂ vẫn bay riêng.',
+            'Các khí trong không khí chỉ trộn lẫn, không liên kết với nhau thành chất mới. Mỗi phân tử N₂ hay O₂ vẫn bay riêng. Vì thế không khí là hỗn hợp, không phải hợp chất.',
           conceptIds: ['mixture'],
         },
         {
@@ -794,7 +802,7 @@ export const unit02: UnitInput = {
             { id: 's4', text: 'Liên kết mới hình thành, tạo ra phân tử H₂O' },
           ],
           explanation:
-            'Không nguyên tử nào mất đi hay sinh thêm, chúng chỉ đổi bạn nắm tay. Đó là điều xảy ra trong mọi phản ứng hoá học, bạn sẽ học kỹ ở Unit 4.',
+            'Không nguyên tử nào mất đi hay sinh thêm, chúng chỉ đổi bạn nắm tay. Sự đổi bạn như vậy gọi là phản ứng hoá học. Bạn sẽ học kĩ về nó ở Unit 4.',
           conceptIds: ['reaction', 'compound'],
         },
       ],
@@ -829,7 +837,8 @@ export const unit02: UnitInput = {
           prompt: 'Ghép phân tử ammonia NH₃',
           targetMoleculeId: 'nh3',
           availableAtoms: { N: 2, H: 5, C: 1 },
-          explanation: 'Chỉ số 3 đứng sau H: NH₃ gồm 1 nguyên tử nitrogen và 3 nguyên tử hydrogen.',
+          explanation:
+            'Chỉ số 3 đứng ngay sau H, còn sau N không ghi số. Vậy NH₃ gồm 1 nguyên tử nitrogen và 3 nguyên tử hydrogen.',
           conceptIds: ['formula', 'molecule'],
         },
         {
@@ -837,18 +846,19 @@ export const unit02: UnitInput = {
           type: 'fill-blank',
           prompt: 'Chọn số đúng cho từng chỗ trống',
           template:
-            'Công thức CH₄ cho biết phân tử có ___ nguyên tử carbon và ___ nguyên tử hydrogen.',
+            'Khí trong bình gas nhà bếp có propane, công thức C₃H₈. Mỗi phân tử propane có ___ nguyên tử carbon và ___ nguyên tử hydrogen.',
           blanks: [
-            { accepted: ['1', 'một'], wordBank: ['1', '2', '4'] },
-            { accepted: ['4', 'bốn'], wordBank: ['1', '2', '4'] },
+            { accepted: ['3', 'ba'], wordBank: ['3', '8', '11'] },
+            { accepted: ['8', 'tám'], wordBank: ['3', '8', '11'] },
           ],
-          explanation: 'Sau C không ghi số nên có 1 carbon. Số 4 đứng sau H nên có 4 hydrogen.',
+          explanation:
+            'Chỉ số 3 đứng ngay sau C nên có 3 nguyên tử carbon. Chỉ số 8 đứng ngay sau H nên có 8 nguyên tử hydrogen. Còn 11 là tổng số nguyên tử của cả phân tử.',
           conceptIds: ['formula'],
         },
         {
           id: 'u2-cp-e4',
           type: 'sort',
-          prompt: 'Chia sẻ hay cho–nhận?',
+          prompt: 'Liên kết trong mỗi chất là liên kết cộng hoá trị hay liên kết ion?',
           groups: [
             { id: 'covalent', label: 'Liên kết cộng hoá trị' },
             { id: 'ionic', label: 'Liên kết ion' },
@@ -861,7 +871,7 @@ export const unit02: UnitInput = {
             { id: 'i5', moleculeId: 'o2', groupId: 'covalent' },
           ],
           explanation:
-            'Phi kim với phi kim thì chia sẻ electron: NH₃, H₂O, O₂. Kim loại sodium gặp phi kim thì cho–nhận electron: NaF, NaCl.',
+            'Phi kim với phi kim thì dùng chung electron, tạo liên kết cộng hoá trị: NH₃, H₂O, O₂. Kim loại sodium gặp phi kim thì cho và nhận electron, tạo liên kết ion: NaF, NaCl.',
           conceptIds: ['covalent-bond', 'ionic-bond'],
         },
         {
@@ -933,11 +943,11 @@ export const unit02: UnitInput = {
         {
           id: 'u2-cp-e10',
           type: 'true-false',
-          prompt: 'Công thức NaCl cho biết trong muối ăn cứ 1 sodium thì có 1 chlorine.',
-          visual: { id: 'v', moleculeId: 'nacl' },
+          prompt:
+            'Một loại phân kali bón cho cây là potassium chloride KCl. Giống muối ăn, nó gồm các ion K⁺ và Cl⁻. Công thức KCl cho biết cứ 1 ion K⁺ thì có 1 ion Cl⁻.',
           answer: true,
           explanation:
-            'Đúng. Muối ăn không gồm các phân tử riêng lẻ mà là vô số ion Na⁺ và Cl⁻ xếp xen kẽ, theo tỉ lệ 1 : 1.',
+            'Đúng. Giống muối ăn NaCl, potassium chloride không gồm các phân tử riêng lẻ mà là vô số ion K⁺ và Cl⁻ xếp xen kẽ. Công thức KCl cho biết tỉ lệ giữa chúng là 1 : 1.',
           conceptIds: ['formula', 'ionic-bond'],
         },
         {
@@ -952,27 +962,29 @@ export const unit02: UnitInput = {
           items: [
             { id: 'i1', text: 'Gold (vàng, Au)', groupId: 'elemental' },
             { id: 'i2', text: 'Nước cất (H₂O)', groupId: 'compound' },
-            { id: 'i3', text: 'Nước biển', groupId: 'mixture' },
+            { id: 'i3', text: 'Nước khoáng (nước có hoà tan chất khoáng)', groupId: 'mixture' },
             { id: 'i4', text: 'Khí nitrogen (N₂)', groupId: 'elemental' },
             { id: 'i5', text: 'Khí methane (CH₄)', groupId: 'compound' },
             { id: 'i6', text: 'Không khí', groupId: 'mixture' },
           ],
           explanation:
-            'Một nguyên tố là đơn chất. Từ hai nguyên tố liên kết với nhau là hợp chất. Nhiều chất chỉ trộn lẫn với nhau là hỗn hợp.',
+            'Tạo từ một nguyên tố là đơn chất. Từ hai nguyên tố liên kết với nhau là hợp chất. Nhiều chất chỉ trộn lẫn với nhau là hỗn hợp: nước khoáng là nước có hoà tan các chất khoáng, không khí là nhiều khí trộn lẫn.',
           conceptIds: ['elemental-substance', 'compound', 'mixture'],
         },
         {
           id: 'u2-cp-e12',
           type: 'mcq',
-          prompt: 'CO và CO₂ khác nhau ở điểm nào?',
+          prompt:
+            'Chai oxy già trong tủ thuốc chứa hydrogen peroxide, công thức H₂O₂. Phân tử này khác phân tử nước H₂O ở điểm nào?',
+          visual: { id: 'v', moleculeId: 'h2o2' },
           options: [
-            { id: 'a', text: 'Phân tử CO₂ có nhiều hơn CO một nguyên tử oxygen' },
-            { id: 'b', text: 'Phân tử CO có thêm một nguyên tử carbon' },
-            { id: 'c', text: 'Chúng là một chất, chỉ khác cách viết' },
+            { id: 'a', text: 'Có nhiều hơn phân tử nước một nguyên tử oxygen' },
+            { id: 'b', text: 'Có nhiều hơn phân tử nước một nguyên tử hydrogen' },
+            { id: 'c', text: 'Không khác gì, chỉ là hai cách viết của nước' },
           ],
           correctOptionId: 'a',
           explanation:
-            'CO có 1 oxygen, CO₂ có 2 oxygen. Chỉ một con số nhỏ thay đổi là thành chất khác hẳn: CO rất độc, còn CO₂ có trong hơi thở của bạn.',
+            'H₂O₂ có 2 hydrogen và 2 oxygen, còn H₂O có 2 hydrogen và 1 oxygen. Chỉ thêm một nguyên tử oxygen là thành chất khác hẳn: nước thì uống được, còn oxy già thì tuyệt đối không.',
           conceptIds: ['formula', 'compound'],
         },
       ],
