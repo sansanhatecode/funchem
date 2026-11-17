@@ -1314,7 +1314,7 @@ export const unit05: UnitInput = {
         {
           id: 'u5-cp-e11',
           type: 'match-pairs',
-          prompt: 'Nối các chất phản ứng với thứ chúng tạo ra',
+          prompt: 'Nối các chất tham gia với thứ chúng tạo ra',
           pairs: [
             { left: { id: 'l1', text: 'Acid + base' }, right: { id: 'r1', text: 'Muối + nước' } },
             {

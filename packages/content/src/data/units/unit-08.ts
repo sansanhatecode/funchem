@@ -47,7 +47,7 @@ export const unit08: UnitInput = {
           prompt:
             'Hô hấp tế bào: glucose và oxygen biến thành carbon dioxide và nước. Xếp mỗi chất vào đúng nhóm',
           groups: [
-            { id: 'reactant', label: 'Chất phản ứng' },
+            { id: 'reactant', label: 'Chất tham gia' },
             { id: 'product', label: 'Sản phẩm' },
           ],
           items: [
@@ -57,7 +57,7 @@ export const unit08: UnitInput = {
             { id: 'i4', moleculeId: 'o2', text: 'Oxygen', groupId: 'reactant' },
           ],
           explanation:
-            'Glucose đến từ thức ăn, oxygen đến từ không khí bạn hít vào: đó là hai chất phản ứng. Carbon dioxide và nước sinh ra trong tế bào: đó là hai sản phẩm.',
+            'Glucose đến từ thức ăn, oxygen đến từ không khí bạn hít vào: đó là hai chất tham gia. Carbon dioxide và nước sinh ra trong tế bào: đó là hai sản phẩm.',
           conceptIds: ['respiration', 'reactants-products'],
         },
         {
@@ -97,7 +97,7 @@ export const unit08: UnitInput = {
           prompt: 'Trong tế bào của bạn có những ngọn lửa tí hon đang đốt glucose.',
           answer: false,
           explanation:
-            'Hô hấp tế bào giống sự cháy ở chất phản ứng và sản phẩm, nhưng không có lửa. Phản ứng đi qua nhiều bước nhỏ ở khoảng 37 °C, nên năng lượng thoát ra từ từ chứ không bùng lên thành ngọn lửa.',
+            'Hô hấp tế bào giống sự cháy ở chất tham gia và sản phẩm, nhưng không có lửa. Phản ứng đi qua nhiều bước nhỏ ở khoảng 37 °C, nên năng lượng thoát ra từ từ chứ không bùng lên thành ngọn lửa.',
           conceptIds: ['respiration', 'combustion'],
         },
         {
