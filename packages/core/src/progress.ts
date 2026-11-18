@@ -1,5 +1,5 @@
 import type { ContentRegistry, Unit } from '@funchem/content'
-import { CHECKPOINT_PASS_ACCURACY } from './grading.js'
+import { passAccuracy } from './grading.js'
 
 export type LessonStatus = 'locked' | 'available' | 'completed'
 
@@ -8,7 +8,7 @@ export interface LessonRecord {
   bestAccuracy: number
 }
 
-/** Một bài tính là hoàn thành khi: bài thường có ít nhất một lần làm; checkpoint đạt ngưỡng. */
+/** Một bài tính là hoàn thành khi lần làm tốt nhất đạt ngưỡng của loại bài (bài thường 50%, checkpoint 80%). */
 export function isLessonCompleted(
   lessonId: string,
   records: Map<string, LessonRecord>,
@@ -18,7 +18,7 @@ export function isLessonCompleted(
   if (!rec) return false
   const entry = registry.lessons.get(lessonId)
   if (!entry) return false
-  return entry.lesson.kind === 'checkpoint' ? rec.bestAccuracy >= CHECKPOINT_PASS_ACCURACY : true
+  return rec.bestAccuracy >= passAccuracy(entry.lesson.kind)
 }
 
 /**

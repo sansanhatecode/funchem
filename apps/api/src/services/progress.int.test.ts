@@ -53,6 +53,23 @@ d('progress service (Postgres)', () => {
     ],
   }
 
+  /** đúng 2 trên 4 câu của bài 1: vừa đủ ngưỡng 50% của bài thường */
+  const lesson1Half = { lessonId: lesson1.lessonId, answers: lesson1.answers.slice(0, 2) }
+  /** đúng 2 trên 3 câu của bài 2 */
+  const lesson2 = {
+    lessonId: 'u1-l2-elements',
+    answers: [
+      {
+        exerciseId: 'u1-l2-e2',
+        answer: {
+          type: 'sort' as const,
+          assignments: { i1: 'element', i2: 'not', i3: 'element', i4: 'not' },
+        },
+      },
+      { exerciseId: 'u1-l2-e3', answer: { type: 'fill-blank' as const, values: ['2'] } },
+    ],
+  }
+
   beforeEach(async () => {
     await db.execute(sql`truncate table "user" cascade`)
   })
@@ -96,8 +113,7 @@ d('progress service (Postgres)', () => {
       db,
       {
         userId: u,
-        lessonId: 'u1-l1-atoms',
-        answers: [],
+        ...lesson1Half,
         now: new Date('2026-11-11T03:00:00Z'),
       },
       fixtureContent,
@@ -169,9 +185,20 @@ d('progress service (Postgres)', () => {
     await expect(
       submitAttempt(db, { userId: u, lessonId: 'u1-checkpoint', answers: [] }, fixtureContent),
     ).rejects.toBeInstanceOf(LessonLockedError)
+    // bài 2 làm sai hết: được nộp, nhưng chưa đạt 50% nên bài kiểm tra vẫn khoá
+    const failed = await submitAttempt(
+      db,
+      { userId: u, lessonId: 'u1-l2-elements', answers: [] },
+      fixtureContent,
+    )
+    expect(failed.grade.passed).toBe(false)
+    expect(failed.grade.xpEarned).toBe(0)
     await expect(
-      submitAttempt(db, { userId: u, lessonId: 'u1-l2-elements', answers: [] }, fixtureContent),
-    ).resolves.toBeDefined()
+      submitAttempt(db, { userId: u, lessonId: 'u1-checkpoint', answers: [] }, fixtureContent),
+    ).rejects.toBeInstanceOf(LessonLockedError)
+    const passed = await submitAttempt(db, { userId: u, ...lesson2 }, fixtureContent)
+    expect(passed.grade.passed).toBe(true)
+    expect(passed.repeat).toBe(false)
     // Unit 2 chỉ mở khi bài kiểm tra Unit 1 đạt
     await submitAttempt(db, { userId: u, lessonId: 'u1-checkpoint', answers: [] }, fixtureContent)
     await expect(
@@ -290,7 +317,7 @@ d('progress service (Postgres)', () => {
     const b = await mkUser('u-lb-b')
     await submitAttempt(db, { userId: guest, ...lesson1 }, fixtureContent)
     await submitAttempt(db, { userId: a, ...lesson1 }, fixtureContent)
-    await submitAttempt(db, { userId: b, lessonId: 'u1-l1-atoms', answers: [] }, fixtureContent)
+    await submitAttempt(db, { userId: b, ...lesson1Half }, fixtureContent)
     await updateProfile(db, a, { displayName: 'An' })
 
     const board = await getLeaderboard(db, b)

@@ -152,13 +152,24 @@ export interface LessonGrade {
   correct: number
   /** 0..1 */
   accuracy: number
-  /** checkpoint cần đạt ngưỡng; bài thường luôn pass */
+  /** đạt ngưỡng của loại bài (xem `passAccuracy`) */
   passed: boolean
   xpEarned: number
 }
 
 /** Ngưỡng điểm để qua checkpoint */
 export const CHECKPOINT_PASS_ACCURACY = 0.8
+
+/**
+ * Ngưỡng điểm để một bài thường tính là xong. Thấp để người mới không bị chặn,
+ * nhưng trả lời sai gần hết thì chưa mở bài kế tiếp.
+ */
+export const LESSON_PASS_ACCURACY = 0.5
+
+/** Ngưỡng điểm (0..1) theo loại bài, tính trên câu trả lời đầu tiên. */
+export function passAccuracy(kind: Lesson['kind']): number {
+  return kind === 'checkpoint' ? CHECKPOINT_PASS_ACCURACY : LESSON_PASS_ACCURACY
+}
 
 /** Thưởng XP theo độ chính xác, cộng vào baseXp của bài */
 export function xpBonus(accuracy: number): number {
@@ -186,7 +197,7 @@ export function gradeLesson(
   const total = results.length
   const correct = results.filter((r) => r.correct).length
   const accuracy = total === 0 ? 0 : correct / total
-  const passed = lesson.kind === 'checkpoint' ? accuracy >= CHECKPOINT_PASS_ACCURACY : true
+  const passed = accuracy >= passAccuracy(lesson.kind)
   const xpEarned = passed
     ? lesson.baseXp + xpBonus(accuracy)
     : Math.round(lesson.baseXp * accuracy * 0.5)

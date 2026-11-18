@@ -131,7 +131,7 @@ describe('balance-reaction', () => {
 
 describe('gradeLesson', () => {
   const lesson = content.lessons.get('u1-l1-atoms')!.lesson
-  it('bài thường luôn pass, XP = base + thưởng', () => {
+  it('bài thường đúng hết: pass, XP = base + thưởng', () => {
     const g = gradeLesson(
       lesson,
       {
@@ -163,8 +163,35 @@ describe('gradeLesson', () => {
   it('thiếu câu trả lời tính là sai', () => {
     const g = gradeLesson(lesson, { lessonId: lesson.id, answers: [] }, content)
     expect(g.correct).toBe(0)
-    expect(g.passed).toBe(true)
-    expect(g.xpEarned).toBe(10)
+    expect(g.passed).toBe(false)
+    expect(g.xpEarned).toBe(0)
+  })
+  it('bài thường đúng vừa đủ một nửa thì pass, dưới một nửa thì chưa', () => {
+    const half = gradeLesson(
+      lesson,
+      {
+        lessonId: lesson.id,
+        answers: [
+          { exerciseId: 'u1-l1-e1', answer: { type: 'mcq', optionId: 'a' } },
+          { exerciseId: 'u1-l1-e2', answer: { type: 'true-false', value: true } },
+        ],
+      },
+      content,
+    )
+    expect(half.accuracy).toBe(0.5)
+    expect(half.passed).toBe(true)
+    expect(half.xpEarned).toBe(10)
+    const one = gradeLesson(
+      lesson,
+      {
+        lessonId: lesson.id,
+        answers: [{ exerciseId: 'u1-l1-e1', answer: { type: 'mcq', optionId: 'a' } }],
+      },
+      content,
+    )
+    expect(one.accuracy).toBe(0.25)
+    expect(one.passed).toBe(false)
+    expect(one.xpEarned).toBe(1)
   })
   it('checkpoint dưới ngưỡng thì không pass và XP giảm', () => {
     const cp = content.lessons.get('u1-checkpoint')!.lesson

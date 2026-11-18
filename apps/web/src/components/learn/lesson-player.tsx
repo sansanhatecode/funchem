@@ -2,6 +2,7 @@
 
 import { type AttemptResponse, unwrap } from '@funchem/api-client'
 import { moleculeLabel } from '@funchem/content/lib'
+import { passAccuracy } from '@funchem/core'
 import { useQueryClient } from '@tanstack/react-query'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -125,8 +126,9 @@ function ResultScreen({
       <h1 className="text-3xl font-extrabold">{headline}</h1>
       {!grade.passed && (
         <p className="max-w-sm text-ink-soft">
-          Bài kiểm tra cần đúng ít nhất 80%. Bạn đúng {grade.correct}/{grade.total} câu. Xem lại rồi
-          thử lần nữa nhé.
+          {isCheckpoint ? 'Bài kiểm tra' : 'Bài học'} cần đúng ít nhất{' '}
+          {Math.round(passAccuracy(bundle.lesson.kind) * 100)}% để mở bài tiếp theo. Bạn đúng{' '}
+          {grade.correct}/{grade.total} câu. Xem lại rồi thử lần nữa nhé.
         </p>
       )}
 

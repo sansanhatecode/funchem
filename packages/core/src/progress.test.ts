@@ -19,6 +19,11 @@ describe('computeLessonStatuses', () => {
     expect(s.get('u1-l1-atoms')).toBe('completed')
     expect(s.get('u1-l2-elements')).toBe('available')
   })
+  it('bài thường dưới 50% chưa tính hoàn thành, bài kế tiếp vẫn khoá', () => {
+    const s = computeLessonStatuses(content, rec([['u1-l1-atoms', 0.25]]))
+    expect(s.get('u1-l1-atoms')).toBe('available')
+    expect(s.get('u1-l2-elements')).toBe('locked')
+  })
   it('checkpoint dưới ngưỡng chưa tính hoàn thành', () => {
     const s = computeLessonStatuses(
       content,
