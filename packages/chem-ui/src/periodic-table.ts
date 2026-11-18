@@ -1,4 +1,8 @@
-export type ElementCategory = 'metal' | 'nonmetal' | 'metalloid' | 'noble-gas'
+/**
+ * Ba nhóm theo sách KHTN 7 (chương trình 2018): kim loại, phi kim, khí hiếm.
+ * Sách không tách nhóm "á kim": boron, silicon, arsenic xếp vào phi kim, germanium vào kim loại.
+ */
+export type ElementCategory = 'metal' | 'nonmetal' | 'noble-gas'
 
 export interface TableElement {
   number: number
@@ -35,7 +39,7 @@ export const PERIODIC_TABLE: TableElement[] = [
   row(2, 'He', 'Helium', 18, 1, 'noble-gas', { note: 'Khí bơm bóng bay' }),
   row(3, 'Li', 'Lithium', 1, 2, 'metal', { note: 'Pin điện thoại' }),
   row(4, 'Be', 'Beryllium', 2, 2, 'metal'),
-  row(5, 'B', 'Boron', 13, 2, 'metalloid'),
+  row(5, 'B', 'Boron', 13, 2, 'nonmetal'),
   row(6, 'C', 'Carbon', 14, 2, 'nonmetal', { note: 'Than, ruột bút chì, kim cương' }),
   row(7, 'N', 'Nitrogen', 15, 2, 'nonmetal', {
     vi: 'nitơ',
@@ -47,7 +51,7 @@ export const PERIODIC_TABLE: TableElement[] = [
   row(11, 'Na', 'Sodium', 1, 3, 'metal', { vi: 'natri', note: 'Có trong muối ăn' }),
   row(12, 'Mg', 'Magnesium', 2, 3, 'metal', { note: 'Pháo bông cháy sáng trắng' }),
   row(13, 'Al', 'Aluminium', 13, 3, 'metal', { vi: 'nhôm', note: 'Vỏ lon, giấy bạc gói đồ ăn' }),
-  row(14, 'Si', 'Silicon', 14, 3, 'metalloid', { note: 'Cát và chip điện thoại' }),
+  row(14, 'Si', 'Silicon', 14, 3, 'nonmetal', { note: 'Cát và chip điện thoại' }),
   row(15, 'P', 'Phosphorus', 15, 3, 'nonmetal', { note: 'Vỏ bao diêm' }),
   row(16, 'S', 'Sulfur', 16, 3, 'nonmetal', {
     vi: 'lưu huỳnh',
@@ -68,8 +72,8 @@ export const PERIODIC_TABLE: TableElement[] = [
   row(29, 'Cu', 'Copper', 11, 4, 'metal', { vi: 'đồng', note: 'Lõi dây điện' }),
   row(30, 'Zn', 'Zinc', 12, 4, 'metal', { vi: 'kẽm', note: 'Vỏ pin, tôn mạ kẽm' }),
   row(31, 'Ga', 'Gallium', 13, 4, 'metal'),
-  row(32, 'Ge', 'Germanium', 14, 4, 'metalloid'),
-  row(33, 'As', 'Arsenic', 15, 4, 'metalloid'),
+  row(32, 'Ge', 'Germanium', 14, 4, 'metal'),
+  row(33, 'As', 'Arsenic', 15, 4, 'nonmetal'),
   row(34, 'Se', 'Selenium', 16, 4, 'nonmetal'),
   row(35, 'Br', 'Bromine', 17, 4, 'nonmetal'),
   row(36, 'Kr', 'Krypton', 18, 4, 'noble-gas'),
@@ -83,7 +87,6 @@ export const PERIODIC_TABLE: TableElement[] = [
 export const CATEGORY_LABEL: Record<ElementCategory, string> = {
   metal: 'Kim loại',
   nonmetal: 'Phi kim',
-  metalloid: 'Á kim',
   'noble-gas': 'Khí hiếm',
 }
 
@@ -91,7 +94,6 @@ export const CATEGORY_LABEL: Record<ElementCategory, string> = {
 export const CATEGORY_COLOR: Record<ElementCategory, string> = {
   metal: '#FFD58A',
   nonmetal: '#9BE3B4',
-  metalloid: '#C9B8F5',
   'noble-gas': '#9FD4F7',
 }
 

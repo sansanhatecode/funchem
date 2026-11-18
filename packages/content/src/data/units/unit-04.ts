@@ -2,12 +2,14 @@ import type { UnitInput } from '../../schema/lesson.js'
 
 /**
  * Unit 4: Phản ứng hoá học đầu tiên
- * 5 bài học + checkpoint: chất tham gia và sản phẩm, dấu hiệu phản ứng,
- * bảo toàn khối lượng, hệ số và cân bằng phương trình, phản ứng quanh ta.
+ * 6 bài học + checkpoint: chất tham gia và sản phẩm, dấu hiệu phản ứng,
+ * bảo toàn khối lượng, hệ số và chỉ số, cân bằng phương trình, phản ứng quanh ta.
  *
  * Thuật ngữ: dùng "chất tham gia" (lần đầu ghi thêm "còn gọi là chất phản ứng").
- * Thứ tự bài tập trong mảng là thứ tự người học gặp. Ở Bài 4 và Bài 5, thứ tự này
+ * Thứ tự bài tập trong mảng là thứ tự người học gặp. Ở Bài 4, Bài 5 và Bài 6, thứ tự này
  * không trùng thứ tự số trong id: id cũ được giữ nguyên khi chèn thêm bậc thang.
+ * Bài 4 và Bài 5 vốn là một bài 12 câu (id bài tập đều bắt đầu bằng u4-l4), được tách đôi
+ * cho vừa 5 tới 8 phút.
  */
 export const unit04: UnitInput = {
   id: 'u4-reactions',
@@ -522,17 +524,17 @@ export const unit04: UnitInput = {
       baseXp: 10,
     },
 
-    // ───────────────────────── Bài 4: Cân bằng phương trình ─────────────────────────
+    // ───────────────────────── Bài 4: Hệ số và chỉ số ─────────────────────────
     {
-      id: 'u4-l4-balancing',
-      title: 'Cân bằng phương trình',
+      id: 'u4-l4-coefficients',
+      title: 'Hệ số và chỉ số',
       intro: {
         title: 'Bếp than và những con số đứng trước',
         story: [
           'Than trong bếp nướng cháy đỏ rực. Mỗi nguyên tử carbon lấy một phân tử oxygen, thành một phân tử carbon dioxide. Viết bằng công thức: C + O₂ → CO₂. Cách viết này gọi là phương trình hoá học.',
           'Không nguyên tử nào mất đi hay sinh thêm, nên hai vế của phương trình phải có số nguyên tử mỗi nguyên tố bằng nhau. Vế trái là phần trước mũi tên, vế phải là phần sau mũi tên. Ở đây mỗi vế đều có 1 C và 2 O: phương trình đã cân bằng.',
           'Còn H₂ + O₂ → H₂O thì chưa cân bằng: vế trái có 2 O, vế phải chỉ có 1. Muốn có thêm nguyên tử, ta lấy thêm cả phân tử bằng cách viết một con số trước công thức, gọi là hệ số. 2H₂O là 2 phân tử nước, có tất cả 4 H và 2 O.',
-          'Con số nhỏ bên dưới gọi là chỉ số, và không được sửa nó. Đổi H₂O thành H₂O₂ là biến nước thành chất khác: hydrogen peroxide (oxy già). Hệ số thì chọn bộ số nhỏ nhất: viết 2H₂ + O₂ → 2H₂O, không viết 4H₂ + 2O₂ → 4H₂O.',
+          'Con số nhỏ bên dưới gọi là chỉ số, và không được sửa nó. Đổi H₂O thành H₂O₂ là biến nước thành chất khác: hydrogen peroxide (oxy già). Ở bài sau, bạn sẽ tự tay thêm hệ số để cân bằng phương trình.',
         ],
         visual: { type: 'reaction', reactionId: 'carbon-combustion' },
       },
@@ -603,6 +605,16 @@ export const unit04: UnitInput = {
           conceptIds: ['coefficient'],
         },
         {
+          id: 'u4-l4-e4',
+          type: 'true-false',
+          prompt: 'Để cân bằng phương trình, bạn được phép đổi H₂O thành H₂O₂.',
+          visual: { id: 'v', moleculeId: 'h2o2' },
+          answer: false,
+          explanation:
+            'Đổi chỉ số là đổi sang chất khác: H₂O là nước, còn H₂O₂ là hydrogen peroxide (oxy già). Phản ứng sinh ra nước thì bạn phải viết đúng công thức của nước. Khi cân bằng, chỉ được thay đổi hệ số đứng trước công thức.',
+          conceptIds: ['coefficient', 'balancing'],
+        },
+        {
           id: 'u4-l4-e11',
           type: 'fill-blank',
           prompt: 'Đếm nguyên tử oxygen ở từng vế',
@@ -635,6 +647,25 @@ export const unit04: UnitInput = {
             'C + O₂ → CO₂ có 1 C và 2 O ở mỗi vế. CH₄ + 2O₂ → CO₂ + 2H₂O có 1 C, 4 H và 4 O ở mỗi vế. Ba cách viết còn lại đều lệch: H₂ + O₂ → H₂O lệch oxygen (2 và 1), CO + O₂ → CO₂ lệch oxygen (3 và 2), N₂ + H₂ → NH₃ lệch cả nitrogen (2 và 1) lẫn hydrogen (2 và 3).',
           conceptIds: ['balancing', 'chemical-equation'],
         },
+      ],
+      baseXp: 10,
+    },
+
+    // ───────────────────────── Bài 5: Cân bằng phương trình ─────────────────────────
+    {
+      id: 'u4-l4-balancing',
+      title: 'Cân bằng phương trình',
+      intro: {
+        title: 'Đếm, thêm hệ số, đếm lại',
+        story: [
+          'Một số tên lửa đốt khí hydrogen với khí oxygen, sản phẩm phụt ra phía sau là hơi nước. Viết bằng công thức: H₂ + O₂ → H₂O. Cách viết này mới là sơ đồ phản ứng, vì oxygen đang lệch: vế trái có 2, vế phải chỉ có 1.',
+          'Để cân bằng, bạn chỉ thêm hệ số trước công thức, không sửa chỉ số. Đặt 2 trước H₂O thì vế phải có 2 O. Nhưng lúc này hydrogen lại lệch: trái 2, phải 4. Đặt tiếp 2 trước H₂ là xong: 2H₂ + O₂ → 2H₂O.',
+          'Cách làm lúc nào cũng vậy: đếm nguyên tử ở hai vế, thêm hệ số cho nguyên tố đang lệch, rồi đếm lại. Sửa chỗ này có thể làm lệch chỗ khác. Chuyện đó rất bình thường, bạn cứ đếm lại rồi sửa tiếp.',
+          'Hệ số thì chọn bộ số nhỏ nhất: viết 2H₂ + O₂ → 2H₂O, không viết 4H₂ + 2O₂ → 4H₂O. Hệ số 1 thì không cần viết ra.',
+        ],
+        visual: { type: 'reaction', reactionId: 'water-formation' },
+      },
+      exercises: [
         {
           id: 'u4-l4-e3',
           type: 'balance-reaction',
@@ -646,14 +677,19 @@ export const unit04: UnitInput = {
           conceptIds: ['balancing', 'chemical-equation'],
         },
         {
-          id: 'u4-l4-e4',
-          type: 'true-false',
-          prompt: 'Để cân bằng phương trình, bạn được phép đổi H₂O thành H₂O₂.',
-          visual: { id: 'v', moleculeId: 'h2o2' },
-          answer: false,
+          id: 'u4-l4-e13',
+          type: 'mcq',
+          prompt:
+            'Sơ đồ H₂ + O₂ → H₂O đang lệch oxygen: vế trái có 2, vế phải có 1. Cách sửa nào đúng?',
+          options: [
+            { id: 'a', text: 'Đổi H₂O thành H₂O₂' },
+            { id: 'b', text: 'Đặt hệ số 2 trước H₂O' },
+            { id: 'c', text: 'Viết O thay cho O₂ ở vế trái' },
+          ],
+          correctOptionId: 'b',
           explanation:
-            'Đổi chỉ số là đổi sang chất khác: H₂O là nước, còn H₂O₂ là hydrogen peroxide (oxy già). Phản ứng sinh ra nước thì bạn phải viết đúng công thức của nước. Khi cân bằng, chỉ được thay đổi hệ số đứng trước công thức.',
-          conceptIds: ['coefficient', 'balancing'],
+            'Khi cân bằng, bạn chỉ được thêm hệ số. 2H₂O là 2 phân tử nước, có 2 nguyên tử oxygen, vừa bằng vế trái. Đổi H₂O thành H₂O₂ hay O₂ thành O là sửa chỉ số, tức là viết sang một chất khác.',
+          conceptIds: ['balancing', 'coefficient'],
         },
         {
           id: 'u4-l4-e6',
@@ -680,6 +716,19 @@ export const unit04: UnitInput = {
           conceptIds: ['balancing', 'chemical-equation'],
         },
         {
+          id: 'u4-l4-e14',
+          type: 'fill-blank',
+          prompt: 'Cân bằng xong thì đếm lại để kiểm tra',
+          template: '2H₂ + O₂ → 2H₂O. Mỗi vế có ___ nguyên tử hydrogen và ___ nguyên tử oxygen.',
+          blanks: [
+            { accepted: ['4', 'bốn'], wordBank: ['2', '4', '6'] },
+            { accepted: ['2', 'hai'], wordBank: ['1', '2', '4'] },
+          ],
+          explanation:
+            'Vế trái: 2 phân tử H₂ có 2 × 2 = 4 nguyên tử hydrogen, 1 phân tử O₂ có 2 nguyên tử oxygen. Vế phải: 2 phân tử H₂O có 4 nguyên tử hydrogen và 2 nguyên tử oxygen. Hai vế bằng nhau, phương trình đã cân bằng.',
+          conceptIds: ['balancing', 'conservation-of-mass'],
+        },
+        {
           id: 'u4-l4-e9',
           type: 'balance-reaction',
           reactionId: 'carbon-monoxide-burning',
@@ -704,7 +753,7 @@ export const unit04: UnitInput = {
       baseXp: 10,
     },
 
-    // ───────────────────────── Bài 5: Phản ứng quanh ta ─────────────────────────
+    // ───────────────────────── Bài 6: Phản ứng quanh ta ─────────────────────────
     {
       id: 'u4-l5-reactions-around-you',
       title: 'Phản ứng quanh ta',

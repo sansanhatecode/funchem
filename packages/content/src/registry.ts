@@ -17,7 +17,7 @@ import {
 } from './schema/index.js'
 
 /** Phiên bản nội dung, tăng khi thay đổi bài học đã phát hành. Lưu kèm mỗi lần làm bài. */
-export const CONTENT_VERSION = '2026.11.3'
+export const CONTENT_VERSION = '2026.11.4'
 
 export interface ContentRegistry {
   version: string
