@@ -59,6 +59,12 @@ export function MoleculeZoom({
               </p>
             </div>
           </div>
+          {particleMode(molecule) === 'solution' && (
+            <p className="text-sm text-ink-soft">
+              Hình bên là một phân tử khi chưa tan. Trong nước, nó tách thành các ion mang dấu + và
+              − như bạn thấy ở trên.
+            </p>
+          )}
           <ParticleLegend molecule={molecule} />
         </div>
       ) : (

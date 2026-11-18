@@ -13,12 +13,12 @@ import { AtomShape, BondShape } from './shapes'
 const W = 320
 const H = 200
 
-export type ParticleMode = 'gas' | 'liquid' | 'metal' | 'ionic' | 'solid'
+export type ParticleMode = 'gas' | 'liquid' | 'solution' | 'metal' | 'ionic' | 'solid'
 
 /** Chọn cách sắp xếp hạt theo trạng thái và kiểu liên kết của chất. */
 export function particleMode(m: Molecule): ParticleMode {
   if (m.state === 'gas') return 'gas'
-  if (m.state === 'liquid') return 'liquid'
+  if (m.state === 'liquid') return m.ions ? 'solution' : 'liquid'
   if (m.atoms.length === 1) return 'metal'
   if (m.atoms.length === 2 && m.bonds.every((b) => b.kind === 'ionic')) return 'ionic'
   return 'solid'
@@ -27,6 +27,8 @@ export function particleMode(m: Molecule): ParticleMode {
 export const PARTICLE_CAPTION: Record<ParticleMode, string> = {
   gas: 'Thể khí: các phân tử bay tự do, cách xa nhau.',
   liquid: 'Thể lỏng: các phân tử chen sát nhau nhưng vẫn trượt qua nhau được.',
+  solution:
+    'Dung dịch trong nước: chất tan tách thành ion dương và ion âm, bơi giữa các phân tử nước (vẽ mờ).',
   metal: 'Thể rắn: các nguyên tử xếp khít thành hàng lối, chỉ rung nhẹ tại chỗ.',
   ionic: 'Tinh thể ion: ion dương và ion âm xếp xen kẽ, hút chặt lấy nhau.',
   solid: 'Thể rắn: các hạt xếp khít, chỉ rung nhẹ tại chỗ.',
@@ -81,6 +83,68 @@ function MoleculeGlyph({
       ))}
     </g>
   )
+}
+
+/** Nhãn điện tích ở góc trên phải của một ion: "+", "−", "2−"… */
+function ChargeBadge({ charge, r }: { charge: number; r: number }) {
+  const n = Math.abs(charge)
+  const text = `${n > 1 ? n : ''}${charge > 0 ? '+' : '−'}`
+  return (
+    <g>
+      <circle r={r} fill="#fff" stroke="rgb(31 42 55 / 0.3)" strokeWidth="0.8" />
+      <text
+        textAnchor="middle"
+        dominantBaseline="central"
+        fontSize={r * (n > 1 ? 1.15 : 1.45)}
+        fontWeight={800}
+        fill="#1f2a37"
+      >
+        {text}
+      </text>
+    </g>
+  )
+}
+
+/** Một phân tử nước nhỏ, vẽ mờ làm nền cho dung dịch. */
+function WaterGlyph() {
+  return (
+    <g opacity="0.45">
+      <g transform="translate(-5.4 4.2)">
+        <AtomShape element="H" r={3.6} showLabel={false} />
+      </g>
+      <g transform="translate(5.4 4.2)">
+        <AtomShape element="H" r={3.6} showLabel={false} />
+      </g>
+      <AtomShape element="O" r={5.6} showLabel={false} />
+    </g>
+  )
+}
+
+/** Tỉ lệ vẽ ion trong dung dịch so với hộp phân tử 100x100. */
+const ION_SCALE = 0.72
+/** Cạnh lớn nhất của một ion, theo đơn vị khung 320x200 (một ô nước rộng khoảng 46x40). */
+const MAX_ION_SIDE = 36
+
+/** Tách một chất thành các ion của nó, mỗi ion là một "phân tử con" vẽ được bằng MoleculeGlyph. */
+function ionParts(molecule: Molecule): { part: Molecule; charge: number; side: number }[] {
+  return (molecule.ions ?? []).map((ion, i) => {
+    const ids = new Set(ion.atomIds)
+    const part: Molecule = {
+      ...molecule,
+      id: `${molecule.id}:ion${i}`,
+      atoms: molecule.atoms.filter((a) => ids.has(a.id)),
+      bonds: molecule.bonds.filter((b) => ids.has(b.a) && ids.has(b.b)),
+    }
+    return {
+      part,
+      charge: ion.charge,
+      // ion nhiều nguyên tử (SO₄²⁻…) được giới hạn cỡ để không tràn sang ô bên cạnh
+      side: Math.min(
+        MAX_ION_SIDE,
+        moleculeViewBox(part, { padding: 0, minSide: 0 }).side * ION_SCALE,
+      ),
+    }
+  })
 }
 
 /**
@@ -142,6 +206,62 @@ export function ParticleView({
       }
     }
     content = items
+  } else if (mode === 'solution') {
+    // lưới phân tử nước chen sát như chất lỏng; một số ô nhường chỗ cho các ion của chất tan
+    const parts = ionParts(molecule)
+    const cols = 7
+    const rows = 5
+    const cellW = W / cols
+    const cellH = H / rows
+    // mỗi "đơn vị công thức" góp đủ bộ ion của nó; lặp tới khi chiếm khoảng một phần ba số ô
+    const units = Math.max(2, Math.floor((cols * rows) / 3.5 / Math.max(1, parts.length)))
+    // ion không nằm ở cột ngoài cùng, để ion lớn không bị mép khung cắt mất
+    const cells = Array.from({ length: cols * rows }, (_, i) => i).filter(
+      (i) => i % cols !== 0 && i % cols !== cols - 1,
+    )
+    for (let i = cells.length - 1; i > 0; i--) {
+      const j = Math.floor(rand() * (i + 1))
+      ;[cells[i], cells[j]] = [cells[j]!, cells[i]!]
+    }
+    const ionAt = new Map<number, (typeof parts)[number]>()
+    for (let u = 0; u < units; u++)
+      parts.forEach((part, k) => ionAt.set(cells[u * parts.length + k]!, part))
+    const items = []
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const ion = ionAt.get(r * cols + c)
+        const x = (c + 0.5) * cellW + (rand() - 0.5) * cellW * 0.25 + (r % 2 ? cellW * 0.2 : 0)
+        const y = (r + 0.5) * cellH + (rand() - 0.5) * cellH * 0.2
+        const drift = move(
+          Math.round((rand() - 0.5) * 12),
+          Math.round((rand() - 0.5) * 9),
+          ion ? 0 : Math.round((rand() - 0.5) * 50),
+          +(1.6 + rand() * 1.4).toFixed(2),
+          -+(rand() * 4).toFixed(2),
+        )
+        items.push(
+          <g
+            key={`${r}-${c}`}
+            transform={`translate(${x.toFixed(1)} ${y.toFixed(1)})${ion ? '' : ` rotate(${Math.round(rand() * 360)})`}`}
+          >
+            <g className="particle" style={drift}>
+              {ion ? (
+                <>
+                  <MoleculeGlyph molecule={ion.part} size={ion.side} labels />
+                  <g transform={`translate(${ion.side * 0.4} ${-ion.side * 0.4})`}>
+                    <ChargeBadge charge={ion.charge} r={5} />
+                  </g>
+                </>
+              ) : (
+                <WaterGlyph />
+              )}
+            </g>
+          </g>,
+        )
+      }
+    }
+    // ion vẽ sau cùng để nằm trên các phân tử nước
+    content = [...items.filter((_, i) => !ionAt.has(i)), ...items.filter((_, i) => ionAt.has(i))]
   } else if (mode === 'metal' || mode === 'ionic') {
     const elements: ElementSymbol[] =
       mode === 'metal'

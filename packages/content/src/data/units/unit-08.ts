@@ -350,6 +350,7 @@ export const unit08: UnitInput = {
           conceptIds: ['photosynthesis', 'respiration', 'carbohydrate'],
         },
       ],
+      unlocksMolecules: ['c12h22o11'],
       baseXp: 10,
     },
 

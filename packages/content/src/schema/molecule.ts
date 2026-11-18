@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { ElementSymbolSchema } from './elements.js'
+import { ELEMENTS, type ElementSymbol, ElementSymbolSchema } from './elements.js'
 import { SceneIdSchema } from './scene.js'
 
 export const IdSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'id phải là kebab-case')
@@ -30,6 +30,19 @@ export const BondSchema = z.object({
 })
 export type Bond = z.infer<typeof BondSchema>
 
+export const IonSchema = z.object({
+  /** id các nguyên tử (trong `atoms` của chất) tạo nên ion này */
+  atomIds: z.array(z.string().min(1)).min(1),
+  /** điện tích, ví dụ 1 cho H⁺, -2 cho SO₄²⁻ */
+  charge: z
+    .number()
+    .int()
+    .min(-3)
+    .max(3)
+    .refine((c) => c !== 0, 'ion phải mang điện'),
+})
+export type Ion = z.infer<typeof IonSchema>
+
 export const MoleculeSchema = z
   .object({
     id: IdSchema,
@@ -46,8 +59,45 @@ export const MoleculeSchema = z
     lifeExamples: z.array(LifeExampleSchema).min(1),
     funFact: z.string().optional(),
     conceptIds: z.array(IdSchema).default([]),
+    /**
+     * Chất này ở trong nước thì tách thành ion (acid mạnh, base tan, muối tan).
+     * Mỗi phần tử là một ion: các nguyên tử tạo nên nó và điện tích của nó.
+     * Chất có trường này và `state: 'liquid'` được vẽ ở hình phóng to như một dung dịch:
+     * các ion bơi giữa những phân tử nước, thay vì phân tử còn nguyên vẹn.
+     */
+    ions: z.array(IonSchema).min(2).optional(),
   })
   .superRefine((m, ctx) => {
+    if (m.ions) {
+      const seen = new Map<string, number>()
+      for (const ion of m.ions) for (const id of ion.atomIds) seen.set(id, (seen.get(id) ?? 0) + 1)
+      for (const a of m.atoms) {
+        if (seen.get(a.id) !== 1) {
+          ctx.addIssue({
+            code: 'custom',
+            message: `nguyên tử "${a.id}" phải thuộc đúng một ion`,
+            path: ['ions'],
+          })
+        }
+      }
+      if (
+        seen.size > m.atoms.length ||
+        [...seen.keys()].some((id) => !m.atoms.some((a) => a.id === id))
+      ) {
+        ctx.addIssue({
+          code: 'custom',
+          message: 'ion trỏ tới nguyên tử không tồn tại',
+          path: ['ions'],
+        })
+      }
+      if (m.ions.reduce((sum, ion) => sum + ion.charge, 0) !== 0) {
+        ctx.addIssue({
+          code: 'custom',
+          message: 'tổng điện tích các ion phải bằng 0',
+          path: ['ions'],
+        })
+      }
+    }
     const ids = new Set(m.atoms.map((a) => a.id))
     if (ids.size !== m.atoms.length) {
       ctx.addIssue({ code: 'custom', message: 'id nguyên tử bị trùng', path: ['atoms'] })
@@ -75,4 +125,15 @@ export type MoleculeInput = z.input<typeof MoleculeSchema>
 /** Tên hiển thị của một chất: tên quốc tế, kèm tên thường gọi trong ngoặc nếu có. Ví dụ "Sodium chloride (muối ăn)". */
 export function moleculeLabel(m: Pick<Molecule, 'name' | 'commonName'>): string {
   return m.commonName ? `${m.name} (${m.commonName})` : m.name
+}
+
+/**
+ * Mô tả hình vẽ của một chất mà không gọi tên chất: "2 hydrogen, 1 oxygen".
+ * Dùng làm nhãn cho trình đọc màn hình ở những chỗ tên chất chính là đáp án;
+ * người nhìn hình cũng chỉ thấy đúng chừng đó (các quả cầu có kí hiệu nguyên tố).
+ */
+export function moleculeComposition(m: Pick<Molecule, 'atoms'>): string {
+  const counts = new Map<ElementSymbol, number>()
+  for (const a of m.atoms) counts.set(a.element, (counts.get(a.element) ?? 0) + 1)
+  return [...counts].map(([el, n]) => `${n} ${ELEMENTS[el].name.toLowerCase()}`).join(', ')
 }

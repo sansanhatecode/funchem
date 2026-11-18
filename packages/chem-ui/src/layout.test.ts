@@ -1,6 +1,7 @@
 import { content } from '@funchem/content'
 import { describe, expect, it } from 'vitest'
 import {
+  atomScale,
   BASE_ATOM_RADIUS,
   layoutReaction,
   layoutSide,
@@ -89,5 +90,25 @@ describe('moleculeViewBox', () => {
   it('phân tử một nguyên tử không bị phóng quá to', () => {
     // He: đường kính 18 + lề 10 = 28, nhỏ hơn mức tối thiểu 36
     expect(moleculeViewBox(content.molecules.get('he')!).side).toBe(36)
+  })
+})
+
+describe('atomScale', () => {
+  it('phân tử nhỏ giữ nguyên cỡ quả cầu', () => {
+    expect(atomScale(content.molecules.get('h2o')!)).toBe(1)
+    expect(atomScale(content.molecules.get('fe')!)).toBe(1)
+  })
+  it('phân tử lớn được thu nhỏ quả cầu', () => {
+    expect(atomScale(content.molecules.get('c6h12o6')!)).toBeLessThan(0.8)
+  })
+  it.each([...content.molecules.keys()])('%s: không có hai quả cầu nào đè lên nhau', (id) => {
+    const placed = placeMolecule(content.molecules.get(id)!, 'k', 50, 50, 100)
+    for (let i = 0; i < placed.atoms.length; i++) {
+      for (let j = i + 1; j < placed.atoms.length; j++) {
+        const a = placed.atoms[i]!
+        const b = placed.atoms[j]!
+        expect(Math.hypot(a.x - b.x, a.y - b.y)).toBeGreaterThan(a.r + b.r)
+      }
+    }
   })
 })

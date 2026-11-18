@@ -48,6 +48,30 @@ export interface StageSize {
   height: number
 }
 
+/** Khoảng hở tối thiểu giữa hai nguyên tử gần nhau nhất, tính theo tổng bán kính của chúng. */
+const MIN_ATOM_GAP = 1.04
+
+/**
+ * Hệ số thu nhỏ quả cầu nguyên tử của một phân tử, trong khoảng (0, 1].
+ * Phân tử nhỏ giữ nguyên cỡ (hệ số 1). Phân tử lớn như glucose phải nhét nhiều nguyên tử
+ * vào cùng hộp 100x100, nên quả cầu được thu nhỏ vừa đủ để không đè lên nhau.
+ */
+export function atomScale(molecule: Pick<Molecule, 'atoms'>): number {
+  let scale = 1
+  const atoms = molecule.atoms
+  for (let i = 0; i < atoms.length; i++) {
+    for (let j = i + 1; j < atoms.length; j++) {
+      const a = atoms[i]!
+      const b = atoms[j]!
+      const reach =
+        BASE_ATOM_RADIUS * (ELEMENTS[a.element].radius + ELEMENTS[b.element].radius) * MIN_ATOM_GAP
+      const dist = Math.hypot(a.x - b.x, a.y - b.y)
+      if (dist > 0) scale = Math.min(scale, dist / reach)
+    }
+  }
+  return Math.round(scale * 1000) / 1000
+}
+
 /** Đặt một phân tử (toạ độ hộp 100x100) vào ô vuông cạnh `size`, tâm (cx, cy). */
 export function placeMolecule(
   molecule: Molecule,
@@ -57,13 +81,14 @@ export function placeMolecule(
   size: number,
 ): PlacedMolecule {
   const k = size / 100
+  const shrink = atomScale(molecule)
   const pos = (v: number, c: number) => c + (v - 50) * k
   const atoms: PlacedAtom[] = molecule.atoms.map((a) => ({
     key: `${key}:${a.id}`,
     element: a.element,
     x: pos(a.x, cx),
     y: pos(a.y, cy),
-    r: BASE_ATOM_RADIUS * ELEMENTS[a.element].radius * k,
+    r: BASE_ATOM_RADIUS * ELEMENTS[a.element].radius * k * shrink,
   }))
   const byId = new Map(molecule.atoms.map((a, i) => [a.id, atoms[i]!]))
   const bonds: PlacedBond[] = molecule.bonds.flatMap((b, i) => {
@@ -79,7 +104,7 @@ export function placeMolecule(
         y2: c.y,
         order: b.order,
         kind: b.kind,
-        width: (b.order === 1 ? 3.2 : 2.4) * k,
+        width: (b.order === 1 ? 3.2 : 2.4) * k * shrink,
       },
     ]
   })
@@ -239,8 +264,9 @@ export function moleculeViewBox(
   let minY = Infinity
   let maxX = -Infinity
   let maxY = -Infinity
+  const shrink = atomScale(molecule)
   for (const a of molecule.atoms) {
-    const r = BASE_ATOM_RADIUS * ELEMENTS[a.element].radius
+    const r = BASE_ATOM_RADIUS * ELEMENTS[a.element].radius * shrink
     minX = Math.min(minX, a.x - r)
     minY = Math.min(minY, a.y - r)
     maxX = Math.max(maxX, a.x + r)

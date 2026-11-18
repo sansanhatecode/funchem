@@ -55,7 +55,13 @@ export function ItemContent({
         </span>
       )}
       {molecule && (
-        <MoleculeView molecule={molecule} size={moleculeSize} decorative={Boolean(item.text)} />
+        // không đọc tên chất: ở lựa chọn chỉ có hình, tên chất chính là đáp án
+        <MoleculeView
+          molecule={molecule}
+          size={moleculeSize}
+          decorative={Boolean(item.text)}
+          anonymous
+        />
       )}
       {item.text && <span>{item.text}</span>}
     </span>

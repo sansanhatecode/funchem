@@ -33,6 +33,11 @@ export const unit05Molecules: MoleculeInput[] = [
     funFact:
       'Hydrochloric acid là dung dịch của khí hydrogen chloride HCl trong nước. Tan vào nước, mỗi phân tử HCl tách thành một ion H⁺ và một ion Cl⁻.',
     conceptIds: ['acid', 'compound', 'covalent-bond'],
+    // trong nước, HCl tách hết thành ion H⁺ và ion Cl⁻
+    ions: [
+      { atomIds: ['h'], charge: 1 },
+      { atomIds: ['cl'], charge: -1 },
+    ],
   },
   {
     id: 'h2so4',
@@ -76,6 +81,12 @@ export const unit05Molecules: MoleculeInput[] = [
     funFact:
       'Sulfuric acid là một trong những hoá chất được sản xuất nhiều nhất thế giới. Mỗi phân tử có thể nhả ra tới 2 ion H⁺.',
     conceptIds: ['acid', 'compound', 'formula'],
+    // trong nước, mỗi H₂SO₄ cho 2 ion H⁺ và 1 ion SO₄²⁻
+    ions: [
+      { atomIds: ['h1'], charge: 1 },
+      { atomIds: ['h2'], charge: 1 },
+      { atomIds: ['s', 'o1', 'o2', 'o3', 'o4'], charge: -2 },
+    ],
   },
   {
     id: 'naoh',

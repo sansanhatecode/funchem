@@ -1,5 +1,10 @@
 import { moleculeViewBox, placeMolecule } from '@funchem/chem-ui'
-import { formatFormula, type Molecule, moleculeLabel } from '@funchem/content/lib'
+import {
+  formatFormula,
+  type Molecule,
+  moleculeComposition,
+  moleculeLabel,
+} from '@funchem/content/lib'
 import { AtomShape, BondShape } from './shapes'
 
 export interface MoleculeViewProps {
@@ -10,6 +15,11 @@ export interface MoleculeViewProps {
   showLabel?: boolean
   /** ẩn khỏi trình đọc màn hình khi phân tử chỉ để trang trí hoặc đã có nhãn bên cạnh */
   decorative?: boolean
+  /**
+   * Trình đọc màn hình chỉ đọc các nguyên tử trong hình, không đọc tên chất.
+   * Dùng trong bài tập, nơi tên chất có thể chính là đáp án.
+   */
+  anonymous?: boolean
 }
 
 /**
@@ -22,10 +32,13 @@ export function MoleculeView({
   animated = false,
   showLabel = false,
   decorative = false,
+  anonymous = false,
 }: MoleculeViewProps) {
   const placed = placeMolecule(molecule, molecule.id, 50, 50, 100)
   const vb = moleculeViewBox(molecule)
-  const title = `${moleculeLabel(molecule)}, ${formatFormula(molecule.formula)}`
+  const title = anonymous
+    ? `Mô hình gồm ${moleculeComposition(molecule)}`
+    : `${moleculeLabel(molecule)}, ${formatFormula(molecule.formula)}`
 
   return (
     <figure className="inline-flex flex-col items-center gap-2">
