@@ -22,7 +22,7 @@ export const unit09: UnitInput = {
         story: [
           'Tối đến, nhiều con đường sáng lên một màu vàng cam quen thuộc. Loại bóng đèn ấy chứa hơi sodium (natri): vô số nguyên tử sodium bay lơ lửng trong bóng. Khi có dòng điện, electron của chúng nhận năng lượng rồi nhả ra thành ánh sáng vàng cam.',
           'Ở Unit 1 bạn đã biết electron chuyển động quanh hạt nhân. Theo mô hình mà các nhà khoa học dùng để hình dung nguyên tử, electron không bay lộn xộn mà xếp thành từng lớp, gọi là lớp electron. Lớp thứ nhất ở sát hạt nhân nhất, rồi tới lớp thứ hai, lớp thứ ba.',
-          'Mỗi lớp chỉ chứa được một số electron nhất định: lớp thứ nhất tối đa 2, lớp thứ hai tối đa 8. Electron xếp vào lớp gần hạt nhân trước, lớp đó đầy rồi mới sang lớp kế tiếp.',
+          'Mỗi lớp chỉ chứa được một số electron nhất định: lớp thứ nhất tối đa 2, lớp thứ hai tối đa 8. Electron xếp vào lớp gần hạt nhân trước: đủ 2 ở lớp thứ nhất rồi mới sang lớp thứ hai, đủ 8 ở lớp thứ hai rồi mới sang lớp thứ ba.',
           'Sodium có 11 electron: 2 ở lớp thứ nhất, 8 ở lớp thứ hai, còn 1 electron đứng một mình ở lớp thứ ba. Lớp xa hạt nhân nhất gọi là lớp ngoài cùng. Bạn phóng to để đếm thử nhé. Các bài sau sẽ cho thấy chính electron ở lớp ngoài cùng quyết định nguyên tử liên kết ra sao.',
         ],
         visual: { type: 'atom', element: 'Na', scene: 'sodium-street-lamp' },
@@ -63,7 +63,7 @@ export const unit09: UnitInput = {
           visual: { id: 'v', image: 'sodium-street-lamp' },
           answer: false,
           explanation:
-            'Không lớp nào ở gần hạt nhân chứa nổi 11 electron. Lớp thứ nhất nhận 2, lớp thứ hai nhận 8, electron thứ 11 phải sang lớp thứ ba. Vậy sodium có 3 lớp electron, xếp 2, 8, 1.',
+            'Electron phải xếp từ lớp trong cùng ra, mà hai lớp đầu không lớp nào chứa nổi 11 electron. Lớp thứ nhất nhận 2, lớp thứ hai nhận 8, electron thứ 11 phải sang lớp thứ ba. Vậy sodium có 3 lớp electron, xếp 2, 8, 1.',
           conceptIds: ['electron-shell'],
         },
         {
@@ -78,7 +78,7 @@ export const unit09: UnitInput = {
             { id: 's4', text: 'Kết quả: 2 lớp electron, lớp ngoài cùng có 6 electron' },
           ],
           explanation:
-            'Số electron bằng số proton, tức bằng số ô trong bảng tuần hoàn. Xếp từ trong ra: lớp thứ nhất 2, lớp thứ hai nhận 6 electron còn lại. Oxygen xếp 2, 6.',
+            'Trong nguyên tử, số electron bằng số proton, và số proton chính là số thứ tự của ô trong bảng tuần hoàn. Xếp từ trong ra: lớp thứ nhất 2, lớp thứ hai nhận 6 electron còn lại. Oxygen xếp 2, 6.',
           conceptIds: ['electron-shell', 'atomic-number'],
         },
         {
@@ -118,7 +118,7 @@ export const unit09: UnitInput = {
           id: 'u9-l1-e7',
           type: 'fill-blank',
           prompt:
-            'Aluminium (nhôm) có 13 electron. Xếp lần lượt vào lớp thứ nhất, lớp thứ hai rồi gõ con số còn thiếu',
+            'Aluminium (nhôm) có 13 electron. Xếp lần lượt vào lớp thứ nhất (tối đa 2), lớp thứ hai (tối đa 8), phần còn lại sang lớp thứ ba. Gõ con số còn thiếu',
           template: 'Lớp ngoài cùng của nguyên tử aluminium có ___ electron.',
           blanks: [{ accepted: ['3', 'ba'] }],
           explanation:
@@ -158,7 +158,7 @@ export const unit09: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Số lớp khác nhau (2, 3 và 4 lớp), tổng số electron cũng khác nhau (3, 11 và 19). Điểm chung là lớp ngoài cùng đều có 1 electron. Ở Unit 1 bạn đã biết các nguyên tố cùng cột thường có tính chất giống nhau. Giờ bạn thấy lí do: lớp ngoài cùng của chúng giống nhau.',
+            'Số lớp khác nhau (2, 3 và 4 lớp), tổng số electron cũng khác nhau (3, 11 và 19). Điểm chung là lớp ngoài cùng đều có 1 electron. Ở Unit 1 bạn đã biết các nguyên tố cùng cột thường có tính chất giống nhau. Giờ bạn thấy lí do: lớp ngoài cùng của chúng giống nhau. Bạn cũng thấy ở potassium, lớp thứ ba mới có 8 electron thì electron kế tiếp đã sang lớp thứ tư. Lớp thứ ba thật ra còn chứa được nhiều hơn 8, điều đó để dành cho lớp trên.',
           conceptIds: ['electron-shell', 'periodic-table'],
         },
         {
@@ -186,7 +186,7 @@ export const unit09: UnitInput = {
           'Trên phố đêm có những biển hiệu chữ uốn bằng ống thuỷ tinh, sáng một màu đỏ cam. Trong ống là khí neon. Cho dòng điện chạy qua thì neon phát sáng. Dùng bao nhiêu năm, khí neon trong ống vẫn còn nguyên, không phản ứng với thứ gì.',
           'Neon là một khí hiếm. Ở Unit 1 bạn đã biết nguyên tử khí hiếm hầu như không ghép với nguyên tử nào khác. Phóng to một nguyên tử neon, bạn sẽ thấy 10 electron xếp 2, 8. Lớp ngoài cùng có đúng 8 electron.',
           'Các khí hiếm khác cũng vậy: argon xếp 2, 8, 8. Riêng helium chỉ có một lớp với 2 electron, và lớp thứ nhất như thế là đã đầy. Lớp ngoài cùng có 8 electron (với helium là 2) là một cách sắp xếp rất bền. Vì thế nguyên tử khí hiếm đứng riêng một mình.',
-          'Nguyên tử của các nguyên tố khác chưa có lớp vỏ electron bền như vậy. Khi liên kết với nhau, chúng có xu hướng đạt được lớp vỏ electron giống khí hiếm, bằng cách cho đi, nhận thêm hoặc dùng chung electron. Đó là lí do các nguyên tử liên kết với nhau.',
+          'Nguyên tử của các nguyên tố khác chưa có lớp vỏ electron bền như vậy. Khi liên kết với nhau, chúng có xu hướng đạt được lớp vỏ electron giống khí hiếm, bằng cách cho đi, nhận thêm hoặc dùng chung electron. Ở mức này, đó là cách ta giải thích vì sao các nguyên tử liên kết với nhau.',
         ],
         visual: { type: 'atom', element: 'Ne', scene: 'neon-sign' },
       },
@@ -285,14 +285,14 @@ export const unit09: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Lớp ngoài cùng của chlorine có 7 electron, còn đúng một chỗ trống. Electron nhận thêm vào chỗ đó, thành 2, 8, 8, giống argon. Nếu chọn 2, 8, 6 thì bạn đã bớt đi thay vì thêm vào.',
+            'Lớp ngoài cùng của chlorine có 7 electron, chỉ thiếu 1 electron là đủ 8. Electron nhận thêm vào đúng lớp ấy, thành 2, 8, 8, giống argon. Dãy 2, 8, 7, 1 đặt electron mới sang hẳn một lớp khác nên lớp ngoài cùng vẫn chưa giống khí hiếm. Nếu chọn 2, 8, 6 thì bạn đã bớt đi thay vì thêm vào.',
           conceptIds: ['noble-gas-shell', 'ion', 'ionic-bond'],
         },
         {
           id: 'u9-l2-e7',
           type: 'order-steps',
           prompt:
-            'Que pháo bông cháy sáng tạo ra magnesium oxide MgO, một hợp chất ion. Sắp xếp các bước hình thành liên kết giữa magnesium và oxygen',
+            'Bột magnesium trong que pháo bông cháy sáng tạo ra magnesium oxide MgO, một hợp chất ion. Sắp xếp các bước hình thành liên kết giữa magnesium và oxygen',
           steps: [
             {
               id: 's1',
@@ -371,8 +371,8 @@ export const unit09: UnitInput = {
         title: 'Mùi trứng thối và cốc nước',
         story: [
           'Quả trứng để quá lâu, đập ra là mùi thối xộc lên. Thủ phạm là khí hydrogen sulfide, công thức H₂S, một khí độc. Lạ ở chỗ công thức này giống hệt nước H₂O, chỉ đổi O thành S. Vì sao sulfur và oxygen đều đi với đúng 2 nguyên tử hydrogen?',
-          'Hãy đếm electron lớp ngoài cùng. Oxygen (xếp 2, 6) và sulfur (xếp 2, 8, 6) đều có 6 electron, thiếu 2 electron nữa thì giống khí hiếm. Hydrogen có 1 electron, thiếu 1 electron nữa thì giống helium.',
-          'Phi kim gặp phi kim thì dùng chung electron. Mỗi liên kết cộng hoá trị là một cặp electron dùng chung, và cặp này được tính cho cả hai nguyên tử. Sulfur dùng chung 2 cặp với 2 nguyên tử hydrogen: lớp ngoài cùng của nó thành 8, còn mỗi hydrogen có 2. Oxygen trong nước cũng làm y như vậy.',
+          'Hãy đếm electron lớp ngoài cùng. Oxygen (xếp 2, 6) và sulfur (xếp 2, 8, 6) đều có 6 electron ở lớp ngoài cùng, thiếu 2 electron nữa thì giống khí hiếm. Hydrogen có 1 electron, thiếu 1 electron nữa thì giống helium.',
+          'Phi kim gặp phi kim thì thường dùng chung electron. Mỗi liên kết cộng hoá trị là một cặp electron dùng chung, và cặp này được tính cho cả hai nguyên tử. Sulfur dùng chung 2 cặp với 2 nguyên tử hydrogen: lớp ngoài cùng của nó thành 8, còn mỗi hydrogen có 2. Oxygen trong nước cũng làm y như vậy.',
           'Trong chất cộng hoá trị, số cặp electron mà một nguyên tử dùng chung với các nguyên tử khác gọi là hoá trị của nguyên tố đó. Hoá trị là con số cho biết khả năng liên kết của nguyên tử, viết bằng số La Mã. Hydrogen có hoá trị I. Oxygen có hoá trị II. Sulfur trong H₂S cũng có hoá trị II.',
         ],
         visual: { type: 'molecule', moleculeId: 'h2s', scene: 'rotten-egg' },
@@ -448,7 +448,7 @@ export const unit09: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'Mỗi cặp dùng chung đem lại cho nitrogen thêm 1 electron của nguyên tử bên kia. Nó thiếu 8 − 5 = 3 electron nên cần 3 cặp. Vì thế nitrogen có hoá trị III và ammonia là NH₃.',
+            'Mỗi cặp dùng chung đem lại cho nitrogen thêm 1 electron của nguyên tử bên kia. Nó thiếu 8 − 5 = 3 electron nên cần 3 cặp. Vì thế trong ammonia NH₃, nitrogen có hoá trị III.',
           conceptIds: ['valence', 'noble-gas-shell', 'covalent-bond'],
         },
         {
@@ -486,7 +486,7 @@ export const unit09: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Mỗi nguyên tử chlorine chỉ thiếu 1 electron là đủ 8. Hai nguyên tử góp mỗi bên 1 electron thành 1 cặp dùng chung, và cặp này tính cho cả hai. Vì thế chlorine có hoá trị I, và Cl₂ có một liên kết đơn.',
+            'Mỗi nguyên tử chlorine chỉ thiếu 1 electron là đủ 8. Hai nguyên tử góp mỗi bên 1 electron thành 1 cặp dùng chung, và cặp này tính cho cả hai. Vì thế trong Cl₂, chlorine có hoá trị I và hai nguyên tử nối nhau bằng một liên kết đơn.',
           conceptIds: ['valence', 'covalent-bond', 'noble-gas-shell'],
         },
         {
@@ -550,8 +550,8 @@ export const unit09: UnitInput = {
         story: [
           'Đồ bằng bạc để lâu cứ xỉn dần thành màu xám đen. Lớp xỉn ấy là silver sulfide: bạc đã phản ứng với lượng rất nhỏ khí hydrogen sulfide lẫn trong không khí. Công thức của nó là Ag₂S. Vì sao lại là 2 nguyên tử bạc với 1 nguyên tử sulfur?',
           'Bạc có hoá trị I, sulfur ở đây có hoá trị II. Bạn có thể hình dung mỗi hoá trị là một cánh tay: sulfur có 2 tay, mỗi nguyên tử bạc có 1 tay. Để không tay nào bỏ trống, 1 sulfur phải nắm 2 bạc. Nguyên tử không có tay thật, đây chỉ là cách hình dung cho dễ.',
-          'Viết thành phép tính: trong công thức của hợp chất hai nguyên tố, hoá trị nhân với chỉ số của nguyên tố này bằng hoá trị nhân với chỉ số của nguyên tố kia. Đó là quy tắc hoá trị. Với Ag₂S: bạc có I × 2 = 2, sulfur có II × 1 = 2. Quy tắc này dùng cho những hợp chất mà nguyên tử của cùng một nguyên tố không nối trực tiếp với nhau, tức là hầu hết hợp chất bạn gặp ở mức này.',
-          'Quy tắc này dùng được cho cả hợp chất ion. Hoá trị của kim loại bằng số electron mà nguyên tử của nó cho đi: sodium, potassium và bạc có hoá trị I. Magnesium, calcium và kẽm có hoá trị II. Aluminium có hoá trị III. Biết hoá trị là bạn tự viết được công thức.',
+          'Viết thành phép tính: trong công thức của hợp chất hai nguyên tố, hoá trị nhân với chỉ số của nguyên tố này bằng hoá trị nhân với chỉ số của nguyên tố kia. Đó là quy tắc hoá trị. Với Ag₂S: bạc có I × 2 = 2, sulfur có II × 1 = 2. Khi lập công thức, ta chọn các chỉ số nhỏ nhất làm cho hai tích bằng nhau. Quy tắc này dùng cho những hợp chất mà nguyên tử của cùng một nguyên tố không nối trực tiếp với nhau, tức là hầu hết hợp chất bạn gặp ở mức này.',
+          'Quy tắc này dùng được cho cả hợp chất ion, tức hợp chất của kim loại với phi kim. Ở đó, hoá trị của kim loại bằng số electron mà mỗi nguyên tử của nó cho đi, còn hoá trị của phi kim bằng số electron mà mỗi nguyên tử của nó nhận thêm. Sodium, potassium và bạc có hoá trị I. Magnesium, calcium và kẽm có hoá trị II. Aluminium có hoá trị III. Biết hoá trị là bạn tự viết được công thức.',
         ],
         visual: { type: 'molecule', moleculeId: 'ag2s', scene: 'tarnished-silver' },
       },
@@ -634,7 +634,7 @@ export const unit09: UnitInput = {
           id: 'u9-l4-e6',
           type: 'mcq',
           prompt:
-            'Quy tắc hoá trị còn giúp tìm hoá trị chưa biết. Trong gỉ sắt Fe₂O₃, oxygen có hoá trị II. Sắt có hoá trị mấy?',
+            'Quy tắc hoá trị còn giúp tìm hoá trị chưa biết. Chất tạo nên gỉ sắt có công thức Fe₂O₃, trong đó oxygen có hoá trị II. Sắt trong chất này có hoá trị mấy?',
           visual: { id: 'v', moleculeId: 'fe2o3' },
           options: [
             { id: 'a', text: 'Hoá trị II' },
@@ -668,7 +668,7 @@ export const unit09: UnitInput = {
             'Trong khí sulfur dioxide, sulfur có hoá trị IV và oxygen có hoá trị II. Công thức của khí này là S₂O₄.',
           answer: false,
           explanation:
-            'Số nhỏ nhất chia hết cho cả 4 và 2 là 4, nên chỉ cần 1 nguyên tử S và 2 nguyên tử O: SO₂, đúng công thức của khí gây mưa acid bạn gặp ở Unit 5. Một nguyên tử sulfur dùng chung 4 cặp electron là vừa đủ cho 2 nguyên tử oxygen, không cần tới nguyên tử sulfur thứ hai. Bạn cũng thấy sulfur có nhiều hoá trị: II trong H₂S, IV trong SO₂.',
+            'Số nhỏ nhất chia hết cho cả 4 và 2 là 4, nên chỉ cần 1 nguyên tử S và 2 nguyên tử O: SO₂, đúng công thức của khí gây mưa acid bạn gặp ở Unit 5. S₂O₄ cũng làm hai tích bằng nhau (IV × 2 = II × 4), nhưng khi lập công thức từ hoá trị ta lấy các chỉ số nhỏ nhất. Bạn cũng thấy sulfur có nhiều hoá trị: II trong H₂S, IV trong SO₂. Vì sao sulfur có lúc mang hoá trị IV thì lớp trên bạn sẽ học, ở đây chỉ cần biết hoá trị để lập công thức.',
           conceptIds: ['writing-formula', 'valence'],
         },
         {
@@ -712,7 +712,7 @@ export const unit09: UnitInput = {
           'Ở tiệm kim hoàn, viên kim cương bé bằng hạt đậu được đặt lên một chiếc cân nhạy tới từng phần nghìn gam. Kim cương là carbon gần như nguyên chất: vô số nguyên tử carbon liên kết chặt với nhau.',
           'Vậy một nguyên tử carbon nặng bao nhiêu? Khoảng 0,00000000000000000000002 gam, sau dấu phẩy có tới 22 chữ số 0. Không chiếc cân nào cân nổi một nguyên tử, và con số dài như thế cũng rất khó dùng.',
           'Vì vậy các nhà khoa học dùng một đơn vị riêng cho nguyên tử, gọi là amu (đơn vị khối lượng nguyên tử). Một proton nặng xấp xỉ 1 amu. Một neutron cũng xấp xỉ 1 amu. Electron nhẹ hơn proton khoảng 1800 lần, nên gần như không đáng kể.',
-          'Khối lượng của nguyên tử vì thế gần bằng tổng số proton và neutron trong hạt nhân. Bạn phóng to vào một nguyên tử carbon mà xem: hạt nhân có 6 proton và 6 neutron, nên khối lượng nguyên tử của carbon xấp xỉ 12 amu.',
+          'Khối lượng của nguyên tử, tính theo amu, vì thế gần bằng tổng số proton và neutron trong hạt nhân. Bạn phóng to vào một nguyên tử carbon mà xem: hạt nhân thường có 6 proton và 6 neutron, nên khối lượng nguyên tử của carbon xấp xỉ 12 amu.',
         ],
         visual: { type: 'atom', element: 'C', scene: 'diamond-scale' },
       },
@@ -822,7 +822,7 @@ export const unit09: UnitInput = {
           id: 'u9-l5-e7',
           type: 'mcq',
           prompt:
-            'Nguyên tử magnesium nặng 24 amu, nguyên tử carbon nặng 12 amu. So với nguyên tử carbon, nguyên tử magnesium thế nào?',
+            'Nguyên tử magnesium nặng khoảng 24 amu, nguyên tử carbon nặng khoảng 12 amu. So với nguyên tử carbon, nguyên tử magnesium thế nào?',
           options: [
             { id: 'a', text: 'Nặng gấp 2 lần' },
             { id: 'b', text: 'Nặng gấp 12 lần' },
@@ -830,7 +830,7 @@ export const unit09: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            '24 : 12 = 2, nên một nguyên tử magnesium nặng bằng hai nguyên tử carbon. Dùng amu, bạn so sánh được các nguyên tử với nhau bằng những phép chia nhỏ như thế này. Con số 12 là hiệu 24 − 12, không phải số lần.',
+            '24 : 12 = 2, nên một nguyên tử magnesium nặng xấp xỉ bằng hai nguyên tử carbon. Dùng amu, bạn so sánh được các nguyên tử với nhau bằng những phép chia nhỏ như thế này. Con số 12 là hiệu 24 − 12, không phải số lần.',
           conceptIds: ['atomic-mass'],
         },
         {
@@ -845,16 +845,17 @@ export const unit09: UnitInput = {
             { id: 's5', text: 'Iron (sắt): 26 proton, 30 neutron' },
           ],
           explanation:
-            'Cộng proton với neutron: hydrogen 1 amu, carbon 12 amu, oxygen 16 amu, sulfur 32 amu, sắt 56 amu. Hydrogen là nguyên tử nhẹ nhất trong mọi nguyên tử.',
+            'Cộng proton với neutron: hydrogen 1 amu, carbon 12 amu, oxygen 16 amu, sulfur 32 amu, sắt 56 amu. Nguyên tử hydrogen thường gặp chỉ có đúng 1 proton trong hạt nhân, nên nó là nguyên tử nhẹ nhất trong mọi nguyên tử.',
           conceptIds: ['atomic-mass'],
         },
         {
           id: 'u9-l5-e9',
           type: 'true-false',
-          prompt: 'Một nguyên tử sulfur (32 amu) nặng bằng hai nguyên tử oxygen (16 amu) cộng lại.',
+          prompt:
+            'Một nguyên tử sulfur (khoảng 32 amu) nặng xấp xỉ bằng hai nguyên tử oxygen (mỗi nguyên tử khoảng 16 amu) cộng lại.',
           answer: true,
           explanation:
-            '16 + 16 = 32. Hai nguyên tử oxygen cộng lại nặng đúng bằng một nguyên tử sulfur. Ở bài sau, bạn sẽ cộng khối lượng các nguyên tử như thế này để tính khối lượng của cả một phân tử.',
+            '16 + 16 = 32. Hai nguyên tử oxygen cộng lại nặng xấp xỉ bằng một nguyên tử sulfur. Ở bài sau, bạn sẽ cộng khối lượng các nguyên tử như thế này để tính khối lượng của cả một phân tử.',
           conceptIds: ['atomic-mass'],
         },
         {
@@ -886,7 +887,7 @@ export const unit09: UnitInput = {
         title: 'Quả bóng sát trần, quả bóng dưới sàn',
         story: [
           'Trong tiệc sinh nhật, quả bóng bơm khí helium bay lên nằm sát trần nhà. Quả bóng bạn tự thổi bằng miệng thì rơi xuống sàn. Cùng là bóng bay, sao lại khác nhau thế?',
-          'Trong quả bóng sát trần là các nguyên tử helium đứng riêng lẻ, mỗi nguyên tử nặng 4 amu. Còn không khí quanh bạn chủ yếu gồm phân tử nitrogen N₂ và phân tử oxygen O₂. Muốn so sánh, ta phải biết một phân tử nặng bao nhiêu.',
+          'Trong quả bóng sát trần là các nguyên tử helium đứng riêng lẻ, mỗi nguyên tử nặng khoảng 4 amu. Còn không khí quanh bạn chủ yếu gồm phân tử nitrogen N₂ và phân tử oxygen O₂. Muốn so sánh, ta phải biết một phân tử nặng bao nhiêu.',
           'Khối lượng phân tử bằng tổng khối lượng của các nguyên tử trong phân tử, cũng tính theo amu. Nitrogen nặng 14 amu nên N₂ nặng 14 × 2 = 28 amu. Oxygen nặng 16 amu nên O₂ nặng 16 × 2 = 32 amu. Với nước H₂O: 1 × 2 + 16 = 18 amu.',
           'Ở cùng nhiệt độ và áp suất, hai thể tích khí bằng nhau chứa số hạt gần như nhau. Hạt helium nhẹ hơn hạt không khí khoảng 7 lần, nên quả bóng helium nhẹ hơn phần không khí mà nó chiếm chỗ và bị đẩy lên. Hơi bạn thổi ra thì vẫn chủ yếu là N₂ và O₂, nặng xấp xỉ không khí. Cộng thêm vỏ cao su, quả bóng ấy rơi xuống.',
         ],
