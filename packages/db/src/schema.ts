@@ -1,5 +1,6 @@
 import { relations, sql } from 'drizzle-orm'
 import {
+  bigint,
   boolean,
   index,
   integer,
@@ -79,6 +80,18 @@ export const verification = pgTable(
   },
   (t) => [index('verification_identifier_idx').on(t.identifier)],
 )
+
+/**
+ * Bộ đếm giới hạn tần suất của Better Auth (gửi OTP, đăng nhập…).
+ * Lưu ở database thay vì bộ nhớ từng máy, để giới hạn vẫn đúng khi API chạy nhiều máy.
+ */
+export const rateLimit = pgTable('rate_limit', {
+  id: text('id').primaryKey(),
+  key: text('key').notNull().unique(),
+  count: integer('count').notNull(),
+  /** thời điểm của request gần nhất, tính bằng mili giây */
+  lastRequest: bigint('last_request', { mode: 'number' }).notNull(),
+})
 
 /* ------------------------------------------------------------------ */
 /* Bảng của FunChem                                                    */

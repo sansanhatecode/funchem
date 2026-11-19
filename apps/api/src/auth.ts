@@ -30,8 +30,12 @@ export function createAuth(env: Env, db: Db, mailer: Mailer) {
         session: schema.session,
         account: schema.account,
         verification: schema.verification,
+        rateLimit: schema.rateLimit,
       },
     }),
+    // Giới hạn tần suất (ví dụ gửi OTP: 3 lần mỗi phút cho một địa chỉ IP) mặc định chỉ bật ở production.
+    // Bộ đếm nằm trong Postgres để mọi máy chạy API dùng chung một con số.
+    rateLimit: { storage: 'database' },
     emailAndPassword: { enabled: false },
     socialProviders: social,
     session: {
