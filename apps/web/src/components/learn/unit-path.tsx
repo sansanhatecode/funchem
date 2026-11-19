@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { Mascot } from '@/components/mascot'
-import { SceneView } from '@/components/scenes'
+import { LazySceneView } from '@/components/scenes/lazy-scene-view'
 import { CheckIcon, LockIcon, StarIcon } from '@/components/ui/icons'
 import { ProgressBar } from '@/components/ui/progress-bar'
 import { cn } from '@/lib/cn'
@@ -52,7 +52,7 @@ export function UnitPath({
         </div>
         {bannerScene && (
           <div className="hidden w-36 shrink-0 min-[420px]:block" aria-hidden="true">
-            <SceneView id={bannerScene} still decorative className="h-full" />
+            <LazySceneView id={bannerScene} still decorative className="h-full" />
           </div>
         )}
       </div>
@@ -129,7 +129,7 @@ function Sticker({
       )}
       style={{ transform: `rotate(${index % 2 ? 5 : -5}deg)` }}
     >
-      <SceneView id={scene} still decorative />
+      <LazySceneView id={scene} still decorative />
     </span>
   )
 }

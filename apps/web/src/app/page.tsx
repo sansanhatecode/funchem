@@ -4,7 +4,7 @@ import type { CSSProperties } from 'react'
 import { MoleculeView } from '@/components/chem/molecule-view'
 import { ReactionPlayer } from '@/components/chem/reaction-player'
 import { Mascot } from '@/components/mascot'
-import { SceneView } from '@/components/scenes'
+import { LazySceneView } from '@/components/scenes/lazy-scene-view'
 import { buttonClass } from '@/components/ui/button'
 import { CheckIcon } from '@/components/ui/icons'
 import { cn } from '@/lib/cn'
@@ -184,7 +184,12 @@ export default function HomePage() {
                   className="w-44 shrink-0"
                   aria-hidden={i >= SCENE_IDS.length}
                 >
-                  <SceneView id={id} still decorative className="rounded-2xl border border-line" />
+                  <LazySceneView
+                    id={id}
+                    still
+                    decorative
+                    className="rounded-2xl border border-line"
+                  />
                 </li>
               ))}
             </ul>
@@ -211,7 +216,7 @@ export default function HomePage() {
                     <span className="absolute top-0 left-0 grid h-11 min-w-11 place-items-center rounded-full bg-ink px-3 text-sm font-extrabold text-white">
                       {d.time}
                     </span>
-                    <SceneView
+                    <LazySceneView
                       id={d.scene}
                       decorative
                       className="rounded-(--radius-card) border border-line shadow-(--shadow-card)"
@@ -295,7 +300,7 @@ export default function HomePage() {
                 <li key={w.question}>
                   <details className="group h-full overflow-hidden rounded-(--radius-card) border border-line bg-paper shadow-(--shadow-card)">
                     <summary className="flex cursor-pointer list-none flex-col [&::-webkit-details-marker]:hidden">
-                      <SceneView id={w.scene} decorative />
+                      <LazySceneView id={w.scene} decorative />
                       <span className="flex items-center justify-between gap-3 p-4">
                         <span className="text-lg leading-snug font-extrabold">{w.question}</span>
                         <span

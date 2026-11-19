@@ -101,7 +101,7 @@ Mỗi phân tử và phản ứng phải gắn với một cảnh ngoài đời 
 
 1. Thêm id vào `SCENE_IDS` trong `packages/content/src/schema/scene.ts`.
 2. Vẽ cảnh trong `apps/web/src/components/scenes/art/<id>.tsx`, dùng khung và bảng màu ở `scenes/kit.tsx`.
-3. Đăng ký vào `SCENES` trong `apps/web/src/components/scenes/index.tsx`, kèm mô tả và điểm phóng to. TypeScript báo lỗi cho tới khi cảnh được đăng ký.
+3. Đăng ký cảnh ở hai chỗ trong `apps/web/src/components/scenes/`: nhãn và điểm phóng to ở `meta/<gói>.ts`, phần vẽ ở `packs/<gói>.tsx`. TypeScript báo lỗi cho tới khi cảnh được đăng ký đủ. Mỗi gói (Unit 1-4 chung một gói, từ Unit 5 mỗi Unit một gói) chỉ được trình duyệt tải khi trang dùng tới.
 
 ## Đăng nhập
 

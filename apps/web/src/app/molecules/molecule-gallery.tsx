@@ -6,6 +6,7 @@ import { MoleculeView } from '@/components/chem/molecule-view'
 import { MoleculeZoom } from '@/components/chem/molecule-zoom'
 import { AppShell } from '@/components/learn/app-shell'
 import { SceneView } from '@/components/scenes'
+import { LazySceneView } from '@/components/scenes/lazy-scene-view'
 import { Button } from '@/components/ui/button'
 import { LockIcon } from '@/components/ui/icons'
 import { cn } from '@/lib/cn'
@@ -55,7 +56,7 @@ export function MoleculeGallery({ molecules: all }: { molecules: Molecule[] }) {
                   className={cn('relative', !has && 'opacity-60 blur-[3px] grayscale')}
                   aria-hidden="true"
                 >
-                  {scene && <SceneView id={scene} still decorative />}
+                  {scene && <LazySceneView id={scene} still decorative />}
                   <div className="absolute -bottom-5 right-2 rounded-full border-4 border-paper bg-paper shadow-(--shadow-card)">
                     <MoleculeView molecule={m} size={52} decorative />
                   </div>

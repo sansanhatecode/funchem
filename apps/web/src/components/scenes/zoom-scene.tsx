@@ -4,7 +4,7 @@ import type { SceneId } from '@funchem/content/lib'
 import { MagnifyingGlassMinusIcon, MagnifyingGlassPlusIcon } from '@phosphor-icons/react'
 import { type ReactNode, useState } from 'react'
 import { cn } from '@/lib/cn'
-import { SCENES } from './index'
+import { SceneArt, SCENES } from './index'
 
 export interface ZoomSceneProps {
   scene: SceneId
@@ -64,7 +64,7 @@ export function ZoomScene({
             transition: `transform ${ZOOM_MS}ms cubic-bezier(0.6, 0, 0.3, 1), opacity ${ZOOM_MS * 0.55}ms ease ${zoomed ? ZOOM_MS * 0.35 : 0}ms`,
           }}
         >
-          <def.Component label={def.label} />
+          <SceneArt id={scene} label={def.label} />
         </div>
 
         {/* thế giới hạt, mở ra từ điểm phóng to */}
