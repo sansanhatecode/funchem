@@ -34,7 +34,7 @@ export const unit12Molecules: MoleculeInput[] = [
         illustration: 'oil-rig',
         title: 'Khí lấy lên từ mỏ dầu',
         description:
-          'Khí thiên nhiên và khí lấy lên cùng dầu mỏ chứa nhiều methane nhất. Đứng thứ hai thường là ethane.',
+          'Khí thiên nhiên và khí mỏ dầu, tức khí lấy lên cùng dầu mỏ, chứa nhiều methane nhất. Đứng thứ hai thường là ethane.',
       },
       {
         title: 'Nguyên liệu làm ethylene',

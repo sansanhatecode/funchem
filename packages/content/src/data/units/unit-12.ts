@@ -21,7 +21,7 @@ export const unit12: UnitInput = {
         story: [
           'Bạn vặn máy nướng bánh mì lên nấc to nhất rồi quên mất. Lúc lát bánh bật lên, nó đã đen thui và bốc khói. Miếng thịt nướng quá lửa, nồi cơm cháy, que củi trong bếp cũng vậy: cháy khét rồi đều hoá đen. Sao thứ nào cũng ra cùng một màu?',
           'Màu đen ấy là carbon, cũng là thứ làm nên cục than. Bánh mì, thịt, gỗ đều tạo từ những phân tử có bộ khung là các nguyên tử carbon. Bị nung quá nóng, phần lớn hydrogen và oxygen thoát đi dưới dạng hơi nước và các chất khí, còn lại chủ yếu là carbon. Bấm kính lúp để xem glucose, mắt xích của tinh bột trong bánh mì: khung của nó gồm 6 nguyên tử carbon.',
-          'Các hợp chất của carbon như thế gọi là hợp chất hữu cơ. Đường, tinh bột, chất béo, protein, ethanol, nhựa, xăng đều là hợp chất hữu cơ. Có vài ngoại lệ: carbon monoxide CO, carbon dioxide CO₂ và các muối carbonate như đá vôi CaCO₃ tuy có carbon nhưng được xếp vào chất vô cơ, cùng nhóm với nước, muối ăn và kim loại.',
+          'Các hợp chất của carbon như thế gọi là hợp chất hữu cơ, và ngành hoá học nghiên cứu chúng gọi là hoá học hữu cơ. Đường, tinh bột, chất béo, protein, ethanol đều là hợp chất hữu cơ. Nhựa và xăng cũng làm từ hợp chất hữu cơ. Có một số ngoại lệ, như carbon monoxide CO, carbon dioxide CO₂ và các muối carbonate như đá vôi CaCO₃: tuy có carbon nhưng chúng được xếp vào chất vô cơ, cùng nhóm với nước, muối ăn và kim loại.',
           'Vì sao carbon làm được bộ khung? Mỗi nguyên tử carbon có 4 "tay" để tạo liên kết. Các nguyên tử carbon nắm tay nhau thành mạch ngắn, mạch dài, mạch có nhánh, rồi mới dùng những tay còn lại để giữ hydrogen, oxygen. Nhờ vậy, số hợp chất hữu cơ đã biết lên tới hàng chục triệu, nhiều hơn hẳn số chất vô cơ.',
         ],
         visual: { type: 'molecule', moleculeId: 'c6h12o6', scene: 'burnt-toast' },
@@ -120,7 +120,7 @@ export const unit12: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Trong hoá học, "hữu cơ" chỉ có nghĩa là hợp chất của carbon. Nó không có nghĩa là tự nhiên hay sạch. Nhựa và xăng đều là hợp chất hữu cơ, còn nước và muối ăn lấy từ thiên nhiên lại là chất vô cơ.',
+            'Trong hoá học, "hữu cơ" chỉ có nghĩa là hợp chất của carbon, trừ vài ngoại lệ như CO, CO₂ và muối carbonate. Nó không có nghĩa là tự nhiên hay sạch. Polyethylene và các chất trong xăng đều là hợp chất hữu cơ, còn nước và muối ăn lấy từ thiên nhiên lại là chất vô cơ.',
           conceptIds: ['organic-compound'],
         },
         {
@@ -356,7 +356,7 @@ export const unit12: UnitInput = {
         story: [
           'Trong giờ thí nghiệm, thầy cô có hai bình khí không màu: một bình methane, một bình ethylene. Nhìn bằng mắt thì không thể phân biệt. Thầy cô dẫn từng khí qua một lọ nước bromine màu vàng cam. Với methane, màu vàng cam vẫn nguyên. Với ethylene, màu nhạt dần rồi mất hẳn.',
           'Khác biệt nằm ở một liên kết. Bạn đã gặp ethylene C₂H₄ ở Unit 7: hai nguyên tử carbon của nó nối với nhau bằng liên kết đôi. Hydrocarbon mạch hở có một liên kết đôi giữa hai nguyên tử carbon gọi là alkene, và ethylene là alkene nhỏ nhất. Nó là chất khí không màu, rất ít tan trong nước.',
-          'Liên kết đôi có thể mở ra một nửa. Khi gặp bromine, liên kết đôi mở thành liên kết đơn, mỗi nguyên tử carbon gắn thêm một nguyên tử bromine. Bromine bị giữ vào một phân tử mới không màu, nên nước bromine mất màu. Methane chỉ có liên kết đơn, carbon của nó đã dùng hết 4 tay, nên không gắn thêm được gì.',
+          'Liên kết đôi có thể mở ra một nửa. Khi gặp bromine, liên kết đôi mở thành liên kết đơn, mỗi nguyên tử carbon gắn thêm một nguyên tử bromine. Bromine bị giữ vào một phân tử mới không màu, nên nước bromine mất màu. Methane chỉ có liên kết đơn, không có liên kết đôi nào để mở ra, nên không gắn thêm được bromine.',
           'Cũng nhờ liên kết đôi mở ra mà các phân tử ethylene nối được với nhau thành mạch polyethylene của chiếc túi nilon. Phản ứng nối rất nhiều phân tử nhỏ thành polymer như thế gọi là phản ứng trùng hợp. Và giống mọi hydrocarbon, ethylene cháy được, tạo ra carbon dioxide và hơi nước.',
         ],
         visual: { type: 'molecule', moleculeId: 'c2h4', scene: 'bromine-water' },
@@ -387,7 +387,7 @@ export const unit12: UnitInput = {
             { accepted: ['mất màu'], wordBank: ['mất màu', 'đậm màu hơn', 'hoá xanh'] },
           ],
           explanation:
-            'Nước bromine có màu vàng cam. Ethylene phản ứng với bromine, tạo thành một chất không màu, nên màu vàng cam nhạt dần rồi mất. Bromine là chất độc, nên thí nghiệm này chỉ do thầy cô làm trong phòng thí nghiệm.',
+            'Nước bromine có màu vàng cam. Ethylene phản ứng với bromine, tạo thành một chất không màu: C₂H₄ + Br₂ → C₂H₄Br₂. Bromine có màu bị dùng dần, nên màu vàng cam nhạt đi rồi mất. Bromine là chất độc, nên thí nghiệm này chỉ do thầy cô làm trong phòng thí nghiệm.',
           conceptIds: ['alkene', 'reaction-signs'],
         },
         {
@@ -534,7 +534,7 @@ export const unit12: UnitInput = {
         story: [
           'Xe dừng ở cây xăng. Vòi bơm cắm vào bình, con số trên trụ bơm nhảy liên tục, trong không khí thoảng mùi xăng quen thuộc. Thứ chất lỏng ấy đã đi một chặng đường rất dài, bắt đầu từ sâu dưới lòng đất.',
           'Điểm xuất phát là dầu mỏ: một chất lỏng sánh, màu nâu đen, không tan trong nước và nhẹ hơn nước. Dầu mỏ nằm trong các mỏ sâu dưới lòng đất, có khi dưới cả đáy biển. Nó không phải một chất mà là hỗn hợp của rất nhiều hydrocarbon khác nhau. Dưới lòng đất còn có khí thiên nhiên, với thành phần chính là methane.',
-          'Giàn khoan hút dầu mỏ lên rồi đưa về nhà máy lọc dầu. Ở đó, dầu được đun nóng trong một tháp cao. Phân tử càng nhỏ thì càng dễ bay hơi, nên các hydrocarbon tách dần thành từng nhóm theo nhiệt độ sôi: khí gas, xăng, dầu hoả, dầu diesel, và sau cùng là nhựa đường. Cách tách này gọi là chưng cất phân đoạn.',
+          'Giàn khoan hút dầu mỏ lên rồi đưa về nhà máy lọc dầu. Ở đó, dầu được đun nóng cho hoá hơi rồi dẫn vào một tháp cao. Phân tử càng nhỏ thì càng dễ bay hơi, nên các hydrocarbon tách dần thành từng nhóm theo nhiệt độ sôi: khí gas, xăng, dầu hoả, dầu diesel. Phần nặng nhất đọng lại ở đáy tháp, từ đó người ta lấy ra nhựa đường. Cách tách này gọi là chưng cất phân đoạn.',
           'Xăng là nhóm hydrocarbon có khoảng 5 tới 11 nguyên tử carbon. Bấm kính lúp để xem octane C₈H₁₈, một phân tử tiêu biểu trong xăng. Than, dầu mỏ và khí thiên nhiên hình thành từ xác sinh vật bị vùi lấp qua hàng triệu năm, nên được gọi là nhiên liệu hoá thạch. Dùng hết rồi thì không thể chờ lứa mới.',
         ],
         visual: { type: 'molecule', moleculeId: 'c8h18' },
@@ -727,7 +727,7 @@ export const unit12: UnitInput = {
         title: 'Giọt gel mát lạnh trên tay',
         story: [
           'Bóp một giọt gel rửa tay khô vào lòng bàn tay rồi xoa đều. Tay bạn mát lạnh, và chỉ nửa phút sau đã khô ráo, không cần khăn lau. Nước thì đâu có khô nhanh như vậy.',
-          'Thành phần chính của gel là ethylic alcohol, còn gọi là ethanol, quen miệng là cồn. Đó là chất lỏng không màu, sôi ở khoảng 78 °C nên bay hơi nhanh hơn nước. Lúc bay hơi, nó lấy nhiệt từ da bạn, vì thế bạn thấy mát. Công thức phân tử của nó là C₂H₆O, viết rõ cấu tạo là CH₃–CH₂–OH, hay gọn hơn là C₂H₅OH. Nhờ nhóm –OH mà ethanol tan trong nước theo bất kì tỉ lệ nào.',
+          'Thành phần chính của gel thường là ethylic alcohol, còn gọi là ethanol, quen miệng là cồn. Đó là chất lỏng không màu, sôi ở khoảng 78 °C nên bay hơi nhanh hơn nước. Lúc bay hơi, nó lấy nhiệt từ da bạn, vì thế bạn thấy mát. Công thức phân tử của nó là C₂H₆O, viết rõ cấu tạo là CH₃–CH₂–OH, hay gọn hơn là C₂H₅OH. Nhờ nhóm –OH mà ethanol tan trong nước theo bất kì tỉ lệ nào.',
           'Trên nhãn chai cồn y tế thường ghi 70 độ. Con số ấy là độ cồn: số mililít ethanol nguyên chất có trong 100 mL dung dịch, đo ở 20 °C. Cồn 70 độ nghĩa là cứ 100 mL thì có 70 mL ethanol. Bia thường khoảng 5 độ, rượu trắng khoảng 30 tới 40 độ.',
           'Ethanol trong rượu bia là do men biến đường và tinh bột thành, như bạn đã gặp ở Unit 6. Uống vào, ethanol theo máu lên não, làm phản xạ chậm đi và phán đoán kém đi. Vì thế đã uống rượu bia thì không lái xe. Uống nhiều và lâu dài còn hại gan, dạ dày, tim mạch và gây nghiện. Não của người dưới 18 tuổi vẫn đang phát triển nên càng dễ bị tổn hại, và pháp luật nước ta không cho phép người dưới 18 tuổi uống rượu bia.',
         ],
@@ -864,7 +864,7 @@ export const unit12: UnitInput = {
             { accepted: ['nước'], wordBank: ['nước', 'oxygen', 'bromine'] },
           ],
           explanation:
-            'Lên men là cách lâu đời: enzyme của men biến đường thành ethanol và carbon dioxide. Cách công nghiệp là cho ethylene phản ứng với nước, có acid làm xúc tác: C₂H₄ + H₂O → C₂H₅OH. Liên kết đôi của ethylene lại mở ra, lần này để gắn thêm H và OH.',
+            'Lên men là cách lâu đời: enzyme của men biến đường thành ethanol và carbon dioxide. Tinh bột thì được cắt thành đường trước rồi mới lên men. Cách công nghiệp là cho ethylene phản ứng với nước, có acid làm xúc tác: C₂H₄ + H₂O → C₂H₅OH. Liên kết đôi của ethylene lại mở ra, lần này để gắn thêm H và OH.',
           conceptIds: ['ethylic-alcohol', 'fermentation', 'alkene'],
         },
         {
@@ -884,12 +884,12 @@ export const unit12: UnitInput = {
             { id: 'i5', text: 'Rượu bia có thể gây nghiện', groupId: 'true' },
             {
               id: 'i6',
-              text: 'Tuổi 15 uống rượu bia cũng chỉ hại như người lớn',
+              text: 'Ở tuổi 15, rượu bia chỉ gây hại ngang với người lớn',
               groupId: 'myth',
             },
           ],
           explanation:
-            'Ethanol tác động thẳng lên não, nên người đã uống rượu bia phản xạ chậm và dễ gây tai nạn khi lái xe. Uống nhiều, lâu dài làm hại gan và gây nghiện. Bia vẫn chứa ethanol, uống nhiều thì lượng ethanol vào người vẫn lớn. Não của người dưới 18 tuổi còn đang phát triển nên bị hại nặng hơn, vì thế pháp luật không cho phép người dưới 18 tuổi uống rượu bia.',
+            'Ethanol tác động thẳng lên não, nên người đã uống rượu bia phản xạ chậm và dễ gây tai nạn khi lái xe. Uống nhiều, lâu dài làm hại gan và gây nghiện. Bia vẫn chứa ethanol, uống nhiều thì lượng ethanol vào người vẫn lớn. Não của người dưới 18 tuổi còn đang phát triển nên dễ bị tổn hại hơn, vì thế pháp luật nước ta không cho phép người dưới 18 tuổi uống rượu bia.',
           conceptIds: ['ethylic-alcohol'],
         },
       ],
@@ -964,7 +964,7 @@ export const unit12: UnitInput = {
           id: 'u12-l6-e5',
           type: 'sort',
           prompt:
-            'Giấm phản ứng với kim loại đứng trước hydrogen trong dãy hoạt động hoá học và với muối carbonate. Đồng thì đứng sau hydrogen. Thả mỗi thứ sau vào giấm, điều gì xảy ra?',
+            'Giấm phản ứng với kim loại đứng trước hydrogen trong dãy hoạt động hoá học và với muối carbonate. Magnesium và kẽm đứng trước hydrogen, còn đồng đứng sau. Thả mỗi thứ sau vào giấm, điều gì xảy ra?',
           groups: [
             { id: 'h2', label: 'Sủi bọt khí hydrogen' },
             { id: 'co2', label: 'Sủi bọt khí carbon dioxide' },
@@ -1004,7 +1004,7 @@ export const unit12: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'Magnesium phản ứng với ion H⁺. Cùng nồng độ, hydrochloric acid nhả gần như toàn bộ H⁺ nên sủi bọt mạnh. Acetic acid chỉ nhả một phần rất nhỏ nên sủi bọt chậm hơn hẳn. Ở Unit 6 bạn đã biết: nồng độ chất tham gia càng thấp thì phản ứng càng chậm.',
+            'Magnesium phản ứng với ion H⁺. Cùng nồng độ, hydrochloric acid nhả gần như toàn bộ H⁺ nên sủi bọt mạnh. Acetic acid chỉ nhả một phần rất nhỏ, nên nồng độ ion H⁺ trong cốc thấp hơn nhiều và sủi bọt chậm hơn hẳn. Ở Unit 6 bạn đã biết: nồng độ chất tham gia càng thấp thì phản ứng càng chậm.',
           conceptIds: ['acetic-acid', 'acid', 'reaction-rate'],
         },
         {
@@ -1019,7 +1019,7 @@ export const unit12: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Đếm nguyên tử: vế trái có 4 C, 10 H và 3 O. Ethyl acetate giữ 4 C, 8 H và 2 O. Còn dư đúng 2 H và 1 O, tức một phân tử nước. Phản ứng ester hoá diễn ra chậm và không hoàn toàn: trong bình luôn còn lại một phần acid và alcohol chưa phản ứng.',
+            'Đếm nguyên tử: vế trái có 4 C, 10 H và 3 O. Ethyl acetate giữ 4 C, 8 H và 2 O. Còn dư đúng 2 H và 1 O, tức một phân tử nước. Phản ứng ester hoá diễn ra chậm và chạy được cả hai chiều: ester và nước cũng phản ứng ngược lại thành acid và alcohol. Vì thế trong bình luôn còn một phần acid và alcohol, và người ta thường viết phản ứng này với mũi tên hai chiều: CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O.',
           conceptIds: ['ester', 'acetic-acid', 'conservation-of-mass'],
         },
         {

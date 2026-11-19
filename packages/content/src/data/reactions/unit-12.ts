@@ -19,7 +19,7 @@ export const unit12Reactions: ReactionInput[] = [
       illustration: 'oil-rig',
       title: 'Ngọn đuốc trên giàn khoan',
       description:
-        'Khí lấy lên cùng dầu mỏ chứa methane, ethane và vài alkane khác. Phần khí chưa kịp thu gom được đốt ở đầu một ống cao, thành ngọn đuốc nhìn thấy từ rất xa. Ethane trong đó phản ứng với oxygen, tạo thành carbon dioxide và hơi nước.',
+        'Khí lấy lên cùng dầu mỏ gọi là khí mỏ dầu. Nó chứa methane, ethane và vài alkane khác. Phần khí chưa kịp thu gom được đốt ở đầu một ống cao, thành ngọn đuốc nhìn thấy từ rất xa. Ethane trong đó phản ứng với oxygen, tạo thành carbon dioxide và hơi nước.',
     },
     conceptIds: ['reaction', 'combustion', 'alkane', 'balancing'],
   },
@@ -61,7 +61,7 @@ export const unit12Reactions: ReactionInput[] = [
       illustration: 'nail-polish-remover',
       title: 'Mùi thơm trong lọ nước tẩy sơn móng tay',
       description:
-        'Nhiều loại nước tẩy sơn móng tay chứa ethyl acetate, một chất lỏng mùi thơm hoà tan được lớp sơn. Nhà máy có thể làm ra nó bằng cách đun nóng acetic acid với ethanol, có sulfuric acid đặc làm xúc tác. Hai phân tử ghép lại thành một phân tử ester và tách ra một phân tử nước.',
+        'Nhiều loại nước tẩy sơn móng tay chứa ethyl acetate, một chất lỏng mùi thơm hoà tan được lớp sơn. Nhà máy có thể làm ra nó bằng cách đun nóng acetic acid với ethanol, có sulfuric acid đặc làm xúc tác. Hai phân tử ghép lại thành một phân tử ester và tách ra một phân tử nước. Phản ứng chạy được cả hai chiều nên acid và ethanol không bao giờ phản ứng hết.',
     },
     conceptIds: ['reaction', 'ester', 'acetic-acid', 'ethylic-alcohol'],
   },
