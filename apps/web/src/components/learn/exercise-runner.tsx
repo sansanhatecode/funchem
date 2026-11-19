@@ -18,12 +18,10 @@ import { SpeakerHighIcon, SpeakerSlashIcon, XIcon } from '@/components/ui/icons'
 import { ProgressBar } from '@/components/ui/progress-bar'
 import { cn } from '@/lib/cn'
 import { useContent } from '@/lib/content-context'
+import { applyCheck, type RunItem, startRun, type Submitted } from '@/lib/run-queue'
 import { playSound, setMuted, useMuted } from '@/lib/sound'
 
-export type Submitted = { exerciseId: string; answer: Answer }
-
-/** Mỗi câu sai được hỏi lại tối đa chừng này lần ở cuối lượt. */
-const MAX_RETRIES = 2
+export type { Submitted } from '@/lib/run-queue'
 
 export interface ExerciseRunnerProps<R> {
   exercises: Exercise[]
@@ -51,11 +49,10 @@ export function ExerciseRunner<R>({
   onSubmitted,
   renderResult,
 }: ExerciseRunnerProps<R>) {
-  type Item = { exercise: Exercise; retry: boolean }
-  const initialQueue = () => exercises.map((exercise): Item => ({ exercise, retry: false }))
+  const initialQueue = () => startRun(exercises).queue
 
   const [phase, setPhase] = useState<'intro' | 'exercise' | 'result'>(intro ? 'intro' : 'exercise')
-  const [queue, setQueue] = useState<Item[]>(initialQueue)
+  const [queue, setQueue] = useState<RunItem[]>(initialQueue)
   const content = useContent()
   const [pos, setPos] = useState(0)
   const [answers, setAnswers] = useState<Submitted[]>([])
@@ -90,11 +87,9 @@ export function ExerciseRunner<R>({
     const result = gradeExercise(exercise, draft, content)
     setCheck(result)
     playSound(result.correct ? 'correct' : 'wrong')
-    if (!item.retry) setAnswers((a) => [...a, { exerciseId: exercise.id, answer: draft }])
-    if (!result.correct) {
-      const tries = queue.filter((q) => q.exercise.id === exercise.id && q.retry).length
-      if (tries < MAX_RETRIES) setQueue((q) => [...q, { exercise, retry: true }])
-    }
+    const run = applyCheck({ queue, answers }, pos, draft, result.correct)
+    setQueue(run.queue)
+    setAnswers(run.answers)
   }
 
   const next = () => {
