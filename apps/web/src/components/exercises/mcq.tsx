@@ -1,6 +1,8 @@
 'use client'
 
+import { useMemo } from 'react'
 import { cn } from '@/lib/cn'
+import { seededShuffle } from '@/lib/shuffle'
 import {
   type ChoiceState,
   choiceClass,
@@ -11,6 +13,12 @@ import {
 
 export function McqExercise({ exercise, value, onChange, checked }: ExerciseProps<'mcq'>) {
   const pictorial = exercise.options.every((o) => o.moleculeId)
+  // Xáo thứ tự lựa chọn (ổn định theo id bài tập) để vị trí không gợi ý đáp án:
+  // trong nội dung, đáp án đúng hay được viết ở cùng một vị trí.
+  const options = useMemo(
+    () => seededShuffle(exercise.options, exercise.id),
+    [exercise.options, exercise.id],
+  )
   return (
     <div>
       {exercise.visual && <ExerciseVisual item={exercise.visual} />}
@@ -19,7 +27,7 @@ export function McqExercise({ exercise, value, onChange, checked }: ExerciseProp
         aria-label="Các lựa chọn"
         className={cn('grid gap-3', pictorial ? 'grid-cols-2' : 'grid-cols-1')}
       >
-        {exercise.options.map((o) => {
+        {options.map((o) => {
           const selected = value?.optionId === o.id
           let state: ChoiceState = selected ? 'selected' : 'idle'
           if (checked) {
