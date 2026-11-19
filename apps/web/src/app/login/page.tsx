@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
+import { NO_INDEX } from '@/lib/site'
 import Link from 'next/link'
 import { LoginForm } from './login-form'
 
-export const metadata: Metadata = { title: 'Đăng nhập' }
+export const metadata: Metadata = { title: 'Đăng nhập', robots: NO_INDEX }
 
 export default function LoginPage() {
   return (

@@ -1,7 +1,11 @@
 import type { Metadata } from 'next'
 import { LegalPage } from '@/components/legal-page'
 
-export const metadata: Metadata = { title: 'Chính sách riêng tư' }
+export const metadata: Metadata = {
+  title: 'Chính sách riêng tư',
+  description: 'FunChem lưu những dữ liệu gì của bạn, dùng vào việc gì và cách xoá chúng.',
+  alternates: { canonical: '/privacy' },
+}
 
 export default function PrivacyPage() {
   return (

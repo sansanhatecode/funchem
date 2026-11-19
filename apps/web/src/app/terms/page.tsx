@@ -1,7 +1,11 @@
 import type { Metadata } from 'next'
 import { LegalPage } from '@/components/legal-page'
 
-export const metadata: Metadata = { title: 'Điều khoản sử dụng' }
+export const metadata: Metadata = {
+  title: 'Điều khoản sử dụng',
+  description: 'Điều khoản sử dụng FunChem, công cụ học hoá học cho người mới bắt đầu.',
+  alternates: { canonical: '/terms' },
+}
 
 export default function TermsPage() {
   return (

@@ -120,6 +120,6 @@ Mỗi phân tử và phản ứng phải gắn với một cảnh ngoài đời 
   fly deploy --config apps/api/fly.toml --dockerfile apps/api/Dockerfile .
   fly secrets set DATABASE_URL=... BETTER_AUTH_SECRET=... API_URL=https://api.<domain> WEB_URL=https://<domain> COOKIE_DOMAIN=<domain>
   ```
-- **Web:** Vercel, root directory `apps/web`, đặt `NEXT_PUBLIC_API_URL`.
+- **Web:** Vercel, root directory `apps/web`, đặt `NEXT_PUBLIC_API_URL` và `NEXT_PUBLIC_SITE_URL=https://<domain>` (dùng cho canonical, sitemap và ảnh xem trước khi chia sẻ link).
 
 Web và API nên cùng domain gốc (ví dụ `funchem.vn` và `api.funchem.vn`) để cookie đăng nhập dùng chung được.

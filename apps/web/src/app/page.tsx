@@ -1,4 +1,5 @@
 import { content, formatFormula, moleculeLabel, SCENE_IDS, type SceneId } from '@funchem/content'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import type { CSSProperties } from 'react'
 import { MoleculeView } from '@/components/chem/molecule-view'
@@ -12,6 +13,8 @@ import { ContentProvider } from '@/lib/content-context'
 import { sliceFor } from '@/lib/content-slices'
 import { HeroPlayground } from './home/hero-playground'
 import { TryExercise } from './home/try-exercise'
+
+export const metadata: Metadata = { alternates: { canonical: '/' } }
 
 // Một ngày bình thường, nhìn bằng con mắt hoá học
 const DAY: { time: string; moment: string; scene: SceneId; molecule: string; fact: string }[] = [
