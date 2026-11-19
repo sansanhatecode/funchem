@@ -8,6 +8,7 @@ import { unit07 } from './unit-07.js'
 import { unit08 } from './unit-08.js'
 import { unit09 } from './unit-09.js'
 import { unit10 } from './unit-10.js'
+import { unit11 } from './unit-11.js'
 
 export const units = [
   unit01,
@@ -20,4 +21,5 @@ export const units = [
   unit08,
   unit09,
   unit10,
+  unit11,
 ]
