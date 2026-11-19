@@ -6,11 +6,11 @@ import { MoleculeView } from '@/components/chem/molecule-view'
 import { ReactionPlayer } from '@/components/chem/reaction-player'
 import { Mascot } from '@/components/mascot'
 import { LazySceneView } from '@/components/scenes/lazy-scene-view'
-import { buttonClass } from '@/components/ui/button'
 import { CheckIcon } from '@/components/ui/icons'
 import { cn } from '@/lib/cn'
 import { ContentProvider } from '@/lib/content-context'
 import { sliceFor } from '@/lib/content-slices'
+import { HeaderAccount, HeroActions } from './home/account-links'
 import { HeroPlayground } from './home/hero-playground'
 import { TryExercise } from './home/try-exercise'
 
@@ -138,9 +138,7 @@ export default function HomePage() {
               <Mascot size={30} />
               FunChem
             </Link>
-            <Link href="/login" className={buttonClass('ghost', 'md')}>
-              Đăng nhập
-            </Link>
+            <HeaderAccount />
           </header>
 
           <section
@@ -159,14 +157,7 @@ export default function HomePage() {
                 Ngay trong ly nước, ngọn nến, lon nước ngọt quanh bạn. Chạm vào để thấy thế giới bên
                 trong. Dễ hơn bạn nghĩ nhiều.
               </p>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <Link href="/learn" className={buttonClass('primary', 'lg')}>
-                  Bắt đầu học
-                </Link>
-                <Link href="/login" className={buttonClass('secondary', 'lg')}>
-                  Tôi đã có tài khoản
-                </Link>
-              </div>
+              <HeroActions />
             </div>
             <div className="relative min-w-0">
               <HeroPlayground />
