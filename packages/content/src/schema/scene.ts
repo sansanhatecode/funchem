@@ -4,6 +4,7 @@ import { UNIT06_SCENE_IDS } from './scenes/unit-06.js'
 import { UNIT07_SCENE_IDS } from './scenes/unit-07.js'
 import { UNIT08_SCENE_IDS } from './scenes/unit-08.js'
 import { UNIT09_SCENE_IDS } from './scenes/unit-09.js'
+import { UNIT10_SCENE_IDS } from './scenes/unit-10.js'
 
 /**
  * Các cảnh minh hoạ đời sống. Nội dung chỉ tham chiếu theo id;
@@ -51,6 +52,7 @@ export const SCENE_IDS = [
   ...UNIT07_SCENE_IDS,
   ...UNIT08_SCENE_IDS,
   ...UNIT09_SCENE_IDS,
+  ...UNIT10_SCENE_IDS,
 ] as const
 
 export type CoreSceneId = (typeof CORE_SCENE_IDS)[number]
@@ -59,5 +61,6 @@ export type Unit06SceneId = (typeof UNIT06_SCENE_IDS)[number]
 export type Unit07SceneId = (typeof UNIT07_SCENE_IDS)[number]
 export type Unit08SceneId = (typeof UNIT08_SCENE_IDS)[number]
 export type Unit09SceneId = (typeof UNIT09_SCENE_IDS)[number]
+export type Unit10SceneId = (typeof UNIT10_SCENE_IDS)[number]
 export type SceneId = (typeof SCENE_IDS)[number]
 export const SceneIdSchema = z.enum(SCENE_IDS)

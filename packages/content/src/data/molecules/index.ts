@@ -4,6 +4,7 @@ import { unit06Molecules } from './unit-06.js'
 import { unit07Molecules } from './unit-07.js'
 import { unit08Molecules } from './unit-08.js'
 import { unit09Molecules } from './unit-09.js'
+import { unit10Molecules } from './unit-10.js'
 
 export const molecules: MoleculeInput[] = [
   {
@@ -709,4 +710,5 @@ export const molecules: MoleculeInput[] = [
   ...unit07Molecules,
   ...unit08Molecules,
   ...unit09Molecules,
+  ...unit10Molecules,
 ]
