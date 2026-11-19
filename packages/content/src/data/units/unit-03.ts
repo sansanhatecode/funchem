@@ -20,8 +20,8 @@ export const unit03: UnitInput = {
         title: 'Đá, nước và hơi nước',
         story: [
           'Viên đá trong cốc trà đá, nước trong ly và hơi nước thoát ra từ vòi ấm đang sôi. Ba thứ trông khác hẳn nhau, nhưng đều là nước.',
-          'Đó là ba thể (hay ba trạng thái) của chất: rắn, lỏng và khí. Viên đá cứng, tự giữ hình dạng. Nước lỏng chảy được, rót vào ly nào thì mang hình ly đó. Hơi nước thì lan ra khắp gian bếp.',
-          'Vì sao lại khác nhau như vậy? Phóng to lên, cả ba đều gồm cùng một loại hạt là phân tử H₂O. Chỉ cách các hạt xếp và chuyển động là khác. Trong nước đá, chúng xếp ngay hàng thẳng lối và chỉ rung tại chỗ. Trong nước lỏng, chúng vẫn ở sát nhau nhưng trượt qua nhau được. Trong hơi nước, chúng ở rất xa nhau và bay tự do.',
+          'Đó là ba thể (hay ba trạng thái) của chất: rắn, lỏng và khí. Viên đá cứng, tự giữ hình dạng. Nước lỏng chảy được, rót vào ly nào thì mang hình ly đó, nhưng thể tích, tức khoảng không gian nó chiếm, vẫn vậy: một lít nước rót sang bình nào cũng là một lít. Hơi nước thì lan ra khắp gian bếp, có bao nhiêu chỗ trống là chiếm hết.',
+          'Vì sao lại khác nhau như vậy? Phóng to lên, cả ba đều gồm cùng một loại hạt là phân tử H₂O. Chỉ cách các hạt xếp và chuyển động là khác. Trong nước đá, chúng xếp ngay hàng thẳng lối và chỉ rung tại chỗ. Trong nước lỏng, chúng vẫn ở sát nhau nhưng trượt qua nhau được. Trong hơi nước, chúng ở rất xa nhau và bay tự do. Giữa các hạt khí còn nhiều khoảng trống, nên chất khí nén được, tức là ép lại cho chiếm ít chỗ hơn. Chất rắn và chất lỏng thì rất khó nén.',
           'Hơi nước không màu nên mắt không thấy được. Làn trắng phía trên vòi ấm là thứ khác, bài sau bạn sẽ biết.',
         ],
         visual: {
@@ -138,14 +138,26 @@ export const unit03: UnitInput = {
           conceptIds: ['state-of-matter'],
         },
         {
-          id: 'u3-l1-e7',
-          type: 'fill-blank',
-          prompt: 'Chọn từ đúng',
-          template:
-            'Bơm helium vào quả bóng bay, helium lan ra khắp quả bóng. Chất ở thể ___ luôn chiếm hết khoảng trống của vật chứa nó.',
-          blanks: [{ accepted: ['khí'], wordBank: ['rắn', 'lỏng', 'khí'] }],
+          id: 'u3-l1-e11',
+          type: 'match-pairs',
+          prompt:
+            'Thể tích là khoảng không gian mà một lượng chất chiếm. Nối mỗi thể với đặc điểm về hình dạng và thể tích của nó',
+          pairs: [
+            {
+              left: { id: 'l1', text: 'Thể rắn' },
+              right: { id: 'r1', text: 'Hình dạng và thể tích đều giữ nguyên' },
+            },
+            {
+              left: { id: 'l2', text: 'Thể lỏng' },
+              right: { id: 'r2', text: 'Thể tích giữ nguyên, hình dạng theo vật chứa' },
+            },
+            {
+              left: { id: 'l3', text: 'Thể khí' },
+              right: { id: 'r3', text: 'Lan ra chiếm hết vật chứa, không có thể tích riêng' },
+            },
+          ],
           explanation:
-            'Các hạt của chất khí ở xa nhau và bay tự do theo mọi hướng. Vì thế chất khí không có hình dạng riêng: vật chứa rộng bao nhiêu, nó lan ra chiếm hết bấy nhiêu.',
+            'Viên đá đặt vào ly nào cũng vẫn hình ấy, to chừng ấy. Một lít nước rót sang bình khác thì đổi hình dạng nhưng vẫn là một lít. Còn chất khí thì vật chứa rộng bao nhiêu, nó lan ra chiếm hết bấy nhiêu: bơm helium vào quả bóng bay, helium lan khắp quả bóng.',
           conceptIds: ['state-of-matter', 'particle-model'],
         },
         {
@@ -168,6 +180,26 @@ export const unit03: UnitInput = {
           blanks: [{ accepted: ['xa'], wordBank: ['xa', 'sát'] }],
           explanation:
             'Trong chất khí, các hạt ở rất xa nhau nên ép lại gần nhau được. Trong chất rắn và chất lỏng, các hạt đã ở sát nhau sẵn nên rất khó nén. Khi bị nén, từng hạt không nhỏ đi, chỉ khoảng trống giữa chúng hẹp lại.',
+          conceptIds: ['state-of-matter', 'particle-model'],
+        },
+        {
+          id: 'u3-l1-e12',
+          type: 'sort',
+          prompt:
+            'Nén là ép một chất lại cho nó chiếm ít chỗ hơn. Thứ nào nén lại được, thứ nào rất khó nén?',
+          groups: [
+            { id: 'easy', label: 'Nén lại được' },
+            { id: 'hard', label: 'Rất khó nén' },
+          ],
+          items: [
+            { id: 'i1', text: 'Không khí trong ống bơm xe đạp', groupId: 'easy' },
+            { id: 'i2', text: 'Nước đựng đầy trong chai', groupId: 'hard' },
+            { id: 'i3', text: 'Khí helium trong quả bóng bay', image: 'balloons', groupId: 'easy' },
+            { id: 'i4', text: 'Cây đinh sắt', image: 'iron-nail', groupId: 'hard' },
+            { id: 'i5', text: 'Dầu ăn đựng đầy trong chai', groupId: 'hard' },
+          ],
+          explanation:
+            'Không khí và helium là chất khí: các hạt ở rất xa nhau nên ép lại gần nhau được. Nhờ vậy người ta nén được rất nhiều khí vào một chiếc bình nhỏ. Nước và dầu ăn là chất lỏng, đinh sắt là chất rắn: các hạt đã ở sát nhau sẵn, gần như không còn chỗ để dồn lại, nên rất khó nén.',
           conceptIds: ['state-of-matter', 'particle-model'],
         },
         {
@@ -198,8 +230,8 @@ export const unit03: UnitInput = {
         story: [
           'Phơi quần áo ướt ngoài sân, vài giờ sau là khô. Nước đi đâu? Từng phân tử nước rời khỏi vải, bay vào không khí thành hơi nước. Chất lỏng chuyển thành khí như vậy gọi là sự bay hơi.',
           'Chiều ngược lại cũng có. Hơi nước gặp lạnh thì tụ lại thành giọt, như những giọt nước đọng bên ngoài ly nước đá. Đó là sự ngưng tụ.',
-          'Rắn và lỏng cũng đổi qua lại được. Viên đá để ngoài tủ lạnh chảy thành nước: đó là sự nóng chảy. Nước trong ngăn đá cứng lại thành đá: đó là sự đông đặc. Với nước, cả hai đều xảy ra ở 0 °C.',
-          'Còn sôi thì sao? Bay hơi diễn ra lặng lẽ trên mặt nước, ở nhiệt độ nào cũng có. Khi đun tới khoảng 100 °C, nước chuyển thành hơi ngay cả trong lòng nó, bọt hơi nổi lên ùng ục: đó là sự sôi. Dù chuyển thể kiểu nào, phân tử H₂O vẫn y nguyên.',
+          'Rắn và lỏng cũng đổi qua lại được. Viên đá để ngoài tủ lạnh chảy thành nước: đó là sự nóng chảy. Nước trong ngăn đá cứng lại thành đá: đó là sự đông đặc. Với nước, cả hai đều xảy ra ở 0 °C. Chừng nào đá còn đang chảy, nhiệt độ của nó vẫn đứng ở 0 °C: nhiệt nhận vào lúc này chỉ dùng để chuyển thể.',
+          'Còn sôi thì sao? Bay hơi diễn ra lặng lẽ trên mặt nước, ở nhiệt độ nào cũng có. Khi đun tới khoảng 100 °C, nước chuyển thành hơi ngay cả trong lòng nó, bọt hơi nổi lên ùng ục: đó là sự sôi. Suốt lúc sôi, nhiệt độ của nước cũng giữ nguyên ở khoảng 100 °C. Dù chuyển thể kiểu nào, phân tử H₂O vẫn y nguyên.',
         ],
         visual: { type: 'molecule', moleculeId: 'h2o', scene: 'wet-clothes' },
       },
@@ -305,6 +337,18 @@ export const unit03: UnitInput = {
           correctOptionId: 'b',
           explanation:
             'Lửa to hơn thì cấp nhiệt nhanh hơn, nhưng chừng nào nước còn đang sôi, nhiệt ấy chỉ làm nước chuyển thành hơi nhanh hơn. Nhiệt độ của nước vẫn đứng ở khoảng 100 °C. Nước đá cũng vậy: trong lúc đang nóng chảy, nó giữ nguyên 0 °C cho tới khi chảy hết.',
+          conceptIds: ['state-change'],
+        },
+        {
+          id: 'u3-l2-e11',
+          type: 'fill-blank',
+          prompt:
+            'Một cốc đầy đá viên để trên bàn, thỉnh thoảng được khuấy đều. Đá nhận nhiệt từ không khí ấm xung quanh và chảy dần. Chọn số đúng',
+          template:
+            'Chừng nào trong cốc còn đá đang nóng chảy, nhiệt độ của nước trong cốc vẫn ở khoảng ___ °C.',
+          blanks: [{ accepted: ['0'], wordBank: ['0', '10', '25'] }],
+          explanation:
+            'Trong lúc đá đang nóng chảy, nhiệt nhận vào chỉ dùng để chuyển đá thành nước, nên nhiệt độ đứng ở khoảng 0 °C. Chỉ khi viên đá cuối cùng chảy hết, nước trong cốc mới ấm dần lên. Cũng giống nước đang sôi giữ nguyên khoảng 100 °C cho tới khi cạn.',
           conceptIds: ['state-change'],
         },
         {
@@ -543,6 +587,17 @@ export const unit03: UnitInput = {
           ],
           explanation:
             'Đá, sáp nến và nhôm tự chuyển từ rắn sang lỏng khi đủ nóng: đó là nóng chảy, không cần thêm chất nào khác. Đường, muối và bột ngọt thì phải gặp nước mới tan: đó là hoà tan. Đời thường ta hay nói "đá tan", nhưng viên đá không tan vào chất nào cả. Trong hoá học, đó là nóng chảy.',
+          conceptIds: ['solution', 'state-change'],
+        },
+        {
+          id: 'u3-l3-e11',
+          type: 'true-false',
+          prompt:
+            'Thả một viên đường vào cốc nước ấm, viên đường nhỏ dần rồi không còn thấy nữa. Viên đường đã nóng chảy.',
+          visual: { id: 'v', image: 'sugar-tea' },
+          answer: false,
+          explanation:
+            'Viên đường đã hoà tan chứ không nóng chảy: các phân tử nước kéo từng phân tử đường rời ra, lẫn vào giữa chúng. Nóng chảy là một chất tự chuyển từ rắn sang lỏng khi đủ nóng, mà nước ấm thì chưa đủ nóng để làm đường chảy lỏng. Đời thường ta hay nói "đường tan chảy trong nước", nhưng trong hoá học đó là hoà tan.',
           conceptIds: ['solution', 'state-change'],
         },
       ],
@@ -960,17 +1015,18 @@ export const unit03: UnitInput = {
           conceptIds: ['state-change'],
         },
         {
-          id: 'u3-cp-e2',
+          id: 'u3-cp-e13',
           type: 'mcq',
-          prompt: 'Ở thể nào các hạt ở rất xa nhau và bay tự do?',
+          prompt:
+            'Bình khí của thợ lặn nhỏ gọn mà đủ khí để thở dưới nước khá lâu, vì người ta đã nén rất nhiều không khí vào bình. Vì sao chất khí nén được, còn nước thì rất khó nén?',
           options: [
-            { id: 'a', text: 'Rắn' },
-            { id: 'b', text: 'Lỏng' },
-            { id: 'c', text: 'Khí' },
+            { id: 'a', text: 'Vì từng hạt khí mềm, bị ép thì nhỏ lại' },
+            { id: 'b', text: 'Vì các hạt khí nhẹ hơn các phân tử nước' },
+            { id: 'c', text: 'Vì các hạt khí ở rất xa nhau, còn nhiều khoảng trống' },
           ],
           correctOptionId: 'c',
           explanation:
-            'Trong chất khí, các hạt ở xa nhau và bay tự do, nên chất khí lan ra chiếm hết vật chứa.',
+            'Trong chất khí, các hạt ở rất xa nhau và bay tự do, nên ép lại gần nhau được. Khi bị nén, từng hạt không nhỏ đi, chỉ khoảng trống giữa chúng hẹp lại. Trong nước lỏng, các phân tử đã ở sát nhau sẵn nên rất khó nén. Hạt nặng hay nhẹ không quyết định chuyện này.',
           conceptIds: ['particle-model', 'state-of-matter'],
         },
         {
@@ -1049,13 +1105,14 @@ export const unit03: UnitInput = {
           conceptIds: ['diffusion'],
         },
         {
-          id: 'u3-cp-e8',
+          id: 'u3-cp-e14',
           type: 'true-false',
-          prompt: 'Nhiệt độ càng cao, các hạt chuyển động càng nhanh.',
-          answer: true,
+          prompt:
+            'Nồi nước luộc rau đang sôi. Vặn lửa to hơn nữa thì nước trong nồi nóng lên quá 100 °C rất nhiều.',
+          answer: false,
           explanation:
-            'Đúng. Vì thế đường tan nhanh hơn trong trà nóng, và mùi thức ăn nóng lan xa hơn so với khi đã nguội.',
-          conceptIds: ['particle-motion'],
+            'Trong lúc sôi, nhiệt độ của nước giữ nguyên ở khoảng 100 °C. Lửa to hơn chỉ làm nước chuyển thành hơi nhanh hơn, nồi cạn nhanh hơn. Nước đá đang nóng chảy cũng vậy: nó giữ nguyên 0 °C cho tới khi chảy hết.',
+          conceptIds: ['state-change'],
         },
         {
           id: 'u3-cp-e9',

@@ -377,7 +377,7 @@ export const unit04: UnitInput = {
           'Nấu xong nồi canh, bếp biogas đã đốt mất một ít khí methane. Số methane ấy đi đâu? Phóng to lên bạn sẽ thấy: mỗi phân tử methane (CH₄) gặp 2 phân tử oxygen (O₂), cháy thành 1 phân tử carbon dioxide (CO₂) và 2 phân tử nước (H₂O).',
           'Thử đếm nguyên tử. Trước phản ứng: 1 C và 4 H trong CH₄, 4 O trong hai phân tử O₂. Sau phản ứng: 1 C và 2 O trong CO₂, 4 H và 2 O trong hai phân tử H₂O. Vẫn đủ 1 carbon, 4 hydrogen, 4 oxygen. Chúng chỉ đổi chỗ.',
           'Nguyên tử nào cũng có khối lượng. Nguyên tử còn đủ thì tổng khối lượng cũng không đổi. Đó là định luật bảo toàn khối lượng: trong một phản ứng hoá học, tổng khối lượng các sản phẩm bằng tổng khối lượng các chất tham gia.',
-          'Ví dụ: 16 g methane cháy hết với 64 g oxygen thì carbon dioxide và nước sinh ra nặng tổng cộng đúng 16 + 64 = 80 g.',
+          'Ví dụ: 16 g methane cháy hết với 64 g oxygen thì carbon dioxide và nước sinh ra nặng tổng cộng đúng 16 + 64 = 80 g. Biết tổng và một phần thì tìm được phần còn lại: trong 80 g ấy có 44 g carbon dioxide, vậy nước nặng 80 − 44 = 36 g.',
         ],
         visual: { type: 'reaction', reactionId: 'methane-combustion' },
       },
@@ -497,6 +497,17 @@ export const unit04: UnitInput = {
           explanation:
             'Nguyên tử còn nguyên nên số nguyên tử, các nguyên tố và tổng khối lượng đều giữ nguyên. Thứ thay đổi là cách chúng liên kết, vì thế chất cũ mất đi và chất mới xuất hiện.',
           conceptIds: ['conservation-of-mass', 'reaction'],
+        },
+        {
+          id: 'u4-l3-e11',
+          type: 'fill-blank',
+          prompt: 'Tìm khối lượng còn thiếu',
+          template:
+            '68 g hydrogen peroxide (oxy già) tách hết thành nước và khí oxygen. Lượng nước thu được nặng 36 g. Vậy khí oxygen bay đi nặng ___ g.',
+          blanks: [{ accepted: ['32'], wordBank: ['32', '36', '104'] }],
+          explanation:
+            'Tổng khối lượng hai sản phẩm phải bằng 68 g hydrogen peroxide ban đầu. Nước chiếm 36 g, vậy khí oxygen nặng 68 − 36 = 32 g. Cộng 68 với 36 thành 104 là nhầm: sản phẩm không thể nặng hơn chất tham gia đã tạo ra nó.',
+          conceptIds: ['conservation-of-mass'],
         },
         {
           id: 'u4-l3-e9',
@@ -647,6 +658,21 @@ export const unit04: UnitInput = {
             'C + O₂ → CO₂ có 1 C và 2 O ở mỗi vế. CH₄ + 2O₂ → CO₂ + 2H₂O có 1 C, 4 H và 4 O ở mỗi vế. Ba cách viết còn lại đều lệch: H₂ + O₂ → H₂O lệch oxygen (2 và 1), CO + O₂ → CO₂ lệch oxygen (3 và 2), N₂ + H₂ → NH₃ lệch cả nitrogen (2 và 1) lẫn hydrogen (2 và 3).',
           conceptIds: ['balancing', 'chemical-equation'],
         },
+        {
+          id: 'u4-l4-e15',
+          type: 'mcq',
+          prompt:
+            'Đồ nhôm để ngoài không khí luôn phủ một lớp aluminium oxide (Al₂O₃) rất mỏng, do aluminium (nhôm) kết hợp với oxygen. Ba bạn viết phương trình theo ba cách. Cách nào đã cân bằng? Hãy đếm số nguyên tử Al và O ở từng vế',
+          options: [
+            { id: 'a', text: '2Al + O₂ → Al₂O₃' },
+            { id: 'b', text: '2Al + 3O₂ → Al₂O₃' },
+            { id: 'c', text: '4Al + 3O₂ → 2Al₂O₃' },
+          ],
+          correctOptionId: 'c',
+          explanation:
+            '4Al + 3O₂ → 2Al₂O₃ có 4 Al và 3 × 2 = 6 O ở vế trái, 2 × 2 = 4 Al và 2 × 3 = 6 O ở vế phải: đã cân bằng. Cách 2Al + O₂ → Al₂O₃ lệch oxygen (2 và 3). Cách 2Al + 3O₂ → Al₂O₃ cũng lệch oxygen (6 và 3). Muốn kiểm tra một phương trình, bạn lấy hệ số nhân với chỉ số rồi so từng nguyên tố ở hai vế.',
+          conceptIds: ['balancing', 'coefficient'],
+        },
       ],
       baseXp: 10,
     },
@@ -661,7 +687,7 @@ export const unit04: UnitInput = {
           'Một số tên lửa đốt khí hydrogen với khí oxygen, sản phẩm phụt ra phía sau là hơi nước. Viết bằng công thức: H₂ + O₂ → H₂O. Cách viết này mới là sơ đồ phản ứng, vì oxygen đang lệch: vế trái có 2, vế phải chỉ có 1.',
           'Để cân bằng, bạn chỉ thêm hệ số trước công thức, không sửa chỉ số. Đặt 2 trước H₂O thì vế phải có 2 O. Nhưng lúc này hydrogen lại lệch: trái 2, phải 4. Đặt tiếp 2 trước H₂ là xong: 2H₂ + O₂ → 2H₂O.',
           'Cách làm lúc nào cũng vậy: đếm nguyên tử ở hai vế, thêm hệ số cho nguyên tố đang lệch, rồi đếm lại. Sửa chỗ này có thể làm lệch chỗ khác. Chuyện đó rất bình thường, bạn cứ đếm lại rồi sửa tiếp.',
-          'Hệ số thì chọn bộ số nhỏ nhất: viết 2H₂ + O₂ → 2H₂O, không viết 4H₂ + 2O₂ → 4H₂O. Hệ số 1 thì không cần viết ra.',
+          'Hệ số thì chọn bộ số nhỏ nhất: viết 2H₂ + O₂ → 2H₂O, không viết 4H₂ + 2O₂ → 4H₂O. Hệ số 1 thì không cần viết ra. Phương trình đã cân bằng còn cho biết tỉ lệ số phân tử: cứ 2 phân tử H₂ thì cần 1 phân tử O₂ và tạo ra 2 phân tử H₂O.',
         ],
         visual: { type: 'reaction', reactionId: 'water-formation' },
       },
@@ -729,6 +755,21 @@ export const unit04: UnitInput = {
           conceptIds: ['balancing', 'conservation-of-mass'],
         },
         {
+          id: 'u4-l4-e16',
+          type: 'mcq',
+          prompt:
+            'Phương trình 2H₂ + O₂ → 2H₂O cho biết tỉ lệ: cứ 2 phân tử H₂ thì cần 1 phân tử O₂. Vậy 10 phân tử O₂ phản ứng vừa hết với bao nhiêu phân tử H₂?',
+          options: [
+            { id: 'a', text: '5' },
+            { id: 'b', text: '10' },
+            { id: 'c', text: '20' },
+          ],
+          correctOptionId: 'c',
+          explanation:
+            'Hệ số cho biết tỉ lệ số phân tử giữa các chất: 2 H₂ đi với 1 O₂ và tạo ra 2 H₂O. Số phân tử O₂ gấp lên 10 lần thì số phân tử H₂ cũng gấp lên 10 lần: 2 × 10 = 20. Khi đó tạo ra 20 phân tử H₂O. Chọn 5 là đã đảo ngược tỉ lệ: H₂ phải nhiều gấp đôi O₂ chứ không phải bằng một nửa.',
+          conceptIds: ['coefficient', 'chemical-equation'],
+        },
+        {
           id: 'u4-l4-e9',
           type: 'balance-reaction',
           reactionId: 'carbon-monoxide-burning',
@@ -762,8 +803,8 @@ export const unit04: UnitInput = {
         story: [
           'Đêm giao thừa, bố châm một que pháo bông cho cả nhà cùng ngắm. Những tia sáng bắn ra tí tách, chói đến mức phải nheo mắt.',
           'Lớp thuốc bọc quanh que pháo có trộn bột kim loại. Loại cho tia sáng trắng thường có magnesium (Mg). Khi cháy, magnesium kết hợp với oxygen thành magnesium oxide (MgO), một chất rắn màu trắng, đồng thời toả nhiệt và phát sáng rất mạnh.',
-          'Bếp than, bếp biogas, cây đinh gỉ, nhà máy phân đạm: quanh bạn đâu đâu cũng có phản ứng hoá học. Phương trình nào cũng lập được theo cùng một cách: viết sơ đồ phản ứng với công thức đúng, đếm nguyên tử rồi thêm hệ số cho tới khi hai vế bằng nhau, cuối cùng đếm lại để kiểm tra.',
-          'Gặp phương trình có nhiều nguyên tố, bạn cân bằng từng nguyên tố một. Mẹo nhỏ: nguyên tố nào có mặt ở nhiều chất, thường là oxygen, thì để sau cùng.',
+          'Que pháo nằm trong hộp cả năm chẳng sao, phải châm lửa nó mới cháy. Phản ứng chỉ xảy ra khi đủ điều kiện. Trước hết, các chất tham gia phải tiếp xúc với nhau. Nhiều phản ứng còn cần được đun nóng hoặc mồi lửa lúc đầu. Có phản ứng cần thêm chất xúc tác, là chất giúp phản ứng xảy ra nhanh hơn. Unit 6 sẽ nói kĩ về nó.',
+          'Bếp than, bếp biogas, cây đinh gỉ, nhà máy phân đạm: phương trình của phản ứng nào cũng lập theo cùng một cách. Viết sơ đồ với công thức đúng, đếm nguyên tử, thêm hệ số cho tới khi hai vế bằng nhau rồi đếm lại. Gặp nhiều nguyên tố thì cân bằng từng nguyên tố một. Nguyên tố nào có mặt ở nhiều chất, thường là oxygen, thì để sau cùng.',
         ],
         visual: { type: 'reaction', reactionId: 'magnesium-burning' },
       },
@@ -793,39 +834,43 @@ export const unit04: UnitInput = {
           conceptIds: ['balancing', 'combustion'],
         },
         {
-          id: 'u4-l5-e3',
+          id: 'u4-l5-e12',
           type: 'match-pairs',
           prompt:
-            'Nối mỗi phản ứng với sản phẩm của nó. Gợi ý: sản phẩm chỉ chứa những nguyên tố có trong chất tham gia',
+            'Mỗi phản ứng dưới đây chưa xảy ra, hoặc xảy ra rất chậm, vì còn thiếu một điều kiện. Nối mỗi trường hợp với điều kiện còn thiếu. Gợi ý: oxy già chỉ tách nhanh thành nước và khí oxygen khi gặp chất xúc tác, chẳng hạn một chất có sẵn trong máu',
           pairs: [
             {
-              left: { id: 'l1', text: 'Than (carbon) cháy', image: 'charcoal-grill' },
-              right: { id: 'r1', text: 'Carbon dioxide' },
+              left: { id: 'l1', text: 'Giấm và baking soda để trong hai lọ riêng' },
+              right: { id: 'r1', text: 'Hai chất tham gia chưa tiếp xúc với nhau' },
             },
             {
-              left: { id: 'l2', text: 'Magnesium trong pháo bông cháy', image: 'sparkler' },
-              right: { id: 'r2', text: 'Magnesium oxide' },
+              left: { id: 'l2', text: 'Que pháo bông còn nằm trong hộp' },
+              right: { id: 'r2', text: 'Chưa được mồi lửa' },
             },
             {
-              left: { id: 'l3', text: 'Đinh sắt gỉ', image: 'rusty-nail' },
-              right: { id: 'r3', text: 'Iron(III) oxide' },
-            },
-            {
-              left: { id: 'l4', text: 'Methane cháy trên bếp biogas', image: 'biogas-stove' },
-              right: { id: 'r4', text: 'Carbon dioxide và nước' },
-            },
-            {
-              left: {
-                id: 'l5',
-                text: 'Nitrogen gặp hydrogen trong nhà máy phân đạm',
-                image: 'rice-field',
-              },
-              right: { id: 'r5', text: 'Ammonia' },
+              left: { id: 'l3', text: 'Oxy già đựng trong chai ở tủ thuốc' },
+              right: { id: 'r3', text: 'Chưa gặp chất xúc tác' },
             },
           ],
           explanation:
-            'Sản phẩm chỉ chứa các nguyên tố có trong chất tham gia. Than gồm chủ yếu là carbon nên cháy thành carbon dioxide. Methane có thêm hydrogen nên còn sinh ra nước. Nitrogen với hydrogen thì chỉ có thể tạo ra chất gồm N và H: ammonia NH₃.',
-          conceptIds: ['reactants-products', 'reaction'],
+            'Giấm chỉ sủi bọt khi được rót lên baking soda: các chất tham gia phải tiếp xúc với nhau. Que pháo bông vẫn nằm giữa không khí có oxygen, nhưng phải được châm lửa thì mới cháy. Oxy già trong chai tách ra rất chậm, gặp chất xúc tác trong máu ở vết xước thì sủi bọt ngay.',
+          conceptIds: ['reaction'],
+        },
+        {
+          id: 'u4-l5-e13',
+          type: 'mcq',
+          prompt:
+            'Bao than để trong góc bếp cả tháng không cháy, dù than luôn tiếp xúc với oxygen trong không khí. Than còn thiếu điều kiện gì để cháy?',
+          visual: { id: 'v', image: 'charcoal-grill' },
+          options: [
+            { id: 'a', text: 'Được tiếp xúc với nhiều oxygen hơn nữa' },
+            { id: 'b', text: 'Được mồi lửa cho đủ nóng' },
+            { id: 'c', text: 'Được để yên thêm vài tháng nữa' },
+          ],
+          correctOptionId: 'b',
+          explanation:
+            'Than và oxygen đã tiếp xúc với nhau sẵn, nhưng ở nhiệt độ thường thì phản ứng cháy không bắt đầu được, để bao lâu cũng vậy. Mồi lửa làm than đủ nóng để bắt đầu cháy. Khi đã cháy, nhiệt do chính phản ứng toả ra giữ cho than cháy tiếp.',
+          conceptIds: ['reaction', 'combustion'],
         },
         {
           id: 'u4-l5-e4',
@@ -836,16 +881,6 @@ export const unit04: UnitInput = {
           explanation:
             'Carbon đã bằng nhau. CH₄ có 4 H nên cần 2 H₂O. Lúc này vế phải có 2 + 2 = 4 O, nên cần 2 O₂. Kết quả: CH₄ + 2O₂ → CO₂ + 2H₂O. Oxygen để sau cùng vì nó nằm trong cả hai sản phẩm: sửa nó sớm thì lát nữa lại lệch.',
           conceptIds: ['balancing', 'combustion'],
-        },
-        {
-          id: 'u4-l5-e5',
-          type: 'true-false',
-          prompt: 'Viết Mg + O₂ → MgO₂ là một cách đúng để cân bằng phản ứng magnesium cháy.',
-          visual: { id: 'v', moleculeId: 'mgo' },
-          answer: false,
-          explanation:
-            'Không được sửa chỉ số: sản phẩm của phản ứng là MgO, còn MgO₂ là một chất khác. Cách đúng là thêm hệ số: 2Mg + O₂ → 2MgO.',
-          conceptIds: ['coefficient', 'balancing'],
         },
         {
           id: 'u4-l5-e6',
@@ -995,22 +1030,30 @@ export const unit04: UnitInput = {
           conceptIds: ['reaction', 'physical-change', 'chemical-change'],
         },
         {
-          id: 'u4-cp-e3',
-          type: 'balance-reaction',
-          reactionId: 'water-formation',
-          prompt: 'Cân bằng phương trình của phản ứng tạo thành nước: H₂ + O₂ → H₂O',
+          id: 'u4-cp-e13',
+          type: 'fill-blank',
+          prompt: 'Một số tên lửa đốt khí hydrogen với khí oxygen để tạo lực đẩy. Chọn số đúng',
+          template:
+            'Phương trình 2H₂ + O₂ → 2H₂O cho biết: cứ 1 phân tử O₂ thì cần 2 phân tử H₂. Vậy 50 phân tử O₂ phản ứng vừa hết với ___ phân tử H₂.',
+          blanks: [{ accepted: ['100'], wordBank: ['25', '50', '100'] }],
           explanation:
-            'Cần 2 phân tử H₂O để đủ 2 O, rồi cần 2 phân tử H₂ để đủ 4 H. Kết quả: 2H₂ + O₂ → 2H₂O.',
-          conceptIds: ['balancing'],
+            'Hệ số cho biết tỉ lệ số phân tử: 2 H₂ đi với 1 O₂. Số phân tử H₂ luôn gấp đôi số phân tử O₂, nên 50 phân tử O₂ cần 50 × 2 = 100 phân tử H₂.',
+          conceptIds: ['coefficient', 'chemical-equation'],
         },
         {
-          id: 'u4-cp-e4',
-          type: 'true-false',
-          prompt: 'Khi cân bằng phương trình, bạn có thể sửa chỉ số trong công thức nếu cần.',
-          answer: false,
+          id: 'u4-cp-e14',
+          type: 'mcq',
+          prompt:
+            'Đống củi xếp sẵn cho buổi lửa trại luôn tiếp xúc với oxygen trong không khí, nhưng chỉ bốc cháy khi được châm lửa. Việc châm lửa đã cung cấp điều kiện gì?',
+          options: [
+            { id: 'a', text: 'Làm củi đủ nóng để phản ứng cháy bắt đầu' },
+            { id: 'b', text: 'Đưa thêm oxygen tới chỗ củi' },
+            { id: 'c', text: 'Cho củi và oxygen tiếp xúc với nhau' },
+          ],
+          correctOptionId: 'a',
           explanation:
-            'Chỉ số là một phần của công thức. Sửa chỉ số là đổi sang chất khác. Bạn chỉ được thêm hệ số đứng trước công thức.',
-          conceptIds: ['coefficient', 'balancing'],
+            'Củi và oxygen đã tiếp xúc với nhau từ trước, và không khí quanh củi cũng không thiếu oxygen. Thứ còn thiếu là nhiệt lúc đầu: nhiều phản ứng chỉ bắt đầu khi các chất tham gia được làm nóng tới mức cần thiết.',
+          conceptIds: ['reaction', 'combustion'],
         },
         {
           id: 'u4-cp-e5',
