@@ -20,7 +20,7 @@ export const unit10Meta: Record<Unit10SceneId, SceneMeta> = {
   },
   'balloon-and-jug': {
     label:
-      'Quả bóng bay đỏ bơm căng, buộc dây vào quả cân nhỏ trên sàn, to hơn hẳn bình nước lọc 20 lít màu xanh đặt bên cạnh',
+      'Quả bóng bay đỏ bơm căng khí helium, buộc dây vào quả cân nhỏ trên sàn, to hơn hẳn bình nước lọc 20 lít màu xanh đặt bên cạnh',
     hotspot: { x: 112, y: 82 },
   },
   'balloons-rise-sink': {

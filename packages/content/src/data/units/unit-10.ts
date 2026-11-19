@@ -36,11 +36,11 @@ export const unit10: UnitInput = {
           prompt: 'Một tá trứng là 12 quả. Vậy một mol phân tử nước là bao nhiêu phân tử?',
           visual: { id: 'v', image: 'egg-carton-dozen' },
           options: [
-            { id: 'a', text: '6022 phân tử' },
-            { id: 'b', text: '6,022 × 10²³ phân tử' },
-            { id: 'c', text: '23 phân tử' },
+            { id: 'a', text: '23 phân tử' },
+            { id: 'b', text: '6022 phân tử' },
+            { id: 'c', text: '6,022 × 10²³ phân tử' },
           ],
-          correctOptionId: 'b',
+          correctOptionId: 'c',
           explanation:
             'Một mol luôn là 6,022 × 10²³ hạt, cũng như một tá luôn là 12. Kí hiệu 10²³ nghĩa là số 1 kèm theo 23 chữ số 0, nên 6,022 × 10²³ lớn gấp 6022 tới một trăm tỉ tỉ lần.',
           conceptIds: ['mole'],
@@ -106,7 +106,9 @@ export const unit10: UnitInput = {
           prompt:
             'Nửa tá trứng là 6 quả. Một ngụm nước nhỏ chứa 3,011 × 10²³ phân tử nước, đúng bằng một nửa số Avogadro. Điền số vào chỗ trống',
           template: 'Ngụm nước đó chứa ___ mol phân tử nước.',
-          blanks: [{ accepted: ['0,5', '0.5', '1/2', '0,50', '0.50'] }],
+          blanks: [
+            { accepted: ['0,5', '0.5', '1/2', '0,50', '0.50', ',5', '.5', 'nửa', 'một nửa'] },
+          ],
           explanation:
             '3,011 × 10²³ đúng bằng một nửa của 6,022 × 10²³, nên đó là nửa mol, viết là 0,5 mol. Số mol không cần phải là số nguyên, cũng như bạn vẫn mua được nửa tá trứng.',
           conceptIds: ['mole'],
@@ -196,11 +198,11 @@ export const unit10: UnitInput = {
           type: 'mcq',
           prompt: 'Khối lượng mol của một chất cho bạn biết điều gì?',
           options: [
-            { id: 'a', text: 'Khối lượng của một nguyên tử chất đó, tính bằng gam' },
-            { id: 'b', text: 'Khối lượng của 1 mol chất đó, tính bằng gam' },
+            { id: 'a', text: 'Khối lượng của 1 mol chất đó, tính bằng gam' },
+            { id: 'b', text: 'Khối lượng của một nguyên tử chất đó, tính bằng gam' },
             { id: 'c', text: 'Số hạt có trong 1 gam chất đó' },
           ],
-          correctOptionId: 'b',
+          correctOptionId: 'a',
           explanation:
             'Khối lượng mol là khối lượng của cả 1 mol, tức của 6,022 × 10²³ hạt gộp lại. Một nguyên tử riêng lẻ thì nhẹ tới mức không cái cân nào trong nhà đo nổi.',
           conceptIds: ['molar-mass'],
@@ -330,7 +332,7 @@ export const unit10: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'CaCO₃ có 1 Ca, 1 C và 3 O: 40 + 12 + 3 × 16 = 100 g/mol. Ra 68 là do quên nhân 3 cho oxygen. Ra 204 là do nhân 3 cho cả ba nguyên tố, trong khi chỉ số 3 chỉ thuộc về oxygen.',
+            'CaCO₃ có 1 Ca, 1 C và 3 O: 40 + 12 + 3 × 16 = 100 g/mol. Ra 68 là do quên nhân 3 cho oxygen. Ra 204 là do nhân 3 cho cả ba nguyên tố, trong khi chỉ số 3 chỉ thuộc về oxygen. Calcium carbonate là hợp chất ion, không gồm các phân tử riêng lẻ, nhưng khối lượng mol vẫn tính bằng cách cộng theo công thức như thế.',
           conceptIds: ['molar-mass', 'formula'],
         },
         {
@@ -435,7 +437,7 @@ export const unit10: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'n = m : M = 180 : 18 = 10 mol. Một cốc nước bình thường đã chứa 10 mol phân tử nước, tức 10 lần số Avogadro.',
+            'n = m : M = 180 : 18 = 10 mol. Ra 0,1 là do chia ngược, lấy 18 chia 180. Ra 162 là do lấy hai số trừ nhau. Một cốc nước bình thường đã chứa 10 mol phân tử nước, tức số phân tử gấp 10 lần số Avogadro.',
           conceptIds: ['mole-conversion'],
         },
         {
@@ -526,11 +528,11 @@ export const unit10: UnitInput = {
         title: 'Quả bóng 24,79 lít',
         story: [
           'Một quả bóng bay bơm thật căng, to hơn cả bình nước lọc 20 lít đặt bên cạnh. Chất khí không có hình dạng riêng và rất nhẹ, nên muốn biết có bao nhiêu khí, người ta thường đo thể tích thay vì đặt lên cân.',
-          'Ở thể khí, các phân tử ở rất xa nhau. Khoảng trống giữa chúng lớn hơn bản thân phân tử rất nhiều, nên phân tử to hay nhỏ gần như không ảnh hưởng tới chỗ mà cả đám khí chiếm. Vì thế, ở cùng nhiệt độ và áp suất, 1 mol khí nào cũng chiếm thể tích như nhau.',
+          'Ở thể khí, các hạt (phân tử, hoặc nguyên tử đứng riêng lẻ như ở khí helium) ở rất xa nhau. Khoảng trống giữa chúng lớn hơn bản thân mỗi hạt rất nhiều, nên hạt to hay nhỏ gần như không ảnh hưởng tới chỗ mà cả đám khí chiếm. Vì thế, ở cùng nhiệt độ và áp suất, 1 mol khí nào cũng chiếm thể tích gần như bằng nhau. Khi tính toán, ta coi là bằng nhau.',
           'Để ai tính cũng ra cùng một số, người ta chọn một mốc chung gọi là điều kiện chuẩn: nhiệt độ 25 °C và áp suất 1 bar. Áp suất cho biết chất khí ép lên mọi thứ quanh nó mạnh tới đâu, và 1 bar gần bằng sức ép của không khí quanh bạn. Ở điều kiện chuẩn, 1 mol chất khí bất kì chiếm 24,79 L. Con số này gọi là thể tích mol của chất khí.',
-          'Quả bóng trong hình rộng khoảng 36 cm và chứa khoảng 1 mol khí oxygen, nặng 32 g. Nếu bơm vào đó 1 mol khí hydrogen, bóng vẫn to như vậy nhưng khí bên trong chỉ nặng 2 g. Gọi thể tích là V, bạn có: V = n × 24,79 (L), và ngược lại n = V : 24,79.',
+          'Quả bóng trong hình rộng khoảng 36 cm và chứa khoảng 1 mol khí helium, chỉ nặng 4 g. Nếu bơm vào đó 1 mol khí oxygen, bóng vẫn to như vậy nhưng khí bên trong nặng tới 32 g. Gọi thể tích là V (tính bằng lít) và số mol là n, ở điều kiện chuẩn bạn có: V = n × 24,79, và ngược lại n = V : 24,79.',
         ],
-        visual: { type: 'molecule', moleculeId: 'o2', scene: 'balloon-and-jug' },
+        visual: { type: 'molecule', moleculeId: 'he', scene: 'balloon-and-jug' },
       },
       exercises: [
         {
@@ -549,16 +551,16 @@ export const unit10: UnitInput = {
         {
           id: 'u10-l4-e2',
           type: 'mcq',
-          prompt: 'Ở điều kiện chuẩn, 1 mol khí oxygen O₂ (M = 32 g/mol) chiếm thể tích bao nhiêu?',
+          prompt: 'Ở điều kiện chuẩn, 1 mol khí helium (M = 4 g/mol) chiếm thể tích bao nhiêu?',
           visual: { id: 'v', image: 'balloon-and-jug' },
           options: [
-            { id: 'a', text: '18 L' },
-            { id: 'b', text: '24,79 L' },
-            { id: 'c', text: '32 L' },
+            { id: 'a', text: '4 L' },
+            { id: 'b', text: '18 L' },
+            { id: 'c', text: '24,79 L' },
           ],
-          correctOptionId: 'b',
+          correctOptionId: 'c',
           explanation:
-            'Ở điều kiện chuẩn, 1 mol khí nào cũng chiếm 24,79 L. Con số 32 là khối lượng mol của oxygen tính bằng gam, không phải thể tích. Thể tích của 1 mol khí không phụ thuộc vào việc khí đó nặng hay nhẹ.',
+            'Ở điều kiện chuẩn, 1 mol khí nào cũng chiếm 24,79 L. Con số 4 là khối lượng mol của helium tính bằng gam, không phải thể tích. Còn 18 là số gam của 1 mol nước lỏng, không liên quan gì tới chất khí. Thể tích của 1 mol khí không phụ thuộc vào việc khí đó nặng hay nhẹ.',
           conceptIds: ['molar-volume'],
         },
         {
@@ -762,7 +764,7 @@ export const unit10: UnitInput = {
             'Khí methane có M = 16 g/mol, khí oxygen có M = 32 g/mol. Tỉ khối của methane so với oxygen là 0,5, nghĩa là methane nặng bằng một nửa oxygen.',
           answer: true,
           explanation:
-            'd = 16 : 32 = 0,5. Tỉ khối nhỏ hơn 1 cho biết khí đứng trước nhẹ hơn khí đứng sau. Lớn hơn 1 thì nặng hơn. Đúng bằng 1 thì hai khí nặng như nhau.',
+            'd = 16 : 32 = 0,5. Cùng một thể tích và cùng điều kiện, khí methane chỉ nặng bằng một nửa khí oxygen. Tỉ khối nhỏ hơn 1 cho biết khí đứng trước nhẹ hơn khí đứng sau. Lớn hơn 1 thì nặng hơn. Đúng bằng 1 thì hai khí nặng như nhau.',
           conceptIds: ['relative-density'],
         },
         {
@@ -945,7 +947,7 @@ export const unit10: UnitInput = {
             { id: 's4', text: 'Đổi số mol CO₂ ra gam: m = 2 × 44 = 88 g' },
           ],
           explanation:
-            'Ba chặng: gam ra mol, mol chất này sang mol chất kia theo hệ số, rồi mol ra gam. 24 g than cho ra 88 g CO₂. Phần tăng thêm 64 g chính là 2 mol oxygen lấy từ không khí.',
+            'Ba chặng: gam ra mol, mol chất này sang mol chất kia theo hệ số, rồi mol ra gam. 24 g than cho ra 88 g CO₂. Phần tăng thêm 64 g chính là 2 mol khí oxygen O₂ (2 × 32 = 64 g) lấy từ không khí.',
           conceptIds: ['stoichiometry', 'mole-conversion', 'conservation-of-mass'],
         },
         {
@@ -1040,7 +1042,7 @@ export const unit10: UnitInput = {
           ],
           correctOptionId: 'a',
           explanation:
-            'n = m : M = 1,2 : 12 = 0,1 mol. Ra 10 là do chia ngược, ra 14,4 là do nhân. Viên kim cương nhỏ xíu ấy vẫn chứa khoảng 0,6 × 10²³ nguyên tử carbon.',
+            'n = m : M = 1,2 : 12 = 0,1 mol. Ra 10 là do chia ngược, ra 14,4 là do nhân. Viên kim cương chỉ cỡ một hạt đậu ấy chứa tới khoảng 0,6 × 10²³ nguyên tử carbon.',
           conceptIds: ['mole-conversion'],
         },
         {
@@ -1058,7 +1060,7 @@ export const unit10: UnitInput = {
           id: 'u10-cp-e4',
           type: 'mcq',
           prompt:
-            'Nước rửa tay khô chứa ethanol C₂H₆O. Khối lượng mol của ethanol là bao nhiêu? Biết C = 12, H = 1, O = 16.',
+            'Nước rửa tay khô chứa ethanol (cồn), công thức C₂H₆O. Khối lượng mol của ethanol là bao nhiêu? Biết C = 12, H = 1, O = 16.',
           visual: { id: 'v', moleculeId: 'c2h6o' },
           options: [
             { id: 'a', text: '29 g/mol' },
@@ -1067,7 +1069,7 @@ export const unit10: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'C₂H₆O có 2 C, 6 H và 1 O: 2 × 12 + 6 × 1 + 16 = 46 g/mol. Ra 29 là do chỉ tính mỗi nguyên tố một nguyên tử, bỏ qua các chỉ số 2 và 6.',
+            'C₂H₆O có 2 C, 6 H và 1 O: 2 × 12 + 6 × 1 + 16 = 46 g/mol. Ra 29 là do chỉ tính mỗi nguyên tố một nguyên tử, bỏ qua các chỉ số 2 và 6. Ra 58 là do nhân đôi cả công thức, trong khi chỉ số 2 chỉ thuộc về carbon.',
           conceptIds: ['molar-mass', 'formula'],
         },
         {
@@ -1120,7 +1122,7 @@ export const unit10: UnitInput = {
           ],
           correctOptionId: 'b',
           explanation:
-            'V = n × 24,79 = 2 × 24,79 = 49,58 L, đủ làm căng một chiếc túi che trước ngực người lái. Con số 56 là khối lượng của 2 mol nitrogen tính bằng gam, không phải thể tích.',
+            'V = n × 24,79 = 2 × 24,79 = 49,58 L, cỡ một chiếc túi che trước ngực người lái. Con số 56 là khối lượng của 2 mol khí nitrogen N₂ tính bằng gam (2 × 28), không phải thể tích. Còn 24,79 L mới là thể tích của 1 mol.',
           conceptIds: ['molar-volume'],
         },
         {
