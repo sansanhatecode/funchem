@@ -9,6 +9,7 @@ import { unit07Meta } from './meta/unit-07'
 import { unit08Meta } from './meta/unit-08'
 import { unit09Meta } from './meta/unit-09'
 import { unit10Meta } from './meta/unit-10'
+import { unit11Meta } from './meta/unit-11'
 import type { SceneMeta } from './scene-def'
 
 export type { SceneMeta } from './scene-def'
@@ -29,6 +30,7 @@ const PACKS = {
   unit08: dynamic(() => import('./packs/unit-08')),
   unit09: dynamic(() => import('./packs/unit-09')),
   unit10: dynamic(() => import('./packs/unit-10')),
+  unit11: dynamic(() => import('./packs/unit-11')),
 }
 
 type PackName = keyof typeof PACKS
@@ -50,6 +52,7 @@ export const SCENES: Record<SceneId, SceneMeta & { pack: PackName }> = {
   ...inPack('unit08', unit08Meta),
   ...inPack('unit09', unit09Meta),
   ...inPack('unit10', unit10Meta),
+  ...inPack('unit11', unit11Meta),
 }
 
 /** Phần vẽ của một cảnh, lấp đầy khung cha. `label` bỏ trống thì cảnh ẩn khỏi trình đọc màn hình. */
