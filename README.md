@@ -50,16 +50,18 @@ Mở http://localhost:3000 và bấm "Bắt đầu học".
 
 Khi chưa đặt `RESEND_API_KEY`, mã OTP đăng nhập được in ra log của API (dòng có `"code"`) thay vì gửi email.
 
+Khi chưa đặt `SENTRY_DSN`, lỗi của API và lỗi JavaScript do trình duyệt báo về chỉ được ghi ra log. Đặt biến này thì chúng được gửi thêm lên Sentry.
+
 ## Lệnh thường dùng
 
-| Lệnh               | Việc                                                                                                    |
-| ------------------ | ------------------------------------------------------------------------------------------------------- |
-| `pnpm test`        | Chạy toàn bộ test. Test tích hợp Postgres chỉ chạy khi có `TEST_DATABASE_URL`.                          |
-| `pnpm typecheck`   | Kiểm tra kiểu mọi gói                                                                                   |
-| `pnpm lint`        | ESLint                                                                                                  |
-| `pnpm e2e`         | Test trình duyệt (Playwright). Cần `E2E_DATABASE_URL`. Chạy ở cổng 3100/4100 nên không đụng `pnpm dev`. |
-| `pnpm db:generate` | Sinh migration mới sau khi sửa `packages/db/src/schema.ts`                                              |
-| `pnpm db:migrate`  | Áp migration vào `DATABASE_URL`                                                                         |
+| Lệnh               | Việc                                                                                                                                                                                  |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pnpm test`        | Chạy toàn bộ test. Test tích hợp Postgres chỉ chạy khi có `TEST_DATABASE_URL`.                                                                                                        |
+| `pnpm typecheck`   | Kiểm tra kiểu mọi gói                                                                                                                                                                 |
+| `pnpm lint`        | ESLint                                                                                                                                                                                |
+| `pnpm e2e`         | Test trình duyệt (Playwright), gồm cả quét accessibility và một test chơi hết chương trình (khoảng 15 phút). Cần `E2E_DATABASE_URL`. Chạy ở cổng 3100/4100 nên không đụng `pnpm dev`. |
+| `pnpm db:generate` | Sinh migration mới sau khi sửa `packages/db/src/schema.ts`                                                                                                                            |
+| `pnpm db:migrate`  | Áp migration vào `DATABASE_URL`                                                                                                                                                       |
 
 Chạy test tích hợp:
 

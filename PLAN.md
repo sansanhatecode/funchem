@@ -60,22 +60,26 @@ Bên cạnh luôn có khung **"Ngoài đời"**: hình minh hoạ hiện tượn
 
 ---
 
-## 4. Chương trình học (8 Unit)
+## 4. Chương trình học (12 Unit)
 
-| #   | Unit                              | Nội dung cốt lõi                                                                                                 | Gắn với đời sống                               |
-| --- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| 1   | **Mọi thứ được làm từ gì?**       | Nguyên tử, nguyên tố, ký hiệu, bảng tuần hoàn (chỉ 20 nguyên tố đầu + vài nguyên tố quen thuộc)                  | Vàng, sắt, oxy trong không khí, than           |
-| 2   | **Nguyên tử bắt tay nhau**        | Phân tử, hợp chất, liên kết cộng hoá trị vs ion (minh hoạ "chia sẻ" vs "cho–nhận"), đọc công thức H₂O, CO₂, NaCl | Nước, muối ăn, khí ga, đường                   |
-| 3   | **Rắn, lỏng, khí**                | Trạng thái vật chất, nóng chảy/bay hơi, hoà tan, dung dịch, biến đổi vật lý vs hoá học                           | Đá tan, nước sôi, pha đường vào trà            |
-| 4   | **Phản ứng hoá học đầu tiên**     | Chất phản ứng → sản phẩm, dấu hiệu phản ứng, bảo toàn khối lượng, cân bằng phương trình đơn giản                 | Gỉ sắt, nến cháy, giấm + baking soda           |
-| 5   | **Chua và xà phòng: Axit – Bazơ** | pH, chất chỉ thị, trung hoà                                                                                      | Chanh, xà phòng, thuốc đau dạ dày, bắp cải tím |
-| 6   | **Hoá học trong bếp**             | Bột nở sinh CO₂, caramel hoá, phản ứng Maillard, lên men                                                         | Bánh nở, thịt nướng vàng, sữa chua             |
-| 7   | **Hoá học quanh nhà**             | Oxi hoá – khử cơ bản, pin, chất tẩy, polymer/nhựa                                                                | Pin điện thoại, nước tẩy, chai nhựa            |
-| 8   | **Hoá học trong cơ thể**          | Hô hấp tế bào, tiêu hoá, đường/đạm/béo, nước và muối khoáng                                                      | Thở, ăn, uống nước điện giải                   |
+| #   | Unit                              | Nội dung cốt lõi                                                                                                  | Gắn với đời sống                               |
+| --- | --------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1   | **Mọi thứ được làm từ gì?**       | Nguyên tử, nguyên tố, ký hiệu, bảng tuần hoàn (chỉ 20 nguyên tố đầu + vài nguyên tố quen thuộc)                   | Vàng, sắt, oxy trong không khí, than           |
+| 2   | **Nguyên tử bắt tay nhau**        | Phân tử, hợp chất, liên kết cộng hoá trị vs ion (minh hoạ "chia sẻ" vs "cho–nhận"), đọc công thức H₂O, CO₂, NaCl  | Nước, muối ăn, khí ga, đường                   |
+| 3   | **Rắn, lỏng, khí**                | Trạng thái vật chất, nóng chảy/bay hơi, hoà tan, dung dịch, biến đổi vật lý vs hoá học                            | Đá tan, nước sôi, pha đường vào trà            |
+| 4   | **Phản ứng hoá học đầu tiên**     | Chất phản ứng → sản phẩm, dấu hiệu phản ứng, bảo toàn khối lượng, cân bằng phương trình đơn giản                  | Gỉ sắt, nến cháy, giấm + baking soda           |
+| 5   | **Chua và xà phòng: Axit – Bazơ** | pH, chất chỉ thị, trung hoà                                                                                       | Chanh, xà phòng, thuốc đau dạ dày, bắp cải tím |
+| 6   | **Hoá học trong bếp**             | Bột nở sinh CO₂, caramel hoá, phản ứng Maillard, lên men                                                          | Bánh nở, thịt nướng vàng, sữa chua             |
+| 7   | **Hoá học quanh nhà**             | Oxi hoá – khử cơ bản, pin, chất tẩy, polymer/nhựa                                                                 | Pin điện thoại, nước tẩy, chai nhựa            |
+| 8   | **Hoá học trong cơ thể**          | Hô hấp tế bào, tiêu hoá, đường/đạm/béo, nước và muối khoáng                                                       | Thở, ăn, uống nước điện giải                   |
+| 9   | **Công thức và hoá trị**          | Lớp electron, quy tắc khí hiếm, hoá trị, lập công thức, khối lượng nguyên tử và phân tử theo amu                  | Đèn đường, biển neon, đồ bạc bị xỉn, bóng bay  |
+| 10  | **Đếm bằng mol**                  | Mol, khối lượng mol, đổi giữa số mol, khối lượng và số hạt, thể tích mol 24,79 L, tỉ khối, tính theo phương trình | Vỉ trứng một tá, cân nhà bếp, lon gas bếp lẩu  |
+| 11  | **Dung dịch và tách chất**        | Chất tan và dung môi, độ tan, nồng độ phần trăm và nồng độ mol, huyền phù, nhũ tương, lọc, cô cạn, chiết          | Nước biển, đường phèn, phin cà phê, ruộng muối |
+| 12  | **Nhiên liệu và hợp chất hữu cơ** | Hợp chất hữu cơ, alkane, ethylene, dầu mỏ và nhiên liệu, ethylic alcohol, acetic acid                             | Bánh mì cháy khét, cây xăng, đèn cồn, hũ giấm  |
 
-**Cả 8 Unit đã có nội dung** (2026-11-17). Unit 5–8 đã được chỉnh lại cho bám Chương trình 2018, xem bảng đối chiếu ở mục 9.
+**Cả 12 Unit đã có nội dung** (2026-11-19). Unit 5–8 bám Chương trình 2018 theo bảng đối chiếu ở mục 9; Unit 9–12 phủ nốt phần hoá học của KHTN 7–9 (xem mục 9).
 
-Mỗi Unit: 4–6 bài học + 1 Checkpoint. Mỗi bài học: 1 thẻ "Khám phá" (hoạt hình + câu chuyện) + 8–12 bài tập.
+Mỗi Unit: 5–7 bài học + 1 Checkpoint. Mỗi bài học: 1 thẻ "Khám phá" (hoạt hình + câu chuyện) + 7–11 bài tập.
 
 ---
 
@@ -463,6 +467,59 @@ Nội dung vẫn nằm trong mã (không ở database), nhưng trình duyệt ch
 
 API tự xét bài đã mở khoá chưa (trước chỉ chặn ở giao diện). Mỗi bài mỗi ngày chỉ cho tối đa bằng lần làm tốt nhất trong ngày, ôn tập chỉ 3 lượt đầu mỗi ngày được cộng XP, các lần nộp cùng lúc phải xếp hàng. Còn lại từ lượt review mã: giám sát lỗi, giới hạn gửi OTP khi chạy nhiều máy, Dockerfile chưa build thử, web chưa có test đơn vị. Một bài thường vẫn tính là xong dù trả lời sai hết, nên bài kế tiếp mở ngay: cần quyết định có đặt ngưỡng tối thiểu không.
 
-### Tiếp theo: Giai đoạn 2
+### Hoàn thiện nền tảng và Unit 9–12 — ngày 2026-11-18 và 2026-11-19
 
-Unit 3–4 (có bài cân bằng phản ứng), ôn tập theo khái niệm yếu, hỏi lại câu sai, âm thanh, trang hồ sơ, bảng xếp hạng tuần, ba loại hình minh hoạ ở trên, pháp lý và phân tích học tập.
+Bốn đợt việc, làm theo thứ tự.
+
+**Đợt 1, sửa những gì người học đang gặp**
+
+- [x] Bài thường cần đúng ít nhất 50% câu trả lời đầu tiên mới tính là xong và mở bài kế tiếp (bài kiểm tra vẫn 80%). Luật nằm ở `packages/core`, API tự theo.
+- [x] Trình đọc màn hình không còn đọc lộ đáp án: ở lựa chọn chỉ có hình, nó đọc thành phần nguyên tử ("Mô hình gồm 2 hydrogen, 1 oxygen") thay cho tên chất.
+- [x] Bài cân bằng 12 câu của Unit 4 tách thành "Hệ số và chỉ số" và "Cân bằng phương trình". Unit 5 giữ 7 bài.
+- [x] Bảng tuần hoàn chia ba nhóm như sách KHTN 7: boron, silicon, arsenic xếp vào phi kim, germanium vào kim loại. Cần giáo viên xác nhận cách xếp bốn nguyên tố này theo bộ sách đang dùng.
+
+**Đợt 2, hình hoá**
+
+- [x] Dung dịch có ion: phân tử có trường `ions` và `state: 'liquid'` được vẽ ở hình phóng to thành các ion bơi giữa những phân tử nước. Đã dùng cho hydrochloric acid, sulfuric acid và nước muối.
+- [x] Phân tử lớn: quả cầu nguyên tử tự thu nhỏ khi phân tử đông nguyên tử (`atomScale` trong `chem-ui`), glucose không còn đè lên nhau. Thêm hình saccharose (45 nguyên tử).
+
+**Đợt 3, tối ưu và chất lượng**
+
+- [x] Cảnh minh hoạ chia gói theo Unit (Unit 1–4 chung một gói) và chỉ tải khi trang dùng tới; ảnh thu nhỏ ở bản đồ học, bộ sưu tập, trang chủ chỉ tải khi sắp lọt vào màn hình. Thêm Unit mới không làm các trang khác nặng thêm.
+- [x] Gỡ zod khỏi gói trình duyệt: `@funchem/content/lib` chỉ còn kiểu dữ liệu và hàm thuần. JavaScript tải về (đã nén) đo lúc có 8 Unit: trang chủ 300 → 252 KB, trang bài học 314 → 266 KB, bộ sưu tập 340 → 304 KB.
+- [x] Web có test đơn vị (vitest): hàng đợi hỏi lại câu sai, xáo trộn, cắt nội dung, màu chữ.
+- [x] Accessibility: bộ test trình duyệt có thêm `a11y.spec.ts`, quét axe theo WCAG 2.1 mức A và AA trên các màn hình chính, hiện không còn lỗi. Chữ trên nền màu thương hiệu đổi từ trắng sang chữ đậm, chữ trên nền màu Unit tự chọn trắng hoặc đậm theo độ tương phản. Chưa làm: thử bằng tay với bàn phím và trình đọc màn hình thật.
+- [x] Giới hạn tần suất của Better Auth (ví dụ gửi OTP 3 lần mỗi phút) lưu ở Postgres, đúng cả khi API chạy nhiều máy. Giới hạn tính theo địa chỉ IP lấy từ header `x-forwarded-for`; khi deploy cần chắc header này do proxy đặt.
+- [x] Dockerfile đã build và chạy thử. Bỏ các gói không dùng khỏi image: thư mục ứng dụng từ khoảng 480 MB còn khoảng 55 MB (đo trước khi thêm Sentry).
+- [x] Giám sát lỗi: API bật Sentry khi có `SENTRY_DSN`, không có thì không nạp thư viện. Trình duyệt gửi lỗi JavaScript về `POST /client-errors` thay vì nhúng thư viện giám sát. Có màn hình lỗi thân thiện.
+- [x] Sự kiện học tập: bảng `learning_events` ghi lúc bắt đầu và lúc rời một lượt bài học hay ôn tập. `packages/db/analytics.sql` có truy vấn bài nào bị bỏ dở và rời ở câu nào.
+
+Chưa làm: giao diện tối, học offline.
+
+**Đợt 4, nội dung**
+
+- [x] Bổ sung Unit 3: thể tích và tính nén của chất khí, nhiệt độ giữ nguyên khi đang nóng chảy hoặc sôi, phân biệt nóng chảy với hoà tan.
+- [x] Bổ sung Unit 4: tìm khối lượng còn thiếu, kiểm tra phương trình đã cân bằng chưa, tỉ lệ của hệ số, điều kiện để phản ứng xảy ra.
+- [x] Unit 9–12 viết mới, mỗi Unit 6 bài học và một bài kiểm tra, mỗi Unit qua một lượt soát độc lập.
+
+| Unit | Bám chương trình                                                                  | Cố ý chưa dạy                                                               |
+| ---- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| 9    | KHTN 7: lớp electron, liên kết, hoá trị, công thức hoá học, khối lượng theo amu   | Phần trăm nguyên tố trong hợp chất, tìm công thức từ phần trăm, đồng vị     |
+| 10   | KHTN 8: mol, khối lượng mol, thể tích mol, tỉ khối, tính theo phương trình        | Hiệu suất, chất dư                                                          |
+| 11   | KHTN 6 và 8: dung dịch, độ tan, nồng độ, huyền phù, nhũ tương, tách chất          | Bảng tính tan, pha chế nhiều bước, kí hiệu C_M                              |
+| 12   | KHTN 9: hợp chất hữu cơ, alkane, alkene, nhiên liệu, ethylic alcohol, acetic acid | Ethylic alcohol với sodium, acetic acid cháy, phương trình với nước bromine |
+
+Chương trình hiện có 12 Unit, 70 bài học và 12 bài kiểm tra, 845 bài tập, 56 phân tử, 32 phản ứng, 84 khái niệm, 101 cảnh minh hoạ. Phiên bản nội dung `2026.11.5`.
+
+Kết quả soát độc lập Unit 9–12: không có đáp án, phép tính hay phương trình nào sai. Một lỗi kiến thức ở Unit 10 (quả bóng vẽ lơ lửng nhưng lời kể nói chứa oxygen, đã đổi thành helium). Khoảng 60 chỗ còn lại là câu chữ dễ hiểu lầm, đáp án có thể bị cãi, câu thiếu ngữ cảnh khi mở thẳng trong ôn tập, đều đã sửa.
+
+Kiểm chứng: 369 test đơn vị và tích hợp (content 11, core 45, chem-ui 180, api 20, web 113), 25 test trình duyệt, gồm một test chơi hết cả 12 Unit qua giao diện (845 câu) và 5 test quét accessibility.
+
+Việc cần chủ dự án quyết định hoặc làm tiếp:
+
+- Nhờ giáo viên đọc Unit 9–12. Người viết và người soát đều không đối chiếu sách in, và phần lớn số liệu đời sống chỉ dựa trên hiểu biết chung. Những chỗ người soát để lại cho giáo viên: hoá trị của kim loại trong hợp chất ion (Unit 9), thể tích mol coi như bằng nhau với mọi khí (Unit 10), sữa tươi xếp vào nhũ tương và ruộng muối gọi là cô cạn (Unit 11), cách nói về tác hại rượu bia và quy định dưới 18 tuổi (Unit 12).
+- Phần trăm nguyên tố trong hợp chất (KHTN 7) chưa có ở Unit nào. Hợp nhất là thêm một bài vào Unit 10.
+- Tên gọi: tài liệu thuật ngữ ghi lớp 9 dùng "ethylic alcohol", còn các Unit 2–8 và phân tử `c2h6o` dùng "ethanol". Unit 12 viết "ethylic alcohol, còn gọi là ethanol". Cần chốt một cách.
+- Unit 10 và Unit 12 mỗi bên có một cảnh bếp lẩu gas (`hotpot-gas-can`, `hotpot-gas-stove`) vì được viết song song. Có thể gộp làm một.
+- Chữ trên nút xanh đổi từ trắng sang chữ đậm để đủ tương phản. Đây là thay đổi nhìn thấy được, nên xem lại bằng mắt.
+- Deploy vẫn chưa làm (xem mục "Chưa làm, cần tài khoản của bạn" ở Giai đoạn 0). Khi deploy cần chạy migration 0001 và 0002.
