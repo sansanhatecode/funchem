@@ -1,4 +1,5 @@
-import { ELEMENTS, type ElementCounts, type ElementSymbol } from './schema/elements.js'
+import { ELEMENTS, type ElementSymbol } from './elements.js'
+import type { ElementCounts } from './schema/elements.js'
 
 /**
  * Phân tích công thức như "H2O", "Ca(OH)2", "Fe2O3" thành số nguyên tử từng nguyên tố.
