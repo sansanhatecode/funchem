@@ -3,7 +3,7 @@
 import { type Answer, content, type Exercise } from '@funchem/content'
 import { fixtureContent } from '@funchem/content/testing'
 import { describeCorrectAnswer, gradeExercise, isAnswerComplete } from '@funchem/core'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { ReactionPlayer } from '@/components/chem/reaction-player'
 import { ExerciseView } from '@/components/exercises/exercise-view'
 import { Button } from '@/components/ui/button'
@@ -18,9 +18,13 @@ const FIXTURE_SLICE = {
 
 export function ExerciseGallery() {
   const exercises = [...fixtureContent.exercises.values()].map((e) => e.exercise)
+  // Đánh dấu khi trang đã hoạt động (React đã gắn xong sự kiện). Trang này dài, trên máy chậm
+  // test trình duyệt phải chờ dấu này rồi mới bấm, nếu không cú bấm rơi vào HTML chưa có sự kiện.
+  const [ready, setReady] = useState(false)
+  useEffect(() => setReady(true), [])
   return (
     <ContentProvider slice={FIXTURE_SLICE}>
-      <main className="mx-auto max-w-2xl px-5 py-8">
+      <main className="mx-auto max-w-2xl px-5 py-8" data-ready={ready || undefined}>
         <h1 className="text-2xl font-extrabold">Thử nghiệm dạng bài</h1>
         <p className="text-sm text-ink-soft">Dùng nội dung fixture. Không lưu gì lên server.</p>
 
