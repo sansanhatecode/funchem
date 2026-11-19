@@ -10,7 +10,7 @@ export const unit12: UnitInput = {
   order: 12,
   title: 'Nhiên liệu và hợp chất hữu cơ',
   tagline: 'Gas, xăng, cồn và giấm',
-  color: '#B0703C',
+  color: '#52606D',
   lessons: [
     // ───────────────────────── Bài 1: Hợp chất hữu cơ ─────────────────────────
     {
@@ -343,7 +343,7 @@ export const unit12: UnitInput = {
           conceptIds: ['conservation-of-mass', 'combustion'],
         },
       ],
-      unlocksMolecules: ['c4h10'],
+      // butane đã được mở khoá ở Unit 10 (bài tỉ khối của chất khí)
       baseXp: 10,
     },
 
