@@ -12,12 +12,35 @@ having count(*) >= 20
 order by percent_correct asc
 limit 30;
 
--- 2. Bài học nào người ta bỏ dở: số người làm xong bài này nhưng không làm bài kế tiếp.
-with done as (select distinct user_id, lesson_id from lesson_attempts)
-select lesson_id, count(*) as learners
-from done
-group by 1
-order by 1;
+-- 2. Bài học nào bị bỏ dở: số lượt bắt đầu, số lượt làm xong và số lượt rời đi giữa chừng.
+--    Nguồn: learning_events (lesson_start, lesson_exit) và lesson_attempts (lượt làm xong).
+--    Lượt bắt đầu mà không có cả "xong" lẫn "rời" là do mất mạng hoặc trình duyệt bị tắt đột ngột.
+with starts as (
+  select lesson_id, count(*) as started from learning_events where type = 'lesson_start' group by 1
+), exits as (
+  select lesson_id, count(*) as exited, round(avg(answered), 1) as avg_answered_before_exit
+  from learning_events where type = 'lesson_exit' group by 1
+), done as (
+  select lesson_id, count(*) as completed from lesson_attempts group by 1
+)
+select s.lesson_id,
+       s.started,
+       coalesce(d.completed, 0)                                        as completed,
+       coalesce(e.exited, 0)                                           as exited,
+       round(100.0 * coalesce(d.completed, 0) / s.started, 1)          as percent_completed,
+       e.avg_answered_before_exit
+from starts s
+left join exits e using (lesson_id)
+left join done d using (lesson_id)
+order by percent_completed asc, s.started desc;
+
+-- 2b. Người học rời đi ở câu nào nhiều nhất (cả bài học lẫn ôn tập).
+select exercise_id, type, count(*) as exits
+from learning_events
+where type in ('lesson_exit', 'review_exit') and exercise_id is not null
+group by 1, 2
+order by exits desc
+limit 30;
 
 -- 3. Giữ chân theo ngày: trong số người học ngày D, bao nhiêu người quay lại ngày D+1 và D+7.
 with days as (

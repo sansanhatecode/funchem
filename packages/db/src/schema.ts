@@ -232,6 +232,34 @@ export const xpEvents = pgTable(
   ],
 )
 
+/**
+ * Sự kiện học tập cho phân tích: bắt đầu và rời một lượt bài học hay ôn tập.
+ * Lượt làm xong đã có trong lesson_attempts; bảng này cho biết những lượt bị bỏ dở và bỏ ở câu nào.
+ */
+export const learningEvents = pgTable(
+  'learning_events',
+  {
+    id: text('id')
+      .primaryKey()
+      .default(sql`gen_random_uuid()`),
+    userId: text('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    /** 'lesson_start' | 'lesson_exit' | 'review_start' | 'review_exit' */
+    type: text('type').notNull(),
+    lessonId: text('lesson_id'),
+    /** câu đang hiện khi người học rời đi */
+    exerciseId: text('exercise_id'),
+    /** số câu đã trả lời trong lượt này khi sự kiện xảy ra */
+    answered: integer('answered'),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    index('learning_events_type_lesson_idx').on(t.type, t.lessonId),
+    index('learning_events_user_time_idx').on(t.userId, t.createdAt),
+  ],
+)
+
 /** Phiên bản nội dung đã phát hành, để lịch sử attempt luôn tra ngược được. */
 export const contentReleases = pgTable(
   'content_releases',

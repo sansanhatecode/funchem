@@ -418,6 +418,9 @@ export async function mergeProgress(db: Db, fromUserId: string, toUserId: string
         updated_at = now()
       from user_stats s where s.user_id = ${fromUserId} and t.user_id = ${toUserId}
     `)
+    await tx.execute(
+      sql`update learning_events set user_id = ${toUserId} where user_id = ${fromUserId}`,
+    )
     // dữ liệu ẩn danh còn lại bị xoá theo cascade khi Better Auth xoá user ẩn danh
   })
 }

@@ -23,6 +23,14 @@ import { playSound, setMuted, useMuted } from '@/lib/sound'
 
 export type { Submitted } from '@/lib/run-queue'
 
+export interface RunnerEvent {
+  kind: 'start' | 'exit'
+  /** câu đang hiện (chỉ có khi rời đi) */
+  exerciseId?: string
+  /** số câu đã trả lời trong lượt này */
+  answered: number
+}
+
 export interface ExerciseRunnerProps<R> {
   exercises: Exercise[]
   color: string
@@ -32,6 +40,11 @@ export interface ExerciseRunnerProps<R> {
   /** gửi các câu trả lời ĐẦU TIÊN của người học lên server để chấm */
   submit: (answers: Submitted[], durationSec: number) => Promise<R>
   onSubmitted?: () => void
+  /**
+   * Báo khi người học bắt đầu lượt bài tập, và khi rời đi lúc chưa làm xong
+   * (bấm thoát, chuyển trang hoặc đóng tab). Dùng cho phân tích học tập.
+   */
+  onEvent?: (event: RunnerEvent) => void
   renderResult: (result: R, restart: () => void) => ReactNode
 }
 
@@ -47,6 +60,7 @@ export function ExerciseRunner<R>({
   intro,
   submit,
   onSubmitted,
+  onEvent,
   renderResult,
 }: ExerciseRunnerProps<R>) {
   const initialQueue = () => startRun(exercises).queue
@@ -76,8 +90,34 @@ export function ExerciseRunner<R>({
   const item = queue[pos]!
   const exercise = item.exercise
 
-  const start = () => {
+  // Trạng thái mới nhất cho các hàm chạy ngoài vòng render (rời trang, đóng tab)
+  const live = useRef({ phase, exerciseId: exercise.id, answered: answers.length, onEvent })
+  live.current = { phase, exerciseId: exercise.id, answered: answers.length, onEvent }
+  const begin = () => {
     startedAt.current = Date.now()
+    live.current.onEvent?.({ kind: 'start', answered: 0 })
+  }
+  useEffect(() => {
+    // lượt không có thẻ Khám phá (ôn tập, bài kiểm tra) bắt đầu ngay khi mở
+    if (!intro) begin()
+    const leave = () => {
+      const now = live.current
+      // bỏ qua lần gỡ-gắn tức thì của React ở chế độ dev
+      if (now.phase !== 'exercise' || !startedAt.current || Date.now() - startedAt.current < 1500)
+        return
+      startedAt.current = null
+      now.onEvent?.({ kind: 'exit', exerciseId: now.exerciseId, answered: now.answered })
+    }
+    window.addEventListener('pagehide', leave)
+    return () => {
+      window.removeEventListener('pagehide', leave)
+      leave()
+    }
+    // mảng phụ thuộc rỗng: chỉ chạy một lần cho mỗi lượt mở trang, đọc trạng thái mới nhất qua `live`
+  }, [])
+
+  const start = () => {
+    begin()
     setPhase('exercise')
   }
 
@@ -110,7 +150,7 @@ export function ExerciseRunner<R>({
     setAnswers([])
     setDraft(null)
     setCheck(null)
-    startedAt.current = Date.now()
+    begin()
     setPhase('exercise')
   }
 

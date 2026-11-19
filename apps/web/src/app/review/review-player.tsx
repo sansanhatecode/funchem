@@ -12,6 +12,7 @@ import { Confetti } from '@/components/ui/confetti'
 import { api } from '@/lib/api'
 import { ContentProvider } from '@/lib/content-context'
 import type { ContentSlice, ExercisesBundle } from '@/lib/content-types'
+import { trackEvent } from '@/lib/track'
 import { progressKey, useProgress } from '@/lib/use-progress'
 
 const EMPTY_SLICE: ContentSlice = { molecules: [], reactions: [] }
@@ -85,6 +86,13 @@ export function ReviewPlayer() {
         color="var(--color-sun-deep)"
         exitHref="/learn"
         submit={async (answers) => unwrap(await api.review.$post({ json: { answers } }))}
+        onEvent={(e) =>
+          trackEvent({
+            type: e.kind === 'start' ? 'review_start' : 'review_exit',
+            ...(e.exerciseId ? { exerciseId: e.exerciseId } : {}),
+            answered: e.answered,
+          })
+        }
         onSubmitted={() => void queryClient.invalidateQueries({ queryKey: progressKey(user.id) })}
         renderResult={(result) => (
           <div className="relative m-auto flex w-full flex-col items-center gap-5 py-6 text-center">

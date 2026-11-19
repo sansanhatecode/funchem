@@ -1,6 +1,7 @@
 import { fixtureContent } from '@funchem/content/testing'
 import { createDb, schema, sql } from '@funchem/db'
 import { afterAll, beforeEach, describe, expect, it } from 'vitest'
+import { recordLearningEvent } from './analytics.js'
 import {
   getProgress,
   LessonLockedError,
@@ -332,6 +333,32 @@ d('progress service (Postgres)', () => {
     const asGuest = await getLeaderboard(db, guest)
     expect(asGuest.me).toBeNull()
     expect(asGuest.myXp).toBe(15)
+  })
+
+  it('sự kiện học tập: ghi lại, theo người học khi khách đăng ký, mất khi xoá tài khoản', async () => {
+    const guest = await mkUser('u-ev-guest', true)
+    const real = await mkUser('u-ev-real')
+    await recordLearningEvent(db, { userId: guest, type: 'lesson_start', lessonId: 'u1-l1-atoms' })
+    await recordLearningEvent(db, {
+      userId: guest,
+      type: 'lesson_exit',
+      lessonId: 'u1-l1-atoms',
+      exerciseId: 'u1-l1-e3',
+      answered: 2,
+    })
+    await submitAttempt(db, { userId: guest, ...lesson1 }, fixtureContent)
+    await mergeProgress(db, guest, real)
+    await db.delete(schema.user).where(sql`id = ${guest}`)
+
+    const rows = await db.select().from(schema.learningEvents).orderBy(schema.learningEvents.type)
+    expect(rows.map((r) => [r.userId, r.type, r.exerciseId, r.answered])).toEqual([
+      [real, 'lesson_exit', 'u1-l1-e3', 2],
+      [real, 'lesson_start', null, null],
+    ])
+
+    await deleteAccount(db, real)
+    const [n] = await db.select({ c: sql<number>`count(*)::int` }).from(schema.learningEvents)
+    expect(n?.c).toBe(0)
   })
 
   it('xoá tài khoản xoá sạch dữ liệu học tập', async () => {

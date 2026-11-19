@@ -13,6 +13,7 @@ import { Card } from '@/components/ui/card'
 import { Confetti } from '@/components/ui/confetti'
 import { api } from '@/lib/api'
 import type { LessonBundle } from '@/lib/content-types'
+import { trackEvent } from '@/lib/track'
 import { progressKey, useProgress } from '@/lib/use-progress'
 import { ExerciseRunner, RunnerShell } from './exercise-runner'
 import { IntroCard } from './intro-card'
@@ -77,6 +78,14 @@ export function LessonPlayer({ bundle }: { bundle: LessonBundle }) {
       intro={lesson.intro ? <IntroCard intro={lesson.intro} /> : undefined}
       submit={async (answers, durationSec) =>
         unwrap(await api.attempts.$post({ json: { lessonId, answers, durationSec } }))
+      }
+      onEvent={(e) =>
+        trackEvent({
+          type: e.kind === 'start' ? 'lesson_start' : 'lesson_exit',
+          lessonId,
+          ...(e.exerciseId ? { exerciseId: e.exerciseId } : {}),
+          answered: e.answered,
+        })
       }
       onSubmitted={() => {
         void queryClient.invalidateQueries({ queryKey: progressKey(user?.id) })

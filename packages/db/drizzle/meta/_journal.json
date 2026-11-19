@@ -15,6 +15,13 @@
       "when": 1795050447553,
       "tag": "0001_wise_quicksilver",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795051474388,
+      "tag": "0002_square_silvermane",
+      "breakpoints": true
     }
   ]
 }

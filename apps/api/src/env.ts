@@ -23,6 +23,8 @@ const EnvSchema = z.object({
   OTP_DEBUG_FILE: z.string().optional(),
   EMAIL_FROM: z.string().default('FunChem <no-reply@funchem.vn>'),
   LOG_LEVEL: z.string().default('info'),
+  /** DSN của Sentry. Bỏ trống thì không gửi gì đi, lỗi chỉ ghi ra log. */
+  SENTRY_DSN: z.string().url().optional(),
 })
 
 export type Env = z.infer<typeof EnvSchema>

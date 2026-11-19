@@ -10,6 +10,8 @@ import { z } from 'zod'
 import type { Auth } from './auth.js'
 import type { Env } from './env.js'
 import { logger } from './lib/logger.js'
+import { captureError } from './lib/monitoring.js'
+import { LEARNING_EVENT_TYPES, recordLearningEvent } from './services/analytics.js'
 import {
   getProgress,
   getRecentAttempts,
@@ -34,6 +36,21 @@ export interface AppDeps {
 
 type SessionUser = Auth['$Infer']['Session']['user']
 type Variables = { user: SessionUser; sessionId: string }
+
+/** Bộ đếm đơn giản trong bộ nhớ: tối đa `max` lần mỗi `windowMs` cho một khoá. Đủ dùng để chặn tràn log. */
+function createWindowLimiter(max: number, windowMs: number) {
+  const hits = new Map<string, { count: number; resetAt: number }>()
+  return (key: string, now = Date.now()): boolean => {
+    const hit = hits.get(key)
+    if (!hit || now >= hit.resetAt) {
+      if (hits.size > 5000) hits.clear()
+      hits.set(key, { count: 1, resetAt: now + windowMs })
+      return true
+    }
+    hit.count++
+    return hit.count <= max
+  }
+}
 
 export function createApp({ env, db, auth }: AppDeps) {
   const app = new Hono<{ Variables: Variables }>()
@@ -150,15 +167,63 @@ export function createApp({ env, db, auth }: AppDeps) {
     .use('*', requireUser)
     .get('/', async (c) => c.json(await getLeaderboard(db, c.get('user').id)))
 
+  // Sự kiện học tập (bắt đầu, rời một lượt) để biết bài nào bị bỏ dở và bỏ ở câu nào.
+  const events = new Hono<{ Variables: Variables }>().use('*', requireUser).post(
+    '/',
+    zValidator(
+      'json',
+      z.object({
+        type: z.enum(LEARNING_EVENT_TYPES),
+        lessonId: z.string().min(1).max(100).optional(),
+        exerciseId: z.string().min(1).max(100).optional(),
+        answered: z.number().int().min(0).max(200).optional(),
+      }),
+    ),
+    async (c) => {
+      await recordLearningEvent(db, { userId: c.get('user').id, ...c.req.valid('json') })
+      return c.json({ ok: true }, 201)
+    },
+  )
+
+  // Lỗi JavaScript ở trình duyệt được gửi về đây thay vì nhúng thư viện giám sát vào trang web.
+  // Không cần đăng nhập (lỗi có thể xảy ra trước khi có phiên), nên giới hạn số lần theo địa chỉ IP.
+  const allowClientError = createWindowLimiter(20, 60_000)
+  const clientErrors = new Hono().post(
+    '/',
+    zValidator(
+      'json',
+      z.object({
+        message: z.string().min(1).max(500),
+        stack: z.string().max(4000).optional(),
+        url: z.string().max(500).optional(),
+        source: z.enum(['error', 'unhandledrejection', 'boundary']).optional(),
+      }),
+    ),
+    (c) => {
+      const ip = c.req.header('fly-client-ip') ?? c.req.header('x-forwarded-for') ?? 'unknown'
+      if (!allowClientError(ip)) return c.json({ error: 'too_many' }, 429)
+      const report = { ...c.req.valid('json'), userAgent: c.req.header('user-agent') }
+      logger.error({ clientError: report }, 'lỗi ở trình duyệt')
+      const err = new Error(report.message)
+      err.name = 'ClientError'
+      if (report.stack) err.stack = report.stack
+      captureError(err, { ...report, stack: undefined })
+      return c.json({ ok: true }, 201)
+    },
+  )
+
   const routes = app
     .route('/me', me)
     .route('/attempts', attempts)
     .route('/review', review)
     .route('/leaderboard', leaderboard)
+    .route('/events', events)
+    .route('/client-errors', clientErrors)
 
   app.notFound((c) => c.json({ error: 'not_found' }, 404))
   app.onError((err, c) => {
     logger.error({ err, path: c.req.path }, 'unhandled')
+    captureError(err, { path: c.req.path, method: c.req.method })
     return c.json({ error: 'internal' }, 500)
   })
 
