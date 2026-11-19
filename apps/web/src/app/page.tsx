@@ -298,10 +298,11 @@ export default function HomePage() {
             <p className="mt-2 text-lg text-ink-soft">
               Chạm vào câu hỏi để xem hoá học trả lời thế nào.
             </p>
-            <ul className="mt-8 grid gap-5 md:grid-cols-2">
+            {/* items-start: thẻ đang mở không kéo thẻ cùng hàng dài ra theo */}
+            <ul className="mt-8 grid items-start gap-5 md:grid-cols-2">
               {WHY.map((w) => (
                 <li key={w.question}>
-                  <details className="group h-full overflow-hidden rounded-(--radius-card) border border-line bg-paper shadow-(--shadow-card)">
+                  <details className="group overflow-hidden rounded-(--radius-card) border border-line bg-paper shadow-(--shadow-card)">
                     <summary className="flex cursor-pointer list-none flex-col [&::-webkit-details-marker]:hidden">
                       <LazySceneView id={w.scene} decorative />
                       <span className="flex items-center justify-between gap-3 p-4">
