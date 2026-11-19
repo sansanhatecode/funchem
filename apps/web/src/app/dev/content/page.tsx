@@ -360,7 +360,7 @@ function Id({ children }: { children: string }) {
 function Answer({ children }: { children: React.ReactNode }) {
   return (
     <p className="mt-2 rounded-xl bg-good-soft px-3 py-2 text-sm">
-      <span className="font-extrabold text-good">Đáp án: </span>
+      <span className="font-extrabold text-good-ink">Đáp án: </span>
       {children}
     </p>
   )
@@ -426,7 +426,9 @@ function ExerciseBody({ exercise: ex, showAnswers }: { exercise: Exercise; showA
               >
                 <span className="font-extrabold">{String.fromCharCode(65 + i)}.</span>
                 <ItemContent item={o} moleculeSize={64} />
-                {correct && <span className="ml-auto text-sm font-extrabold text-good">Đúng</span>}
+                {correct && (
+                  <span className="ml-auto text-sm font-extrabold text-good-ink">Đúng</span>
+                )}
               </li>
             )
           })}
@@ -486,7 +488,7 @@ function ExerciseBody({ exercise: ex, showAnswers }: { exercise: Exercise; showA
             <div className="mt-2 flex items-center gap-3 rounded-xl bg-good-soft px-3 py-2">
               <MoleculeView molecule={target} size={64} decorative />
               <p>
-                <span className="font-extrabold text-good">Đáp án: </span>
+                <span className="font-extrabold text-good-ink">Đáp án: </span>
                 {describeCorrectAnswer(ex, content)}
               </p>
             </div>

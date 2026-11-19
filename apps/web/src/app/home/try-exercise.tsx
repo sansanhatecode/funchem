@@ -44,7 +44,7 @@ export function TryExercise({ exercise }: { exercise: Exercise }) {
           <div className="flex flex-col items-center gap-3 rounded-2xl bg-good-soft p-4 text-center sm:flex-row sm:text-left">
             <Mascot mood="cheer" size={64} />
             <div className="flex-1">
-              <p className="text-lg font-extrabold text-good">Chính xác!</p>
+              <p className="text-lg font-extrabold text-good-ink">Chính xác!</p>
               <p className="text-sm text-ink-soft">
                 Bạn vừa làm xong một bài tập hoá học. {exercise.explanation}
               </p>
@@ -58,7 +58,7 @@ export function TryExercise({ exercise }: { exercise: Exercise }) {
           <div className="flex flex-col items-center gap-3 rounded-2xl bg-bad-soft p-4 text-center sm:flex-row sm:text-left">
             <Mascot mood="oops" size={64} />
             <div className="flex-1">
-              <p className="text-lg font-extrabold text-bad">Chưa đúng</p>
+              <p className="text-lg font-extrabold text-bad-ink">Chưa đúng</p>
               <p className="text-sm text-ink-soft">
                 Gợi ý: công thức của nước là H₂O, tức 2 hydrogen và 1 oxygen.
               </p>

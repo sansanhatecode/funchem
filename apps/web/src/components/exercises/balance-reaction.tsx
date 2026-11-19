@@ -147,7 +147,12 @@ export function BalanceReactionExercise({
                   {elementLabel(el)}
                 </th>
                 <td className="p-2 text-lg font-extrabold">{l}</td>
-                <td className={cn('p-2 text-lg font-extrabold', ok ? 'text-good' : 'text-bad')}>
+                <td
+                  className={cn(
+                    'p-2 text-lg font-extrabold',
+                    ok ? 'text-good-ink' : 'text-bad-ink',
+                  )}
+                >
                   <span aria-hidden="true">{ok ? '=' : '≠'}</span>
                   <span className="sr-only">{ok ? 'bằng' : 'khác'}</span>
                 </td>

@@ -153,9 +153,7 @@ export function ReactionPlayer({
                   aria-current={i === step ? 'step' : undefined}
                   className={cn(
                     'min-w-8 rounded-full px-3 py-1.5 text-xs font-bold whitespace-nowrap transition-colors',
-                    i === step
-                      ? 'bg-brand text-white'
-                      : 'bg-line text-ink-soft hover:bg-brand-soft',
+                    i === step ? 'bg-brand text-ink' : 'bg-line text-ink-soft hover:bg-brand-soft',
                   )}
                 >
                   <span className="sr-only">Bước </span>

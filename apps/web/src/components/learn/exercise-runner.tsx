@@ -219,7 +219,7 @@ export function ExerciseRunner<R>({
                   <p
                     className={cn(
                       'text-lg font-extrabold',
-                      check.correct ? 'text-good' : 'text-bad',
+                      check.correct ? 'text-good-ink' : 'text-bad-ink',
                     )}
                   >
                     {check.correct ? 'Chính xác!' : 'Chưa đúng'}

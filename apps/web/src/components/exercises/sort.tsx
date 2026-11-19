@@ -78,7 +78,7 @@ export function SortExercise({ exercise, value, onChange, checked }: ExercisePro
                     setSelected(null)
                   }
                 }}
-                className="rounded-xl px-2 py-1.5 text-center text-sm font-extrabold enabled:bg-brand enabled:text-white"
+                className="rounded-xl px-2 py-1.5 text-center text-sm font-extrabold enabled:bg-brand enabled:text-ink"
                 aria-label={selected ? `Xếp thẻ đang chọn vào nhóm ${g.label}` : `Nhóm ${g.label}`}
               >
                 {g.label}

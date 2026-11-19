@@ -81,7 +81,7 @@ function ExerciseDemo({ exercise }: { exercise: Exercise }) {
         {result && (
           <p
             role="status"
-            className={result.correct ? 'font-bold text-good' : 'font-bold text-bad'}
+            className={result.correct ? 'font-bold text-good-ink' : 'font-bold text-bad-ink'}
           >
             {result.correct
               ? 'Đúng'

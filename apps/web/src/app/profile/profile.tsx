@@ -191,7 +191,7 @@ export function Profile() {
                     Lưu
                   </Button>
                 </div>
-                <p role="status" className="min-h-5 text-sm font-bold text-good">
+                <p role="status" className="min-h-5 text-sm font-bold text-good-ink">
                   {saved && !update.isPending ? 'Đã lưu.' : ''}
                 </p>
               </form>
@@ -264,7 +264,7 @@ export function Profile() {
               <button
                 type="button"
                 onClick={() => dialogRef.current?.showModal()}
-                className="flex min-h-11 items-center justify-center gap-2 rounded-2xl text-sm font-bold text-bad hover:bg-bad-soft"
+                className="flex min-h-11 items-center justify-center gap-2 rounded-2xl text-sm font-bold text-bad-ink hover:bg-bad-soft"
               >
                 <TrashIcon weight="bold" size={16} />
                 Xoá tài khoản và toàn bộ dữ liệu
@@ -296,7 +296,7 @@ export function Profile() {
           khôi phục.
         </p>
         {remove.isError && (
-          <p className="mt-2 text-sm font-bold text-bad">Không xoá được. Thử lại sau.</p>
+          <p className="mt-2 text-sm font-bold text-bad-ink">Không xoá được. Thử lại sau.</p>
         )}
         <div className="mt-5 flex flex-col gap-2">
           <button

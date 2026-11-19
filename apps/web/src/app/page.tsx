@@ -305,7 +305,7 @@ export default function HomePage() {
                         <span className="text-lg leading-snug font-extrabold">{w.question}</span>
                         <span
                           aria-hidden="true"
-                          className="grid size-9 shrink-0 place-items-center rounded-full bg-brand text-xl font-extrabold text-white transition-transform duration-200 group-open:rotate-45"
+                          className="grid size-9 shrink-0 place-items-center rounded-full bg-brand text-xl font-extrabold text-ink transition-transform duration-200 group-open:rotate-45"
                         >
                           +
                         </span>
@@ -334,7 +334,7 @@ export default function HomePage() {
                 <ul className="mt-5 flex flex-col gap-3">
                   {NOT_HARD.map((line) => (
                     <li key={line} className="flex items-start gap-3 text-lg">
-                      <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-brand text-white">
+                      <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-brand text-ink">
                         <CheckIcon weight="bold" size={14} aria-hidden="true" />
                       </span>
                       {line}
@@ -348,13 +348,13 @@ export default function HomePage() {
 
           {/* ───── Lời mời cuối trang ───── */}
           <section className={cn(container, 'py-14')}>
-            <div className="flex flex-col items-center gap-5 rounded-(--radius-card) bg-brand px-6 py-10 text-center text-white sm:flex-row sm:text-left">
+            <div className="flex flex-col items-center gap-5 rounded-(--radius-card) bg-brand px-6 py-10 text-center text-ink sm:flex-row sm:text-left">
               <Mascot mood="cheer" size={110} />
               <div className="flex-1">
                 <h2 className="text-2xl font-extrabold text-balance md:text-3xl">
                   Nhìn quanh xem. Bạn muốn hiểu thứ gì trước?
                 </h2>
-                <p className="mt-1 opacity-90">
+                <p className="mt-1">
                   Không cần đăng ký. Tiến độ được giữ lại khi bạn tạo tài khoản sau.
                 </p>
               </div>

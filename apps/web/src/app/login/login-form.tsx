@@ -176,7 +176,7 @@ export function LoginForm() {
         .
       </p>
 
-      <p id="form-error" role="alert" className="mt-4 min-h-5 text-sm font-medium text-bad">
+      <p id="form-error" role="alert" className="mt-4 min-h-5 text-sm font-medium text-bad-ink">
         {error}
       </p>
     </Card>

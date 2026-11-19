@@ -14,7 +14,7 @@
   --color-line: #e3e8ef;
 
   --color-brand: #12b886; /* xanh phòng thí nghiệm */
-  --color-brand-deep: #0b8f68;
+  --color-brand-deep: #086b4e; /* đủ đậm để làm màu chữ trên nền sáng (trên 4.5:1) */
   --color-brand-soft: #e3f9f1;
 
   --color-sun: #ffc233; /* XP, streak */
@@ -23,8 +23,10 @@
 
   --color-good: #2fb344;
   --color-good-soft: #e6f6e9;
+  --color-good-ink: #217d30; /* chữ báo đúng: đủ 4.5:1 trên nền sáng và nền good-soft */
   --color-bad: #e5484d;
   --color-bad-soft: #fdecec;
+  --color-bad-ink: #c33d41; /* chữ báo sai: đủ 4.5:1 trên nền sáng và nền bad-soft */
 
   --radius-card: 1.25rem;
   --radius-pill: 999px;

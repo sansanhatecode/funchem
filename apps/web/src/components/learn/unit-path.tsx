@@ -5,6 +5,7 @@ import { LazySceneView } from '@/components/scenes/lazy-scene-view'
 import { CheckIcon, LockIcon, StarIcon } from '@/components/ui/icons'
 import { ProgressBar } from '@/components/ui/progress-bar'
 import { cn } from '@/lib/cn'
+import { inkOn, readableOn } from '@/lib/color'
 import type { OutlineLesson, OutlineUnit } from '@/lib/content-types'
 
 export type LessonStatus = 'locked' | 'available' | 'completed'
@@ -31,23 +32,25 @@ export function UnitPath({
   currentLessonId: string | undefined
 }) {
   const bannerScene = unit.lessons.map((l) => l.scene).find(Boolean)
+  const onColor = inkOn(unit.color)
   return (
     <section aria-labelledby={`unit-${unit.id}`} className="mt-8">
       <div
-        className="flex items-stretch overflow-hidden rounded-(--radius-card) text-white"
-        style={{ backgroundColor: unit.color }}
+        className="flex items-stretch overflow-hidden rounded-(--radius-card)"
+        // chữ trắng hay chữ đậm tuỳ màu Unit, sao cho luôn đủ tương phản
+        style={{ backgroundColor: unit.color, color: onColor }}
       >
         <div className="min-w-0 flex-1 p-5">
-          <p className="text-sm font-bold opacity-90">Unit {unit.order}</p>
+          <p className="text-sm font-bold">Unit {unit.order}</p>
           <h2 id={`unit-${unit.id}`} className="text-xl font-extrabold">
             {unit.title}
           </h2>
-          <p className="text-sm opacity-90">{unit.tagline}</p>
+          <p className="text-sm">{unit.tagline}</p>
           <ProgressBar
-            className="mt-3 bg-white/30"
+            className="mt-3 bg-white/40"
             value={ratio}
             label={`Tiến độ Unit ${unit.order}`}
-            color="#ffffff"
+            color={onColor}
           />
         </div>
         {bannerScene && (
@@ -160,14 +163,14 @@ function LessonNode({
       <span
         aria-hidden="true"
         className={cn(
-          'grid place-items-center rounded-full text-2xl font-extrabold text-white transition-transform duration-100',
+          'grid place-items-center rounded-full text-2xl font-extrabold transition-transform duration-100',
           isCheckpoint ? 'size-24' : 'size-20',
           locked
             ? 'bg-line text-ink-soft shadow-[0_6px_0_#cfd6df]'
             : 'shadow-[0_6px_0_rgb(0_0_0/0.18)] group-active:translate-y-[6px] group-active:shadow-none',
           status === 'completed' && 'ring-4 ring-sun ring-offset-2 ring-offset-canvas',
         )}
-        style={locked ? undefined : { backgroundColor: color }}
+        style={locked ? undefined : { backgroundColor: color, color: inkOn(color) }}
       >
         {status === 'completed' ? (
           <CheckIcon weight="bold" size={34} />
@@ -176,7 +179,9 @@ function LessonNode({
         ) : isCheckpoint ? (
           <StarIcon weight="fill" size={38} />
         ) : (
-          index + 1
+          // Số bài vẽ bằng CSS chứ không phải chữ trong trang: trình đọc màn hình đã đọc "Bài 1" từ aria-label,
+          // và chữ nhìn thấy trong liên kết phải nằm gọn trong tên đó (WCAG 2.5.3).
+          <span data-n={index + 1} className="before:content-[attr(data-n)]" />
         )}
       </span>
     </span>
@@ -204,22 +209,25 @@ function LessonNode({
     )
   }
   return (
-    <Link
-      href={`/learn/${lesson.id}`}
-      className="group relative flex flex-col items-center rounded-3xl"
-      aria-label={`${kind}: ${lesson.title}, ${statusLabel[status]}`}
-    >
+    <div className="relative flex flex-col items-center">
+      {/* bong bóng nằm ngoài thẻ liên kết: chữ trong liên kết phải khớp với tên mà trình đọc màn hình đọc */}
       {isCurrent && (
         <span
           aria-hidden="true"
-          className="absolute -top-9 rounded-xl border-2 border-line bg-paper px-3 py-1 text-xs font-extrabold tracking-wide uppercase"
-          style={{ color, animation: 'bounce-soft 1.6s ease-in-out infinite' }}
+          className="pointer-events-none absolute -top-9 z-10 rounded-xl border-2 border-line bg-paper px-3 py-1 text-xs font-extrabold tracking-wide uppercase"
+          style={{ color: readableOn(color), animation: 'bounce-soft 1.6s ease-in-out infinite' }}
         >
           Bắt đầu
         </span>
       )}
-      {circle}
-      {caption}
-    </Link>
+      <Link
+        href={`/learn/${lesson.id}`}
+        className="group relative flex flex-col items-center rounded-3xl"
+        aria-label={`${kind}: ${lesson.title}, ${statusLabel[status]}`}
+      >
+        {circle}
+        {caption}
+      </Link>
+    </div>
   )
 }

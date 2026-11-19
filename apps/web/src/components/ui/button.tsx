@@ -12,7 +12,7 @@ const base =
 // Nút kiểu "phím bấm": viền dưới dày, nhấn xuống thì lún
 const variants: Record<Variant, string> = {
   primary:
-    'bg-brand text-white shadow-[0_4px_0_var(--color-brand-deep)] hover:brightness-105 ' +
+    'bg-brand text-ink shadow-[0_4px_0_var(--color-brand-deep)] hover:brightness-105 ' +
     'active:translate-y-[4px] active:shadow-none',
   secondary:
     'bg-paper text-ink border-2 border-line shadow-[0_4px_0_var(--color-line)] hover:bg-canvas ' +

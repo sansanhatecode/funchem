@@ -111,12 +111,8 @@
           "name": "account_user_id_user_id_fk",
           "tableFrom": "account",
           "tableTo": "user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -190,12 +186,8 @@
           "name": "concept_strength_user_id_user_id_fk",
           "tableFrom": "concept_strength",
           "tableTo": "user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -203,10 +195,7 @@
       "compositePrimaryKeys": {
         "concept_strength_user_id_concept_id_pk": {
           "name": "concept_strength_user_id_concept_id_pk",
-          "columns": [
-            "user_id",
-            "concept_id"
-          ]
+          "columns": ["user_id", "concept_id"]
         }
       },
       "uniqueConstraints": {},
@@ -384,12 +373,8 @@
           "name": "lesson_attempts_user_id_user_id_fk",
           "tableFrom": "lesson_attempts",
           "tableTo": "user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -464,12 +449,8 @@
           "name": "profiles_user_id_user_id_fk",
           "tableFrom": "profiles",
           "tableTo": "user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -516,9 +497,7 @@
         "rate_limit_key_unique": {
           "name": "rate_limit_key_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "key"
-          ]
+          "columns": ["key"]
         }
       },
       "policies": {},
@@ -602,12 +581,8 @@
           "name": "session_user_id_user_id_fk",
           "tableFrom": "session",
           "tableTo": "user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -617,9 +592,7 @@
         "session_token_unique": {
           "name": "session_token_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "token"
-          ]
+          "columns": ["token"]
         }
       },
       "policies": {},
@@ -690,9 +663,7 @@
         "user_email_unique": {
           "name": "user_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       },
       "policies": {},
@@ -729,12 +700,8 @@
           "name": "user_badges_user_id_user_id_fk",
           "tableFrom": "user_badges",
           "tableTo": "user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -742,10 +709,7 @@
       "compositePrimaryKeys": {
         "user_badges_user_id_badge_id_pk": {
           "name": "user_badges_user_id_badge_id_pk",
-          "columns": [
-            "user_id",
-            "badge_id"
-          ]
+          "columns": ["user_id", "badge_id"]
         }
       },
       "uniqueConstraints": {},
@@ -803,12 +767,8 @@
           "name": "user_lessons_user_id_user_id_fk",
           "tableFrom": "user_lessons",
           "tableTo": "user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -816,10 +776,7 @@
       "compositePrimaryKeys": {
         "user_lessons_user_id_lesson_id_pk": {
           "name": "user_lessons_user_id_lesson_id_pk",
-          "columns": [
-            "user_id",
-            "lesson_id"
-          ]
+          "columns": ["user_id", "lesson_id"]
         }
       },
       "uniqueConstraints": {},
@@ -857,12 +814,8 @@
           "name": "user_molecules_user_id_user_id_fk",
           "tableFrom": "user_molecules",
           "tableTo": "user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -870,10 +823,7 @@
       "compositePrimaryKeys": {
         "user_molecules_user_id_molecule_id_pk": {
           "name": "user_molecules_user_id_molecule_id_pk",
-          "columns": [
-            "user_id",
-            "molecule_id"
-          ]
+          "columns": ["user_id", "molecule_id"]
         }
       },
       "uniqueConstraints": {},
@@ -939,12 +889,8 @@
           "name": "user_stats_user_id_user_id_fk",
           "tableFrom": "user_stats",
           "tableTo": "user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -1108,12 +1054,8 @@
           "name": "xp_events_user_id_user_id_fk",
           "tableFrom": "xp_events",
           "tableTo": "user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
