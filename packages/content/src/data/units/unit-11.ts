@@ -10,7 +10,7 @@ export const unit11: UnitInput = {
   order: 11,
   title: 'Dung dịch và tách chất',
   tagline: 'Tan bao nhiêu, đậm cỡ nào, tách ra sao',
-  color: '#00B8A9',
+  color: '#C08A3E',
   lessons: [
     // ───────────────────────── Bài 1: Chất tan, dung môi, dung dịch ─────────────────────────
     {

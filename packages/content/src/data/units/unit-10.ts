@@ -13,7 +13,7 @@ export const unit10: UnitInput = {
   order: 10,
   title: 'Đếm bằng mol',
   tagline: 'Mol, khối lượng mol và tính theo phương trình',
-  color: '#00B8A9',
+  color: '#6C5CE7',
   lessons: [
     // ───────────────────────── Bài 1: Mol và số Avogadro ─────────────────────────
     {
