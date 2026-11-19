@@ -95,7 +95,7 @@ export const unit11: UnitInput = {
               right: { id: 'r2', text: 'Acetic acid' },
             },
             {
-              left: { id: 'l3', text: 'Nước khoáng có ga' },
+              left: { id: 'l3', text: 'Nước có ga không đường' },
               right: { id: 'r3', text: 'Carbon dioxide' },
             },
             {
@@ -172,7 +172,7 @@ export const unit11: UnitInput = {
             { id: 'i3', text: 'Nước lẫn cát', groupId: 'no' },
             { id: 'i4', text: 'Dầu ăn đổ vào nước', image: 'oil-on-water', groupId: 'no' },
             { id: 'i5', text: 'Nước cất, chỉ gồm các phân tử nước', groupId: 'no' },
-            { id: 'i6', text: 'Nước khoáng có ga', groupId: 'yes' },
+            { id: 'i6', text: 'Nước có ga', groupId: 'yes' },
           ],
           explanation:
             'Nước muối, giấm và nước có ga đều có chất tan lẫn đều trong nước. Cát và dầu ăn không tan trong nước nên hỗn hợp không đồng nhất. Nước cất thì chỉ có một chất nên là chất tinh khiết, không phải hỗn hợp, vì thế cũng không phải dung dịch.',
@@ -300,7 +300,7 @@ export const unit11: UnitInput = {
           prompt:
             'Độ tan tính cho 100 g nước. Nếu đo với lượng nước khác, bạn quy về 100 g. Chọn số đúng',
           template:
-            'Ở 20 °C, 50 g nước hoà tan được tối đa 18 g muối ăn. Vậy 100 g nước hoà tan được tối đa ___ g, đó chính là độ tan của muối ăn ở 20 °C.',
+            'Ở 20 °C, 50 g nước hoà tan được tối đa khoảng 18 g muối ăn. Vậy 100 g nước hoà tan được tối đa khoảng ___ g, đó chính là độ tan của muối ăn ở 20 °C.',
           blanks: [{ accepted: ['36'], wordBank: ['9', '18', '36'] }],
           explanation:
             '100 g nước gấp đôi 50 g nước nên hoà tan được gấp đôi lượng muối: 18 × 2 = 36 g. Bạn cũng thấy độ tan của muối ăn ở 20 °C và 25 °C gần như bằng nhau. Muối ăn là một chất rắn có độ tan thay đổi rất ít theo nhiệt độ.',
@@ -309,7 +309,8 @@ export const unit11: UnitInput = {
         {
           id: 'u11-l2-e8',
           type: 'mcq',
-          prompt: 'Trưa hè oi bức, cá trong ao hay ngoi lên sát mặt nước để đớp không khí. Vì sao?',
+          prompt:
+            'Những ngày hè oi bức, nước ao ấm lên và cá hay ngoi lên sát mặt nước để đớp không khí. Vì sao?',
           options: [
             { id: 'a', text: 'Nước ấm lên nên khí oxygen tan trong nước ít đi' },
             { id: 'b', text: 'Nước ấm lên nên khí oxygen tan trong nước nhiều quá' },
@@ -324,10 +325,10 @@ export const unit11: UnitInput = {
           id: 'u11-l2-e9',
           type: 'true-false',
           prompt:
-            'Dung dịch bão hoà nào cũng đậm đặc, kể cả nước vôi trong, nơi 100 g nước chỉ hoà tan được chưa tới 0,2 g calcium hydroxide là đã bão hoà.',
+            'Ở nhiệt độ phòng, 100 g nước chỉ hoà tan được chưa tới 0,2 g calcium hydroxide là đã bão hoà. Vì đã bão hoà nên nước vôi trong là một dung dịch đậm đặc.',
           answer: false,
           explanation:
-            'Bão hoà chỉ có nghĩa là không hoà tan thêm được nữa, không có nghĩa là đậm đặc. Calcium hydroxide rất ít tan, nên nước vôi trong đã bão hoà mà vẫn rất loãng. Ngược lại, 100 g nước hoà tan 100 g đường là rất đặc mà vẫn chưa bão hoà.',
+            'Bão hoà chỉ có nghĩa là không hoà tan thêm được nữa, không có nghĩa là đậm đặc. Calcium hydroxide rất ít tan, nên nước vôi trong đã bão hoà mà vẫn rất loãng. Ngược lại, 100 g nước ở 25 °C hoà tan 100 g đường là rất đặc mà vẫn chưa bão hoà, vì độ tan của đường khoảng 200 g.',
           conceptIds: ['solubility'],
         },
         {
@@ -714,8 +715,8 @@ export const unit11: UnitInput = {
         title: 'Cốc nước sông mùa lũ',
         story: [
           'Mùa lũ, nước sông Hồng đỏ ngầu phù sa. Múc một cốc để yên trên bàn, vài giờ sau lớp bùn mịn lắng xuống đáy, nước phía trên trong dần. Cốc nước muối thì để cả năm cũng không lắng ra hạt muối nào. Khác nhau ở đâu?',
-          'Ở cỡ hạt. Phóng to phần nước giữa các hạt bùn, bạn chỉ gặp các phân tử nước. Còn mỗi hạt phù sa là cả một khối rắn gồm ít nhất hàng tỉ nguyên tử dính chặt nhau. Chúng không tan, chỉ lơ lửng làm nước đục, rồi chìm dần xuống đáy. Hỗn hợp gồm những hạt chất rắn nhỏ lơ lửng trong chất lỏng gọi là huyền phù.',
-          'Giờ lắc mạnh chai dầu giấm trộn salad: dầu vỡ thành vô số giọt li ti lơ lửng trong giấm, cả chai đục lên. Hỗn hợp gồm những giọt chất lỏng nhỏ lơ lửng trong một chất lỏng khác không hoà tan nó gọi là nhũ tương. Để yên một lúc, các giọt dầu gộp lại và nổi lên thành lớp riêng. Sữa cũng là nhũ tương: những giọt chất béo li ti lơ lửng trong nước.',
+          'Ở cỡ hạt. Phóng to phần nước giữa các hạt bùn, bạn gặp chủ yếu là các phân tử nước. Còn mỗi hạt phù sa là cả một khối rắn gồm vô số nguyên tử dính chặt nhau. Chúng không tan, chỉ lơ lửng làm nước đục, rồi chìm dần xuống đáy. Hỗn hợp gồm những hạt chất rắn nhỏ lơ lửng trong chất lỏng gọi là huyền phù.',
+          'Giờ lắc mạnh chai dầu giấm trộn salad: dầu vỡ thành vô số giọt li ti lơ lửng trong giấm, cả chai đục lên. Hỗn hợp gồm những giọt chất lỏng nhỏ lơ lửng trong một chất lỏng khác không hoà tan nó gọi là nhũ tương. Để yên một lúc, các giọt dầu gộp lại và nổi lên thành lớp riêng. Sữa tươi cũng là nhũ tương: những giọt chất béo li ti lơ lửng trong nước.',
           'Cách nhận ra: dung dịch thì trong suốt, dù có thể có màu, và để yên bao lâu cũng không lắng, không tách lớp. Huyền phù và nhũ tương thì đục. Chúng là hỗn hợp không đồng nhất, và để yên thì thường lắng xuống hoặc tách lớp.',
         ],
         visual: { type: 'molecule', moleculeId: 'h2o', scene: 'muddy-river' },
@@ -780,10 +781,14 @@ export const unit11: UnitInput = {
               groupId: 'sus',
             },
             { id: 'i5', text: 'Nước đường', groupId: 'sol' },
-            { id: 'i6', text: 'Sữa', groupId: 'emu' },
+            {
+              id: 'i6',
+              text: 'Sữa tươi: giọt chất béo li ti lơ lửng trong nước',
+              groupId: 'emu',
+            },
           ],
           explanation:
-            'Muối và đường tan hẳn vào nước nên tạo dung dịch trong suốt. Phù sa và bột sắn dây là hạt rắn không tan trong nước nguội, lơ lửng rồi lắng: huyền phù. Dầu trong giấm và chất béo trong sữa là những giọt lỏng li ti lơ lửng: nhũ tương.',
+            'Muối và đường tan hẳn vào nước nên tạo dung dịch trong suốt. Phù sa và bột sắn dây là hạt rắn không tan trong nước nguội, lơ lửng rồi lắng: huyền phù. Dầu trong giấm và chất béo trong sữa tươi là những giọt lỏng li ti lơ lửng: nhũ tương.',
           conceptIds: ['suspension-emulsion', 'solution'],
         },
         {
@@ -882,7 +887,7 @@ export const unit11: UnitInput = {
           ],
           correctOptionId: 'c',
           explanation:
-            'Giọt chất lỏng (dầu mỡ) lơ lửng trong một chất lỏng khác (nước) là nhũ tương. Dầu mỡ vẫn không tan trong nước, nên nước rửa bát đục chứ không trong. Nhờ lớp nước rửa bát bọc ngoài, các giọt dầu không gộp lại được và trôi đi theo nước.',
+            'Giọt chất lỏng (dầu mỡ) lơ lửng trong một chất lỏng khác (nước) là nhũ tương. Dầu mỡ vẫn không tan trong nước, nên chậu nước sau khi rửa bát đục chứ không trong. Nhờ lớp nước rửa bát bọc ngoài, các giọt dầu không gộp lại được và trôi đi theo nước.',
           conceptIds: ['suspension-emulsion', 'lipid'],
         },
       ],
@@ -1025,7 +1030,8 @@ export const unit11: UnitInput = {
         {
           id: 'u11-l6-e8',
           type: 'order-steps',
-          prompt: 'Muối ăn bị lẫn cát. Sắp xếp các bước để lấy lại muối sạch',
+          prompt:
+            'Trong phòng thí nghiệm, thầy cô có một ít muối ăn bị lẫn cát. Sắp xếp các bước để lấy lại muối sạch',
           steps: [
             { id: 's1', text: 'Cho hỗn hợp vào nước và khuấy: muối tan, cát không tan' },
             { id: 's2', text: 'Đổ qua giấy lọc: cát bị giữ lại, nước muối chảy xuống cốc' },
@@ -1103,7 +1109,9 @@ export const unit11: UnitInput = {
           prompt: 'Tính nồng độ phần trăm rồi gõ con số vào chỗ trống',
           template:
             'Hoà tan hết 30 g đường vào 170 g nước, được 200 g dung dịch. Nồng độ phần trăm của đường là ___ %.',
-          blanks: [{ accepted: ['15', '15%', '15 %', '15,0', '15.0'] }],
+          blanks: [
+            { accepted: ['15', '15%', '15 %', '15,0', '15.0', '15,0%', '15.0%', '15,00', '15.00'] },
+          ],
           explanation:
             'C% = khối lượng chất tan : khối lượng dung dịch × 100% = 30 : 200 × 100% = 15%. Số chia là 200 g dung dịch, không phải 170 g nước.',
           conceptIds: ['percent-concentration'],
@@ -1174,7 +1182,27 @@ export const unit11: UnitInput = {
           prompt: 'Tính nồng độ mol rồi gõ con số vào chỗ trống',
           template:
             'Hoà tan 0,5 mol sodium chloride thành 2 lít dung dịch. Nồng độ mol của dung dịch là ___ M.',
-          blanks: [{ accepted: ['0,25', '0.25', '0,25 M', '0.25 M', '0,25M', '0.25M'] }],
+          blanks: [
+            {
+              accepted: [
+                '0,25',
+                '0.25',
+                '0,250',
+                '0.250',
+                ',25',
+                '.25',
+                '1/4',
+                '0,25 M',
+                '0.25 M',
+                '0,25M',
+                '0.25M',
+                '0,25 mol/L',
+                '0.25 mol/L',
+                '0,25mol/L',
+                '0.25mol/L',
+              ],
+            },
+          ],
           explanation:
             'Nồng độ mol = số mol chất tan : thể tích dung dịch (lít) = 0,5 : 2 = 0,25 mol/L, viết gọn là 0,25 M.',
           conceptIds: ['molar-concentration'],
