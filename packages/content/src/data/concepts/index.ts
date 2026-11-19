@@ -6,6 +6,7 @@ import { unit08Concepts } from './unit-08.js'
 import { unit09Concepts } from './unit-09.js'
 import { unit10Concepts } from './unit-10.js'
 import { unit11Concepts } from './unit-11.js'
+import { unit12Concepts } from './unit-12.js'
 
 export const concepts: Concept[] = [
   { id: 'atom', title: 'Nguyên tử' },
@@ -49,4 +50,5 @@ export const concepts: Concept[] = [
   ...unit09Concepts,
   ...unit10Concepts,
   ...unit11Concepts,
+  ...unit12Concepts,
 ]
